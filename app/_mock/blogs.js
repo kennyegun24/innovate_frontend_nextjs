@@ -1,0 +1,42 @@
+export const blogs = [
+  {
+    author_name: "Forster",
+    text: "the same tradition catch with respect to catch with respect to the same tradition while her catch ca",
+    title: "the entire smoke reg",
+    likes_count: 59807019652,
+    comments_count: 94886754315,
+    blogs_id: 1,
+  },
+  {
+    author_name: "Leupold",
+    text: "the future marriage quit with respect to quit with respect to the future marriage as a rule me quit ",
+    title: "the least fashion pl",
+    likes_count: 9641622710,
+    comments_count: 10529147109,
+    blogs_id: 2,
+  },
+  {
+    author_name: "Xavier",
+    text: "the total Tory act in place of act in place of the total Tory before himself act act.. the entire bi",
+    title: "the total level fly ",
+    likes_count: 19215266198,
+    comments_count: 80043511587,
+    blogs_id: 3,
+  },
+  {
+    author_name: "Brendan",
+    text: "whose top prevent aside from prevent aside from whose top above all itself prevent prevent.. the pre",
+    title: "the specific limitat",
+    likes_count: 94296870800,
+    comments_count: 16807750924,
+    blogs_id: 4,
+  },
+  {
+    author_name: "Lenci",
+    text: "the main polytechnic hit aside from hit aside from the main polytechnic even so whom hit hit.. the s",
+    title: "the future warning c",
+    likes_count: 14812145731,
+    comments_count: 18183419693,
+    blogs_id: 5,
+  },
+];
