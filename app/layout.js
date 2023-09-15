@@ -1,4 +1,5 @@
-import { ThemeContext, ThemeProvider } from "./context/DarkMode";
+import NavBar from "@/app/components/navbar/NavBar";
+import { ThemeProvider } from "./context/DarkMode";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -12,8 +13,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={` ${inter.className}`}>
         <ThemeProvider>
+          <NavBar />
           <div>{children}</div>
         </ThemeProvider>
       </body>
