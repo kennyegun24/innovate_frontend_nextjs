@@ -4,10 +4,217 @@
   box-sizing: border-box;
 }
 
+:root {
+  --mainColor: #2f3b50;
+  --secondaryColor: #151a23;
+  --primaryColor: #202836;
+  --white: #fff;
+  --100vh: 100vh;
+  --90vh: 90vh;
+  --20vh: 20vh;
+  --100: 100%;
+  --90: 90%;
+  --80: 80%;
+  --70: 70%;
+  --50: 50%;
+  --30: 30%;
+  --40: 40%;
+  --35: 35%;
+  --2: 2%;
+  --5: 5%;
+  --flex: flex;
+  --column: column;
+  --center: center;
+  --end: flex-end;
+  --start: flex-start;
+  --10px: 10px;
+  --12px: 12px;
+  --14px: 14px;
+  --16px: 16px;
+  --18px: 18px;
+  --20px: 20px;
+  --05rem: 0.5rem;
+  --1rem: 1rem;
+  --15rem: 1.5rem;
+  --2rem: 2rem;
+  --3rem: 3rem;
+  --4rem: 4rem;
+  --5rem: 5rem;
+}
+
 .light {
-  background-color: bisque;
+  background-color: #f4f4f4;
+  color: #111;
 }
 
 .dark {
-  background-color: #111;
+  background: var(--secondaryColor);
+  color: #bbb;
+}
+
+.bigContainer {
+  min-height: 100vh;
+}
+
+.theme {
+  transition: 0.5s all ease;
+}
+
+.flex {
+  display: flex;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.font10 {
+  font-size: var(--10px);
+}
+
+.font12 {
+  font-size: var(--12px);
+}
+
+.font14 {
+  font-size: var(--14px);
+}
+
+.font16 {
+  font-size: var(--16px);
+}
+
+.font18 {
+  font-size: var(--18px);
+}
+
+.font20 {
+  font-size: var(--20px);
+}
+
+.font24 {
+  font-size: 24px;
+}
+
+.flex {
+  display: var(--flex);
+}
+
+.column {
+  flex-direction: var(--column);
+}
+
+.justify_center {
+  justify-content: var(--center);
+}
+
+.align_center {
+  align-items: var(--center);
+}
+
+.align_start {
+  align-items: var(--start);
+}
+
+.justify_end {
+  justify-content: var(--end);
+}
+
+.justify_start {
+  justify-content: var(--start);
+}
+
+.justify_between {
+  justify-content: space-between;
+}
+
+.textCenter {
+  text-align: var(--center);
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.gap05rem {
+  gap: var(--05rem);
+}
+
+.gap1rem {
+  gap: var(--1rem);
+}
+
+.gap15rem {
+  gap: var(--15rem);
+}
+
+.gap2rem {
+  gap: var(--2rem);
+}
+
+.gap5rem {
+  gap: var(--5rem);
+}
+
+.darkBlue {
+  background: var(--mainColor);
+}
+
+.white {
+  color: var(--white);
+}
+
+.mainBackground {
+  background: var(--secondaryColor);
+}
+
+.primaryColor {
+  background: var(--primaryColor);
+}
+
+.blue {
+  color: #5596e6;
+}
+
+.padding05rem {
+  padding: var(--05rem);
+}
+
+.padding1rem {
+  padding: var(--1rem);
+}
+
+.padding2rem {
+  padding: var(--2rem);
+}
+
+.paddingLeft2rem {
+  padding-left: var(--2rem);
+}
+
+.paddingLeft5 {
+  padding-left: var(--5);
+}
+
+.paddingRight2rem {
+  padding-right: var(--2rem);
+}
+.paddingTop1Rem {
+  padding-top: var(--1rem);
+}
+
+.padding3rem {
+  padding: var(--3rem);
+}
+
+.padding2 {
+  padding: var(--2);
+}
+
+.dark_border {
+  border: 1px solid #111;
+}
+
+.light_border {
+  border: 1px solid #fff;
 }
