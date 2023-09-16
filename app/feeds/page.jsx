@@ -2,8 +2,8 @@ import React from "react";
 import NewPostForm from "../components/writePost/NewPost";
 import styles from "./pages.module.css";
 import RecommendedPages from "@/app/components/recommendedPages/RecommendedPages";
-import RecommendedUsers from "@/app/recommended_users/page";
 import Posts from "./Posts";
+import FiveRecommendUser from "@/app/components/recommendedsers/fiveRecommendUser";
 const Feeds = () => {
   return (
     <div className={styles.container}>
@@ -17,7 +17,7 @@ const Feeds = () => {
         </div>
       </div>
       <div className={styles.rightContainer}>
-        <RecommendedUsers />
+        <FiveRecommendUser />
       </div>
     </div>
   );

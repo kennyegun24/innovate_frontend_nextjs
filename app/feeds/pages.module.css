@@ -3,6 +3,7 @@
   padding: 2rem 5rem;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 .middleContainer {
@@ -11,10 +12,16 @@
 
 .leftContainer {
   width: 25%;
+  /* position: sticky; */
+  /* top: 1000px; */
+  position: relative;
 }
 
 .rightContainer {
   width: 25%;
+  /* position: sticky; */
+  /* top: 1000px; */
+  position: relative;
 }
 
 .subMiddleContainer {
