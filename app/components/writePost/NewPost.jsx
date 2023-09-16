@@ -28,12 +28,16 @@ const NewPostForm = () => {
 
   return (
     <div
-      className={`flex column gap1rem ${styles.container} ${
-        mode === "light" ? "dark_border" : "light_border"
+      className={`flex column gap1rem theme ${styles.container} ${
+        mode === "light" ? "light_border" : " dark_border  primaryColor"
       }`}
       ref={area}
     >
-      <div className={`flex gap1rem width100`}>
+      <div
+        className={`flex gap1rem width100 ${
+          mode === "light" ? "light_border_bottom" : "dark_border_bottom"
+        }`}
+      >
         <Image
           className={styles.image}
           src="/rooney.jpg"
