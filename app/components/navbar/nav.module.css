@@ -1,6 +1,9 @@
 .container {
   padding: 0.5rem 2rem;
   height: 10vh;
+  position: sticky;
+  top: 0;
+  /* background: #151a23; */
 }
 
 .subContainer {

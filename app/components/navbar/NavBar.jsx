@@ -15,7 +15,11 @@ const NavBar = () => {
   const [show, setShow] = useState(false);
 
   return (
-    <div className={`flex justify_between align_center ${styles.container}`}>
+    <div
+      className={`flex justify_between align_center theme ${styles.container} ${
+        mode === "light" ? "light_background" : "dark_background"
+      }`}
+    >
       <FaBars
         onClick={() => setShow((prev) => (prev === true ? false : true))}
         className={`${styles.icons} ${styles.hamBurger}`}

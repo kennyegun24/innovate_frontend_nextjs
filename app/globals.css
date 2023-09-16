@@ -52,6 +52,14 @@
   color: #bbb;
 }
 
+.light_background {
+  background-color: #f4f4f4;
+}
+
+.dark_background {
+  background: var(--secondaryColor);
+}
+
 .light_text {
   color: #bbb;
 }
