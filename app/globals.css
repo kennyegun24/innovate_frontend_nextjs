@@ -287,6 +287,18 @@
   border-radius: 50%;
 }
 
+.br6px {
+  border-radius: 6px;
+}
+
 .object-cover {
   object-fit: cover;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.top15Vh {
+  top: 15vh;
 }
