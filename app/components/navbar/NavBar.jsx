@@ -17,7 +17,7 @@ const NavBar = () => {
   return (
     <div
       className={`flex justify_between align_center theme ${styles.container} ${
-        mode === "light" ? "light_background" : "dark_background"
+        mode === "light" ? "light_background" : "dark_2_background"
       }`}
     >
       <FaBars

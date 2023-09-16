@@ -3,7 +3,7 @@
   height: 10vh;
   position: sticky;
   top: 0;
-  /* background: #151a23; */
+  box-shadow: 1px 1px 6px #111;
 }
 
 .subContainer {

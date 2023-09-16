@@ -29,7 +29,9 @@ const NewPostForm = () => {
   return (
     <div
       className={`flex column gap1rem theme ${styles.container} ${
-        mode === "light" ? "light_border" : " dark_border  primaryColor"
+        mode === "light"
+          ? "lightShadow light_background"
+          : "darkShadow  primaryColor"
       }`}
       ref={area}
     >
