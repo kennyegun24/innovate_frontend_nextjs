@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+  padding: 2rem 5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.middleContainer {
+  width: 45%;
+}
+
+.leftContainer {
+  width: 25%;
+}
+
+.rightContainer {
+  width: 25%;
+}
+
+@media (min-width: 200px) and (max-width: 767px) {
+  .middleContainer {
+    width: 100%;
+  }
+
+  .container {
+    padding: 1rem 1rem;
+  }
+
+  .leftContainer {
+    display: none;
+  }
+
+  .rightContainer {
+    display: none;
+  }
+}
