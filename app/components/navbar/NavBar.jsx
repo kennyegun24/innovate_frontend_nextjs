@@ -7,6 +7,7 @@ import { SlBriefcase } from "react-icons/sl";
 import styles from "./nav.module.css";
 import { ThemeContext } from "@/app/context/DarkMode";
 import DarkMode from "../darkMode/DarkMode";
+import Link from "next/link";
 // import { ThemeContext } from "@/context/DarkMode";
 
 const NavBar = () => {
@@ -24,14 +25,56 @@ const NavBar = () => {
           show === true ? styles.show : styles.hide
         } ${mode === "light" ? styles.backLight : styles.backDark}`}
       >
-        <div className={styles.subContainer2}>
-          <BiHomeHeart className={styles.icons} />
-          <FaUsers className={styles.icons} />
-          <BiMessage className={styles.icons} />
-          <BsBell className={styles.icons} />
+        <div className={`${styles.subContainer2}`}>
+          <Link
+            className={`theme ${
+              mode === "light" ? styles.dark_text : styles.white_text
+            }`}
+            href="/feeds"
+          >
+            <BiHomeHeart className={styles.icons} />
+          </Link>
+          <Link
+            className={`theme ${
+              mode === "light" ? styles.dark_text : styles.white_text
+            }`}
+            href="/recommended_users"
+          >
+            <FaUsers className={styles.icons} />
+          </Link>
+          <Link
+            className={`theme ${
+              mode === "light" ? styles.dark_text : styles.white_text
+            }`}
+            href="/chat"
+          >
+            <BiMessage className={styles.icons} />
+          </Link>
+          <Link
+            className={`theme ${
+              mode === "light" ? styles.dark_text : styles.white_text
+            }`}
+            href="/notifications"
+          >
+            <BsBell className={styles.icons} />
+          </Link>
           <BiShoppingBag className={styles.icons} />
-          <SlBriefcase className={styles.icons} />
-          <FaBlogger className={styles.icons} />
+          <Link
+            className={`theme ${
+              mode === "light" ? styles.dark_text : styles.white_text
+            }`}
+            href="/jobs"
+          >
+            <SlBriefcase className={styles.icons} />
+          </Link>
+          <Link
+            className={`theme ${
+              mode === "light" ? styles.dark_text : styles.white_text
+            }`}
+            href="/blog"
+          >
+            <FaBlogger className={styles.icons} />
+          </Link>
         </div>
         <DarkMode toggle={toggle} mode={mode} />
       </div>

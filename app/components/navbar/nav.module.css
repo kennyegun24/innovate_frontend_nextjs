@@ -13,7 +13,7 @@
 .subContainer2 {
   display: flex;
   gap: 1.5rem;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .icons {
@@ -24,9 +24,18 @@
   display: none;
 }
 
+.white_text {
+  color: #bbb;
+}
+
+.dark_text {
+  color: #2f3b50;
+}
+
 @media (min-width: 200px) and (max-width: 767px) {
   .container {
     position: relative;
+    height: 7vh;
     padding: 1rem 0.5rem;
   }
 
@@ -38,10 +47,10 @@
   }
 
   .subContainer {
-    height: 90vh;
+    height: 93vh;
     width: 30%;
     position: absolute;
-    top: 10vh;
+    top: 7vh;
     backdrop-filter: blur(10px);
     flex-direction: column;
     justify-content: initial;
