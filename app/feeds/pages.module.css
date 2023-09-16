@@ -17,6 +17,10 @@
   width: 25%;
 }
 
+.subMiddleContainer {
+  margin-top: 1rem;
+}
+
 @media (min-width: 200px) and (max-width: 767px) {
   .middleContainer {
     width: 100%;

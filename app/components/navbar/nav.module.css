@@ -4,6 +4,7 @@
   position: sticky;
   top: 0;
   box-shadow: 1px 1px 6px #111;
+  z-index: 999;
 }
 
 .subContainer {

@@ -132,6 +132,10 @@
   font-size: 24px;
 }
 
+.fontW600 {
+  font-weight: 600;
+}
+
 .flex {
   display: var(--flex);
 }
