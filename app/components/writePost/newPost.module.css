@@ -1,0 +1,55 @@
+.container {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+.textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.button,
+.button2 {
+  border-radius: 16px;
+  background-color: transparent;
+}
+
+.image {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.button2 {
+  background: #5596e6;
+}
+
+.selectedImageSubContainer {
+  position: relative;
+  width: 95px;
+  height: 95px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: #202836;
+}
+
+.selectedImageClose {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  right: 0;
+  /* border-radius: 50%; */
+  padding: 0.1rem;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: justify;
+  width: 100%;
+  text-align: right;
+  color: #bbb;
+}
+
+.selectedImage {
+}
