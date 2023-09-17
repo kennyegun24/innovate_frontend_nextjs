@@ -94,6 +94,16 @@
 
 .bigContainer {
   min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.height100 {
+  height: 100%;
+}
+
+.height_fit {
+  height: fit-content;
 }
 
 .theme {
@@ -309,4 +319,8 @@
 
 .relative {
   position: relative;
+}
+
+.br6 {
+  border-radius: 6px;
 }
