@@ -2,6 +2,7 @@ import NavBar from "@/app/components/navbar/NavBar";
 import { ThemeProvider } from "./context/DarkMode";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { FollowedProvider } from "./context/FollowedContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +16,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={` ${inter.className}`}>
         <ThemeProvider>
-          <NavBar />
-          <div>{children}</div>
+          <FollowedProvider>
+            <NavBar />
+            <div>{children}</div>
+          </FollowedProvider>
         </ThemeProvider>
       </body>
     </html>
