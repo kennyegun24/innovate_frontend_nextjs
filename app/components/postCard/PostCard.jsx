@@ -7,6 +7,7 @@ import Like from "../interractions/Like";
 import Comment from "../interractions/Comment";
 import LikeIcon from "../interractions/LikeIcon";
 import CommentIcon from "../interractions/CommentIcon";
+import Link from "next/link";
 
 const PostCard = ({ data }) => {
   const { mode } = useContext(ThemeContext);
@@ -33,7 +34,14 @@ const PostCard = ({ data }) => {
                 <p className="font12">July 26 2018, 01:00pm</p>
               </div>
             </div>
-            <p className={styles.postText}>{post.text}</p>
+            <Link
+              href={`/feeds/${post.id}`}
+              className={` ${
+                mode === "light" ? "dark_text" : "light_text"
+              } text_decoration_none ${styles.postText}`}
+            >
+              {post.text}
+            </Link>
             {post.image && (
               <Image className={styles.postImage} src={post?.image} alt="" />
             )}

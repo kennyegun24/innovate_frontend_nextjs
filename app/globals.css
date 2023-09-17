@@ -42,6 +42,10 @@
   --5rem: 5rem;
 }
 
+.text_decoration_none {
+  text-decoration: none;
+}
+
 .light {
   background-color: #f4f4f4;
   color: #202836;
