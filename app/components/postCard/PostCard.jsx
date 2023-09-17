@@ -40,7 +40,7 @@ const PostCard = ({ data }) => {
             <div
               className={`flex align_center gap1rem ${styles.interractionsDiv}`}
             >
-              <LikeIcon count={post.likes_count} />
+              <LikeIcon isLiked={post.isLiked} count={post.likes_count} />
               <CommentIcon count={post.comments_count} />
             </div>
           </div>
