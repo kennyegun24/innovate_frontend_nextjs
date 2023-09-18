@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 4rem;
+}
+
+.nameCareer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.profileNavigationsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profileNavigationLink {
+  /* color: #fff; */
+  font-size: 12px;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* - warn The server is running out of memory, restarting to free up memory.
+- wait compiling... */
