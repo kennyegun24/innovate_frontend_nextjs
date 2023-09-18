@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import rooney from "public/rooney.jpg";
 import styles from "./styles.module.css";
+import ProfileButton from "../../ProfileButton";
 const ProfileHeader = ({ mode }) => {
   return (
     <div className={styles.profileHeaderContainer}>
@@ -9,24 +10,8 @@ const ProfileHeader = ({ mode }) => {
 
       <section className={styles.profileHeaderNavs}>
         <div className={styles.profileHeaderNavBtnDiv}>
-          <button
-            className={`theme ${
-              mode === "light"
-                ? "light_background dark_text light_border "
-                : "dark_border dark_2_background light_text"
-            } ${styles.button}`}
-          >
-            Feeds
-          </button>
-          <button
-            className={`theme ${
-              mode === "light"
-                ? "light_background dark_text light_border"
-                : "dark_border dark_2_background light_text"
-            } ${styles.button}`}
-          >
-            About
-          </button>
+          <ProfileButton text={"Feeds"} />
+          <ProfileButton text={"About"} />
         </div>
         <div className={styles.profileHeaderProfileImageDiv}>
           <Image
@@ -40,38 +25,14 @@ const ProfileHeader = ({ mode }) => {
           <p className="font12">Software Developer</p>
         </div>
         <div className={styles.profileHeaderNavBtnDiv}>
-          <button
-            className={`theme ${
-              mode === "light"
-                ? "light_background dark_text light_border"
-                : "dark_border dark_2_background light_text"
-            } ${styles.button}`}
-          >
-            Friends
-          </button>
-          <button
-            className={`theme ${
-              mode === "light"
-                ? "light_background dark_text light_border"
-                : "dark_border dark_2_background light_text"
-            } ${styles.button}`}
-          >
-            Photos
-          </button>
+          <ProfileButton text={"Friends"} />
+          <ProfileButton text={"Photos"} />
         </div>
       </section>
 
       <section className={styles.profileHeaderNavs2}>
         <h3>3.4K followers</h3>
-        <button
-          className={`theme ${
-            mode === "light"
-              ? "light_background dark_text light_border"
-              : "dark_border dark_2_background light_text"
-          } ${styles.button}`}
-        >
-          Edit Profile
-        </button>
+        <ProfileButton text={"Edit Profile"} />
       </section>
     </div>
   );
