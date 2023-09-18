@@ -1,3 +1,4 @@
+import rashford from "public/rashford.jpg";
 export const currentUserDetails = {
   name: "Joshuah",
   user_name: "rustic_bat1031",
@@ -13,4 +14,5 @@ export const currentUserDetails = {
   company: "DeCellar",
   id: 1,
   followers_count: 18289,
+  image: rashford,
 };
