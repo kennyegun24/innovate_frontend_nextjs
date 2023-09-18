@@ -17,3 +17,15 @@
   flex-direction: column;
   gap: 2rem;
 }
+
+.layoutProfileChildren::-webkit-scrollbar {
+  width: 5px;
+}
+
+.layoutProfileChildren::-webkit-scrollbar-thumb {
+  background: #5596e6;
+}
+
+.layoutProfileChildren::-webkit-scrollbar-thumb:active {
+  background: #111;
+}
