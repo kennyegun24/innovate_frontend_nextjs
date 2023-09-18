@@ -1,8 +1,8 @@
 import ProfileOverview from "@/app/components/profile/profileAbout/ProfileOverview";
 import React from "react";
 
-const Overview = () => {
-  return <ProfileOverview />;
+const Overview = ({ mode }) => {
+  return <ProfileOverview mode={mode} />;
 };
 
 export default Overview;

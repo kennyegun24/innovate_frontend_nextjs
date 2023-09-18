@@ -1,12 +1,8 @@
-"use client";
-
-import { ThemeContext } from "@/app/context/DarkMode";
-import React, { useContext } from "react";
+import React from "react";
 import { BiLocationPlus } from "react-icons/bi";
 import { FaGraduationCap } from "react-icons/fa";
 
-const ProfileOverview = () => {
-  const { mode } = useContext(ThemeContext);
+const ProfileOverview = ({ mode }) => {
   return (
     <section style={{ width: "100%" }} className="flex gap1rem">
       <div

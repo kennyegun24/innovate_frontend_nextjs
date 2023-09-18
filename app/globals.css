@@ -234,6 +234,10 @@
   color: #5596e6;
 }
 
+.blue_background {
+  background: #5596e6;
+}
+
 .padding05rem {
   padding: var(--05rem);
 }
