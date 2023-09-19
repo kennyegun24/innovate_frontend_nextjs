@@ -1,11 +1,11 @@
 import React from "react";
 import PostCard from "../../postCard/PostCard";
-import { posts } from "@/app/_mock/posts_mock";
+// import { posts } from "@/app/_mock/posts_mock";
 
-const ProfileFeedsPosts = () => {
+const ProfileFeedsPosts = ({ data }) => {
   return (
     <div style={{ width: "100%" }}>
-      <PostCard data={posts} />
+      <PostCard data={data} />
     </div>
   );
 };

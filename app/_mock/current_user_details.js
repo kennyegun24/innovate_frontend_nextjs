@@ -15,4 +15,6 @@ export const currentUserDetails = {
   id: 1,
   followers_count: 18289,
   image: rashford,
+  studiedAt: "Oxford University",
+  from: "Cagliari, Italy, Europe",
 };

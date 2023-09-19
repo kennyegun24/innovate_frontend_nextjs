@@ -4,8 +4,7 @@ import rooney from "public/rooney.jpg";
 import styles from "./styles.module.css";
 import ProfileButton from "../../ProfileButton";
 import { numberFormat } from "@/app/helpers/general";
-import { currentUserDetails } from "@/app/_mock/current_user_details";
-const ProfileHeader = ({ mode }) => {
+const ProfileHeader = ({ data }) => {
   return (
     <div className={styles.profileHeaderContainer}>
       <Image className={styles.profileHeaderImage} src={rooney} alt="" />
@@ -17,14 +16,14 @@ const ProfileHeader = ({ mode }) => {
         </div>
         <div className={styles.profileHeaderProfileImageDiv}>
           <Image
-            src={currentUserDetails.image}
+            src={data.image}
             height={80}
             width={80}
             alt=""
             className="roundedImage object-cover"
           />
-          <h3 className="font16">{currentUserDetails.name}</h3>
-          <p className="font12">{currentUserDetails.profession}</p>
+          <h3 className="font16">{data.name}</h3>
+          <p className="font12">{data.profession}</p>
         </div>
         <div className={styles.profileHeaderNavBtnDiv}>
           <ProfileButton text={"Friends"} />
@@ -33,7 +32,7 @@ const ProfileHeader = ({ mode }) => {
       </section>
 
       <section className={styles.profileHeaderNavs2}>
-        <h3>{numberFormat(currentUserDetails.followers_count)} followers</h3>
+        <h3>{numberFormat(data.followers_count)} followers</h3>
         <ProfileButton text={"Edit Profile"} />
       </section>
     </div>

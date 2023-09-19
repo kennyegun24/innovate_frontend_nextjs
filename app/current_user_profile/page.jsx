@@ -2,15 +2,17 @@ import ProfileFeedsOverview from "@/app/components/profile/profileFeeds/ProfileF
 import ProfileFeedsPosts from "@/app/components/profile/profileFeeds/ProfileFeedsPosts";
 import React from "react";
 import styles from "./profileFeeds.module.css";
+import { currentUserDetails } from "../_mock/current_user_details";
+import { posts } from "../_mock/posts_mock";
 
 const ProfilePostFeeds = () => {
   return (
     <div className={styles.container}>
       <section className={styles.overViewContainer}>
-        <ProfileFeedsOverview />
+        <ProfileFeedsOverview data={currentUserDetails} />
       </section>
       <section className={styles.profilePostsComtainer}>
-        <ProfileFeedsPosts />
+        <ProfileFeedsPosts data={posts} />
       </section>
     </div>
   );

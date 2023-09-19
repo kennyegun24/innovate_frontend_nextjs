@@ -2,7 +2,7 @@ import React from "react";
 import { BiLocationPlus } from "react-icons/bi";
 import { FaGraduationCap } from "react-icons/fa";
 
-const ProfileOverview = () => {
+const ProfileOverview = ({ data }) => {
   return (
     <section style={{ width: "100%" }} className="flex gap1rem">
       <div
@@ -20,7 +20,7 @@ const ProfileOverview = () => {
           <p className="font14">
             <BiLocationPlus /> Location
           </p>
-          <p className="font12">Block N18, Flat 3</p>
+          <p className="font12">{data.location}</p>
         </div>
         <div
           className={` background2 font14 flex column theme gap05rem padding1rem`}
@@ -29,7 +29,7 @@ const ProfileOverview = () => {
           <p className="font14">
             <FaGraduationCap /> Education
           </p>
-          <p className="font12">Oxford University</p>
+          <p className="font12">{data.studiedAt}</p>
         </div>
       </div>
       <div
