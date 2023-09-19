@@ -25,7 +25,7 @@ const ProfileAboutNav = () => {
     {
       icon: <BiBriefcase />,
       text: "Experience",
-      link: "/current_user_profile/about/",
+      link: "/current_user_profile/about/experience",
       tab: 4,
     },
   ];

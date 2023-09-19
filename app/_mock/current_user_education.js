@@ -1,7 +1,7 @@
-import rooney from "public/rooney.jpg";
-import hojlund from "public/hojlund.jpg";
-import messi from "public/messi.jpg";
-import ronaldo from "public/ronaldo.jpg";
+import sch1 from "public/sch1.jpg";
+import sch2 from "public/sch2.jpg";
+import sch3 from "public/sch3.jpg";
+import sch4 from "public/sch4.jpg";
 export const currentUserEducation = [
   {
     school_name: "Harvard",
@@ -9,7 +9,7 @@ export const currentUserEducation = [
     year: "2020",
     course: "Computer Engineering",
     desc: "Learnt Artificial intelligence and created several AI model to help solve algorithmic problems",
-    img: rooney,
+    img: sch1,
   },
   {
     school_name: "Oxford University",
@@ -17,7 +17,7 @@ export const currentUserEducation = [
     year: "2021",
     course: "Computer Science",
     desc: "Learnt Artificial intelligence and created several AI model to help solve algorithmic problems",
-    img: hojlund,
+    img: sch2,
   },
   {
     school_name: "MIT",
@@ -25,7 +25,7 @@ export const currentUserEducation = [
     year: "2016",
     course: "Computer Science",
     desc: "Learnt Artificial intelligence and created several AI model to help solve algorithmic problems",
-    img: messi,
+    img: sch3,
   },
   {
     school_name: "Cambridge University",
@@ -33,6 +33,6 @@ export const currentUserEducation = [
     year: "2020",
     course: "Computer Engineering",
     desc: "Learnt Artificial intelligence and created several AI model to help solve algorithmic problems",
-    img: ronaldo,
+    img: sch4,
   },
 ];
