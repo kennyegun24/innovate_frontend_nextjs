@@ -8,7 +8,7 @@ import { comments } from "@/app/_mock/comments";
 
 const Comments = () => {
   return (
-    <div className={` ${styles.commentDiv}`}>
+    <div className={`theme text_color ${styles.commentDiv}`}>
       {comments.map((comment, index) => (
         <div className="flex gap1rem " key={index}>
           <div>

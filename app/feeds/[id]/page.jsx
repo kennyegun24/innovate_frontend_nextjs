@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useContext, useState } from "react";
-import { ThemeContext } from "@/app/context/DarkMode";
+import React, { useState } from "react";
 import { posts } from "@/app/_mock/posts_mock";
 import Link from "next/link";
 import LikeIcon from "@/app/components/interractions/LikeIcon";
@@ -11,20 +10,14 @@ import Comments from "./comments";
 import WriteComment from "./WriteComment";
 import { usePathname } from "next/navigation";
 const PostDetails = () => {
-  const { mode } = useContext(ThemeContext);
   const router = usePathname();
   const routePath = router.split("/");
   const postId = routePath[routePath.length - 1];
-  // console.log(postId);
   const [post, setPost] = useState(posts[postId]);
   return (
-    <div className={styles.container}>
-      <div className={` ${styles.postImageMainDiv}`}>
-        <div
-          className={`${
-            mode === "light" ? "light_background" : "dark_2_background"
-          } padding1rem ${styles.postImageDiv}`}
-        >
+    <div className={`${styles.container}`}>
+      <div className={`${styles.postImageMainDiv}`}>
+        <div className={`background2 theme padding1rem ${styles.postImageDiv}`}>
           {post.image && (
             <Image
               style={{
@@ -39,10 +32,10 @@ const PostDetails = () => {
         </div>
       </div>
 
-      <div className={`light ${styles.subContainer}`}>
+      <div className={`theme background2 ${styles.subContainer}`}>
         <div className={styles.postCommentsContainer}>
           <div
-            className={`flex column gap05rem light_background ${styles.subPostLeftContainer}`}
+            className={`flex column gap05rem theme text_color ${styles.subPostLeftContainer}`}
           >
             <div className={`flex gap1rem ${styles.postHeaderContainer}`}>
               <Image

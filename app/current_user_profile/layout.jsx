@@ -9,11 +9,7 @@ const Layout = ({ children }) => {
   const { mode } = useContext(ThemeContext);
   return (
     <div className={styles.layoutContainer}>
-      <div
-        className={`theme ${
-          mode === "light" ? "light_background" : "dark_2_background"
-        } ${styles.layoutProfileNavDiv}`}
-      >
+      <div className={`theme background2 ${styles.layoutProfileNavDiv}`}>
         <ProfileNav />
       </div>
       <div className={styles.layoutProfileChildren}>

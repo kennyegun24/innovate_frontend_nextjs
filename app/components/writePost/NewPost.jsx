@@ -28,18 +28,10 @@ const NewPostForm = () => {
 
   return (
     <div
-      className={`flex column gap1rem theme ${styles.container} ${
-        mode === "light"
-          ? "lightShadow light_background"
-          : "darkShadow  primaryColor"
-      }`}
+      className={`flex column gap1rem theme ${styles.container} background2 border_bottom`}
       ref={area}
     >
-      <div
-        className={`flex gap1rem width100 ${
-          mode === "light" ? "light_border_bottom" : "dark_border_bottom"
-        }`}
-      >
+      <div className={`flex gap1rem width100 border_bottom theme`}>
         <Image
           className={styles.image}
           src="/rooney.jpg"
@@ -49,9 +41,7 @@ const NewPostForm = () => {
         />
         <form className="width100">
           <textarea
-            className={`padding05rem flex column gap1rem width100 resize_off ${
-              styles.textarea
-            } ${mode === "light" ? " dark_text" : " light_text"}`}
+            className={`padding05rem flex column gap1rem width100 resize_off ${styles.textarea} text_color`}
             rows="8"
             placeholder="Write something..."
             ref={textareaRef}
@@ -68,11 +58,7 @@ const NewPostForm = () => {
       />
       <label
         htmlFor="image"
-        className={`width_fit padding05rem flex align_center gap05rem font12 ${
-          styles.button
-        } ${
-          mode === "light" ? "dark_border dark_text" : "light_border light_text"
-        }`}
+        className={`width_fit theme padding05rem flex align_center gap05rem font12 ${styles.button} border`}
       >
         <BiCamera /> Media
       </label>
@@ -101,13 +87,7 @@ const NewPostForm = () => {
       {postActive && (
         <>
           <button
-            className={`width100 padding05rem flex align_center justify_center gap05rem margintop1rem ${
-              styles.button2
-            } ${
-              mode === "light"
-                ? "dark_border dark_text"
-                : "light_border light_text"
-            }`}
+            className={`width100 padding05rem flex align_center justify_center gap05rem margintop1rem ${styles.button2} border text_color`}
           >
             Publish Post
           </button>

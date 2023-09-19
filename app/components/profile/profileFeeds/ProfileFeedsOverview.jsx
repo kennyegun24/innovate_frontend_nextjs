@@ -6,11 +6,7 @@ import styles from "./PostFeedOverview.module.css";
 const ProfileFeedsOverview = () => {
   const { mode } = useContext(ThemeContext);
   return (
-    <section
-      className={`${styles.container} ${
-        mode === "light" ? "light_background" : "dark_2_background"
-      }`}
-    >
+    <section className={`${styles.container} background2 theme`}>
       <div className={styles.listDiv}>
         <h4 className="font12">Studied at</h4>
         <p className="font12">Oxford University</p>

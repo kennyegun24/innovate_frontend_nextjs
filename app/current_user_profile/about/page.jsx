@@ -1,12 +1,8 @@
+import ProfileOverview from "@/app/components/profile/profileAbout/ProfileOverview";
 import React from "react";
-import ProfileAboutNav from "./ProfileAboutNav";
 
-const ProfileAbout = () => {
-  return (
-    <div>
-      <ProfileAboutNav />
-    </div>
-  );
+const Overview = () => {
+  return <ProfileOverview />;
 };
 
-export default ProfileAbout;
+export default Overview;

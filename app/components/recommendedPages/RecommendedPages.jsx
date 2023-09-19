@@ -2,18 +2,14 @@
 import React, { useContext } from "react";
 import { FaCheckCircle, FaUserPlus } from "react-icons/fa";
 import Image from "next/image";
-import { ThemeContext } from "@/app/context/DarkMode";
 import { companies } from "@/app/_mock/companies";
 import { FollowedContext } from "@/app/context/FollowedContext";
 
 const RecommendedPages = () => {
-  const { mode } = useContext(ThemeContext);
   const { toggle, setAction } = useContext(FollowedContext);
   return (
     <div
-      className={`sticky top15Vh marginTop1rem flex column gap1rem theme br6px padding1rem ${
-        mode === "light" ? "light_background" : "dark_2_background"
-      }`}
+      className={`sticky top15Vh marginTop1rem flex column gap1rem theme br6px padding1rem background2`}
     >
       <h3 className="font16">Suggested Pages</h3>
 

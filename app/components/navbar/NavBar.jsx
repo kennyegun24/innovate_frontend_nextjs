@@ -8,7 +8,6 @@ import styles from "./nav.module.css";
 import { ThemeContext } from "@/app/context/DarkMode";
 import DarkMode from "../darkMode/DarkMode";
 import Link from "next/link";
-// import { ThemeContext } from "@/context/DarkMode";
 
 const NavBar = () => {
   const { toggle, mode } = useContext(ThemeContext);
@@ -16,9 +15,7 @@ const NavBar = () => {
 
   return (
     <div
-      className={`flex justify_between align_center theme ${styles.container} ${
-        mode === "light" ? "light_background" : "dark_2_background"
-      }`}
+      className={`flex justify_between align_center theme ${styles.container} background2`}
     >
       <FaBars
         onClick={() => setShow((prev) => (prev === true ? false : true))}

@@ -2,7 +2,7 @@ import React from "react";
 import { BiLocationPlus } from "react-icons/bi";
 import { FaGraduationCap } from "react-icons/fa";
 
-const ProfileOverview = ({ mode }) => {
+const ProfileOverview = () => {
   return (
     <section style={{ width: "100%" }} className="flex gap1rem">
       <div
@@ -14,9 +14,7 @@ const ProfileOverview = ({ mode }) => {
         }}
       >
         <div
-          className={`${
-            mode === "light" ? "light_background" : "dark_2_background"
-          } font14 flex column theme gap05rem padding1rem`}
+          className={` background2 font14 flex column theme gap05rem padding1rem`}
           style={{ borderRadius: "6px" }}
         >
           <p className="font14">
@@ -25,9 +23,7 @@ const ProfileOverview = ({ mode }) => {
           <p className="font12">Block N18, Flat 3</p>
         </div>
         <div
-          className={`${
-            mode === "light" ? "light_background" : "dark_2_background"
-          } font14 flex column theme gap05rem padding1rem`}
+          className={` background2 font14 flex column theme gap05rem padding1rem`}
           style={{ borderRadius: "6px" }}
         >
           <p className="font14">
@@ -37,9 +33,7 @@ const ProfileOverview = ({ mode }) => {
         </div>
       </div>
       <div
-        className={`${
-          mode === "light" ? "light_background" : "dark_2_background"
-        } font14 flex column theme gap05rem padding1rem`}
+        className={` background2 font14 flex column theme gap05rem padding1rem`}
         style={{ borderRadius: "6px", width: "60%" }}
       >
         <h4>About Me</h4>

@@ -1,14 +1,38 @@
-"use client";
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { BiBriefcase } from "react-icons/bi";
 import { BsInfo } from "react-icons/bs";
 import { FaCheckCircle, FaGraduationCap } from "react-icons/fa";
-import Overview from "./Overview";
 import { ThemeContext } from "@/app/context/DarkMode";
+import Link from "next/link";
 
 const ProfileAboutNav = () => {
   const [tab, setTab] = useState(1);
-  const { mode } = useContext(ThemeContext);
+  const nav = [
+    {
+      icon: <FaCheckCircle />,
+      text: "Overview",
+      link: "/current_user_profile/about/",
+      tab: 1,
+    },
+    {
+      icon: <BsInfo />,
+      text: "Personal Info",
+      link: "/current_user_profile/about/personal_info",
+      tab: 2,
+    },
+    {
+      icon: <FaGraduationCap />,
+      text: "Education",
+      link: "/current_user_profile/about/education",
+      tab: 3,
+    },
+    {
+      icon: <BiBriefcase />,
+      text: "Experience",
+      link: "/current_user_profile/about/",
+      tab: 4,
+    },
+  ];
   return (
     <section className="flex gap2rem">
       <div
@@ -16,64 +40,22 @@ const ProfileAboutNav = () => {
           display: "flex",
           flexDirection: "column",
           gap: "0.5rem",
-          width: "25%",
+          width: "100%",
         }}
       >
-        <p
-          className={`font14 pointer flex align_center theme gap05rem padding1rem ${
-            mode === "light" && tab !== 1
-              ? "light_background dark_text"
-              : mode === "dark" && tab !== 1
-              ? "dark_2_background light_text"
-              : tab === 1 && "blue_background white"
-          }`}
-          style={{ borderRadius: "6px" }}
-          onClick={() => setTab(1)}
-        >
-          <FaCheckCircle /> Overview
-        </p>
-        <p
-          className={`font14 pointer flex align_center theme gap05rem padding1rem ${
-            mode === "light" && tab !== 2
-              ? "light_background dark_text"
-              : mode === "dark" && tab !== 2
-              ? "dark_2_background light_text"
-              : tab === 2 && "blue_background white"
-          }`}
-          style={{ borderRadius: "6px" }}
-          onClick={() => setTab(2)}
-        >
-          <BsInfo /> Personal Info
-        </p>
-        <p
-          className={`font14 pointer flex align_center theme gap05rem padding1rem ${
-            mode === "light" && tab !== 3
-              ? "light_background dark_text"
-              : mode === "dark" && tab !== 3
-              ? "dark_2_background light_text"
-              : tab === 3 && "blue_background white"
-          }`}
-          style={{ borderRadius: "6px" }}
-          onClick={() => setTab(3)}
-        >
-          <FaGraduationCap /> Education
-        </p>
-        <p
-          className={`font14 pointer flex align_center theme gap05rem padding1rem ${
-            mode === "light" && tab !== 4
-              ? "light_background dark_text"
-              : mode === "dark" && tab !== 4
-              ? "dark_2_background light_text"
-              : tab === 4 && "blue_background white"
-          }`}
-          style={{ borderRadius: "6px" }}
-          onClick={() => setTab(4)}
-        >
-          <BiBriefcase /> Experience
-        </p>
-      </div>
-      <div style={{ width: "75%" }}>
-        {tab === 1 && <Overview mode={mode} />}
+        {nav.map((nav) => (
+          <Link
+            key={nav.tab}
+            href={nav.link}
+            className={`font14 background2 text_color pointer flex align_center theme gap05rem padding1rem text_decoration_none ${
+              tab === nav.tab && "blue_background white"
+            }`}
+            style={{ borderRadius: "6px" }}
+            onClick={() => setTab(nav.tab)}
+          >
+            {nav.icon} {nav.text}
+          </Link>
+        ))}
       </div>
     </section>
   );
