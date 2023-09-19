@@ -13,6 +13,7 @@
   /* --blue_color: #5596e6; */
   --border_color: #2f3b50;
   --interractions_shadow: 0px 5px 20px rgba(86, 151, 230, 0.4);
+  --overview_shadow: 0px 5px 10px rgba(86, 151, 230, 0.3);
   --white: #fff;
   --100vh: 100vh;
   --90vh: 90vh;
@@ -98,6 +99,10 @@
 
 .like_comment_btn {
   box-shadow: var(--interractions_shadow);
+}
+
+.overview_btn_shadow {
+  box-shadow: var(--overview_shadow);
 }
 
 .white_background {

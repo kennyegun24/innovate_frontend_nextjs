@@ -47,8 +47,8 @@ const ProfileAboutNav = () => {
           <Link
             key={nav.tab}
             href={nav.link}
-            className={`font14 background2 text_color pointer flex align_center theme gap05rem padding1rem text_decoration_none ${
-              tab === nav.tab && "blue_background white"
+            className={`font14 text_color pointer flex align_center theme gap05rem padding05rem text_decoration_none ${
+              tab === nav.tab && "overview_btn_shadow blue_background white"
             }`}
             style={{ borderRadius: "6px" }}
             onClick={() => setTab(nav.tab)}
