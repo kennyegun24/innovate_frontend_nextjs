@@ -4,21 +4,17 @@ import { BsInfo } from "react-icons/bs";
 import { FaCheckCircle, FaGraduationCap } from "react-icons/fa";
 import { ThemeContext } from "@/app/context/DarkMode";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const ProfileAboutNav = () => {
   const [tab, setTab] = useState(1);
+  const pathName = usePathname();
   const nav = [
     {
       icon: <FaCheckCircle />,
       text: "Overview",
-      link: "/current_user_profile/about/",
+      link: "/current_user_profile/about",
       tab: 1,
-    },
-    {
-      icon: <BsInfo />,
-      text: "Personal Info",
-      link: "/current_user_profile/about/personal_info",
-      tab: 2,
     },
     {
       icon: <FaGraduationCap />,
@@ -39,7 +35,7 @@ const ProfileAboutNav = () => {
         style={{
           display: "flex",
           flexDirection: "column",
-          gap: "0.5rem",
+          gap: "1rem",
           width: "100%",
         }}
       >
@@ -48,10 +44,11 @@ const ProfileAboutNav = () => {
             key={nav.tab}
             href={nav.link}
             className={`font14 text_color pointer flex align_center theme gap05rem padding05rem text_decoration_none ${
-              tab === nav.tab && "overview_btn_shadow blue_background white"
+              pathName === nav.link &&
+              "overview_btn_shadow blue_background white"
             }`}
             style={{ borderRadius: "6px" }}
-            onClick={() => setTab(nav.tab)}
+            // onClick={() => setTab(nav.tab)}
           >
             {nav.icon} {nav.text}
           </Link>
