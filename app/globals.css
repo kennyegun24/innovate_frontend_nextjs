@@ -73,6 +73,10 @@
   border: 1px solid var(--border_color);
 }
 
+.toggle_btn_border {
+  border: 1px solid var(--shadow_color);
+}
+
 .text_color {
   color: var(--textColor);
 }

@@ -2,9 +2,9 @@
 import Image from "next/image";
 import React, { useContext, useRef, useState, useEffect } from "react";
 import styles from "./newPost.module.css";
-import { BsCamera } from "react-icons/bs";
 import { BiCamera } from "react-icons/bi";
 import { ThemeContext } from "@/app/context/DarkMode";
+import { currentUserDetails } from "@/app/_mock/current_user_details";
 
 const NewPostForm = () => {
   const [postActive, setPostActive] = useState(false);
@@ -32,13 +32,15 @@ const NewPostForm = () => {
       ref={area}
     >
       <div className={`flex gap1rem width100 border_bottom theme`}>
-        <Image
-          className={styles.image}
-          src="/rooney.jpg"
-          width={50}
-          height={50}
-          alt="profile image"
-        />
+        <div>
+          <Image
+            className={styles.image}
+            src={currentUserDetails.image}
+            width={50}
+            height={50}
+            alt="profile image"
+          />
+        </div>
         <form className="width100">
           <textarea
             className={`padding05rem flex column gap1rem width100 resize_off ${styles.textarea} text_color`}
