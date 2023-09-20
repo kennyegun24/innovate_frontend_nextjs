@@ -1,0 +1,26 @@
+.layoutContainer {
+  height: 90vh;
+  width: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 0 1rem;
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+}
+
+.layoutProfileChildren {
+  padding: 0 5rem;
+}
+
+.layoutContainer::-webkit-scrollbar {
+  width: 5px;
+}
+
+.layoutContainer::-webkit-scrollbar-thumb {
+  background: #5596e6;
+}
+
+.layoutContainer::-webkit-scrollbar-thumb:active {
+  background: #111;
+}

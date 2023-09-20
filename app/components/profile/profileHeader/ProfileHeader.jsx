@@ -5,17 +5,17 @@ import styles from "./styles.module.css";
 import ProfileButton from "../../ProfileButton";
 import { numberFormat } from "@/app/helpers/general";
 import Link from "next/link";
-const ProfileHeader = ({ data }) => {
+const ProfileHeader = ({ data, feeds, about, editProfile, friends }) => {
   return (
     <div className={styles.profileHeaderContainer}>
       <Image className={styles.profileHeaderImage} src={rooney} alt="" />
 
       <section className={styles.profileHeaderNavs}>
         <div className={styles.profileHeaderNavBtnDiv}>
-          <Link href={"/current_user_profile"}>
+          <Link href={feeds}>
             <ProfileButton text={"Feeds"} />
           </Link>
-          <Link href={"/current_user_profile/about"}>
+          <Link href={about}>
             <ProfileButton text={"About"} />
           </Link>
         </div>
@@ -31,10 +31,10 @@ const ProfileHeader = ({ data }) => {
           <p className="font12">{data.profession}</p>
         </div>
         <div className={styles.profileHeaderNavBtnDiv}>
-          <Link href={"/current_user_profile/friends"}>
+          <Link href={friends}>
             <ProfileButton text={"Friends"} />
           </Link>
-          <Link href={"/current_user_profile"}>
+          <Link href={editProfile}>
             <ProfileButton text={"Edit Profile"} />
           </Link>
         </div>
