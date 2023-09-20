@@ -5,7 +5,7 @@ import styles from "./profileFeeds.module.css";
 import { currentUserDetails } from "../_mock/current_user_details";
 import { posts } from "../_mock/posts_mock";
 
-const ProfilePostFeeds = () => {
+const CurrentUserProfilePostFeeds = () => {
   return (
     <div className={styles.container}>
       <section className={styles.overViewContainer}>
@@ -18,4 +18,4 @@ const ProfilePostFeeds = () => {
   );
 };
 
-export default ProfilePostFeeds;
+export default CurrentUserProfilePostFeeds;

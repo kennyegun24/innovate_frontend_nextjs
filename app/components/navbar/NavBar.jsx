@@ -13,6 +13,44 @@ const NavBar = () => {
   const { toggle, mode } = useContext(ThemeContext);
   const [show, setShow] = useState(false);
 
+  const navs = [
+    {
+      id: 1,
+      icon: <BiHomeHeart className={styles.icons} />,
+      link: "/feeds",
+    },
+    {
+      id: 2,
+      icon: <FaUsers className={styles.icons} />,
+      link: "/recommended_users",
+    },
+    {
+      id: 3,
+      icon: <BiMessage className={styles.icons} />,
+      link: "/chat",
+    },
+    {
+      id: 4,
+      icon: <BsBell className={styles.icons} />,
+      link: "/notifications",
+    },
+    {
+      id: 5,
+      icon: <BiShoppingBag className={styles.icons} />,
+      link: "",
+    },
+    {
+      id: 6,
+      icon: <SlBriefcase className={styles.icons} />,
+      link: "/jobs",
+    },
+    {
+      id: 7,
+      icon: <FaBlogger className={styles.icons} />,
+      link: "/blog",
+    },
+  ];
+
   return (
     <div
       className={`flex justify_between align_center theme ${styles.container} background2`}
@@ -27,55 +65,17 @@ const NavBar = () => {
         } ${mode === "light" ? styles.backLight : styles.backDark}`}
       >
         <div className={`${styles.subContainer2}`}>
-          <Link
-            className={`theme ${
-              mode === "light" ? styles.dark_text : styles.white_text
-            }`}
-            href="/feeds"
-          >
-            <BiHomeHeart className={styles.icons} />
-          </Link>
-          <Link
-            className={`theme ${
-              mode === "light" ? styles.dark_text : styles.white_text
-            }`}
-            href="/recommended_users"
-          >
-            <FaUsers className={styles.icons} />
-          </Link>
-          <Link
-            className={`theme ${
-              mode === "light" ? styles.dark_text : styles.white_text
-            }`}
-            href="/chat"
-          >
-            <BiMessage className={styles.icons} />
-          </Link>
-          <Link
-            className={`theme ${
-              mode === "light" ? styles.dark_text : styles.white_text
-            }`}
-            href="/notifications"
-          >
-            <BsBell className={styles.icons} />
-          </Link>
-          <BiShoppingBag className={styles.icons} />
-          <Link
-            className={`theme ${
-              mode === "light" ? styles.dark_text : styles.white_text
-            }`}
-            href="/jobs"
-          >
-            <SlBriefcase className={styles.icons} />
-          </Link>
-          <Link
-            className={`theme ${
-              mode === "light" ? styles.dark_text : styles.white_text
-            }`}
-            href="/blog"
-          >
-            <FaBlogger className={styles.icons} />
-          </Link>
+          {navs.map((nav) => (
+            <Link
+              key={nav.id}
+              className={`theme ${
+                mode === "light" ? styles.dark_text : styles.white_text
+              }`}
+              href={nav.link}
+            >
+              {nav.icon}
+            </Link>
+          ))}
         </div>
         <DarkMode toggle={toggle} mode={mode} />
       </div>
