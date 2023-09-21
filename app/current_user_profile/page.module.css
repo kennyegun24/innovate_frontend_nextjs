@@ -29,3 +29,12 @@
 .layoutProfileChildren::-webkit-scrollbar-thumb:active {
   background: #111;
 }
+
+@media (min-width: 200px) and (max-width: 767px) {
+  .layoutProfileNavDiv {
+    display: none;
+  }
+  .layoutProfileChildren {
+    width: 100%;
+  }
+}
