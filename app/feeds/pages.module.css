@@ -1,0 +1,47 @@
+.container {
+  width: 100%;
+  padding: 2rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.middleContainer {
+  width: 45%;
+}
+
+.leftContainer {
+  width: 25%;
+  /* position: sticky; */
+  /* top: 1000px; */
+  position: relative;
+}
+
+.rightContainer {
+  width: 25%;
+  /* position: sticky; */
+  /* top: 1000px; */
+  position: relative;
+}
+
+.subMiddleContainer {
+  margin-top: 1rem;
+}
+
+@media (min-width: 200px) and (max-width: 767px) {
+  .middleContainer {
+    width: 100%;
+  }
+
+  .container {
+    padding: 1rem 1rem;
+  }
+
+  .leftContainer {
+    display: none;
+  }
+
+  .rightContainer {
+    display: none;
+  }
+}

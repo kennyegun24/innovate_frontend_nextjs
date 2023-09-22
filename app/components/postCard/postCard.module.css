@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  /* background-color: #202836; */
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.subContainer {
+  position: relative;
+  min-height: 20vh;
+}
+
+.postImage {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.postText {
+  font-size: 12px;
+  white-space: pre-line;
+  line-height: 20px;
+  text-align: justify;
+}
+
+.interractionsDiv {
+  position: absolute;
+  right: 1%;
+  /* top: -50%; */
+  bottom: -4%;
+}
+.likesCommentsDiv {
+  height: 5vh;
+}

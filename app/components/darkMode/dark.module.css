@@ -1,0 +1,29 @@
+.toggleBtn {
+  font-size: 12px;
+}
+
+.toggleRound {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+}
+
+.toggleBtnContainer {
+  position: relative;
+  padding: 2px;
+  height: 24px;
+  width: 44px;
+  display: flex;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 200px) and (max-width: 767px) {
+  /* .toggleBtnContainer {
+    flex-direction: column;
+    height: 44px;
+    width: 24px;
+  } */
+}
