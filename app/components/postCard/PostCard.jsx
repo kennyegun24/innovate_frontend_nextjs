@@ -1,24 +1,18 @@
 "use client";
-import React, { useContext } from "react";
+import React from "react";
 import styles from "./postCard.module.css";
 import Image from "next/image";
-import { ThemeContext } from "@/app/context/DarkMode";
 import Like from "../interractions/Like";
 import Comment from "../interractions/Comment";
 import LikeIcon from "../interractions/LikeIcon";
 import CommentIcon from "../interractions/CommentIcon";
+import Link from "next/link";
 
 const PostCard = ({ data }) => {
-  const { mode } = useContext(ThemeContext);
   return (
     <div className="flex column gap2rem">
       {data.map((post) => (
-        <div
-          key={post.id}
-          className={`theme ${
-            mode === "light" ? "light_background" : "dark_2_background"
-          } ${styles.container}`}
-        >
+        <div key={post.id} className={`theme background2 ${styles.container}`}>
           <div className={`flex column gap05rem ${styles.subContainer}`}>
             <div className={`flex gap1rem ${styles.postHeaderContainer}`}>
               <Image
@@ -33,7 +27,12 @@ const PostCard = ({ data }) => {
                 <p className="font12">July 26 2018, 01:00pm</p>
               </div>
             </div>
-            <p className={styles.postText}>{post.text}</p>
+            <Link
+              href={`/feeds/${post.id}`}
+              className={`text_color text_decoration_none ${styles.postText}`}
+            >
+              {post.text}
+            </Link>
             {post.image && (
               <Image className={styles.postImage} src={post?.image} alt="" />
             )}

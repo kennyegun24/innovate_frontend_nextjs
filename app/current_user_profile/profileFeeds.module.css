@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+
+.overViewContainer {
+  width: 35%;
+  height: max-content;
+}
+
+.profilePostsComtainer {
+  width: 55%;
+}
+
+@media (min-width: 200px) and (max-width: 767px) {
+  .container {
+    gap: 0.5rem;
+    flex-direction: column;
+  }
+  .overViewContainer {
+    width: 100%;
+    height: max-content;
+  }
+
+  .profilePostsComtainer {
+    width: 100%;
+  }
+}

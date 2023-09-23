@@ -6,9 +6,7 @@ const DarkMode = ({ toggle, mode }) => {
     light_button = "#fff";
   return (
     <div
-      className={`pointer ${styles.toggleBtnContainer} ${
-        mode === "light" ? "dark_border" : "light_border"
-      }`}
+      className={`pointer ${styles.toggleBtnContainer} border`}
       onClick={toggle}
     >
       <div className={styles.toggleBtn}>🌙</div>

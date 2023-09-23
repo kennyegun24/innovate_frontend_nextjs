@@ -1,3 +1,4 @@
+import person9 from "public/person9.jpg";
 export const currentUserDetails = {
   name: "Joshuah",
   user_name: "rustic_bat1031",
@@ -12,5 +13,9 @@ export const currentUserDetails = {
   profession: "Software engineer",
   company: "DeCellar",
   id: 1,
-  followers_count: 18289,
+  followers_count: 384287,
+  image: person9,
+  studiedAt: "Oxford University",
+  from: "Cagliari, Italy, Europe",
+  post_count: 1280,
 };
