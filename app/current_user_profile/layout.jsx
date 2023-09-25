@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
       </div>
       <div className={styles.layoutProfileChildren}>
         <Header />
-        {children}
+        <div className={styles.layoutProfileChildrenDiv}>{children}</div>
       </div>
     </div>
   );

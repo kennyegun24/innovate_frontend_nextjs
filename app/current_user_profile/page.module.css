@@ -42,4 +42,8 @@
     height: 100vh;
     gap: 1rem;
   }
+  .layoutProfileChildrenDiv {
+    flex: 1;
+    overflow: auto;
+  }
 }
