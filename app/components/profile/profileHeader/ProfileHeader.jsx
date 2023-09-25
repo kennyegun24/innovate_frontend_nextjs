@@ -33,7 +33,7 @@ const ProfileHeader = ({
             alt=""
             className={`roundedImage object-cover ${styles.profileImage}`}
           />
-          <div className="flex column gap05rem">
+          <div className={`${styles.profileName} flex column gap05rem`}>
             <h3 className="font16">{data.name}</h3>
             <p className="font12">{data.profession}</p>
           </div>

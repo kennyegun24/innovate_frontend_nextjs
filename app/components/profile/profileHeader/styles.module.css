@@ -52,7 +52,14 @@
   border-radius: 6px;
 }
 
+.profileName {
+  align-items: center;
+}
+
 @media (min-width: 200px) and (max-width: 767px) {
+  .profileName {
+    align-items: flex-start;
+  }
   .profileHeaderImage {
     width: 100%;
     height: 80px;
