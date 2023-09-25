@@ -5,7 +5,15 @@ import styles from "./styles.module.css";
 import ProfileButton from "../../ProfileButton";
 import { numberFormat } from "@/app/helpers/general";
 import Link from "next/link";
-const ProfileHeader = ({ data, feeds, about, editProfile, friends }) => {
+const ProfileHeader = ({
+  data,
+  feeds,
+  about,
+  editProfile,
+  friends,
+  button = null,
+}) => {
+  // alert(button);
   return (
     <div className={styles.profileHeaderContainer}>
       <Image className={styles.profileHeaderImage} src={rooney} alt="" />
@@ -22,13 +30,13 @@ const ProfileHeader = ({ data, feeds, about, editProfile, friends }) => {
         <div className={styles.profileHeaderProfileImageDiv}>
           <Image
             src={data.image}
-            height={80}
-            width={80}
             alt=""
-            className="roundedImage object-cover"
+            className={`roundedImage object-cover ${styles.profileImage}`}
           />
-          <h3 className="font16">{data.name}</h3>
-          <p className="font12">{data.profession}</p>
+          <div className="flex column gap05rem">
+            <h3 className="font16">{data.name}</h3>
+            <p className="font12">{data.profession}</p>
+          </div>
         </div>
         <div className={styles.profileHeaderNavBtnDiv}>
           <Link href={friends}>
@@ -41,8 +49,22 @@ const ProfileHeader = ({ data, feeds, about, editProfile, friends }) => {
       </section>
 
       <section className={styles.profileHeaderNavs2}>
-        <h3>{numberFormat(data.followers_count)} Followers</h3>
-        <h3>{numberFormat(data.post_count)} Posts</h3>
+        <h3 className={styles.follow_count}>
+          {numberFormat(data.followers_count)} Followers
+        </h3>
+        <div className="flex gap15rem align_center">
+          {button && (
+            <ProfileButton
+              border={button.border}
+              background={button.background_color}
+              text={"Follow"}
+              color={button.color}
+            />
+          )}
+          <h3 className={styles.follow_count}>
+            {numberFormat(data.post_count)} Posts
+          </h3>
+        </div>
       </section>
     </div>
   );

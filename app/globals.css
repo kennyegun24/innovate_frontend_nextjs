@@ -10,7 +10,7 @@
   --primaryColor: #202836;
   --textColor: #bbb;
   --shadow_color: #111;
-  /* --blue_color: #5596e6; */
+  --blue_color: #5596e6;
   --border_color: #2f3b50;
   --interractions_shadow: 0px 5px 20px rgba(86, 151, 230, 0.4);
   --overview_shadow: 0px 5px 10px rgba(86, 151, 230, 0.3);
@@ -263,6 +263,10 @@
   background: #5596e6;
 }
 
+.blue_border {
+  border: 1px solid var(--blue_color);
+}
+
 .padding05rem {
   padding: var(--05rem);
 }
@@ -344,4 +348,14 @@
 
 .br6 {
   border-radius: 6px;
+}
+
+.show {
+  display: block;
+}
+
+@media (min-width: 200px) and (max-width: 767px) {
+  .show {
+    display: none;
+  }
 }

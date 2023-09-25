@@ -1,12 +1,16 @@
-"use client";
-import React, { useContext } from "react";
-import { ThemeContext } from "../context/DarkMode";
+import React from "react";
 
-const ProfileButton = ({ text }) => {
-  const { mode } = useContext(ThemeContext);
+const ProfileButton = ({
+  text,
+  border = null,
+  background = null,
+  color = null,
+}) => {
   return (
     <button
-      className={"theme background2 text_color border pointer"}
+      className={`theme ${background ? background : "background2"} ${
+        color ? color : "text_color"
+      } ${border ? border : "border"} pointer`}
       style={{ borderRadius: "6px", padding: "0.5rem 1rem" }}
     >
       {text}

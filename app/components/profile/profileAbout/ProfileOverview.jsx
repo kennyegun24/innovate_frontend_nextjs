@@ -1,17 +1,21 @@
 import React from "react";
 import { BiLocationPlus } from "react-icons/bi";
 import { FaGraduationCap } from "react-icons/fa";
+import styles from "./styles.module.css";
 
 const ProfileOverview = ({ data }) => {
   return (
-    <section style={{ width: "100%" }} className="flex gap1rem">
+    <section
+      style={{ width: "100%" }}
+      className={`${styles.container} flex gap1rem`}
+    >
       <div
         style={{
           display: "flex",
           flexDirection: "column",
           gap: "0.5rem",
-          width: "35%",
         }}
+        className={styles.containerSm1}
       >
         <div
           className={` background2 font14 flex column theme gap05rem padding1rem`}
@@ -33,8 +37,8 @@ const ProfileOverview = ({ data }) => {
         </div>
       </div>
       <div
-        className={` background2 font14 flex column theme gap05rem padding1rem`}
-        style={{ borderRadius: "6px", width: "60%" }}
+        className={`${styles.containerSm2} background2 font14 flex column theme gap05rem padding1rem`}
+        style={{ borderRadius: "6px" }}
       >
         <h4>About Me</h4>
         <p className="font14">

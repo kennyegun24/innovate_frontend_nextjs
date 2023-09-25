@@ -8,6 +8,10 @@ import LikeIcon from "../interractions/LikeIcon";
 import CommentIcon from "../interractions/CommentIcon";
 import Link from "next/link";
 
+const currentUser = {
+  id: 1,
+};
+
 const PostCard = ({ data }) => {
   return (
     <div className="flex column gap2rem">
@@ -15,7 +19,11 @@ const PostCard = ({ data }) => {
         <div key={post.id} className={`theme background2 ${styles.container}`}>
           <div className={`flex column gap05rem ${styles.subContainer}`}>
             <Link
-              href={`/user/${post.author_id}`}
+              href={
+                currentUser.id === post.author_id
+                  ? "current_user_profile"
+                  : `/user/${post.author_id}`
+              }
               className={`flex gap1rem text_color text_decoration_none ${styles.postHeaderContainer}`}
             >
               <Image

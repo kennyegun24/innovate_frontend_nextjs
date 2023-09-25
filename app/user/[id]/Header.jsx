@@ -19,6 +19,12 @@ const Header = () => {
         friends={friends}
         editProfile={editProfile}
         data={otherUserDetails[pathId]}
+        button={{
+          presence: true,
+          border: "blue_border",
+          background_color: "blue_background",
+          color: "white",
+        }}
       />
     </div>
   );
