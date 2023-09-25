@@ -38,9 +38,10 @@
 
 @media (min-width: 200px) and (max-width: 767px) {
   .container {
-    position: relative;
+    position: initial;
     height: 7vh;
     padding: 1rem 0.5rem;
+    width: 50px;
   }
 
   .hamBurger {
@@ -51,20 +52,26 @@
   }
 
   .subContainer {
-    height: 93vh;
-    width: 30%;
+    height: fit-content;
+    width: 200px;
     position: absolute;
     top: 7vh;
+    flex-direction: row;
     backdrop-filter: blur(10px);
     flex-direction: column;
+    align-items: flex-start;
     justify-content: initial;
     gap: 2.5rem;
     padding: 1rem 0.5rem;
     transition: all 0.5s ease-in-out;
   }
 
+  .links {
+    flex-grow: 1;
+  }
+
   .backLight {
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.5);
   }
 
   .backDark {
@@ -72,7 +79,8 @@
   }
 
   .subContainer2 {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .icons {
@@ -80,7 +88,7 @@
   }
 
   .hide {
-    right: -100%;
+    right: -999%;
   }
 
   .show {

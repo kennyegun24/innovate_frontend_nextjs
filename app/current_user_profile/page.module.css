@@ -37,4 +37,9 @@
   .layoutProfileChildren {
     width: 100%;
   }
+  .layoutContainer {
+    display: flex;
+    height: 100vh;
+    gap: 1rem;
+  }
 }

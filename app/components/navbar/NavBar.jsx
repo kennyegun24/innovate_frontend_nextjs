@@ -53,7 +53,7 @@ const NavBar = () => {
 
   return (
     <div
-      className={`flex justify_between align_center theme ${styles.container} background2`}
+      className={`flex justify_between align_center theme ${styles.container} navTransparent`}
     >
       <FaBars
         onClick={() => setShow((prev) => (prev === true ? false : true))}
@@ -70,7 +70,7 @@ const NavBar = () => {
               key={nav.id}
               className={`theme ${
                 mode === "light" ? styles.dark_text : styles.white_text
-              }`}
+              } ${styles.links}`}
               href={nav.link}
             >
               {nav.icon}

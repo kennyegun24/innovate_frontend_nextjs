@@ -4,6 +4,20 @@
   display: flex;
   justify-content: space-between;
   position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: #5596e6;
+}
+
+.container::-webkit-scrollbar-thumb:active {
+  background: #111;
 }
 
 .middleContainer {
