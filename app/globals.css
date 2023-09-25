@@ -109,6 +109,10 @@
   box-shadow: var(--overview_shadow);
 }
 
+.viewMoreButton:hover {
+  background: transparent;
+}
+
 .white_background {
   background: #fff;
 }
