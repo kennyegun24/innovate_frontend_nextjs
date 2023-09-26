@@ -3,6 +3,14 @@
   width: 100%;
 }
 
+.navLayoutHeader {
+  width: 7%;
+}
+
+.appLayoutChildren {
+  width: 93%;
+}
+
 @media (min-width: 200px) and (max-width: 767px) {
   .navLayoutHeader {
     position: fixed;
@@ -10,5 +18,9 @@
     top: 40vh;
     width: fit-content;
     z-index: 9999;
+  }
+
+  .appLayoutChildren {
+    width: 100%;
   }
 }

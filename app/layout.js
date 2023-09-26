@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
               <div className={styles.navLayoutHeader}>
                 <NavBar />
               </div>
-              <div>{children}</div>
+              <div className={styles.appLayoutChildren}>{children}</div>
             </div>
           </FollowedProvider>
         </ThemeProvider>
