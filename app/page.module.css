@@ -4,11 +4,11 @@
 }
 
 .navLayoutHeader {
-  width: 7%;
+  width: 15%;
 }
 
 .appLayoutChildren {
-  width: 93%;
+  width: 85%;
 }
 
 @media (min-width: 200px) and (max-width: 767px) {

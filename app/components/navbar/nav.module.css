@@ -1,8 +1,10 @@
 .container {
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1rem;
   position: sticky;
   top: 0;
   z-index: 999;
+  height: 100vh;
+  border: 1px solid #fff;
 }
 
 .subContainer {
@@ -11,6 +13,14 @@
   justify-content: space-between;
   width: 100%;
   flex-direction: column;
+  height: 70vh;
+}
+
+.toggleContainer {
+  /* margin-top: 20%; */
+  /* justify-self: flex-end; */
+  margin: 100% 0;
+  height: fit-content;
 }
 
 .subContainer2 {
@@ -28,11 +38,15 @@
 }
 
 .white_text {
-  color: #bbb;
+  color: #f4f4f4;
 }
 
 .dark_text {
-  color: #2f3b50;
+  color: #111;
+}
+
+.navLabel {
+  font-size: 16px;
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
@@ -41,6 +55,14 @@
     height: 7vh;
     padding: 1rem 0.5rem;
     width: 50px;
+  }
+
+  .toggleContainer {
+    margin: 0;
+  }
+
+  .navLabel {
+    font-size: 12px;
   }
 
   .hamBurger {
@@ -67,6 +89,7 @@
 
   .links {
     flex-grow: 1;
+    flex-direction: column;
   }
 
   .backLight {
@@ -80,6 +103,7 @@
   .subContainer2 {
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
   }
 
   .icons {

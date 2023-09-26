@@ -18,36 +18,43 @@ const NavBar = () => {
       id: 1,
       icon: <BiHomeHeart className={styles.icons} />,
       link: "/feeds",
+      label: "Feeds",
     },
     {
       id: 2,
       icon: <FaUsers className={styles.icons} />,
       link: "/recommended_users",
+      label: "Users",
     },
     {
       id: 3,
       icon: <BiMessage className={styles.icons} />,
       link: "/chat",
+      label: "Chat",
     },
     {
       id: 4,
       icon: <BsBell className={styles.icons} />,
       link: "/notifications",
+      label: "Notification",
     },
     {
       id: 5,
       icon: <BiShoppingBag className={styles.icons} />,
       link: "",
+      label: "Store",
     },
     {
       id: 6,
       icon: <SlBriefcase className={styles.icons} />,
       link: "/jobs",
+      label: "Jobs",
     },
     {
       id: 7,
       icon: <FaBlogger className={styles.icons} />,
       link: "/blog",
+      label: "Blogs",
     },
   ];
 
@@ -68,16 +75,19 @@ const NavBar = () => {
           {navs.map((nav) => (
             <Link
               key={nav.id}
-              className={`theme ${
+              className={`theme flex gap05rem align_center text_decoration_none ${
                 mode === "light" ? styles.dark_text : styles.white_text
               } ${styles.links}`}
               href={nav.link}
             >
               {nav.icon}
+              <p className={styles.navLabel}>{nav.label}</p>
             </Link>
           ))}
+          <div className={`${styles.toggleContainer}`}>
+            <DarkMode toggle={toggle} mode={mode} />
+          </div>
         </div>
-        <DarkMode toggle={toggle} mode={mode} />
       </div>
     </div>
   );
