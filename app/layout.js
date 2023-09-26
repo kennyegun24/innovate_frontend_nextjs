@@ -23,10 +23,12 @@ export default function RootLayout({ children }) {
       <body className={` ${inter.className}`}>
         <ThemeProvider>
           <FollowedProvider>
-            <div className={styles.navLayoutHeader}>
-              <NavBar />
+            <div className={styles.appLayout}>
+              <div className={styles.navLayoutHeader}>
+                <NavBar />
+              </div>
+              <div>{children}</div>
             </div>
-            <div>{children}</div>
           </FollowedProvider>
         </ThemeProvider>
       </body>

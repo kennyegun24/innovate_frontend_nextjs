@@ -63,7 +63,9 @@ const PostDetails = () => {
               <CommentIcon count={post.comments_count} />
             </div>
           </div>
-          <Comments />
+          <div className={styles.commentsContainer}>
+            <Comments />
+          </div>
         </div>
         <div className={styles.inputWriteComment}>
           <WriteComment />

@@ -1,7 +1,7 @@
-/* .navLayoutHeader {
-  position: relative;
-  top: 0;
-} */
+.appLayout {
+  display: flex;
+  width: 100%;
+}
 
 @media (min-width: 200px) and (max-width: 767px) {
   .navLayoutHeader {

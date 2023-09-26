@@ -1,9 +1,7 @@
 .container {
   padding: 0.5rem 2rem;
-  height: 10vh;
   position: sticky;
   top: 0;
-  box-shadow: 1px 1px 6px #111;
   z-index: 999;
 }
 
@@ -12,12 +10,13 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  flex-direction: column;
 }
 
 .subContainer2 {
   display: flex;
   gap: 1.5rem;
-  /* align-items: center; */
+  flex-direction: column;
 }
 
 .icons {
@@ -94,6 +93,4 @@
   .show {
     right: 0;
   }
-
-  /* var(--mainColor) */
 }

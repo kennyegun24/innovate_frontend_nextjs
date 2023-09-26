@@ -25,9 +25,9 @@ export const comments = [
     commentor_image: ronaldo,
     text: "the same brush persuade along persuade along the same brush forthwith us persuade persuade.. the tot",
   },
-  // {
-  //   commentor_name: "Edsel",
-  // commentor_image: hojlund
-  //   text: "the next-to-last quality boil along with boil along with the next-to-last quality both... and hersel",
-  // },
+  {
+    commentor_name: "Edsel",
+    commentor_image: hojlund,
+    text: "the next-to-last quality boil along with boil along with the next-to-last quality both... and hersel",
+  },
 ];
