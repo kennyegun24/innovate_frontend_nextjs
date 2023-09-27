@@ -4,7 +4,6 @@
   top: 0;
   z-index: 999;
   height: 100vh;
-  border: 1px solid #fff;
 }
 
 .subContainer {
@@ -17,8 +16,6 @@
 }
 
 .toggleContainer {
-  /* margin-top: 20%; */
-  /* justify-self: flex-end; */
   margin: 100% 0;
   height: fit-content;
 }

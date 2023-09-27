@@ -1,5 +1,5 @@
 .layoutContainer {
-  height: 90vh;
+  height: 100vh;
   width: 100%;
   max-height: 100%;
   overflow-y: auto;
@@ -23,4 +23,18 @@
 
 .layoutContainer::-webkit-scrollbar-thumb:active {
   background: #111;
+}
+@media (min-width: 200px) and (max-width: 767px) {
+  .layoutProfileChildren {
+    width: 100%;
+    flex: 1;
+    overflow: auto;
+    padding: 0;
+  }
+  .layoutContainer {
+    display: flex;
+    height: 100vh;
+    gap: 1rem;
+    width: 100%;
+  }
 }
