@@ -129,8 +129,13 @@
     flex-direction: column;
     width: 100%;
     gap: 1rem;
+    max-height: 100vh;
+    overflow-y: auto;
   }
 
+  .subContainer {
+    padding: 1rem 0.5rem;
+  }
   .postImageMainDiv {
     height: 200px;
     width: 90%;

@@ -5,6 +5,7 @@ import styles from "./styles.module.css";
 import ProfileButton from "../../ProfileButton";
 import { numberFormat } from "@/app/helpers/general";
 import Link from "next/link";
+import { useWindowSize } from "@/app/customHooks/windowsSize";
 const ProfileHeader = ({
   data,
   feeds,
@@ -13,6 +14,7 @@ const ProfileHeader = ({
   friends,
   button = null,
 }) => {
+  const windowWidth = 768;
   // alert(button);
   return (
     <div className={styles.profileHeaderContainer}>
@@ -34,7 +36,7 @@ const ProfileHeader = ({
             className={`roundedImage object-cover ${styles.profileImage}`}
           />
           <div className={`${styles.profileName} flex column gap05rem`}>
-            <h3 className="font16">{data.name}</h3>
+            <h3 className={`font16 ${styles.truncate}`}>{data.name}</h3>
             <p className="font12">{data.profession}</p>
           </div>
         </div>

@@ -92,4 +92,11 @@
   .follow_count {
     font-size: 14px;
   }
+
+  .truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 25vw; /* Adjust as needed */
+  }
 }
