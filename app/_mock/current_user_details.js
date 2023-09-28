@@ -103,6 +103,10 @@ export const currentUserDetails = {
   experience: [
     {
       company_name: "DeCellar",
+      date: "April 2023 - July 2023",
+      type: "Internship",
+      location: "remote",
+      country: "Italy",
       id: 1,
       image: image1,
       desc: "Integrated smart contracts for users to interract with",
@@ -110,6 +114,10 @@ export const currentUserDetails = {
     },
     {
       company_name: "Microsoft",
+      date: "Dec 2023 - Feb 2024",
+      type: "Contract",
+      location: "remote",
+      country: "USA",
       id: 1,
       image: image2,
       desc: "Improved the response time and cached datas for faster response",
@@ -117,6 +125,10 @@ export const currentUserDetails = {
     },
     {
       company_name: "Goldman Sachs",
+      date: "Jan 2024 - Present",
+      type: "Full-Time",
+      location: "remote",
+      country: "GBR",
       id: 1,
       image: image3,
       desc: "Worked closely with UI designers to develop beautiful and fully responsive UIs",
@@ -124,6 +136,10 @@ export const currentUserDetails = {
     },
     {
       company_name: "DeCellar",
+      date: "Dec 2023 - Mar 2024",
+      type: "Full-Time",
+      location: "remote",
+      country: "Italy",
       id: 1,
       image: image4,
       desc: "Integrated smart contracts for users to interract with",

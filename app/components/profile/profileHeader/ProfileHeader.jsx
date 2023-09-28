@@ -1,3 +1,4 @@
+// "use client";
 import Image from "next/image";
 import React from "react";
 import rooney from "public/rooney.jpg";
@@ -5,7 +6,7 @@ import styles from "./styles.module.css";
 import ProfileButton from "../../ProfileButton";
 import { numberFormat } from "@/app/helpers/general";
 import Link from "next/link";
-import { useWindowSize } from "@/app/customHooks/windowsSize";
+
 const ProfileHeader = ({
   data,
   feeds,
@@ -14,8 +15,6 @@ const ProfileHeader = ({
   friends,
   button = null,
 }) => {
-  const windowWidth = 768;
-  // alert(button);
   return (
     <div className={styles.profileHeaderContainer}>
       <Image className={styles.profileHeaderImage} src={rooney} alt="" />
