@@ -171,12 +171,27 @@
   font-size: var(--20px);
 }
 
+.back {
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  height: fit-content;
+}
+
 .font24 {
   font-size: 24px;
 }
 
 .fontW600 {
   font-weight: 600;
+}
+
+.lnH18 {
+  line-height: 18px;
 }
 
 .flex {
@@ -253,6 +268,10 @@
 
 .white {
   color: var(--white);
+}
+
+.white-space {
+  white-space: pre-line;
 }
 
 .mainBackground {
@@ -369,5 +388,14 @@
 
   .navTransparent {
     background-color: var(--navTransparent);
+  }
+
+  .back {
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
   }
 }
