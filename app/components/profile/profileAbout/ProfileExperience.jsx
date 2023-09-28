@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Button } from "antd";
+import Link from "next/link";
 const ProfileExperience = ({ data }) => {
   const date = "2001";
   return (
@@ -71,9 +72,11 @@ const ProfileExperience = ({ data }) => {
         ))}
       </Swiper>
       <div className="flex margintop1rem justify_center">
-        <Button className=" blue_background white viewMoreButton">
-          View More
-        </Button>
+        <Link href={"/current_user_profile/experience/all"}>
+          <Button className=" blue_background white viewMoreButton">
+            View More
+          </Button>
+        </Link>
       </div>
     </section>
   );

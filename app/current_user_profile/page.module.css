@@ -8,6 +8,7 @@
 .layoutProfileNavDiv {
   width: 20%;
   height: 100%;
+  position: relative;
 }
 .layoutProfileChildren {
   width: 80%;
@@ -17,6 +18,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  position: relative;
 }
 
 .layoutProfileChildren::-webkit-scrollbar {
@@ -31,12 +33,22 @@
   background: #111;
 }
 
+.backDiv {
+  display: none;
+}
+
 @media (min-width: 200px) and (max-width: 767px) {
   .layoutProfileNavDiv {
     display: none;
   }
   .layoutProfileChildren {
     width: 100%;
+  }
+
+  .backDiv {
+    display: block;
+    position: fixed;
+    z-index: 9999;
   }
   .layoutContainer {
     display: flex;

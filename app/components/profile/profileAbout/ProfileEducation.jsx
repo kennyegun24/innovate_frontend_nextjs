@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Button } from "antd";
+import Link from "next/link";
 
 const ProfileEducation = ({ data }) => {
   return (
@@ -74,9 +75,11 @@ const ProfileEducation = ({ data }) => {
         ))}
       </Swiper>
       <div className="flex margintop1rem justify_center">
-        <Button className=" blue_background white viewMoreButton">
-          View More
-        </Button>
+        <Link href={"/current_user_profile/education/all"}>
+          <Button className=" blue_background white viewMoreButton">
+            View More
+          </Button>
+        </Link>
       </div>
     </section>
   );
