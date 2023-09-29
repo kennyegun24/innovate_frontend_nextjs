@@ -7,6 +7,7 @@
   display: flex;
   gap: 3rem;
   flex-direction: column;
+  position: relative;
 }
 
 .layoutProfileChildren {
@@ -19,6 +20,10 @@
 
 .layoutContainer::-webkit-scrollbar-thumb {
   background: #5596e6;
+}
+
+.backDiv2 {
+  display: none;
 }
 
 .layoutContainer::-webkit-scrollbar-thumb:active {
@@ -36,5 +41,16 @@
     height: 100vh;
     gap: 1rem;
     width: 100%;
+  }
+
+  .backDiv2 {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    left: 1rem;
+  }
+
+  .backDiv1 {
+    display: none;
   }
 }

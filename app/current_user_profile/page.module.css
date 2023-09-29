@@ -47,8 +47,9 @@
 
   .backDiv {
     display: block;
-    position: fixed;
+    position: absolute;
     z-index: 9999;
+    left: 1rem;
   }
   .layoutContainer {
     display: flex;
