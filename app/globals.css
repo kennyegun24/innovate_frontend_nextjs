@@ -412,10 +412,10 @@
 
 /* ----- 404 PAGE ------ */
 .not_found_image {
-  width: 600px;
+  width: 300px;
   transition: all 0.5s;
-  height: 100%;
-  filter: drop-shadow(5px 50px 50px #fff);
+  height: auto;
+  filter: drop-shadow(5px 5px 15px #fff);
 }
 
 .not_found_image_div {
@@ -423,12 +423,9 @@
 }
 
 .not_found_image_shadow {
-  /* box-shadow: 0px 30px 10px -15px #fff; */
-  /* box-shadow: var(--overview_shadow); */
-  box-shadow: 0px 5px 10px #ffffff;
+  box-shadow: 0px 5px 20px #ffffff;
   height: 20px;
   width: 300px;
-  /* background-color: rgba(255, 255, 255, 1); */
   margin: 0 auto;
   border-radius: 50%;
 }
@@ -438,12 +435,31 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: typewriter 4s steps(30) infinite;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+@keyframes typewriter {
+  0%,
+  20% {
+    width: 10%;
+  }
+  60%,
+  80% {
+    width: 100%;
+  }
+  100% {
+    width: 10%;
+  }
 }
 
 @keyframes up-down {
   0% {
     /* padding-top: -10px; */
-    transform: translateY(-40px);
+    transform: translateY(-10px);
   }
   50% {
     /* padding-top: -10px; */
@@ -451,7 +467,7 @@
   }
   100% {
     /* padding-top: 0; */
-    transform: translateY(-40px);
+    transform: translateY(-10px);
   }
 }
 

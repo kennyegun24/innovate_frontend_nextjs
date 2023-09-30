@@ -2,13 +2,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import ghost from "public/ghost1_white.png";
+import ghost from "public/ghost1_white2.png";
 // import ghost from "public/ghost1_black.png";
 
 const notFound = () => {
   return (
     <div
-      className="absolute"
+      className="absolute flex align_center justify_center"
       style={{
         width: "100%",
         top: "0",
@@ -18,7 +18,13 @@ const notFound = () => {
         zIndex: 999999,
       }}
     >
-      <div className="flex align_center justify_center">
+      <div
+        className="flex align_center justify_between"
+        style={{
+          width: "70%",
+          height: "100%",
+        }}
+      >
         <div className="flex gap2rem column">
           <h1 className="not_found_page_header" style={{ fontSize: "60px" }}>
             Hello Buddy,
@@ -40,7 +46,7 @@ const notFound = () => {
             Go Home
           </Link>
         </div>
-        <div className="not_found_image_div">
+        <div className="not_found_image_div gap5rem flex column">
           <Image src={ghost} alt="" className="not_found_image" />
           <div className="not_found_image_shadow" />
         </div>
