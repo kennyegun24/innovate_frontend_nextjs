@@ -1,10 +1,32 @@
 .layoutContainer {
+  height: 100vh;
+  width: 100%;
+}
+
+.subLayoutContainer {
+  height: 90%;
+  width: 80%;
 }
 
 .layoutAllChatsDiv {
-  width: 20%;
+  width: 30%;
+  /* max-height: 100%; */
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0.5rem;
+}
+
+.layoutAllChatsDiv::-webkit-scrollbar {
+  background: #5596e6;
+  width: 5px;
+}
+
+.layoutAllChatsDiv::-webkit-scrollbar-thumb {
+  background: #fff;
 }
 
 .layoutChildren {
-  width: 80%;
+  width: 70%;
+  height: 100%;
+  padding: 0.5rem;
 }
