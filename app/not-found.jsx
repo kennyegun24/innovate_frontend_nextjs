@@ -20,7 +20,9 @@ const notFound = () => {
     >
       <div className="flex align_center justify_center">
         <div className="flex gap2rem column">
-          <h1 style={{ fontSize: "60px" }}>Hello Buddy</h1>
+          <h1 className="not_found_page_header" style={{ fontSize: "60px" }}>
+            Hello Buddy,
+          </h1>
           <p className="font12">
             We can&apos;t seem to find the page you are looking for...
           </p>
@@ -38,7 +40,10 @@ const notFound = () => {
             Go Home
           </Link>
         </div>
-        <Image src={ghost} alt="" className="not_found_image" />
+        <div className="not_found_image_div">
+          <Image src={ghost} alt="" className="not_found_image" />
+          <div className="not_found_image_shadow" />
+        </div>
       </div>
     </div>
   );
