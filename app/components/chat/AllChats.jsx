@@ -2,13 +2,18 @@ import React from "react";
 import { _mock_all_chats } from "@/app/_mock/all_message";
 import Image from "next/image";
 import { convertTime } from "@/app/helpers/general";
+import Link from "next/link";
 
 const AllChats = () => {
   return (
     <div className="flex column gap05rem">
       {_mock_all_chats.map((user, index) => (
         <>
-          <div key={index} className="flex gap05rem">
+          <Link
+            href={`/chat/${user.sender_id}/${user.chat_id}`}
+            key={index}
+            className="flex gap05rem text_decoration_none text_color"
+          >
             <Image
               src={user.image}
               alt=""
@@ -30,7 +35,7 @@ const AllChats = () => {
               </p>
               <p className="font10 opacity05">{convertTime(user.time)}</p>
             </div>
-          </div>
+          </Link>
           <hr className="hr" />
         </>
       ))}
