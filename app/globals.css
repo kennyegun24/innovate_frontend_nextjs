@@ -171,6 +171,22 @@
   font-size: var(--20px);
 }
 
+.scroll_y {
+  overflow-y: auto;
+}
+
+.scroll_y::-webkit-scrollbar-button {
+  background: #5596e6;
+}
+
+.scroll_y::-webkit-scrollbar-thumb {
+  background: #5596e6;
+}
+
+.opacity05 {
+  opacity: 0.5;
+}
+
 .back {
   width: fit-content;
   padding: 0.5rem 1rem;
@@ -379,6 +395,15 @@
 
 .show {
   display: block;
+}
+
+.hr {
+  /* border: none; */
+  border: 0.1px solid var(--border_color);
+}
+
+.hr:nth-last-child(1) {
+  border: none;
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
