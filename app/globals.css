@@ -84,6 +84,10 @@
   color: var(--textColor);
 }
 
+.absolute {
+  position: absolute;
+}
+
 .background {
   background: var(--secondaryColor);
 }
@@ -404,6 +408,29 @@
 
 .hr:nth-last-child(1) {
   border: none;
+}
+
+/* ----- 404 PAGE ------ */
+.not_found_image {
+  width: 600px;
+  animation: up-down 2s infinite;
+  transition: all 0.5s;
+  height: 100%;
+}
+
+@keyframes up-down {
+  0% {
+    /* padding-top: -10px; */
+    transform: translateY(0px);
+  }
+  50% {
+    /* padding-top: -10px; */
+    transform: translateY(-20px);
+  }
+  100% {
+    /* padding-top: 0; */
+    transform: translateY(0px);
+  }
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
