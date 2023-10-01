@@ -33,7 +33,7 @@ const AllChats = () => {
                   ? user.last_message.slice(0, 40) + "..."
                   : user.last_message}
               </p>
-              <p className="font10 opacity05">{convertTime(user.time)}</p>
+              <p className="font10 opacity05">{user.time}</p>
             </div>
           </Link>
           <hr className="hr" />

@@ -6,11 +6,12 @@
 }
 
 .chatContentChatHeaderContainer {
-  height: 15%;
+  height: fit-content;
 }
 
 .chatContentChatBodyContainer {
-  height: 75%;
+  flex: 1;
+  overflow-y: auto;
 }
 
 .chatContentChatInputContainer {

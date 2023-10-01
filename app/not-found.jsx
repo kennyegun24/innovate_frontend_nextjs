@@ -1,11 +1,9 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import ghost from "public/ghost1_white2.png";
-// import ghost from "public/ghost1_black.png";
 
-const notFound = () => {
+const NotFound = () => {
   return (
     <div
       className="absolute flex align_center justify_center"
@@ -58,4 +56,4 @@ const notFound = () => {
   );
 };
 
-export default notFound;
+export default NotFound;

@@ -16,15 +16,6 @@
   padding: 0.5rem;
 }
 
-.layoutAllChatsDiv::-webkit-scrollbar {
-  background: #5596e6;
-  width: 5px;
-}
-
-.layoutAllChatsDiv::-webkit-scrollbar-thumb {
-  background: #fff;
-}
-
 .layoutChildren {
   width: 70%;
   height: 100%;
