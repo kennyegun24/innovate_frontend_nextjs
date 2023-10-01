@@ -12,7 +12,7 @@ const notFound = () => {
       style={{
         width: "100%",
         top: "0",
-        background: "#111",
+        background: "#000",
         left: 0,
         height: "100%",
         zIndex: 999999,
@@ -47,7 +47,10 @@ const notFound = () => {
           </Link>
         </div>
         <div className="not_found_image_div gap5rem flex column">
-          <Image src={ghost} alt="" className="not_found_image" />
+          <div>
+            <div className="not_found_image_shadow1" />
+            <Image src={ghost} alt="" className="not_found_image" />
+          </div>
           <div className="not_found_image_shadow" />
         </div>
       </div>
