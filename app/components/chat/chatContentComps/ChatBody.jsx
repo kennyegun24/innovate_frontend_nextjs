@@ -21,7 +21,7 @@ const ChatBody = () => {
           }}
         >
           <div
-            className="background width_fit padding05rem "
+            className="background theme width_fit padding05rem "
             style={{
               borderRadius:
                 chat.sender_id === id ? "6px 6px 0 6px" : "6px 6px 6px 0",
@@ -30,8 +30,11 @@ const ChatBody = () => {
           >
             <p className=" font12">{chat.message}</p>
             <p
-              className="font10"
-              style={{ textAlign: chat.sender_id === id ? "right" : "left" }}
+              className="font10 opacity05"
+              style={{
+                textAlign: chat.sender_id === id ? "right" : "left",
+                paddingTop: "0.5rem",
+              }}
             >
               {chat.time}
             </p>

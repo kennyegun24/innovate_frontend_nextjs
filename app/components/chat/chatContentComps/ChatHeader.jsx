@@ -9,7 +9,7 @@ const ChatHeader = ({ data }) => {
     online: false,
   };
   return (
-    <div className="flex justify_between align_center  padding05rem">
+    <div className="flex justify_between padding05rem">
       <div className="gap05rem flex">
         <Image
           src={data?.image}

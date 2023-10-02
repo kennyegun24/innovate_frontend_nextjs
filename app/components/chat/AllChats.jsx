@@ -3,15 +3,26 @@ import { _mock_all_chats } from "@/app/_mock/all_message";
 import Image from "next/image";
 import { convertTime } from "@/app/helpers/general";
 import Link from "next/link";
+import { Input } from "antd";
+import Search from "antd/es/input/Search";
 
 const AllChats = () => {
   return (
-    <div className="flex column gap05rem">
+    <div className="flex column gap05rem ">
+      <div
+        className="padding1rem background_transparent"
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 9999999,
+        }}
+      >
+        <Search placeholder="Search users..." />
+      </div>
       {_mock_all_chats.map((user, index) => (
-        <>
+        <div className="padding05rem flex column gap05rem" key={index}>
           <Link
             href={`/chat/${user.sender_id}/${user.chat_id}`}
-            key={index}
             className="flex gap05rem text_decoration_none text_color"
           >
             <Image
@@ -37,7 +48,7 @@ const AllChats = () => {
             </div>
           </Link>
           <hr className="hr" />
-        </>
+        </div>
       ))}
     </div>
   );
