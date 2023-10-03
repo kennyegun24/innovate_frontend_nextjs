@@ -1,0 +1,9 @@
+.container_small {
+  width: 70%;
+}
+
+@media (min-width: 200px) and (max-width: 600px) {
+  .container_small {
+    width: 100%;
+  }
+}

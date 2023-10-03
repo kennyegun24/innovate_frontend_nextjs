@@ -1,0 +1,9 @@
+.popupText {
+  font-size: 12px;
+}
+
+@media (min-width: 200px) and (max-width: 600px) {
+  .popupText {
+    font-size: 16px;
+  }
+}
