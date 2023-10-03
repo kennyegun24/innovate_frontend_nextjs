@@ -1,7 +1,7 @@
 import { currentUserDetails } from "@/app/_mock/current_user_details";
 import Image from "next/image";
 import React from "react";
-import ChatHeaderElippse from "./header/ChatHeaderActions";
+import ChatHeaderActions from "./header/ChatHeaderActions";
 
 const ChatHeader = ({ data }) => {
   const status = {
@@ -28,7 +28,7 @@ const ChatHeader = ({ data }) => {
           <p className="font12 typing_text fontW600">Typing...</p>
         </div>
       </div>
-      <ChatHeaderElippse />
+      <ChatHeaderActions />
     </div>
   );
 };

@@ -22,3 +22,14 @@
   height: 100%;
   padding: 0.5rem;
 }
+
+@media (min-width: 200px) and (max-width: 700px) {
+  .subLayoutContainer {
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+  }
+  .layoutChildren {
+    width: 100%;
+  }
+}
