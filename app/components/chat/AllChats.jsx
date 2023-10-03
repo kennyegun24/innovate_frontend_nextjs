@@ -40,8 +40,8 @@ const AllChats = () => {
             >
               <p className="font14">{user.display_name}</p>
               <p className="font12">
-                {user.last_message.length >= 40
-                  ? user.last_message.slice(0, 40) + "..."
+                {user.last_message.length >= 60
+                  ? user.last_message.slice(0, 60) + "..."
                   : user.last_message}
               </p>
               <p className="font10 opacity05">{user.time}</p>

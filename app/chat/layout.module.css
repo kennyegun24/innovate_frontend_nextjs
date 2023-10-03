@@ -26,7 +26,7 @@
 @media (min-width: 200px) and (max-width: 700px) {
   .subLayoutContainer {
     width: 100%;
-    flex-direction: column;
+    /* flex-direction: column; */
     height: 100%;
   }
   .layoutChildren {
