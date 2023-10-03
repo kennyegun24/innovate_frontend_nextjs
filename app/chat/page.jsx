@@ -34,7 +34,17 @@ const Chat = () => {
           <span>TAP ON A MESSAGE TO DISPLAY HERE</span>
         </div>
       ) : (
-        <AllChats />
+        <div
+          className="scroll_y"
+          style={{
+            maxHeight: "100%",
+            overflowY: "auto",
+            overflowX: "hidden",
+            borderRight: "1px solid #757474",
+          }}
+        >
+          <AllChats />
+        </div>
       )}
     </>
   );

@@ -1,0 +1,23 @@
+.textareaDiv {
+  resize: none;
+  width: 90%;
+  height: 100%;
+}
+
+.sendIconDiv {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+@media (min-width: 200px) and (max-width: 600px) {
+  .textareaDiv {
+    width: 85%;
+  }
+
+  .sendIconDiv {
+    width: 15%;
+  }
+}

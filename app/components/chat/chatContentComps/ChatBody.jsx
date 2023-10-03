@@ -25,7 +25,7 @@ const ChatBody = () => {
             style={{
               borderRadius:
                 chat.sender_id === id ? "6px 6px 0 6px" : "6px 6px 6px 0",
-              maxWidth: "70%",
+              maxWidth: "80%",
             }}
           >
             <p className=" font12">{chat.message}</p>

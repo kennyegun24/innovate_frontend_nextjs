@@ -22,9 +22,9 @@ const ChatHeaderActions = () => {
   return (
     <div className="flex gap05rem column relative" ref={area}>
       <div className="flex gap05rem">
-        <BiVideo className="font18" />
+        <BiVideo className="font20" />
         <FaEllipsisV
-          className="font18 pointer"
+          className="font20 pointer"
           onClick={() => setShow((prev) => (prev === true ? false : true))}
         />
       </div>
