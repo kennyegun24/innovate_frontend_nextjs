@@ -11,7 +11,7 @@
   --textColor: #bbb;
   --shadow_color: #111;
   --blue_color: #5596e6;
-  --border_color: #2f3b50;
+  --border_color: rgba(47, 59, 80, 0.3);
   --offline_status: #c70a0a;
   --typing_text: #5596e6;
   --navTransparent: rgba(32, 40, 54, 0.3);
@@ -62,7 +62,7 @@
   --typing_text: #5596e6;
   --background_transparent: rgba(21, 26, 35, 0.7);
   /* --blue_color: #5596e6; */
-  --border_color: #2f3b50;
+  --border_color: rgba(47, 59, 80, 0.3);
   --interractions_shadow: 0px 5px 20px rgba(86, 151, 230, 0.4);
   --navTransparent: rgba(32, 40, 54, 0.5);
 }
@@ -76,7 +76,7 @@
   --typing_text: #0ac710;
   --textColor: #202836;
   --shadow_color: #e8e8e8;
-  --border_color: #bbb;
+  --border_color: rgba(187, 187, 187, 0.3);
   --interractions_shadow: 0px 5px 20px rgba(32, 40, 54, 0.4);
   --navTransparent: rgba(244, 244, 244, 0.5);
 }
@@ -432,7 +432,7 @@
 }
 
 .hr {
-  border: 0.1px solid var(--border_color);
+  border: 0.01rem solid var(--border_color);
 }
 
 .hr:nth-last-child(1) {

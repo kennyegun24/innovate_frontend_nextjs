@@ -18,7 +18,7 @@ const RecommendedPeople = ({ data }) => {
       >
         {data.map((user) => (
           <Link
-            href={"/user/"}
+            href={`/user/${user.user_id}`}
             className="flex justify_between text_decoration_none text_color theme"
             key={user.user_id}
           >
