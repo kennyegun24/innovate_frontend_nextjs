@@ -3,21 +3,24 @@
 import { _mock_job_details } from "@/app/_mock/job_details";
 import { company_capacity_converter } from "@/app/helpers/general";
 import { Button } from "antd";
-import React from "react"; // Import React
+import React, { useContext } from "react";
 import { BiBriefcase, BiBuildingHouse } from "react-icons/bi";
+import { FollowedContext } from "@/app/context/FollowedContext";
 
 const Page = () => {
   function wrapLinksWithAnchorTags(text) {
     const urlRegex = /(?:https?:\/\/|www\.)\S+/gi;
     const textWithLinks = text.replace(urlRegex, (url) => {
       const linkName = url
-        .replace(/^(https?:\/\/)?(www\.)?/, "") // Remove the leading "http://", "https://", and "www"
+        .replace(/^(https?:\/\/)?(www\.)?/, "")
         .replace(/\/+/g, ".");
       return `<a class="blue" href="${url}" target="_blank">${linkName}</a>`;
     });
 
     return { __html: textWithLinks };
   }
+  const { setApply } = useContext(FollowedContext);
+  setApply(true);
 
   return (
     <div
@@ -40,6 +43,7 @@ const Page = () => {
           </p>
         </div>
       </div>
+
       <Button
         style={{ backgroundColor: "transparent", alignSelf: "flex-start" }}
         className="text_color"

@@ -8,7 +8,9 @@
   --mainColor: #2f3b50;
   --secondaryColor: #151a23;
   --primaryColor: #202836;
+  --reverse_primaryColor: #fff;
   --textColor: #bbb;
+  --reverse_textColor: #202836;
   --shadow_color: #111;
   --blue_color: #5596e6;
   --border_color: rgba(47, 59, 80, 0.3);
@@ -56,7 +58,9 @@
   --mainColor: #2f3b50;
   --secondaryColor: #151a23;
   --primaryColor: #202836;
+  --reverse_primaryColor: #fff;
   --textColor: #bbb;
+  --reverse_textColor: #202836;
   --shadow_color: #111;
   --offline_status: #c70a0a;
   --typing_text: #5596e6;
@@ -71,10 +75,12 @@
   --mainColor: #fff;
   --secondaryColor: #f4f4f4;
   --primaryColor: #fff;
+  --reverse_primaryColor: #202836;
   --offline_status: #c70a0a;
   --background_transparent: rgba(245, 245, 245, 0.7);
   --typing_text: #0ac710;
   --textColor: #202836;
+  --reverse_textColor: #bbb;
   --shadow_color: #e8e8e8;
   --border_color: rgba(187, 187, 187, 0.3);
   --interractions_shadow: 0px 5px 20px rgba(32, 40, 54, 0.4);
@@ -99,6 +105,14 @@
 
 .text_color {
   color: var(--textColor);
+}
+
+.reverse_text_color {
+  color: var(--reverse_textColor);
+}
+
+.reverse_background2 {
+  background: var(--reverse_primaryColor);
 }
 
 .absolute {
