@@ -1,10 +1,21 @@
-import { FollowedContext } from "@/app/context/FollowedContext";
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { FaHeart } from "react-icons/fa";
+import { InterractionContext } from "@/app/context/InterractionContext";
 
 const LikeIcon = ({ isLiked }) => {
-  const { toggle, setAction } = useContext(FollowedContext);
+  const { toggleInterraction } = useContext(InterractionContext);
   const [liked, setLiked] = useState(isLiked);
+
+  const handleClick = () => {
+    toggleInterraction({
+      word: liked === true ? "Post unliked" : `Post liked`,
+      placement: "bottomRight",
+      type: "success",
+      message: "Post interraction",
+    });
+    setLiked((prev) => (prev === true ? false : true));
+  };
+
   return (
     <div
       style={{
@@ -15,11 +26,7 @@ const LikeIcon = ({ isLiked }) => {
         height: "2rem",
       }}
       className="pointer like_comment_btn"
-      onClick={() => {
-        toggle();
-        liked ? setAction("Post unliked") : setAction("Post liked");
-        setLiked((prev) => (prev === true ? false : true));
-      }}
+      onClick={handleClick}
     >
       <FaHeart
         style={{

@@ -6,6 +6,7 @@ import ApplyUserDetails from "./ApplyUserDetails";
 import Step2 from "./Step2";
 import { SlClose } from "react-icons/sl";
 import { FollowedContext } from "@/app/context/FollowedContext";
+import { Progress } from "antd";
 
 const Apply = () => {
   const [step, setStep] = useState(1);
@@ -31,11 +32,10 @@ const Apply = () => {
           onClick={() => setApply(false)}
         />
         <div className={styles.progressContainer}>
-          <div className={styles.progressContainer2}>
-            <div style={filterStyles} className="blue_background">
-              <span className={styles.progressLabel}>{(step / 2) * 100}%</span>
-            </div>
-          </div>
+          <Progress
+            percent={step <= 2 ? ((step / 3) * 100).toFixed(1) : 100}
+            size="small"
+          />
         </div>
 
         <div className={`flex gap1rem column ${styles.data}`}>
