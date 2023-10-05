@@ -4,7 +4,7 @@ import { createContext, useState, useEffect } from "react";
 export const HeightContext = createContext();
 
 export const HeightProvider = ({ children }) => {
-  const [screenWidth, setScreenWidth] = useState(600);
+  const [screenWidth, setScreenWidth] = useState(0);
 
   useEffect(() => {
     // Function to update screenWidth state

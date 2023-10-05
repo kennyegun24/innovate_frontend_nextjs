@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
           style={{
             width: "40%",
           }}
-          className={`scroll_y`}
+          className={`scroll_y ${styles.showHide}`}
         >
           <Suspense fallback={<div>Loading...</div>}>
             <AllJobs />

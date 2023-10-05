@@ -4,8 +4,10 @@ import { _mock_job_details } from "@/app/_mock/job_details";
 import { company_capacity_converter } from "@/app/helpers/general";
 import { Button } from "antd";
 import React, { useContext } from "react";
-import { BiBriefcase, BiBuildingHouse } from "react-icons/bi";
+import { BiArrowBack, BiBriefcase, BiBuildingHouse } from "react-icons/bi";
 import { FollowedContext } from "@/app/context/FollowedContext";
+import styles from "./styles.module.css";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
   function wrapLinksWithAnchorTags(text) {
@@ -20,13 +22,21 @@ const Page = () => {
     return { __html: textWithLinks };
   }
   const { setApply } = useContext(FollowedContext);
+  const router = useRouter();
 
   return (
     <div
-      className="width100 scroll_y white-space padding05rem flex column gap1rem"
+      className={`${styles.container} width100 scroll_y white-space padding05rem flex column gap1rem`}
       style={{ textAlign: "justify" }}
     >
-      <div className="flex column gap02rem">
+      <div
+        className={`flex align_center gap05rem ${styles.back_btn}`}
+        onClick={() => router.back()}
+      >
+        <BiArrowBack />
+        <p>Back</p>
+      </div>
+      <div className={`flex column gap02rem ${styles.subContainer}`}>
         <h2 className="blue font16">{_mock_job_details.company_name}</h2>
         <h3 className="blue font16">{_mock_job_details.title}</h3>
         <div className="flex gap02rem align_center">

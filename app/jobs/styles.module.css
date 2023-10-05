@@ -1,0 +1,9 @@
+.showHide {
+  display: none;
+}
+
+@media (min-width: 200px) and (max-width: 700px) {
+  .showHide {
+    display: flex;
+  }
+}

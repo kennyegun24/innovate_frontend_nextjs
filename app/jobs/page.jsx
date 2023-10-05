@@ -1,6 +1,7 @@
 "use client";
 import React, { lazy, Suspense, useContext } from "react";
 import { HeightContext } from "../context/HeightContext";
+import styles from "./styles.module.css";
 
 const Jobs = () => {
   const { screenWidth } = useContext(HeightContext);
@@ -9,7 +10,7 @@ const Jobs = () => {
     <>
       {screenWidth < 600 ? (
         <div
-          className="scroll_y"
+          className={`scroll_y ${styles.showHide}`}
           style={{
             maxHeight: "100%",
             minHeight: "100%",
@@ -21,7 +22,7 @@ const Jobs = () => {
           <Suspense
             fallback={
               <div
-                className="flex align_center justify_center"
+                className={`align_center justify_center `}
                 style={{ height: "100vh" }}
               >
                 Loading...

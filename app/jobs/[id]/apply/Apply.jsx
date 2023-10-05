@@ -1,12 +1,9 @@
 import React, { useContext, useState } from "react";
 import styles from "./apply.module.css";
-import { Button } from "antd";
 import Step1 from "./Step1";
 import ApplyButton from "./Button";
 import ApplyUserDetails from "./ApplyUserDetails";
 import Step2 from "./Step2";
-import { FaBars } from "react-icons/fa";
-import { BiCaretDownCircle } from "react-icons/bi";
 import { SlClose } from "react-icons/sl";
 import { FollowedContext } from "@/app/context/FollowedContext";
 
