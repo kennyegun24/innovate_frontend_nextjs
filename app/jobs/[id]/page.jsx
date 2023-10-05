@@ -20,7 +20,6 @@ const Page = () => {
     return { __html: textWithLinks };
   }
   const { setApply } = useContext(FollowedContext);
-  setApply(true);
 
   return (
     <div
@@ -47,6 +46,7 @@ const Page = () => {
       <Button
         style={{ backgroundColor: "transparent", alignSelf: "flex-start" }}
         className="text_color"
+        onClick={() => setApply(true)}
       >
         Apply
       </Button>

@@ -334,6 +334,10 @@
   color: var(--white);
 }
 
+.green {
+  color: #0ac710;
+}
+
 .white-space {
   white-space: pre-line;
 }

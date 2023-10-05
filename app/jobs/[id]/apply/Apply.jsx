@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./apply.module.css";
 import { Button } from "antd";
 import Step1 from "./Step1";
 import ApplyButton from "./Button";
 import ApplyUserDetails from "./ApplyUserDetails";
 import Step2 from "./Step2";
+import { FaBars } from "react-icons/fa";
+import { BiCaretDownCircle } from "react-icons/bi";
+import { SlClose } from "react-icons/sl";
+import { FollowedContext } from "@/app/context/FollowedContext";
 
 const Apply = () => {
   const [step, setStep] = useState(1);
+  const { setApply } = useContext(FollowedContext);
 
   const filterStyles = {
     height: "100%",
@@ -19,8 +24,15 @@ const Apply = () => {
   return (
     <div className={styles.container}>
       <div
-        className={`${styles.formContainer}  reverse_background2 reverse_text_color `}
+        className={`${styles.formContainer} relative reverse_background2 reverse_text_color `}
       >
+        <SlClose
+          className="absolute pointer"
+          style={{
+            right: "0.5rem",
+          }}
+          onClick={() => setApply(false)}
+        />
         <div className={styles.progressContainer}>
           <div className={styles.progressContainer2}>
             <div style={filterStyles} className="blue_background">
