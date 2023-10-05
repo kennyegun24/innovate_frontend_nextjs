@@ -4,6 +4,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { FollowedProvider } from "./context/FollowedContext";
 import styles from "./page.module.css";
+import { HeightProvider } from "./context/HeightContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,14 +23,16 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={` ${inter.className}`}>
         <ThemeProvider>
-          <FollowedProvider>
-            <div className={styles.appLayout}>
-              <div className={styles.navLayoutHeader}>
-                <NavBar />
+          <HeightProvider>
+            <FollowedProvider>
+              <div className={styles.appLayout}>
+                <div className={styles.navLayoutHeader}>
+                  <NavBar />
+                </div>
+                <div className={styles.appLayoutChildren}>{children}</div>
               </div>
-              <div className={styles.appLayoutChildren}>{children}</div>
-            </div>
-          </FollowedProvider>
+            </FollowedProvider>
+          </HeightProvider>
         </ThemeProvider>
       </body>
     </html>
