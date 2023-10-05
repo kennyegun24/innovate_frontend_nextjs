@@ -10,5 +10,15 @@
 .layoutContainer {
   height: 100vh;
 }
+
+.layoutChildren {
+  width: 55%;
+  height: 100%;
+  padding: 0.5rem;
+}
 @media (min-width: 200px) and (max-width: 700px) {
+  .layoutChildren {
+    width: 100%;
+    padding: 0;
+  }
 }

@@ -82,3 +82,9 @@
 .data::-webkit-scrollbar-thumb {
   background: #022c60;
 }
+
+@media (min-width: 200px) and (max-width: 700px) {
+  .formContainer {
+    width: 95%;
+  }
+}

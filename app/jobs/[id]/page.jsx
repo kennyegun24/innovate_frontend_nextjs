@@ -27,8 +27,8 @@ const Page = () => {
       style={{ textAlign: "justify" }}
     >
       <div className="flex column gap02rem">
-        <h2 className="blue">{_mock_job_details.company_name}</h2>
-        <h3 className="blue">{_mock_job_details.title}</h3>
+        <h2 className="blue font16">{_mock_job_details.company_name}</h2>
+        <h3 className="blue font16">{_mock_job_details.title}</h3>
         <div className="flex gap02rem align_center">
           <BiBriefcase className="font16" />
           <p className="font12">{_mock_job_details.level_required}</p>

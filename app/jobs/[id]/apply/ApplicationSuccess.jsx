@@ -11,7 +11,7 @@ const ApplicationSuccess = () => {
       <div
         className={`reverse_text_color gap05rem flex column align_center justify_center padding05rem reverse_background2 ${styles.popContainer}`}
       >
-        <h3>Your Application has been submitted</h3>
+        <h3 className="textCenter">Your Application has been submitted</h3>
         <BiCheckCircle className="font24 green" />
         <Button onClick={() => setSuccess(false)}>Go back to other jobs</Button>
       </div>

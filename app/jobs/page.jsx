@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect, lazy, Suspense } from "react";
-// import AllJobs from "../components/jobs/AllJobs";
 
 const Jobs = () => {
   const [screenWidth, setScreenWidth] = useState(null);
@@ -24,25 +23,44 @@ const Jobs = () => {
   }, []);
   const AllJobs = lazy(() => import("@/app/components/jobs/AllJobs"));
   return (
-    <div>
+    <>
       {screenWidth < 600 ? (
-        <Suspense fallback={<div>Loading...</div>}>
-          <AllJobs />
-        </Suspense>
+        <div
+          className="scroll_y"
+          style={{
+            maxHeight: "100%",
+            minHeight: "100%",
+            overflowY: "auto",
+            overflowX: "hidden",
+            borderRight: "none",
+          }}
+        >
+          <Suspense
+            fallback={
+              <div
+                className="flex align_center justify_center"
+                style={{ height: "100vh" }}
+              >
+                Loading...
+              </div>
+            }
+          >
+            <AllJobs />
+          </Suspense>
+        </div>
       ) : (
         <div
           className="flex align_center justify_center"
           style={{
-            height: "100vh",
+            height: "100%",
           }}
         >
           <span>
-            {" "}
             Open a job to see its details to know if you are a good fit!
           </span>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
