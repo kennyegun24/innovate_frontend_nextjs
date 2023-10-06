@@ -9,11 +9,15 @@ import styles from "./styles.module.css";
 import { BiConversation, BiMicrophone } from "react-icons/bi";
 import { blogPost } from "@/app/_mock/blog_post";
 import { wrapLinksWithHeaderTag } from "./helper";
+import BlogUserCard from "./BlogUserCard";
 
 const BlogDetails = () => {
   return (
-    <div>
-      <div className="background2 padding1rem flex gap1rem column">
+    <div className={styles.container}>
+      <div className={styles.card}>
+        <BlogUserCard />
+      </div>
+      <div className={`${styles.blogCard} background2 flex gap1rem column`}>
         <Image src={image} alt="" className={`object-cover ${styles.image}`} />
 
         <div
@@ -30,20 +34,33 @@ const BlogDetails = () => {
             >
               Food Hobit
             </Button>
-            <h3 className="font16">
-              A Discount Toner Cartridge is Better Than Ever
-            </h3>
-            <div className="flex gap05rem align_center">
-              <FaUser className="font10" />
-              <p className="font12">Mark Wiens</p>
-              <CalendarFilled className="font12" />
-              <p className="font12">03 April 2023</p>
-              <CommentOutlined className="font12" />
-              <p className="font12">{numberFormat(3284)} Comments</p>
-              <BiMicrophone className="font12" />
-              <p className="font12">{readTime(blogPost.text)}</p>
-              <BiConversation className="font12" />
-              <p className="font12">{wordCount(blogPost.text)} words</p>
+            <h3 className="font16">{blogPost.title}</h3>
+            <div className="flex gap05rem wrap">
+              <div className="flex gap05rem column">
+                <p className={`${styles.labels}  flex gap05rem align_center`}>
+                  <FaUser className="" />
+                  {blogPost.author_name}
+                </p>
+
+                <p className={`${styles.labels}  flex gap05rem align_center`}>
+                  <CalendarFilled className="" />
+                  03 April 2023
+                </p>
+              </div>
+              <div className="flex gap05rem column">
+                <p className={`${styles.labels}  flex gap05rem align_center`}>
+                  <BiMicrophone className="" />
+                  {readTime(blogPost.text)}
+                </p>
+                <p className={`${styles.labels}  flex gap05rem align_center`}>
+                  <BiConversation className={`${styles.labels} `} />
+                  {wordCount(blogPost.text)} words
+                </p>
+              </div>
+              <p className={`${styles.labels}  flex gap05rem align_center`}>
+                <CommentOutlined className="" />
+                {numberFormat(blogPost.comments_count)} Comments
+              </p>
             </div>
           </div>
           <p

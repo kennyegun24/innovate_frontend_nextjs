@@ -1,0 +1,17 @@
+.container {
+  padding: 0.5rem;
+}
+
+.labels {
+  font-size: 0.8vw;
+}
+
+@media (min-width: 200px) and (max-width: 900px) {
+  .labels {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+}
