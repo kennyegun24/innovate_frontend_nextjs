@@ -9,6 +9,7 @@ import { blogs } from "@/app/_mock/blogs";
 import { numberFormat } from "@/app/helpers/general";
 import SearchComponent from "./Search";
 import SearchToggle from "./SearchToggle";
+import Link from "next/link";
 
 const AllBlogs = () => {
   const [toggleSearch, setToggleSearch] = useState(false);
@@ -29,7 +30,11 @@ const AllBlogs = () => {
           )
           .slice(0, 3)
           .map((blog) => (
-            <div className={`relative ${styles.col}`} key={blog.blogs_id}>
+            <Link
+              href={`/blog/${blog.blogs_id}`}
+              className={`text_color theme relative ${styles.col}`}
+              key={blog.blogs_id}
+            >
               <Image
                 className={`object-cover ${styles.image}`}
                 src={blog.image}
@@ -58,7 +63,7 @@ const AllBlogs = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
       </div>
 
@@ -75,7 +80,10 @@ const AllBlogs = () => {
                 className={`object-cover ${styles.images2}`}
               />
 
-              <div className={`flex column ${styles.subContainer2Sm}`}>
+              <Link
+                href={`/blog/${blog.blogs_id}`}
+                className={`text_color theme flex column ${styles.subContainer2Sm}`}
+              >
                 <h3 className="font16">{blog.title}</h3>
                 <div className="flex gap05rem align_center">
                   <FaUser className="font10" />
@@ -88,7 +96,7 @@ const AllBlogs = () => {
                   </p>
                 </div>
                 <p className={`font14 ${styles.text}`}>{blog.text}</p>
-              </div>
+              </Link>
             </div>
           ))}
         </div>
