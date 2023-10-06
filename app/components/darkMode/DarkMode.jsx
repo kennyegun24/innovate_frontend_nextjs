@@ -4,11 +4,8 @@ import { Switch } from "antd";
 
 const DarkMode = ({ toggle }) => {
   return (
-    <div
-      className={`pointer ${styles.toggleBtnContainer} border`}
-      onClick={toggle}
-    >
-      <Switch size="small" defaultChecked />
+    <div className={`pointer ${styles.toggleBtnContainer}`} onClick={toggle}>
+      <Switch size="default" defaultChecked />
     </div>
   );
 };

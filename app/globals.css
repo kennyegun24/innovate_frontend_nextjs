@@ -409,6 +409,10 @@
   width: 100%;
 }
 
+.width90 {
+  width: 90%;
+}
+
 .resize_off {
   resize: none;
 }
