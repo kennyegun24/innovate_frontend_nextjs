@@ -5,7 +5,7 @@ import { BsClockFill } from "react-icons/bs";
 import { BiUser } from "react-icons/bi";
 import { FaSignOutAlt, FaUsers } from "react-icons/fa";
 import { currentUserDetails } from "@/app/_mock/current_user_details";
-import { numberFormat } from "@/app/helpers/general";
+import { numberFormat } from "@/app/utils/general";
 import Link from "next/link";
 const ProfileNav = () => {
   return (

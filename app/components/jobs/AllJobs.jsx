@@ -1,8 +1,6 @@
 import React from "react";
-import styles from "./allJobs.module.css";
 import Image from "next/image";
 import { jobs } from "@/app/_mock/jobs";
-import { convertTime } from "@/app/helpers/general";
 import Link from "next/link";
 
 const AllJobs = () => {

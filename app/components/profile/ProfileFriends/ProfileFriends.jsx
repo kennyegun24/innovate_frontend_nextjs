@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Col, Row, Slider } from "antd";
-import { numberFormat } from "@/app/helpers/general";
+import { numberFormat } from "@/app/utils/general";
 import styles from "./friends.module.css";
 
 const ProfileFriends = ({ data }) => {

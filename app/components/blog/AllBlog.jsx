@@ -6,7 +6,7 @@ import Image from "next/image";
 import { CalendarFilled, CommentOutlined } from "@ant-design/icons";
 import { FaUser } from "react-icons/fa";
 import { blogs } from "@/app/_mock/blogs";
-import { numberFormat } from "@/app/helpers/general";
+import { numberFormat } from "@/app/utils/general";
 import SearchComponent from "./Search";
 import SearchToggle from "./SearchToggle";
 import Link from "next/link";

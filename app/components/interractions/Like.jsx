@@ -1,4 +1,4 @@
-import { numberFormat } from "@/app/helpers/general";
+import { numberFormat } from "@/app/utils/general";
 import React from "react";
 
 const Like = ({ count }) => {

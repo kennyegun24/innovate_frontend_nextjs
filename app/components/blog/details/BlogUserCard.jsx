@@ -3,7 +3,7 @@ import styles from "./blog_card.module.css";
 import { FaUser } from "react-icons/fa";
 import { CalendarFilled, CommentOutlined } from "@ant-design/icons";
 import { BiConversation, BiMicrophone } from "react-icons/bi";
-import { numberFormat, readTime, wordCount } from "@/app/helpers/general";
+import { numberFormat, readTime, wordCount } from "@/app/utils/general";
 import { blogPost } from "@/app/_mock/blog_post";
 import image from "public/person1.jpg";
 import Image from "next/image";

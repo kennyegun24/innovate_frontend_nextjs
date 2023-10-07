@@ -1,9 +1,7 @@
 import React from "react";
 import { _mock_all_chats } from "@/app/_mock/all_message";
 import Image from "next/image";
-import { convertTime } from "@/app/helpers/general";
 import Link from "next/link";
-import { Input } from "antd";
 import Search from "antd/es/input/Search";
 
 const AllChats = () => {

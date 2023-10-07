@@ -1,7 +1,7 @@
 "use client";
 
 import { _mock_job_details } from "@/app/_mock/job_details";
-import { company_capacity_converter } from "@/app/helpers/general";
+import { company_capacity_converter } from "@/app/utils/general";
 import { Button } from "antd";
 import React, { useContext } from "react";
 import { BiArrowBack, BiBriefcase, BiBuildingHouse } from "react-icons/bi";

@@ -4,7 +4,7 @@ import React from "react";
 import rooney from "public/rooney.jpg";
 import styles from "./styles.module.css";
 import ProfileButton from "../../ProfileButton";
-import { numberFormat } from "@/app/helpers/general";
+import { numberFormat } from "@/app/utils/general";
 import Link from "next/link";
 
 const ProfileHeader = ({

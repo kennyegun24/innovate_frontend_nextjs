@@ -3,7 +3,7 @@ import image from "public/twitter.png";
 import { FaUser } from "react-icons/fa";
 import { CalendarFilled, CommentOutlined } from "@ant-design/icons";
 import { Button } from "antd";
-import { numberFormat, readTime, wordCount } from "@/app/helpers/general";
+import { numberFormat, readTime, wordCount } from "@/app/utils/general";
 import styles from "./styles.module.css";
 import { BiConversation, BiMicrophone } from "react-icons/bi";
 import { blogPost } from "@/app/_mock/blog_post";
