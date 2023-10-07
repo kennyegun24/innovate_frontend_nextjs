@@ -33,7 +33,7 @@ const page = () => {
       <div className={`flex ${styles.inputDiv2}`} style={{ height: "70vh" }}>
         <TextArea
           style={{ resize: "none", border: "none", order: 2 }}
-          className={`background_invisible font18 text_color ${styles.input}`}
+          className={`background_invisible font18 text_color scroll_y ${styles.input}`}
           rows={15}
           placeholder="Write article..."
         />
