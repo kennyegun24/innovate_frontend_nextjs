@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 
 const Back = () => {
   const history = useRouter();
-  console.log(history);
   const handleBack = () => {
     history.back();
   };
