@@ -8,11 +8,12 @@ import styles from "./nav.module.css";
 import { ThemeContext } from "@/app/context/DarkMode";
 import DarkMode from "../darkMode/DarkMode";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NavBar = () => {
   const { toggle, mode } = useContext(ThemeContext);
   const [show, setShow] = useState(false);
-
+  const path = usePathname();
   const navs = [
     {
       id: 1,
@@ -76,8 +77,10 @@ const NavBar = () => {
             <Link
               key={nav.id}
               className={`theme flex gap05rem align_center text_decoration_none ${
-                mode === "light" ? styles.dark_text : styles.white_text
-              } ${styles.links}`}
+                path === nav.link && "blue"
+              } ${mode === "light" ? styles.dark_text : styles.white_text} ${
+                styles.links
+              }`}
               href={nav.link}
             >
               {nav.icon}

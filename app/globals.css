@@ -110,6 +110,10 @@
   color: var(--textColor);
 }
 
+.text_color::-webkit-input-placeholder {
+  color: var(--textColor);
+}
+
 .reverse_text_color {
   color: var(--reverse_textColor);
 }
@@ -128,6 +132,10 @@
 
 .background_transparent {
   background: var(--background_transparent);
+}
+
+.background_invisible {
+  background: transparent;
 }
 
 .background2 {
@@ -257,6 +265,10 @@
   font-weight: 600;
 }
 
+.italics {
+  font-style: italic;
+}
+
 .lnH18 {
   line-height: 18px;
 }
@@ -295,6 +307,10 @@
 
 .textCenter {
   text-align: var(--center);
+}
+
+.textRight {
+  text-align: right;
 }
 
 .wrap {
