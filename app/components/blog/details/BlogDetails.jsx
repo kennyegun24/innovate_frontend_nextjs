@@ -1,5 +1,4 @@
 import Image from "next/image";
-// import image from "public/asset1.jpg";
 import image from "public/twitter.png";
 import { FaUser } from "react-icons/fa";
 import { CalendarFilled, CommentOutlined } from "@ant-design/icons";
@@ -8,8 +7,8 @@ import { numberFormat, readTime, wordCount } from "@/app/helpers/general";
 import styles from "./styles.module.css";
 import { BiConversation, BiMicrophone } from "react-icons/bi";
 import { blogPost } from "@/app/_mock/blog_post";
-import { wrapLinksWithHeaderTag } from "./helper";
 import BlogUserCard from "./BlogUserCard";
+import { _anchorBoldItalics } from "@/app/utils/textFormat";
 
 const BlogDetails = () => {
   return (
@@ -65,7 +64,7 @@ const BlogDetails = () => {
           </div>
           <p
             className={`font14 ${styles.text}`}
-            dangerouslySetInnerHTML={wrapLinksWithHeaderTag(blogPost.text)}
+            dangerouslySetInnerHTML={_anchorBoldItalics(blogPost.text)}
           ></p>
         </div>
       </div>

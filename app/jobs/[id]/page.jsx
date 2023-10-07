@@ -8,19 +8,9 @@ import { BiArrowBack, BiBriefcase, BiBuildingHouse } from "react-icons/bi";
 import { FollowedContext } from "@/app/context/FollowedContext";
 import styles from "./styles.module.css";
 import { useRouter } from "next/navigation";
+import { _anchorBoldItalics } from "@/app/utils/textFormat";
 
 const Page = () => {
-  function wrapLinksWithAnchorTags(text) {
-    const urlRegex = /(?:https?:\/\/|www\.)\S+/gi;
-    const textWithLinks = text.replace(urlRegex, (url) => {
-      const linkName = url
-        .replace(/^(https?:\/\/)?(www\.)?/, "")
-        .replace(/\/+/g, ".");
-      return `<a class="blue" href="${url}" target="_blank">${linkName}</a>`;
-    });
-
-    return { __html: textWithLinks };
-  }
   const { setApply } = useContext(FollowedContext);
   const router = useRouter();
 
@@ -65,9 +55,7 @@ const Page = () => {
         <h4>Introduction</h4>
         <p
           className="font14 text_color"
-          dangerouslySetInnerHTML={wrapLinksWithAnchorTags(
-            _mock_job_details.desc
-          )}
+          dangerouslySetInnerHTML={_anchorBoldItalics(_mock_job_details.desc)}
         ></p>
       </div>
       <div className="flex column gap02rem">
