@@ -7,7 +7,7 @@ const AllJobs = () => {
   return (
     <div className="flex column gap05rem ">
       {jobs.map((job) => (
-        <>
+        <div className="flex column gap05rem" key={job.no_of_applicants}>
           <Link
             href="/jobs/1"
             className="flex gap1rem text_decoration_none theme text_color"
@@ -32,7 +32,7 @@ const AllJobs = () => {
             </div>
           </Link>
           <hr className="hr" />
-        </>
+        </div>
       ))}
     </div>
   );
