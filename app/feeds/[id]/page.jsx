@@ -26,6 +26,9 @@ const PostDetails = () => {
                 objectFit: "contain",
               }}
               src={post.image}
+              height={300}
+              width={300}
+              // sizes="(min-width: 780px) calc(50.99vw - 32px), calc(90vw - 47px)"
               alt=""
             />
           )}

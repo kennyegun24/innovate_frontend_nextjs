@@ -1,4 +1,5 @@
 import { posts } from "@/app/_mock/posts_mock";
+import { numberFormat } from "@/app/utils/general";
 import Image from "next/image";
 import { ImageResponse } from "next/server";
 
@@ -7,7 +8,7 @@ export const size = {
   width: 900,
 };
 
-export const contentType = "image/*";
+export const contentType = "image/jpg";
 
 export const metadata = {
   openGraph: {
@@ -21,16 +22,5 @@ export const metadata = {
 
 export default async function og({ params }) {
   const data = posts[params.id];
-  return new ImageResponse(
-    (
-      <div>
-        <Image src={posts[params.id].image} alt="" />
-        <div className="flex align_center gap05rem">
-          <p className="font14">{data.creator_name}</p>
-          <p className="font12">{data.likes_count} likes</p>
-          <p className="font12">{data.likes_count} comments</p>
-        </div>
-      </div>
-    )
-  );
+  return new ImageResponse(<img src={data.image} alt="" />);
 }

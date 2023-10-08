@@ -45,7 +45,13 @@ const PostCard = ({ data }) => {
               {post.text}
             </Link>
             {post.image && (
-              <Image className={styles.postImage} src={post?.image} alt="" />
+              <Image
+                height={300}
+                width={300}
+                className={styles.postImage}
+                src={post?.image}
+                alt=""
+              />
             )}
             <div
               className={`flex align_center gap1rem ${styles.interractionsDiv}`}

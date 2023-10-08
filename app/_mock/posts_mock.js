@@ -3,11 +3,7 @@ import profile_pic2 from "public/person2.jpg";
 import profile_pic3 from "public/person3.jpg";
 import profile_pic4 from "public/person4.jpg";
 import profile_pic5 from "public/person5.jpg";
-import work_shop from "public/asset3.jpg";
-import carImg from "public/asset4.jpg";
-import tiny_images from "public/asset6.jpg";
-import image4 from "public/asset23.jpg";
-import image5 from "public/asset10.jpg";
+import { carImg, tiny_images, workShop } from "./images";
 
 export const posts = [
   {
@@ -19,7 +15,7 @@ export const posts = [
     likes_count: 2330931400,
     comments_count: 32514679110,
     creator_image: profile_pic1,
-    image: work_shop,
+    image: workShop,
   },
   {
     creator_name: "Jonah",
