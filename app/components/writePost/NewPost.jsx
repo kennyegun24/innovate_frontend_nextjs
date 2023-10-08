@@ -1,30 +1,13 @@
 "use client";
 import Image from "next/image";
-import React, { useContext, useRef, useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./newPost.module.css";
 import { BiCamera } from "react-icons/bi";
-import { ThemeContext } from "@/app/context/DarkMode";
 import { currentUserDetails } from "@/app/_mock/current_user_details";
-
+import { useHideRef } from "@/app/customHooks/refHook";
 const NewPostForm = () => {
-  const [postActive, setPostActive] = useState(false);
-  const textareaRef = useRef(null);
-  const area = useRef(null);
   const [selectedImage, setSelectedImage] = useState(null);
-  const { mode } = useContext(ThemeContext);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (area.current && !area.current.contains(event.target)) {
-        setPostActive(false);
-      }
-    };
-    document.addEventListener("click", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
+  const { showActive, setShowActive, area } = useHideRef();
 
   return (
     <div
@@ -46,8 +29,7 @@ const NewPostForm = () => {
             className={`padding05rem flex column gap1rem width100 resize_off ${styles.textarea} text_color`}
             rows="8"
             placeholder="Write something..."
-            ref={textareaRef}
-            onClick={() => setPostActive(true)}
+            onClick={() => setShowActive(true)}
           />
         </form>
       </div>
@@ -86,7 +68,7 @@ const NewPostForm = () => {
         </>
       )}
 
-      {postActive && (
+      {showActive && (
         <>
           <button
             className={`width100 padding05rem flex align_center justify_center gap05rem margintop1rem ${styles.button2} border text_color`}

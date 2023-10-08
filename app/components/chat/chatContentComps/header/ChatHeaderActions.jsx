@@ -2,22 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { BiVideo } from "react-icons/bi";
 import { FaEllipsisV } from "react-icons/fa";
 import ChatHeaderOptions from "./ChatHeaderOptions";
+import { useHideRef } from "@/app/customHooks/refHook";
 
 const ChatHeaderActions = () => {
-  const [show, setShow] = useState(false);
-  const area = useRef(null);
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (area.current && !area.current.contains(event.target)) {
-        setShow(false);
-      }
-    };
-    document.addEventListener("click", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
+  const { showActive, setShowActive, area } = useHideRef();
 
   return (
     <div className="flex gap05rem column relative" ref={area}>
@@ -32,10 +20,12 @@ const ChatHeaderActions = () => {
             fontSize: "22px",
           }}
           className=" pointer"
-          onClick={() => setShow((prev) => (prev === true ? false : true))}
+          onClick={() =>
+            setShowActive((prev) => (prev === true ? false : true))
+          }
         />
       </div>
-      {show && <ChatHeaderOptions />}
+      {showActive && <ChatHeaderOptions />}
     </div>
   );
 };
