@@ -10,6 +10,7 @@ import { InterractionProvider } from "./context/InterractionContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
+  metadataBase: new URL("https://innovate-frontend-nextjs.vercel.app"),
   title: {
     default: "Innovate Socials",
     template: `%s | Innovate Socials`,
