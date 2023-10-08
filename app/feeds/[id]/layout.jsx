@@ -16,10 +16,10 @@ export const generateMetadata = ({ params }) => {
       description: data.text.slice(0, 30) + "...",
       text: data.text.slice(0, 20) + "...",
     },
-    // openGraph: {
-    //   title: "Post by " + data.creator_name,
-    //   description: data.text.slice(0, 30) + "...",
-    // },
+    openGraph: {
+      title: "Post by " + data.creator_name,
+      description: data.text.slice(0, 30) + "...",
+    },
   };
 };
 const layout = ({ children, params }) => {
