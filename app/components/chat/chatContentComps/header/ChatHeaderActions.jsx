@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { BiVideo } from "react-icons/bi";
 import { FaEllipsisV } from "react-icons/fa";
 import ChatHeaderOptions from "./ChatHeaderOptions";

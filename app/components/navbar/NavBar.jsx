@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { FaUsers, FaBlogger, FaBars } from "react-icons/fa";
 import { BiHomeHeart, BiShoppingBag, BiMessage } from "react-icons/bi";
 import { BsBell } from "react-icons/bs";

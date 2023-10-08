@@ -10,8 +10,11 @@ import { InterractionProvider } from "./context/InterractionContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Innovate Socials",
-  description: "Next gen. social media application",
+  title: {
+    default: "Innovate Socials",
+    template: `%s | Innovate Socials`,
+  },
+  description: "Next generation social media application",
   icons: {
     icon: ["/favicon.ico?v=4"],
     apple: ["/apple-touch-icon.png?v=4"],
