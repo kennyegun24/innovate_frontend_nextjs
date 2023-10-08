@@ -1,0 +1,29 @@
+.back_btn {
+  position: fixed;
+  display: none;
+}
+
+.container {
+  padding: 0.5rem;
+}
+
+@media (min-width: 200px) and (max-width: 700px) {
+  .back_btn {
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    padding: 0.7rem;
+  }
+
+  .container {
+    padding: 0;
+    border: none;
+  }
+
+  .subContainer {
+    margin-top: 12%;
+  }
+}

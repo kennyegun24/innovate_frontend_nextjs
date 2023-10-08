@@ -1,0 +1,21 @@
+.containerSm1 {
+  width: 35%;
+}
+
+.containerSm2 {
+  width: 60%;
+}
+
+@media (min-width: 200px) and (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .containerSm1 {
+    width: 100%;
+  }
+
+  .containerSm2 {
+    width: 100%;
+  }
+}

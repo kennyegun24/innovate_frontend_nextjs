@@ -1,0 +1,59 @@
+.image {
+  width: 70%;
+  height: 300px;
+}
+
+.text {
+  line-height: 22px;
+}
+
+.card {
+  position: sticky;
+  top: 10vh;
+  margin-top: 30vh;
+  width: 30%;
+  height: fit-content;
+}
+
+.blogCard {
+  width: 60%;
+  padding: 1rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.labels {
+  font-size: 0.8vw;
+}
+@media (min-width: 200px) and (max-width: 900px) {
+  .card {
+    width: 100%;
+    position: relative;
+    margin-top: 0;
+    top: 0;
+  }
+
+  .blogCard {
+    width: 100%;
+  }
+
+  .labels {
+    font-size: 14px;
+  }
+
+  .container {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
+@media (min-width: 200px) and (max-width: 767px) {
+  .image {
+    width: 100%;
+  }
+  .blogCard {
+    padding: 0.5rem;
+  }
+}

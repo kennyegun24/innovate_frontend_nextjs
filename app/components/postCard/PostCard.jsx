@@ -8,13 +8,24 @@ import LikeIcon from "../interractions/LikeIcon";
 import CommentIcon from "../interractions/CommentIcon";
 import Link from "next/link";
 
+const currentUser = {
+  id: 1,
+};
+
 const PostCard = ({ data }) => {
   return (
     <div className="flex column gap2rem">
       {data.map((post) => (
         <div key={post.id} className={`theme background2 ${styles.container}`}>
           <div className={`flex column gap05rem ${styles.subContainer}`}>
-            <div className={`flex gap1rem ${styles.postHeaderContainer}`}>
+            <Link
+              href={
+                currentUser.id === post.author_id
+                  ? "current_user_profile"
+                  : `/user/${post.author_id}`
+              }
+              className={`flex gap1rem text_color text_decoration_none ${styles.postHeaderContainer}`}
+            >
               <Image
                 className="roundedImage object-cover"
                 src={post.creator_image}
@@ -26,7 +37,7 @@ const PostCard = ({ data }) => {
                 <p className="font14 fontW600">{post.creator_name}</p>
                 <p className="font12">July 26 2018, 01:00pm</p>
               </div>
-            </div>
+            </Link>
             <Link
               href={`/feeds/${post.id}`}
               className={`text_color text_decoration_none ${styles.postText}`}

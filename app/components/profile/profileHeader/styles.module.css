@@ -16,6 +16,11 @@
 .profileHeaderImageSection {
 } */
 
+.profileImage {
+  height: 80px;
+  width: 80px;
+}
+
 .profileHeaderNavs {
   display: flex;
   justify-content: space-between;
@@ -40,9 +45,58 @@
 .profileHeaderNavs2 {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .button {
   padding: 0.5rem 1rem;
   border-radius: 6px;
+}
+
+.profileName {
+  align-items: center;
+}
+
+@media (min-width: 200px) and (max-width: 767px) {
+  .profileName {
+    align-items: flex-start;
+  }
+  .profileHeaderImage {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+  }
+
+  .profileHeaderProfileImageDiv {
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    right: 0;
+    left: auto;
+    top: 0;
+    transform: none;
+    background: rgba(0, 0, 0, 0.6);
+    /* clip-path: polygon(0 1%, 100% 0, 100% 100%, 58% 100%); */
+    clip-path: polygon(16% 0, 100% 0, 100% 100%, 58% 100%);
+    width: 100%;
+    color: #fff;
+    padding: 0.5rem;
+    height: 80px;
+  }
+
+  .profileImage {
+    height: 60px;
+    width: 60px;
+  }
+
+  .follow_count {
+    font-size: 14px;
+  }
+
+  .truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 25vw; /* Adjust as needed */
+  }
 }

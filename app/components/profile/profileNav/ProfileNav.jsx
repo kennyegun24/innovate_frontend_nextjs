@@ -5,7 +5,8 @@ import { BsClockFill } from "react-icons/bs";
 import { BiUser } from "react-icons/bi";
 import { FaSignOutAlt, FaUsers } from "react-icons/fa";
 import { currentUserDetails } from "@/app/_mock/current_user_details";
-import { numberFormat } from "@/app/helpers/general";
+import { numberFormat } from "@/app/utils/general";
+import Link from "next/link";
 const ProfileNav = () => {
   return (
     <div className={styles.container}>
@@ -27,15 +28,24 @@ const ProfileNav = () => {
       </section>
 
       <section className={styles.profileNavigationsSection}>
-        <p className={styles.profileNavigationLink}>
+        <Link
+          href={"/current_user_profile"}
+          className={`flex gap1rem text_color text_decoration_none ${styles.profileNavigationLink}`}
+        >
           <BsClockFill /> Feeds
-        </p>
-        <p className={styles.profileNavigationLink}>
+        </Link>
+        <Link
+          href={"/current_user_profile/about"}
+          className={`flex gap1rem text_color text_decoration_none ${styles.profileNavigationLink}`}
+        >
           <BiUser /> About
-        </p>
-        <p className={styles.profileNavigationLink}>
+        </Link>
+        <Link
+          href={"/current_user_profile/friends"}
+          className={`flex gap1rem text_color text_decoration_none ${styles.profileNavigationLink}`}
+        >
           <FaUsers /> Friends
-        </p>
+        </Link>
         {/* <p className={styles.profileNavigationLink}>Groups</p> */}
       </section>
 

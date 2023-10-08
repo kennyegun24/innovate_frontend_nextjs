@@ -1,0 +1,36 @@
+.layoutContainer {
+  height: 100vh;
+  width: 100%;
+}
+
+.subLayoutContainer {
+  height: 90%;
+  width: 80%;
+}
+
+.layoutAllChatsDiv {
+  width: 30%;
+  /* max-height: 100%; */
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* padding: 0.5rem; */
+  border-right: 1px solid #757474;
+}
+
+.layoutChildren {
+  width: 70%;
+  height: 100%;
+  padding: 0.5rem;
+}
+
+@media (min-width: 200px) and (max-width: 700px) {
+  .subLayoutContainer {
+    width: 100%;
+    /* flex-direction: column; */
+    height: 100%;
+  }
+  .layoutChildren {
+    width: 100%;
+    padding: 0;
+  }
+}

@@ -1,11 +1,12 @@
 import Image from "next/image";
 import React from "react";
 import { Col, Row, Slider } from "antd";
-import { numberFormat } from "@/app/helpers/general";
+import { numberFormat } from "@/app/utils/general";
+import styles from "./friends.module.css";
 
 const ProfileFriends = ({ data }) => {
   return (
-    <Row gutter={[16, 16]} className="padding1rem">
+    <Row gutter={[16, 16]} className={styles.container}>
       {data.map((friend) => (
         <Col xs={12} sm={12} lg={8} key={friend.following_count}>
           <div
@@ -23,28 +24,33 @@ const ProfileFriends = ({ data }) => {
               className="object-cover"
             />
             <div className="flex column align_center">
-              <h4>{friend.name}</h4>
-              <p>Wordpress Developer</p>
+              <h4 className={styles.friendName}>{friend.name}</h4>
+              <p className={styles.friendProfession}>Wordpress Developer</p>
             </div>
-            <div className="flex align_center gap1rem">
+            <div className={`flex align_center ${styles.friendStatDiv}`}>
               <div className="flex column gap05rem align_center">
-                <p className="font12">FOLLOWERS</p>
-                <p className="font14">{numberFormat(friend.followers_count)}</p>
+                <p className={styles.friendStatsLabel}>FOLLOWERS</p>
+                <p className={styles.friendStatNum}>
+                  {numberFormat(friend.followers_count)}
+                </p>
               </div>
               <div
-                className="flex column gap05rem align_center"
+                className={`flex column gap05rem align_center ${styles.vertical}`}
                 style={{
                   borderLeft: "1px solid #fff",
                   borderRight: "1px solid #fff",
-                  padding: "0 1rem",
                 }}
               >
-                <p className="font12">POSTS</p>
-                <p className="font14">{numberFormat(friend.post_count)}</p>
+                <p className={styles.friendStatsLabel}>POSTS</p>
+                <p className={styles.friendStatNum}>
+                  {numberFormat(friend.post_count)}
+                </p>
               </div>
               <div className="flex column gap05rem align_center">
-                <p className="font12">FOLLOWINGS</p>
-                <p className="font14">{numberFormat(friend.following_count)}</p>
+                <p className={styles.friendStatsLabel}>FOLLOWINGS</p>
+                <p className={styles.friendStatNum}>
+                  {numberFormat(friend.following_count)}
+                </p>
               </div>
             </div>
           </div>

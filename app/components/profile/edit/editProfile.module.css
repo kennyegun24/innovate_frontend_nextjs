@@ -1,0 +1,57 @@
+.inputDiv {
+  width: 33%;
+}
+
+.inputSm {
+  width: 100%;
+  border: none;
+}
+
+.inputSm::placeholder {
+  opacity: 0.5;
+}
+
+.inputDivBg {
+  width: 100%;
+}
+
+.container {
+  border-radius: 6px;
+  width: 80%;
+  padding: 1rem 2rem;
+}
+
+.image {
+  height: 70px;
+  width: 70px;
+  margin-bottom: 1rem;
+}
+
+.imageDiv {
+  height: 70px;
+  position: relative;
+  width: 70px;
+}
+
+.imageDiv::before {
+  background: rgba(0, 0, 0, 0.3);
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+}
+
+@media (min-width: 200px) and (max-width: 700px) {
+  .inputDivBg {
+    flex-direction: column;
+  }
+  .inputDiv {
+    width: 100%;
+  }
+
+  .container {
+    padding: 1rem;
+    width: 100%;
+  }
+}

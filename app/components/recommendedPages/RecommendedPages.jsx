@@ -13,8 +13,8 @@ const RecommendedPages = () => {
     >
       <h3 className="font16">Suggested Pages</h3>
 
-      {companies.map((user) => (
-        <>
+      {companies.map((user, index) => (
+        <div className="flex column gap1rem" key={index}>
           <hr />
           <div className={`flex justify_between align_center`}>
             <div className="flex align_center gap1rem">
@@ -45,7 +45,7 @@ const RecommendedPages = () => {
               <FaCheckCircle className="font18" />
             )}
           </div>
-        </>
+        </div>
       ))}
     </div>
   );

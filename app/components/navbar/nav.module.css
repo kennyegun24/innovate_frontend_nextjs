@@ -1,10 +1,9 @@
 .container {
-  padding: 0.5rem 2rem;
-  height: 10vh;
+  padding: 0.5rem 1rem;
   position: sticky;
   top: 0;
-  box-shadow: 1px 1px 6px #111;
   z-index: 999;
+  height: 100vh;
 }
 
 .subContainer {
@@ -12,12 +11,19 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  flex-direction: column;
+  height: 70vh;
+}
+
+.toggleContainer {
+  margin: 100% 0;
+  height: fit-content;
 }
 
 .subContainer2 {
   display: flex;
   gap: 1.5rem;
-  /* align-items: center; */
+  flex-direction: column;
 }
 
 .icons {
@@ -29,18 +35,31 @@
 }
 
 .white_text {
-  color: #bbb;
+  color: #f4f4f4;
 }
 
 .dark_text {
-  color: #2f3b50;
+  color: #111;
+}
+
+.navLabel {
+  font-size: 16px;
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
   .container {
-    position: relative;
+    position: initial;
     height: 7vh;
     padding: 1rem 0.5rem;
+    width: 50px;
+  }
+
+  .toggleContainer {
+    margin: 0;
+  }
+
+  .navLabel {
+    font-size: 12px;
   }
 
   .hamBurger {
@@ -51,20 +70,27 @@
   }
 
   .subContainer {
-    height: 93vh;
-    width: 30%;
+    height: fit-content;
+    width: 200px;
     position: absolute;
     top: 7vh;
+    flex-direction: row;
     backdrop-filter: blur(10px);
     flex-direction: column;
+    align-items: flex-start;
     justify-content: initial;
     gap: 2.5rem;
     padding: 1rem 0.5rem;
     transition: all 0.5s ease-in-out;
   }
 
+  .links {
+    flex-grow: 1;
+    flex-direction: column;
+  }
+
   .backLight {
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.5);
   }
 
   .backDark {
@@ -72,7 +98,9 @@
   }
 
   .subContainer2 {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
   .icons {
@@ -80,12 +108,10 @@
   }
 
   .hide {
-    right: -100%;
+    right: -999%;
   }
 
   .show {
     right: 0;
   }
-
-  /* var(--mainColor) */
 }

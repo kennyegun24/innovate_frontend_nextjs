@@ -12,7 +12,7 @@ const CurrentUserProfilePostFeeds = () => {
         <ProfileFeedsOverview data={currentUserDetails} />
       </section>
       <section className={styles.profilePostsComtainer}>
-        <ProfileFeedsPosts data={posts} />
+        <ProfileFeedsPosts data={currentUserDetails.posts} />
       </section>
     </div>
   );

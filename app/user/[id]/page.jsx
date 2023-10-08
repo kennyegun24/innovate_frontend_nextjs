@@ -3,7 +3,6 @@ import ProfileFeedsOverview from "@/app/components/profile/profileFeeds/ProfileF
 import ProfileFeedsPosts from "@/app/components/profile/profileFeeds/ProfileFeedsPosts";
 import React from "react";
 import styles from "./profileFeeds.module.css";
-import { posts } from "@/app/_mock/posts_mock";
 import { usePathname } from "next/navigation";
 import { otherUserDetails } from "@/app/_mock/user_details";
 
