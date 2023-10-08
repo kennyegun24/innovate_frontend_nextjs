@@ -15,6 +15,13 @@ export const metadata = {
     default: "Innovate Socials",
     template: `%s | Innovate Socials`,
   },
+  twitter: {
+    title: {
+      default: "Innovate Socials",
+      template: `%s | Innovate Socials`,
+    },
+    description: "Next generation social media application",
+  },
   description: "Next generation social media application",
   icons: {
     icon: ["/favicon.ico?v=4"],

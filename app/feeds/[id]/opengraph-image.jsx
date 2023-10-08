@@ -10,17 +10,11 @@ export const size = {
 
 export const contentType = "image/jpg";
 
-export const metadata = {
-  openGraph: {
-    title: "Next.js",
-    description: "The React Framework for the Web",
-    type: "post",
-    publishedTime: "2023-01-01T00:00:00.000Z",
-    authors: ["Seb", "Josh"],
-  },
-};
+// export const metadata = {
 
+// };
+const title = "I am ";
 export default async function og({ params }) {
   const data = posts[params.id];
-  return new ImageResponse(<img src={data.image} alt="" />);
+  return title, new ImageResponse(<img src={data.image} alt="alt" />);
 }
