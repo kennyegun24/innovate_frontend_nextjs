@@ -6,7 +6,11 @@ export const generateMetadata = ({ params }) => {
   return {
     title: "Post by " + data.creator_name,
     description:
-      data.comments_count + "Comments" + data.likes_count + "Likes" + data.text,
+      data.comments_count +
+      "Comments " +
+      data.likes_count +
+      "Likes " +
+      data.text,
   };
 };
 const layout = ({ children, params }) => {
