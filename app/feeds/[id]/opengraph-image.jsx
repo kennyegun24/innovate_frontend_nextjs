@@ -13,8 +13,7 @@ export const contentType = "image/jpg";
 // export const metadata = {
 
 // };
-const title = "I am ";
 export default async function og({ params }) {
   const data = posts[params.id];
-  return title, new ImageResponse(<img src={data.image} alt="alt" />);
+  return new ImageResponse(<img src={data.image} alt="alt" />);
 }
