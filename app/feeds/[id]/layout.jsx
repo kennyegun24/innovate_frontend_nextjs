@@ -11,6 +11,15 @@ export const generateMetadata = ({ params }) => {
       data.likes_count +
       "Likes " +
       data.text,
+    twitter: {
+      title: "Post by " + data.creator_name,
+      description: data.text.slice(0, 30) + "...",
+      text: data.text.slice(0, 20) + "...",
+    },
+    openGraph: {
+      title: "Next.js",
+      description: "The React Framework for the Web",
+    },
   };
 };
 const layout = ({ children, params }) => {
