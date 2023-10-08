@@ -17,8 +17,8 @@ export const generateMetadata = ({ params }) => {
       text: data.text.slice(0, 20) + "...",
     },
     openGraph: {
-      title: "Next.js",
-      description: "The React Framework for the Web",
+      title: "Post by " + data.creator_name,
+      description: data.text.slice(0, 30) + "...",
     },
   };
 };
