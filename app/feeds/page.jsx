@@ -4,6 +4,12 @@ import styles from "./pages.module.css";
 import RecommendedPages from "@/app/components/recommendedPages/RecommendedPages";
 import Posts from "./Posts";
 import FiveRecommendUser from "@/app/components/recommendedsers/fiveRecommendUser";
+
+export const metadata = {
+  title: "Feeds",
+  description: "This is the feeds page of innovate socials",
+};
+
 const Feeds = () => {
   return (
     <div className={styles.container}>

@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { FaUsers, FaBlogger, FaBars } from "react-icons/fa";
 import { BiHomeHeart, BiShoppingBag, BiMessage } from "react-icons/bi";
 import { BsBell } from "react-icons/bs";
@@ -9,10 +9,10 @@ import { ThemeContext } from "@/app/context/DarkMode";
 import DarkMode from "../darkMode/DarkMode";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useHideRef } from "@/app/customHooks/refHook";
 
 const NavBar = () => {
   const { toggle, mode } = useContext(ThemeContext);
-  const [show, setShow] = useState(false);
   const path = usePathname();
   const navs = [
     {
@@ -58,18 +58,19 @@ const NavBar = () => {
       label: "Blogs",
     },
   ];
-
+  const { setShowActive, area, showActive } = useHideRef();
   return (
     <div
+      ref={area}
       className={`flex justify_between align_center theme ${styles.container} navTransparent`}
     >
       <FaBars
-        onClick={() => setShow((prev) => (prev === true ? false : true))}
+        onClick={() => setShowActive((prev) => (prev === true ? false : true))}
         className={`${styles.icons} ${styles.hamBurger}`}
       />
       <div
         className={` ${styles.subContainer} ${
-          show === true ? styles.show : styles.hide
+          showActive === true ? styles.show : styles.hide
         } ${mode === "light" ? styles.backLight : styles.backDark}`}
       >
         <div className={`${styles.subContainer2}`}>
