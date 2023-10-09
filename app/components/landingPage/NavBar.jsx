@@ -5,11 +5,13 @@ import Link from "next/link";
 // import image from "public/home_link_logo.svg";
 import image from "public/innovateIcon.png";
 import { Button } from "antd";
+import { BiLogInCircle } from "react-icons/bi";
+import { KeyOutlined, LoginOutlined } from "@ant-design/icons";
 const NavBar = ({ scrollY }) => {
-  const length = scrollY > 400;
-  const position = length && "sticky";
+  const length = scrollY >= 350;
+  const position = scrollY >= 400 && "sticky";
   const color = length ? "black" : "white";
-  const _less_transparent = scrollY <= 400 && "background_invisible";
+  const _less_transparent = scrollY <= 390 && "background_invisible";
   return (
     <div
       className={`${position} flex gap2rem justify_between`}
@@ -25,8 +27,8 @@ const NavBar = ({ scrollY }) => {
           alt=""
           className="roundedImage object-cover"
           src={image}
-          width={50}
-          height={50}
+          width={40}
+          height={40}
         />
         <nav className="flex gap15rem align_center">
           <Link className={`${color} fontW600 text_decoration_none`} href="">
@@ -45,16 +47,21 @@ const NavBar = ({ scrollY }) => {
       </div>
 
       <nav className="flex gap15rem align_center">
-        <Button className={`${color} fontW600 ${_less_transparent}`}>
+        <Button
+          className={`${color} fontW600 ${_less_transparent}`}
+          icon={<LoginOutlined />}
+        >
           <Link className=" font12 text_decoration_none" href="">
             Login
           </Link>
         </Button>
         <Button
+          icon={<KeyOutlined />}
           className={` fontW600 `}
           style={{
             background: length ? "#000" : "#fff",
             color: length ? "#fff" : "#000",
+            transition: "none",
           }}
         >
           <Link className={` fontW600 font12 text_decoration_none`} href="">

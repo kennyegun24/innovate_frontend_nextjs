@@ -6,8 +6,10 @@
 
 :root {
   --mainColor: #2f3b50;
-  --secondaryColor: #151a23;
-  --primaryColor: #202836;
+  /* --secondaryColor: #151a23;
+  --primaryColor: #202836; */
+  --secondaryColor: #18191a;
+  --primaryColor: #111;
   --reverse_primaryColor: #fff;
   --white-black: #fff;
   --textColor: #bbb;
@@ -57,8 +59,8 @@
 
 [color-scheme="dark"] {
   --mainColor: #2f3b50;
-  --secondaryColor: #151a23;
-  --primaryColor: #202836;
+  --secondaryColor: #18191a;
+  --primaryColor: #111;
   --reverse_primaryColor: #fff;
   --white-black: #fff;
   --textColor: #bbb;
@@ -351,6 +353,10 @@
 
 .white {
   color: var(--white);
+}
+
+.black {
+  color: #000;
 }
 
 .white-black {
