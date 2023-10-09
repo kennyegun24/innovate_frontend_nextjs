@@ -8,27 +8,27 @@ import Image from "next/image";
 
 const ChatInput = () => {
   const [data, setData] = useState({});
-  const prevUrlRef = useRef(null);
+  // const prevUrlRef = useRef(null);
   const handleTextChange = useCallback((newText) => {
-    const _urlRegex = /https:\/\/\S+/gi;
-    const urlPattern = new RegExp(`(${_urlRegex.source})\\s`, "g");
-    const matches = [...newText.matchAll(urlPattern)];
-    if (matches.length > 0) {
-      const lastMatch = matches[matches.length - 1];
-      const lastUrl = lastMatch[1].trim();
-      if (lastUrl !== prevUrlRef.current) {
-        const fetchData = async () => {
-          try {
-            const res = await getURLMetadata(lastUrl);
-            prevUrlRef.current = lastUrl;
-            setData(res ? res : {});
-          } catch (error) {
-            console.error(error);
-          }
-        };
-        fetchData();
-      }
-    }
+    // const _urlRegex = /https:\/\/\S+/gi;
+    // const urlPattern = new RegExp(`(${_urlRegex.source})\\s`, "g");
+    // const matches = [...newText.matchAll(urlPattern)];
+    // if (matches.length > 0) {
+    //   const lastMatch = matches[matches.length - 1];
+    //   const lastUrl = lastMatch[1].trim();
+    //   if (lastUrl !== prevUrlRef.current) {
+    //     const fetchData = async () => {
+    //       try {
+    //         const res = await getURLMetadata(lastUrl);
+    //         prevUrlRef.current = lastUrl;
+    //         setData(res ? res : {});
+    //       } catch (error) {
+    //         console.error(error);
+    //       }
+    //     };
+    //     fetchData();
+    //   }
+    // }
   }, []);
 
   return (
