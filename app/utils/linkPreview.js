@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Function to fetch and parse metadata from a URL
 export async function getURLMetadata(websiteData) {
-  const BASE_URL = "http://localhost:3000/api";
+  const BASE_URL = "/api";
 
   const publicRequest = axios.create({
     baseURL: BASE_URL,
