@@ -14,7 +14,7 @@ const ChatBody = () => {
     >
       {_mock_chat_message.map((chat, index) => (
         <div
-          key={Math.floor(Math.random() * 9999)}
+          key={index}
           className="white-space flex width100"
           style={{
             flexDirection: chat.sender_id === id ? "row-reverse" : "row",

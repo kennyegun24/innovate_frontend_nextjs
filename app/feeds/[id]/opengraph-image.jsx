@@ -15,5 +15,11 @@ export const contentType = "image/jpg";
 // };
 export default async function og({ params }) {
   const data = posts[params.id];
-  return new ImageResponse(<img src={data.image} alt="alt" />);
+  return new ImageResponse(
+    (
+      <div style={{ display: "flex" }}>
+        <img src={data.image} alt="alt" />
+      </div>
+    )
+  );
 }
