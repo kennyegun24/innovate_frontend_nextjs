@@ -42,11 +42,13 @@ export default function RootLayout({ children }) {
             <InterractionProvider>
               <FollowedProvider>
                 <div className={styles.appLayout}>
-                  {pathname !== "/" && (
-                    <div className={styles.navLayoutHeader}>
-                      <NavBar />
-                    </div>
-                  )}
+                  {pathname !== "/" ||
+                    pathname !== "" ||
+                    (pathname !== " " && (
+                      <div className={styles.navLayoutHeader}>
+                        <NavBar />
+                      </div>
+                    ))}
                   <div
                     className={`${
                       !authState ? styles.width100 : styles.width85
