@@ -1,0 +1,32 @@
+.button2 {
+  height: 50px;
+}
+
+.imageDiv2 {
+  width: 50%;
+  height: 100%;
+}
+
+.image2 {
+  width: 100%;
+  height: auto;
+}
+
+.headerContainer2 {
+  width: 45%;
+}
+
+.headerContainer2 h2 {
+  font-size: 30px;
+  text-align: right;
+  background: linear-gradient(to right, #000000, #747474);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.paragraph2 {
+  font-size: 16px;
+  line-height: 25px;
+  text-align: right;
+}

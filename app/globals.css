@@ -11,6 +11,7 @@
   --secondaryColor: #18191a;
   --primaryColor: #111;
   --reverse_primaryColor: #fff;
+  --reverse_primaryColor2: #f4f4f4;
   --white-black: #fff;
   --textColor: #bbb;
   --reverse_textColor: #202836;
@@ -62,6 +63,7 @@
   --secondaryColor: #18191a;
   --primaryColor: #111;
   --reverse_primaryColor: #fff;
+  --reverse_primaryColor2: #f4f4f4;
   --white-black: #fff;
   --textColor: #bbb;
   --reverse_textColor: #202836;
@@ -78,6 +80,7 @@
 [color-scheme="light"] {
   --mainColor: #fff;
   --secondaryColor: #f4f4f4;
+  --reverse_primaryColor2: #18191a;
   --primaryColor: #fff;
   --white-black: #000;
   --reverse_primaryColor: #202836;
@@ -122,6 +125,10 @@
 
 .reverse_background2 {
   background: var(--reverse_primaryColor);
+}
+
+.reverse_background3 {
+  background: var(--reverse_primaryColor2);
 }
 
 .absolute {
@@ -343,6 +350,10 @@
   gap: var(--2rem);
 }
 
+.gap3rem {
+  gap: 3rem;
+}
+
 .gap5rem {
   gap: var(--5rem);
 }
@@ -413,6 +424,10 @@
 
 .paddingRight2rem {
   padding-right: var(--2rem);
+}
+
+.paddingRight5rem {
+  padding-right: 5rem;
 }
 .paddingTop1Rem {
   padding-top: var(--1rem);
