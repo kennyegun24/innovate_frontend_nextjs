@@ -7,7 +7,7 @@
 }
 
 .headerContainer h1 {
-  font-size: 44px;
+  font-size: 3vw;
   background: linear-gradient(to right, #fff, #282828);
   background-clip: text;
   -webkit-background-clip: text;
@@ -31,4 +31,53 @@
 
 .button {
   height: 50px;
+}
+
+.container2 {
+  padding: 1rem 5rem;
+}
+
+@media (min-width: 767px) and (max-width: 900px) {
+  .container {
+    font-size: 30px;
+  }
+  .headerContainer h1 {
+    font-size: 3.1vw;
+  }
+
+  .container2 {
+    padding: 1rem 0 1rem 2rem;
+  }
+
+  .paragraph p {
+    font-size: 1.8vw;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 767px) {
+  .container2 {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .headerContainer {
+    width: 100%;
+  }
+
+  .headerContainer h1 {
+    font-size: 24px;
+  }
+
+  .paragraph p {
+    font-size: 14px;
+  }
+
+  .container2 {
+    padding: 1rem 0 1rem 1rem;
+  }
+
+  .imageDiv {
+    width: 70%;
+    height: 100%;
+  }
 }

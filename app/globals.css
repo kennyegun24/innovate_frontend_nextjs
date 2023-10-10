@@ -11,7 +11,7 @@
   --secondaryColor: #18191a;
   --primaryColor: #111;
   --reverse_primaryColor: #fff;
-  --reverse_primaryColor2: #f4f4f4;
+  --reverse_primaryColor2: #cbc9c9;
   --white-black: #fff;
   --textColor: #bbb;
   --reverse_textColor: #202836;
@@ -230,6 +230,26 @@
   font-size: var(--20px);
 }
 
+.scroll_y_black_white {
+  overflow-y: auto;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.scroll_y_black_white::-webkit-scrollbar {
+  background: #000;
+  width: 5px;
+}
+
+/* .scroll_y_black_white::-webkit-scrollbar-button {
+  background: #fff;
+} */
+
+.scroll_y_black_white::-webkit-scrollbar-thumb {
+  background: #fff;
+}
+
 .scroll_y {
   overflow-y: auto;
   max-height: 100%;
@@ -439,6 +459,14 @@
 
 .padding2 {
   padding: var(--2);
+}
+
+.margintop15vh {
+  margin-top: 15vh;
+}
+
+.margintop20vh {
+  margin-top: 20vh;
 }
 
 .margintop1rem {

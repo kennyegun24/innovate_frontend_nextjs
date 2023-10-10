@@ -14,7 +14,7 @@
 
 .carousel {
   display: inline-block;
-  animation: carousel 30s infinite linear;
+  animation: carousel 50s infinite linear;
 }
 
 .carouselContainer:hover .carousel {

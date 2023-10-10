@@ -1,0 +1,17 @@
+.container {
+  width: 100%;
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.footerDiv {
+  width: 70%;
+}
+
+.design {
+  border-radius: 0 0 50% 50%;
+  background-color: #fff;
+  height: 30vh;
+  width: 100%;
+  margin-bottom: 10vh;
+}

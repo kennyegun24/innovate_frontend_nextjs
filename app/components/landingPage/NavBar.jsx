@@ -21,6 +21,7 @@ const NavBar = ({ scrollY }) => {
         background: length ? "#fff" : "transparent",
         borderRadius: length ? "2rem" : "0",
         zIndex: 9,
+        boxShadow: length ? "5px 1px 15px rgba(0,0,0,0.5)" : "",
       }}
     >
       <div className={`${color} flex gap2rem align_center`}>
