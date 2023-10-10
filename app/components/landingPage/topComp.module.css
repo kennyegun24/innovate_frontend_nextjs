@@ -31,10 +31,15 @@
 
 .button {
   height: 50px;
+  font-size: 14px;
 }
 
 .container2 {
   padding: 1rem 5rem;
+}
+
+.btnDiv {
+  gap: 1rem;
 }
 
 @media (min-width: 767px) and (max-width: 900px) {
@@ -65,7 +70,7 @@
   }
 
   .headerContainer h1 {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .paragraph p {
@@ -79,5 +84,14 @@
   .imageDiv {
     width: 70%;
     height: 100%;
+  }
+
+  .button {
+    font-size: 12px;
+  }
+
+  .btnDiv {
+    padding: 0 1rem 0 0;
+    justify-content: space-between;
   }
 }

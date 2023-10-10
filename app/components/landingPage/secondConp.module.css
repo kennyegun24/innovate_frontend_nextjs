@@ -95,7 +95,7 @@
 
   .paragraph2 {
     line-height: 18px;
-    font-size: 12px;
+    font-size: 16px;
     text-align: left;
   }
 
@@ -117,7 +117,7 @@
   }
 
   .headerContainer2 h2 {
-    font-size: 20px;
+    font-size: 22px;
     text-align: left;
   }
   .row_type:nth-child(even) .headerContainer2 {
@@ -125,7 +125,7 @@
   }
 
   .button2 {
-    height: 30px;
+    height: 40px;
     font-size: 12px;
   }
 }

@@ -23,13 +23,11 @@ const TopComponent = () => {
             <p>Staying up-to-date with the latest trends and innovations.</p>
           </div>
 
-          <div className="flex gap1rem">
-            <Button type="dashed" className={`font14 ${styles.button}`} ghost>
+          <div className={`flex ${styles.btnDiv}`}>
+            <Button type="dashed" className={`${styles.button}`} ghost>
               SIGNIN WITH EMAIL
             </Button>
-            <Button className={`font14 ${styles.button}`}>
-              SIGNUP WITH EMAIL
-            </Button>
+            <Button className={`${styles.button}`}>SIGNUP WITH EMAIL</Button>
           </div>
         </div>
 

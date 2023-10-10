@@ -60,3 +60,14 @@
     rgba(127, 127, 127, 0.8)
   );
 }
+
+@media (min-width: 200px) and (max-width: 767px) {
+  .image {
+    margin-right: 2rem;
+  }
+
+  .carouselContainer::before,
+  .carouselContainer::after {
+    width: 5%;
+  }
+}
