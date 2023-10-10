@@ -57,7 +57,7 @@ const NavBar = ({ scrollY }) => {
           length ? styles.white_background : styles.dark_background
         } flex gap2rem align_center`}
       >
-        <Link className={`${color} fontW600 text_decoration_none`} href="">
+        <Link className={`${color} fontW600 text_decoration_none`} href="about">
           About
         </Link>
         <Link className={`${color} fontW600 text_decoration_none`} href="">

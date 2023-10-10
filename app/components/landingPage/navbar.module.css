@@ -71,6 +71,7 @@
     height: auto;
     padding: 5rem 1rem;
     height: 100%;
+    border-radius: 2rem 2rem 0 0;
   }
 
   .white_background {

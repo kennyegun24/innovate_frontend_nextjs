@@ -25,7 +25,7 @@ export const HeightProvider = ({ children }) => {
   useEffect(() => {
     const handleScroll = () => {
       if (element !== null) {
-        const scrollTotal = document.querySelector(".landingPage")?.scrollTop;
+        const scrollTotal = document.querySelector(`.${element}`)?.scrollTop;
 
         setScrollY(scrollTotal);
       } else {
@@ -35,11 +35,11 @@ export const HeightProvider = ({ children }) => {
     handleScroll();
 
     document
-      .querySelector(".landingPage")
+      .querySelector(`.${element}`)
       ?.addEventListener("scroll", handleScroll);
     return () => {
       document
-        .querySelector(".landingPage")
+        .querySelector(`.${element}`)
         ?.removeEventListener("scroll", handleScroll);
     };
   }, [element]);
