@@ -8,7 +8,7 @@ const Footer = () => {
     <div className={`flex column align_center ${styles.container}`}>
       <div className={styles.design} />
       <div className={`flex gap2rem align_center ${styles.footerDiv}`}>
-        <Link href="" className="white">
+        <Link href="/" className="white">
           <Image src={image} alt="" height={50} width={50} />
         </Link>
         <p className="white font14">Login</p>
