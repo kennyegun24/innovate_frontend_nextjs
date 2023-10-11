@@ -87,7 +87,7 @@ const NavBar = ({ scrollY }) => {
           className={`${color} ${styles.btn_style} fontW600 ${_less_transparent}`}
           icon={<LoginOutlined />}
         >
-          <Link className=" font12 text_decoration_none" href="">
+          <Link className=" font12 text_decoration_none" href="/login">
             Login
           </Link>
         </Button>
@@ -98,7 +98,10 @@ const NavBar = ({ scrollY }) => {
           }`}
           style={{}}
         >
-          <Link className={` fontW600 font12 text_decoration_none`} href="">
+          <Link
+            className={` fontW600 font12 text_decoration_none`}
+            href="/register"
+          >
             Signup
           </Link>
         </Button>
@@ -109,7 +112,7 @@ const NavBar = ({ scrollY }) => {
           className={`${color} fontW600 ${_less_transparent}`}
           icon={<LoginOutlined />}
         >
-          <Link className=" font12 text_decoration_none" href="">
+          <Link className=" font12 text_decoration_none" href="/login">
             Login
           </Link>
         </Button>
@@ -120,7 +123,10 @@ const NavBar = ({ scrollY }) => {
           }`}
           style={{}}
         >
-          <Link className={` fontW600 font12 text_decoration_none`} href="">
+          <Link
+            className={` fontW600 font12 text_decoration_none`}
+            href="/register"
+          >
             Signup
           </Link>
         </Button>
