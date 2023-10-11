@@ -16,7 +16,9 @@ const Footer = () => {
         <Link href="/about" className="white">
           <p className="white font14">About Us</p>
         </Link>
-        <p className="white font14">Creator</p>
+        <Link href="/about_creator" className="white">
+          <p className="font14">Creator</p>
+        </Link>
         <p className="white font14">Why Innovate Socials?</p>
         <p className="font12 white">&copy; 2023</p>
       </div>

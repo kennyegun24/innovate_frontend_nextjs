@@ -1,0 +1,129 @@
+.containerSm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.containerSm section {
+  min-height: 65vh;
+  width: 100%;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: #fff;
+}
+
+.no_space {
+  white-space: nowrap;
+}
+
+.containerSm section h2 {
+  font-size: 3vw;
+}
+.containerSm section p {
+  width: 60%;
+  line-height: 24px;
+}
+.containerSm section:nth-child(1) {
+  background-color: transparent;
+}
+
+.containerSm section:nth-child(2) {
+  background-color: #87ceeb;
+}
+
+.containerSm section:nth-child(3) {
+  background-color: #e6e6fa;
+  color: #000;
+}
+
+.containerSm section:nth-child(4) {
+  gap: 4rem;
+}
+
+.containerSm section:nth-child(4) p {
+  text-align: left;
+}
+
+.containerSm section:nth-child(5) {
+  background-color: #fff;
+  color: #000;
+}
+
+.imageDiv {
+  width: 30%;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sectionDiv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.sectionDiv div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 767px) and (max-width: 900px) {
+  .containerSm section {
+    min-height: 40vh;
+  }
+
+  .containerSm section h2 {
+    font-size: 4vw;
+  }
+  .containerSm section p {
+    font-size: 2.4vw;
+    width: 100%;
+  }
+
+  .sectionDiv {
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+  }
+
+  .containerSm section:nth-child(4) p {
+    width: 100%;
+  }
+  .image {
+    border-radius: 50%;
+  }
+}
+@media (min-width: 200px) and (max-width: 767px) {
+  .containerSm section {
+    min-height: 40vh;
+    padding: 3rem;
+  }
+
+  .containerSm section h2 {
+    font-size: 6.5vw;
+  }
+  .containerSm section p {
+    font-size: 3.6vw;
+    width: 100%;
+  }
+
+  .sectionDiv {
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+  }
+
+  .containerSm section:nth-child(4) p {
+    width: 100%;
+  }
+  .image {
+    border-radius: 50%;
+  }
+}

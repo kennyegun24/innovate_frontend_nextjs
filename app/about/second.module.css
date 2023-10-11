@@ -80,7 +80,7 @@
   }
   .mappedDiv {
     flex-direction: column-reverse;
-    padding: 3rem 0.5rem;
+    padding: 4rem 0.5rem;
     gap: 1rem;
   }
   .mappedDiv:nth-child(even) {

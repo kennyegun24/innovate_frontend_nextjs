@@ -49,7 +49,10 @@ const NavBar = ({ scrollY }) => {
           <Link className={`${color} fontW600 text_decoration_none`} href="">
             Jobs
           </Link>
-          <Link className={`${color} fontW600 text_decoration_none`} href="">
+          <Link
+            className={`${color} fontW600 text_decoration_none`}
+            href="/about_creator"
+          >
             Creator
           </Link>
         </nav>
@@ -74,7 +77,10 @@ const NavBar = ({ scrollY }) => {
         <Link className={`${color} fontW600 text_decoration_none`} href="">
           Jobs
         </Link>
-        <Link className={`${color} fontW600 text_decoration_none`} href="">
+        <Link
+          className={`${color} fontW600 text_decoration_none`}
+          href="/about_creator"
+        >
           Creator
         </Link>
         <Button
