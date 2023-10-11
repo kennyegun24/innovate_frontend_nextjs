@@ -31,6 +31,15 @@ export const metadata = {
   },
 };
 
+const no_nav_links = [
+  "/",
+  "/about",
+  "/about_creator",
+  "/login",
+  "/register",
+  "",
+];
+
 export default function RootLayout({ children }) {
   const headersList = headers();
   const pathname = headersList.get("x-invoke-path") || "";
@@ -42,13 +51,11 @@ export default function RootLayout({ children }) {
             <InterractionProvider>
               <FollowedProvider>
                 <div className={styles.appLayout}>
-                  {pathname !== "/" ||
-                    pathname !== "" ||
-                    (pathname !== " " && (
-                      <div className={styles.navLayoutHeader}>
-                        <NavBar />
-                      </div>
-                    ))}
+                  {!no_nav_links.includes(pathname) && (
+                    <div className={styles.navLayoutHeader}>
+                      <NavBar />
+                    </div>
+                  )}
                   <div
                     className={`${
                       !authState ? styles.width100 : styles.width85
