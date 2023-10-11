@@ -23,7 +23,7 @@ const NavBar = ({ scrollY }) => {
       <div
         className={`${color} ${styles.between} width100 flex gap2rem align_center`}
       >
-        <Link href="">
+        <Link href="/">
           <Image
             alt=""
             className="roundedImage object-cover"
