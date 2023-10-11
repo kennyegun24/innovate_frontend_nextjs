@@ -24,13 +24,12 @@ const NotFound = () => {
             We can&apos;t seem to find the page you are looking for...
           </p>
           <p className="font12">We suggest you check the URL for errors</p>
-          <Link
-            href={"/"}
-            style={{}}
+          <a
+            href="/"
             className={`width_fit text_decoration_none ${styles.link}`}
           >
             Go Home
-          </Link>
+          </a>
         </div>
         <div className={`${styles.not_found_image_div} flex column`}>
           <div>

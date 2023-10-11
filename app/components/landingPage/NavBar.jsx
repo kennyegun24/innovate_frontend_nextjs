@@ -23,13 +23,15 @@ const NavBar = ({ scrollY }) => {
       <div
         className={`${color} ${styles.between} width100 flex gap2rem align_center`}
       >
-        <Image
-          alt=""
-          className="roundedImage object-cover"
-          src={image}
-          width={40}
-          height={40}
-        />
+        <Link href="">
+          <Image
+            alt=""
+            className="roundedImage object-cover"
+            src={image}
+            width={40}
+            height={40}
+          />
+        </Link>
         <FaBars
           onClick={() => setHideBar((prev) => !prev)}
           className={styles.bar}
@@ -37,7 +39,7 @@ const NavBar = ({ scrollY }) => {
         <nav className={`${styles.nav} flex gap15rem align_center`}>
           <Link
             className={`${color} fontW600 text_decoration_none`}
-            href="about"
+            href="/about"
           >
             About
           </Link>
@@ -60,7 +62,10 @@ const NavBar = ({ scrollY }) => {
           length ? styles.white_background : styles.dark_background
         } flex gap2rem align_center`}
       >
-        <Link className={`${color} fontW600 text_decoration_none`} href="about">
+        <Link
+          className={`${color} fontW600 text_decoration_none`}
+          href="/about"
+        >
           About
         </Link>
         <Link className={`${color} fontW600 text_decoration_none`} href="">
