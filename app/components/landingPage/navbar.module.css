@@ -5,6 +5,8 @@
   border-radius: 2rem;
   z-index: 9;
   box-shadow: 5px 1px 15px rgba(0, 0, 0, 0.5);
+  width: fit-content;
+  margin: auto;
 }
 
 .container_style2 {
@@ -13,6 +15,8 @@
   background: transparent;
   border-radius: 0;
   z-index: 9;
+  width: fit-content;
+  margin: auto;
 }
 
 .btn_style1 {
@@ -44,9 +48,11 @@
 @media (min-width: 200px) and (max-width: 767px) {
   .container_style2 {
     padding: 1rem;
+    width: 100%;
   }
   .container_style1 {
     padding: 1rem;
+    width: 100%;
   }
   .nav {
     display: none;

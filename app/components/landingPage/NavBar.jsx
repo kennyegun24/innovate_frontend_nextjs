@@ -35,7 +35,10 @@ const NavBar = ({ scrollY }) => {
           className={styles.bar}
         />
         <nav className={`${styles.nav} flex gap15rem align_center`}>
-          <Link className={`${color} fontW600 text_decoration_none`} href="">
+          <Link
+            className={`${color} fontW600 text_decoration_none`}
+            href="about"
+          >
             About
           </Link>
           <Link className={`${color} fontW600 text_decoration_none`} href="">
