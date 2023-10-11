@@ -3,7 +3,7 @@ import styles from "./login.module.css";
 
 const Login = () => {
   return (
-    <div className={styles.container}>
+    <div className={`scroll_y_black_white ${styles.container}`}>
       <div className={styles.containerSm}>
         <div className={styles.backgroundContainer}>
           <h4>Welcome back to</h4>
