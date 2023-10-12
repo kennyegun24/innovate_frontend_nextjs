@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./thirdComp.module.css";
-import { Button } from "antd";
+import Link from "next/link";
 
 const ThirdComp = () => {
   return (
@@ -17,10 +17,16 @@ const ThirdComp = () => {
         <div
           className={`${styles.buttonDiv} flex gap1rem align_center justify_center`}
         >
-          <Button className={styles.button}>Have an account? Login!</Button>
-          <Button className={styles.button}>
-            Don&apos;t have an account? Signup!
-          </Button>
+          <Link className="text_decoration_none " href={"/login"}>
+            <button className={`pointer ${styles.button1}`}>
+              Have an account? Login!
+            </button>
+          </Link>
+          <Link className="text_decoration_none " href={"/register"}>
+            <button className={`pointer ${styles.button}`}>
+              Don&apos;t have an account? Signup!
+            </button>
+          </Link>
         </div>
       </div>
 

@@ -4,8 +4,8 @@ import image3 from "public/image_preview7a.png";
 import image4 from "public/image_preview4a.png";
 import styles from "./secondConp.module.css";
 import Image from "next/image";
-import { Button } from "antd";
 import Carousel from "./Carousel";
+import Link from "next/link";
 
 const data = [
   {
@@ -33,17 +33,7 @@ const data = [
     p2: "Connect with like-minded individuals and build authentic relationships.",
     p3: "Stay ahead with the latest trends and innovations in your community.",
     image: image3,
-    btn: {
-      btn1: {
-        text: "Have an account? Login : Signup",
-        type: "link",
-        styles: {
-          color: "#5596e6",
-          decoration: "underline",
-          fontWeight: 800,
-        },
-      },
-    },
+    link: true,
   },
   {
     header:
@@ -52,17 +42,7 @@ const data = [
     p2: "Connect with your industry working people.",
     p3: "Stay ahead and get notified of new jobs.",
     image: image4,
-    btn: {
-      btn1: {
-        text: "Have an account? Login : Signup",
-        type: "link",
-        styles: {
-          color: "#5596e6",
-          decoration: "underline",
-          fontWeight: 800,
-        },
-      },
-    },
+    link: true,
   },
 ];
 const SecondContainer = () => {
@@ -90,28 +70,45 @@ const SecondContainer = () => {
             {each.btn && (
               <div className="flex gap1rem">
                 {each.btn.btn1 && (
-                  <Button
-                    type={each.btn.btn1.type}
-                    className={`font14 ${styles.button2}`}
-                    style={{
-                      color: "#000",
-                      ...{ ...(each.btn.btn1.styles && each.btn.btn1.styles) },
-                    }}
-                    ghost={!each.btn.btn1.type}
-                  >
-                    {each.btn.btn1.text}
-                  </Button>
+                  <Link className="text_decoration_none " href={"/login"}>
+                    <button
+                      className={`font14 pointer ${styles.button1}`}
+                      style={{
+                        color: "#000",
+                        ...{
+                          ...(each.btn.btn1.styles && each.btn.btn1.styles),
+                        },
+                      }}
+                    >
+                      {each.btn.btn1.text}
+                    </button>
+                  </Link>
                 )}
                 {each.btn.btn2 && (
-                  <Button
-                    type={each.btn.btn2.type}
-                    style={{ background: "#000", color: "#fff" }}
-                    className={`font14 ${styles.button2}`}
-                  >
-                    {each.btn.btn2.text}
-                  </Button>
+                  <Link className="text_decoration_none " href={"/register"}>
+                    <button
+                      style={{ background: "#000", color: "#fff" }}
+                      className={`font14 pointer ${styles.button2}`}
+                    >
+                      {each.btn.btn2.text}
+                    </button>
+                  </Link>
                 )}
               </div>
+            )}
+            {each.link && (
+              <p>
+                <a className="blue text_decoration_none fontW600" href="/login">
+                  Login...
+                </a>
+                Don&apos;t have an account?{" "}
+                <a
+                  className="blue text_decoration_none fontW600"
+                  href="/register"
+                >
+                  ...register
+                </a>
+              </p>
             )}
           </div>
         </div>

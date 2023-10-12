@@ -29,9 +29,21 @@
   height: auto;
 }
 
-.button {
-  height: 50px;
+.button,
+.button1 {
   font-size: 14px;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.button {
+  border: 1px dashed #000;
+}
+
+.button1 {
+  background: #000;
+  color: #fff;
+  border: 1px dashed #fff;
 }
 
 .container2 {
@@ -83,10 +95,6 @@
 
   .imageDiv {
     display: none;
-  }
-
-  .button {
-    font-size: 12px;
   }
 
   .btnDiv {

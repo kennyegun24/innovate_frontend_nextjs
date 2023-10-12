@@ -1,5 +1,18 @@
+.button2,
+.button1 {
+  font-size: 14px;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.button1 {
+  border: 1px dashed #000;
+}
+
 .button2 {
-  height: 50px;
+  background: #000;
+  color: #fff;
+  border: 1px dashed #fff;
 }
 
 .imageDiv2 {
@@ -122,10 +135,5 @@
   }
   .row_type:nth-child(even) .headerContainer2 {
     padding-left: 1rem;
-  }
-
-  .button2 {
-    height: 40px;
-    font-size: 12px;
   }
 }

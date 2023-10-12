@@ -2,8 +2,8 @@ import Image from "next/image";
 import React from "react";
 import image from "public/innovate_previews.png";
 import styles from "./topComp.module.css";
-import { Button } from "antd";
 import SecondContainer from "./SecondContainer";
+import Link from "next/link";
 
 const TopComponent = () => {
   return (
@@ -24,10 +24,16 @@ const TopComponent = () => {
           </div>
 
           <div className={`flex ${styles.btnDiv}`}>
-            <Button type="dashed" className={`${styles.button}`} ghost>
-              SIGNIN WITH EMAIL
-            </Button>
-            <Button className={`${styles.button}`}>SIGNUP WITH EMAIL</Button>
+            <Link className="text_decoration_none " href={"/login"}>
+              <button className={`pointer ${styles.button1}`}>
+                SIGNIN WITH EMAIL
+              </button>
+            </Link>
+            <Link className="text_decoration_none " href={"/register"}>
+              <button className={`pointer ${styles.button}`}>
+                SIGNUP WITH EMAIL
+              </button>
+            </Link>
           </div>
         </div>
 

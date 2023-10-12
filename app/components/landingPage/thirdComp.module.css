@@ -12,29 +12,21 @@
   gap: 2rem;
 }
 
+.button,
+.button1 {
+  font-size: 14px;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
 .button {
-  height: 60px;
-  font-weight: 700;
+  border: 1px dashed #000;
 }
 
-.button:nth-child(even) {
-  border-color: #000;
-  color: #000;
-}
-
-.button:nth-child(odd) {
+.button1 {
   background: #000;
   color: #fff;
-}
-
-.button:nth-child(even):hover {
-  border-color: #fff;
-  background: #000;
-}
-
-.button:nth-child(odd):hover {
-  border-color: #fff;
-  background: #fff;
+  border: 1px dashed #fff;
 }
 
 .metricsDiv {
