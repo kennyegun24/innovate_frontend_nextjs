@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { HeightContext } from "../context/HeightContext";
 import NavBar from "../components/landingPage/NavBar";
 import styles from "./page.module.css";
@@ -10,9 +10,10 @@ import { GithubFilled, LinkedinFilled, MailFilled } from "@ant-design/icons";
 
 const AboutCreator = () => {
   const { scrollY, setElement } = useContext(HeightContext);
-  if (typeof window !== "undefined") {
+
+  useEffect(() => {
     setElement("about_creator");
-  }
+  }, []);
   return (
     <div className="about_creator flex column align_center scroll_y_black_white">
       <NavBar scrollY={scrollY} />

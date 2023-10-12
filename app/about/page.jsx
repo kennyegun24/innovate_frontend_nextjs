@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import NavBar from "../components/landingPage/NavBar";
 import { HeightContext } from "../context/HeightContext";
 import styles from "./about.module.css";
@@ -8,9 +8,10 @@ import Footer from "../components/landingPage/Footer";
 
 const About = () => {
   const { scrollY, setElement } = useContext(HeightContext);
-  if (typeof window !== "undefined") {
+  useEffect(() => {
     setElement("aboutPage");
-  }
+  }, []);
+
   return (
     <div
       className={`${styles.container} aboutPage scroll_y_black_white flex column  align_center`}

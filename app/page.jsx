@@ -1,5 +1,5 @@
 "use client";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { authState } from "./utils/session";
 import { redirect } from "next/navigation";
 import NavBar from "./components/landingPage/NavBar";
@@ -13,9 +13,10 @@ export default function Home() {
   if (authState) {
     redirect("/feeds");
   }
-  if (typeof window !== "undefined") {
+
+  useEffect(() => {
     setElement("landingPage");
-  }
+  }, []);
   return (
     <div className="landingPage scroll_y_black_white flex column gap1rem">
       <NavBar scrollY={scrollY} />
