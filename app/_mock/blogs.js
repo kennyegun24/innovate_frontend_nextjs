@@ -8,15 +8,15 @@ import plant from "public/asset7.jpg";
 import multiColors from "public/asset8.jpg";
 import birthday_cake from "public/asset9.jpg";
 import triangleImg from "public/asset10.jpg";
-import fingerLock from "public/asset12.jpg";
-import multiColors2 from "public/asset13.jpg";
-import golfBalls from "public/asset14.jpg";
-import bubbles from "public/asset15.jpg";
-import peopleSun from "public/asset16.jpg";
-import cuteAnimalAnimation from "public/asset17.jpg";
-import dice from "public/asset18.jpg";
-import streetTraffic from "public/asset19.jpg";
-import peopleVationMountain from "public/asset20.jpg";
+// import fingerLock from "public/asset12.jpg";
+// import multiColors2 from "public/asset13.jpg";
+// import golfBalls from "public/asset14.jpg";
+// import bubbles from "public/asset15.jpg";
+// import peopleSun from "public/asset16.jpg";
+// import cuteAnimalAnimation from "public/asset17.jpg";
+// import dice from "public/asset18.jpg";
+// import streetTraffic from "public/asset19.jpg";
+// import peopleVationMountain from "public/asset20.jpg";
 export const blogs = [
   {
     author_name: "Forster",
