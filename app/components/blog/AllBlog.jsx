@@ -24,11 +24,11 @@ const AllBlogs = () => {
         {blogs
           .sort(
             (a, b) =>
-              a.comments_count +
-              a.likes_count -
-              (b.likes_count + b.comments_count)
+              b.comments_count +
+              b.likes_count -
+              (a.comments_count + a.likes_count)
           )
-          .slice(0, 3)
+          .slice(2, 5)
           .map((blog) => (
             <Link
               href={`/blog/${blog.blogs_id}`}
@@ -59,7 +59,8 @@ const AllBlogs = () => {
                   <p className="font10">03 April 2023</p>
                   <CommentOutlined className="font10" />
                   <p className="font10">
-                    {numberFormat(blog.comments_count)} Comments r
+                    {numberFormat(blog.comments_count + blog.likes_count)}{" "}
+                    Comments r
                   </p>
                 </div>
               </div>
@@ -72,40 +73,92 @@ const AllBlogs = () => {
           className={`flex background2 column gap1rem ${styles.subContainer2}`}
         >
           <h3 className="padding05rem background font14">Latest</h3>
-          {blogs.map((blog) => (
-            <div className={styles.blogCardDiv} key={blog.blogs_id}>
-              <Image
-                src={blog.image}
-                alt=""
-                className={`object-cover ${styles.images2}`}
-              />
+          {blogs
+            .sort(
+              (a, b) =>
+                b.comments_count +
+                b.likes_count -
+                (a.comments_count + a.likes_count)
+            )
+            .slice(5, 10)
+            .map((blog) => (
+              <div className={styles.blogCardDiv} key={blog.blogs_id}>
+                <Image
+                  src={blog.image}
+                  alt=""
+                  className={`object-cover ${styles.images2}`}
+                />
 
-              <Link
-                href={`/blog/${blog.blogs_id}`}
-                className={`text_color theme flex column ${styles.subContainer2Sm}`}
-              >
-                <h3 className="font16">{blog.title}</h3>
-                <div className="flex gap05rem align_center">
-                  <FaUser className="font10" />
-                  <p className="font10">{blog.author_name}</p>
-                  <CalendarFilled className="font10" />
-                  <p className="font10">03 April 2023</p>
-                  <CommentOutlined className="font10" />
-                  <p className="font10">
-                    {numberFormat(blog.comments_count)} Comments
-                  </p>
-                </div>
-                <p className={`font14 ${styles.text}`}>{blog.text}</p>
-              </Link>
-            </div>
-          ))}
+                <Link
+                  href={`/blog/${blog.blogs_id}`}
+                  className={`text_color theme flex column ${styles.subContainer2Sm}`}
+                >
+                  <h3 className="font16">{blog.title}</h3>
+                  <div className="flex gap05rem align_center">
+                    <FaUser className="font10" />
+                    <p className="font10">{blog.author_name}</p>
+                    <CalendarFilled className="font10" />
+                    <p className="font10">03 April 2023</p>
+                    <CommentOutlined className="font10" />
+                    <p className="font10">
+                      {numberFormat(blog.comments_count + blog.likes_count)}{" "}
+                      Comments
+                    </p>
+                  </div>
+                  <p className={`font14 ${styles.text}`}>{blog.text}</p>
+                </Link>
+              </div>
+            ))}
         </div>
         <div
           className={`${toggleSearch ? styles.show : styles.hide} ${
             styles.searchContainer
           }`}
         >
-          <SearchComponent style={styles.searchDiv} />
+          <SearchComponent style={`background2 ${styles.searchDiv}`} />
+          <div
+            className={`flex background2 column gap1rem ${styles.subContainer3}`}
+          >
+            <h3 className="padding05rem background font14">Most Liked Blogs</h3>
+            {blogs
+              .sort(
+                (a, b) =>
+                  b.comments_count +
+                  b.likes_count -
+                  (a.comments_count + a.likes_count)
+              )
+              .slice(0, 2)
+              .map((blog) => (
+                <div className={styles.blogCardDiv2} key={blog.blogs_id}>
+                  <Image
+                    src={blog.image}
+                    alt=""
+                    className={`object-cover ${styles.images2}`}
+                  />
+
+                  <Link
+                    href={`/blog/${blog.blogs_id}`}
+                    className={`text_color theme flex column ${styles.subContainer2Sm}`}
+                  >
+                    <h3 className="font16">{blog.title}</h3>
+                    <div
+                      className={`flex gap05rem align_center ${styles.wrap}`}
+                    >
+                      <FaUser className="font10" />
+                      <p className="font10">{blog.author_name}</p>
+                      <CalendarFilled className="font10" />
+                      <p className="font10">03 April 2023</p>
+                      <CommentOutlined className="font10" />
+                      <p className="font10">
+                        {numberFormat(blog.comments_count + blog.likes_count)}{" "}
+                        Comments
+                      </p>
+                    </div>
+                    <p className={`font14 ${styles.text}`}>{blog.text}</p>
+                  </Link>
+                </div>
+              ))}
+          </div>
         </div>
       </div>
     </div>
