@@ -35,7 +35,7 @@ const no_nav_links = ["/", "/about", "/about_creator", "/login", "/register"];
 
 export default function RootLayout({ children }) {
   const headersList = headers();
-  const pathname = headersList.get("x-invoke-path") || "";
+  const pathname = headersList.get("x-url") || "";
   console.log(pathname);
   return (
     <html lang="en">
