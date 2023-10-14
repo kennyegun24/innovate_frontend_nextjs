@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import styles from "./register.module.css";
 import { authentication } from "@/app/request/auth";
+import { db } from "../firebase";
+import { Timestamp, doc } from "firebase/firestore";
 
 const Registration = () => {
   const [userData, setUserData] = useState(null);
@@ -13,11 +15,12 @@ const Registration = () => {
 
   const onSub = async (e) => {
     e.preventDefault();
-
+    const id = crypto.randomUUID();
     try {
       await authentication({
         data: userData,
         file,
+        id,
       });
     } catch (error) {
       console.log(error);
