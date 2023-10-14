@@ -1,7 +1,29 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import styles from "./register.module.css";
+import { authentication } from "@/app/request/auth";
 
 const Registration = () => {
+  const [userData, setUserData] = useState(null);
+  const [file, setFile] = useState(null);
+
+  const handleInput = (e) => {
+    setUserData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const onSub = async (e) => {
+    e.preventDefault();
+
+    try {
+      await authentication({
+        data: userData,
+        file,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className={`scroll_y_black_white ${styles.container}`}>
       <div className={styles.containerSm}>
@@ -16,12 +38,19 @@ const Registration = () => {
             <h5>Create your own personal account</h5>
           </div>
 
-          <form>
-            <input placeholder="Username..." />
-            <input placeholder="Name..." />
-            <input placeholder="Email..." />
-            <input placeholder="Passeord..." />
+          <form onChange={(e) => handleInput(e)} onSubmit={onSub}>
+            <input name="user_name" placeholder="Username..." />
+            <input name="name" placeholder="Name..." />
+            <input name="email" placeholder="Email..." />
+            <input name="password" placeholder="Passeord..." />
             <button>Register</button>
+            <input
+              style={{ padding: "initial" }}
+              type="file"
+              name="image"
+              onChange={(e) => setFile(e.target.files[0])}
+              id=""
+            />
             <p>
               Have an account?{" "}
               <a href="/login" className="blue text_decoration_none">
