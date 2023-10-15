@@ -2,13 +2,13 @@
 import React, { useState } from "react";
 import styles from "./register.module.css";
 import { authentication } from "@/app/request/auth";
-import { db } from "../firebase";
-import { Timestamp, doc } from "firebase/firestore";
+import { useDispatch, useSelector } from "react-redux";
+import { redirect } from "next/navigation";
 
 const Registration = () => {
   const [userData, setUserData] = useState(null);
   const [file, setFile] = useState(null);
-
+  const dispatch = useDispatch();
   const handleInput = (e) => {
     setUserData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -17,11 +17,15 @@ const Registration = () => {
     e.preventDefault();
     const id = crypto.randomUUID();
     try {
-      await authentication({
-        data: userData,
-        file,
-        id,
-      });
+      await authentication(
+        {
+          data: userData,
+          file,
+          id,
+        },
+        dispatch
+      );
+      redirect("/feeds");
     } catch (error) {
       console.log(error);
     }
