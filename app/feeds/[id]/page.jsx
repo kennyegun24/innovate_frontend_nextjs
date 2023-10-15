@@ -18,7 +18,7 @@ const PostDetails = () => {
     <div className={`${styles.container}`}>
       <div className={`${styles.postImageMainDiv}`}>
         <div className={`background2 theme padding1rem ${styles.postImageDiv}`}>
-          {post.image && (
+          {post?.image && (
             <Image
               style={{
                 height: "100%",

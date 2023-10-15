@@ -5,11 +5,16 @@
   align-items: center;
   height: 100%;
   background: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(22, 48, 81, 0.6);
+  z-index: 999999;
 }
 
 .containerSm {
   width: 70%;
-  height: 80vh;
+  height: 90vh;
   display: flex;
 }
 
@@ -134,6 +139,12 @@
   .formDiv h5 {
     font-size: 20px;
   }
+  .formDiv form input {
+    width: 70%;
+  }
+  .formDiv form {
+    align-items: center;
+  }
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
@@ -150,5 +161,6 @@
 
   .formDiv h5 {
     font-size: 18px;
+    text-align: center;
   }
 }
