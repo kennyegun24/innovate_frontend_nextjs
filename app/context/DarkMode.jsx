@@ -1,5 +1,7 @@
 "use client";
 import { createContext, useEffect, useState } from "react";
+import { Provider } from "react-redux";
+import { store, wrapper } from "../redux/store";
 
 export const ThemeContext = createContext();
 
@@ -16,9 +18,12 @@ export const ThemeProvider = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ toggle, mode }}>
-      <div className={`theme background bigContainer relative text_color`}>
-        {children}
-      </div>
+      <Provider store={store}>
+        <div className={`theme background bigContainer relative text_color`}>
+          {children}
+        </div>
+      </Provider>
     </ThemeContext.Provider>
   );
 };
+// export default wrapper.useWrappedStore(ThemeProvider);
