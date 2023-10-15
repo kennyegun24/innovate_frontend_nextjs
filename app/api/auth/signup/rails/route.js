@@ -8,10 +8,14 @@ export const POST = async (req, res) => {
     const sendRequestRails = await unauthRailsRequest.post(`authentication`, {
       user,
     });
-
-    return new NextResponse(sendRequestRails.data.data, {
-      status: 201,
-    });
+    console.log(sendRequestRails.data.message);
+    return new NextResponse(
+      JSON.stringify({
+        data: sendRequestRails.data.data,
+        message: sendRequestRails.data.message,
+        status: 201,
+      })
+    );
   } catch (error) {
     return new NextResponse(error.response.data.message, {
       status: error.response.status,

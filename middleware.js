@@ -1,19 +1,22 @@
 // /middleware.js
 import { NextResponse } from "next/server";
+import { store } from "./app/redux/store";
 
 export function middleware(request) {
-  // Extract the pathname from the request URL
-  const url = new URL(request.url);
-  const pathname = url.pathname;
+  const authToken = store.getState().user.currentUser;
+  const path = "/current_user_profile";
 
-  // Store the pathname in a custom header
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("x-url", pathname);
+  if (!authToken && request.nextUrl.pathname.startsWith(path)) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/login";
+    const response = NextResponse.redirect(url);
+    return response;
+  }
 
-  return NextResponse.next({
-    request: {
-      // Apply new request headers
-      headers: requestHeaders,
-    },
-  });
+  if (request.nextUrl.pathname === "/") {
+    const url = request.nextUrl.clone();
+    url.pathname = "/feeds";
+    const response = NextResponse.redirect(url);
+    return response;
+  }
 }
