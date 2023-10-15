@@ -53,3 +53,5 @@ If you have a suggestion that would make this better, please fork the repo and c
 5. Open a Pull Request
    Image by <a href="https://www.freepik.com/free-vector/hand-drawn-flat-halloween-ghost-illustration_17241551.htm#page=5&query=ghost&position=19&from_view=search&track=sph">Freepik</a>
    <a href="https://www.freepik.com/free-vector/cute-white-ghost-element-black-background-vector_24382474.htm#page=2&query=ghost&position=0&from_view=search&track=sph">Image by rawpixel.com</a> on Freepik
+   <a href="https://www.freepik.com/free-vector/cyber-data-security-online-concept-illustration-internet-security-information-privacy-protection_12953560.htm#query=login&position=28&from_view=search&track=sph">Image by jcomp</a> on Freepik
+   <a href="https://www.freepik.com/free-vector/login-concept-illustration_6184159.htm#query=login&position=3&from_view=search&track=sph">Image by storyset</a> on Freepik

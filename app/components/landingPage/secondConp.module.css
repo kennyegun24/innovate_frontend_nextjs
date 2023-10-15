@@ -1,0 +1,139 @@
+.button2,
+.button1 {
+  font-size: 14px;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.button1 {
+  border: 1px dashed #000;
+}
+
+.button2 {
+  background: #000;
+  color: #fff;
+  border: 1px dashed #fff;
+}
+
+.imageDiv2 {
+  width: 50%;
+  height: 100%;
+}
+
+.image2 {
+  width: 100%;
+  height: auto;
+}
+
+.headerContainer2 {
+  width: 45%;
+  padding-right: 5rem;
+  align-items: flex-end;
+}
+
+.headerContainer2 h2 {
+  font-size: 1.8vw;
+  text-align: right;
+  background: linear-gradient(to right, #000000, #747474);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.paragraph2 {
+  font-size: 1.2vw;
+  line-height: 3vh;
+  text-align: right;
+}
+
+.row_type:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.row_type:nth-child(even) .paragraph2 {
+  text-align: left;
+}
+
+.row_type:nth-child(even) .headerContainer2 h2 {
+  text-align: left;
+  white-space: pre-line;
+}
+
+.row_type:nth-child(even) .headerContainer2 {
+  padding-left: 5rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 767px) and (max-width: 1200px) {
+  .row_type:nth-child(even) .headerContainer2 {
+    padding-left: 2rem;
+  }
+  .headerContainer2 {
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 900px) {
+  .paragraph2 {
+    line-height: 20px;
+    font-size: 14px;
+  }
+
+  .headerContainer2 h2 {
+    font-size: 20px;
+  }
+  .imageDiv2 {
+    width: 40%;
+  }
+  .headerContainer2 {
+    width: 55%;
+  }
+
+  .row_type {
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 767px) {
+  .row_type:nth-child(even) .headerContainer2 {
+    padding-left: 1rem;
+  }
+  .headerContainer2 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .paragraph2 {
+    line-height: 18px;
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .imageDiv2 {
+    display: none;
+  }
+
+  .row_type {
+    margin-top: 0;
+    flex-direction: column-reverse;
+    gap: 1rem;
+    text-align: left;
+  }
+  .row_type:nth-child(even) .paragraph2 {
+    text-align: left;
+  }
+  .row_type:nth-child(even) {
+    flex-direction: column-reverse;
+  }
+
+  .headerContainer2 h2 {
+    font-size: 22px;
+    text-align: left;
+  }
+  .row_type:nth-child(even) .headerContainer2 {
+    padding-left: 1rem;
+  }
+}

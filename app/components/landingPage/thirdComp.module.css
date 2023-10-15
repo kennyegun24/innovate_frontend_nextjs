@@ -1,0 +1,77 @@
+.container h2 {
+  font-size: 40px;
+  color: #000;
+}
+
+.container h4 {
+  font-size: 22px;
+  color: #000;
+}
+
+.container .headerDiv {
+  gap: 2rem;
+}
+
+.button,
+.button1 {
+  font-size: 14px;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.button {
+  border: 1px dashed #000;
+}
+
+.button1 {
+  background: #000;
+  color: #fff;
+  border: 1px dashed #fff;
+}
+
+.metricsDiv {
+  width: 70%;
+  color: #0269e7;
+  font-size: 900;
+}
+
+.metricsDiv .metricPercent {
+  font-size: 50px;
+}
+
+@media (min-width: 767px) and (max-width: 900px) {
+  .container h2 {
+    font-size: 30px;
+  }
+
+  .container h4 {
+    font-size: 20px;
+  }
+
+  .metricsDiv .metricPercent {
+    font-size: 40px;
+  }
+}
+@media (min-width: 200px) and (max-width: 767px) {
+  .container {
+    padding: 0 12px;
+  }
+  .container h2 {
+    font-size: 24px;
+  }
+
+  .container h4 {
+    font-size: 18px;
+  }
+  .metricsDiv {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .metricsDiv .metricPercent {
+    font-size: 25px;
+  }
+
+  .buttonDiv {
+    flex-direction: column;
+  }
+}

@@ -9,8 +9,15 @@
 }
 
 .appLayoutChildren {
-  width: 85%;
   height: 100%;
+}
+
+.width100 {
+  width: 100%;
+}
+
+.width85 {
+  width: 85%;
 }
 
 @media (min-width: 200px) and (max-width: 767px) {

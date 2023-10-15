@@ -6,7 +6,8 @@ import { FollowedProvider } from "./context/FollowedContext";
 import styles from "./page.module.css";
 import { HeightProvider } from "./context/HeightContext";
 import { InterractionProvider } from "./context/InterractionContext";
-
+import { authState } from "./utils/session";
+import { headers } from "next/headers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -30,7 +31,11 @@ export const metadata = {
   },
 };
 
+const no_nav_links = ["/", "/about", "/about_creator", "/login", "/register"];
+
 export default function RootLayout({ children }) {
+  const headersList = headers();
+  const pathname = headersList.get("x-url") || "";
   return (
     <html lang="en">
       <body className={` ${inter.className}`}>
@@ -39,10 +44,18 @@ export default function RootLayout({ children }) {
             <InterractionProvider>
               <FollowedProvider>
                 <div className={styles.appLayout}>
-                  <div className={styles.navLayoutHeader}>
-                    <NavBar />
+                  {!no_nav_links.includes(pathname) && (
+                    <div className={styles.navLayoutHeader}>
+                      <NavBar />
+                    </div>
+                  )}
+                  <div
+                    className={`${
+                      !authState ? styles.width100 : styles.width85
+                    } ${styles.appLayoutChildren}`}
+                  >
+                    {children}
                   </div>
-                  <div className={styles.appLayoutChildren}>{children}</div>
                 </div>
               </FollowedProvider>
             </InterractionProvider>

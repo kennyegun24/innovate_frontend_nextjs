@@ -1,0 +1,73 @@
+.image {
+  height: 100px;
+  width: 100px;
+  margin-right: 5rem;
+}
+
+.carouselContainer {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  height: 100px;
+  width: 100%;
+}
+
+.carousel {
+  display: inline-block;
+  animation: carousel 50s infinite linear;
+}
+
+.carouselContainer:hover .carousel {
+  animation-play-state: paused;
+}
+
+@keyframes carousel {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.carouselContainer::before,
+.carouselContainer::after {
+  position: absolute;
+  height: 100%;
+  width: 90px;
+
+  content: "";
+  /* border: 5px solid green; */
+  z-index: 2;
+}
+
+.carouselContainer::after {
+  right: 0;
+  top: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 252, 252, 0),
+    rgba(127, 127, 127, 0.8)
+  );
+}
+
+.carouselContainer::before {
+  left: 0;
+  top: 0;
+  background: linear-gradient(
+    to left,
+    rgba(255, 252, 252, 0.2),
+    rgba(127, 127, 127, 0.8)
+  );
+}
+
+@media (min-width: 200px) and (max-width: 767px) {
+  .image {
+    margin-right: 2rem;
+  }
+
+  .carouselContainer::before,
+  .carouselContainer::after {
+    width: 5%;
+  }
+}

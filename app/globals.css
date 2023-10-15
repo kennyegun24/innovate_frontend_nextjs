@@ -6,9 +6,12 @@
 
 :root {
   --mainColor: #2f3b50;
-  --secondaryColor: #151a23;
-  --primaryColor: #202836;
+  /* --secondaryColor: #151a23;
+  --primaryColor: #202836; */
+  --secondaryColor: #18191a;
+  --primaryColor: #111;
   --reverse_primaryColor: #fff;
+  --reverse_primaryColor2: #cbc9c9;
   --white-black: #fff;
   --textColor: #bbb;
   --reverse_textColor: #202836;
@@ -57,9 +60,10 @@
 
 [color-scheme="dark"] {
   --mainColor: #2f3b50;
-  --secondaryColor: #151a23;
-  --primaryColor: #202836;
+  --secondaryColor: #18191a;
+  --primaryColor: #111;
   --reverse_primaryColor: #fff;
+  --reverse_primaryColor2: #f4f4f4;
   --white-black: #fff;
   --textColor: #bbb;
   --reverse_textColor: #202836;
@@ -76,6 +80,7 @@
 [color-scheme="light"] {
   --mainColor: #fff;
   --secondaryColor: #f4f4f4;
+  --reverse_primaryColor2: #18191a;
   --primaryColor: #fff;
   --white-black: #000;
   --reverse_primaryColor: #202836;
@@ -120,6 +125,10 @@
 
 .reverse_background2 {
   background: var(--reverse_primaryColor);
+}
+
+.reverse_background3 {
+  background: var(--reverse_primaryColor2);
 }
 
 .absolute {
@@ -219,6 +228,26 @@
 
 .font20 {
   font-size: var(--20px);
+}
+
+.scroll_y_black_white {
+  overflow-y: auto;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.scroll_y_black_white::-webkit-scrollbar {
+  background: #000;
+  width: 5px;
+}
+
+/* .scroll_y_black_white::-webkit-scrollbar-button {
+  background: #fff;
+} */
+
+.scroll_y_black_white::-webkit-scrollbar-thumb {
+  background: #fff;
 }
 
 .scroll_y {
@@ -341,6 +370,10 @@
   gap: var(--2rem);
 }
 
+.gap3rem {
+  gap: 3rem;
+}
+
 .gap5rem {
   gap: var(--5rem);
 }
@@ -351,6 +384,10 @@
 
 .white {
   color: var(--white);
+}
+
+.black {
+  color: #000;
 }
 
 .white-black {
@@ -408,6 +445,10 @@
 .paddingRight2rem {
   padding-right: var(--2rem);
 }
+
+.paddingRight5rem {
+  padding-right: 5rem;
+}
 .paddingTop1Rem {
   padding-top: var(--1rem);
 }
@@ -418,6 +459,14 @@
 
 .padding2 {
   padding: var(--2);
+}
+
+.margintop15vh {
+  margin-top: 15vh;
+}
+
+.margintop20vh {
+  margin-top: 20vh;
 }
 
 .margintop1rem {
