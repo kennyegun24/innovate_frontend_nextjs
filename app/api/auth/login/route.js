@@ -1,15 +1,28 @@
 import { NextResponse } from "next/server";
+import { unauthRailsRequest } from "@/app/utils/publicRequest";
 
 export const POST = async (req, res) => {
-  const auth = getAuth(app);
-  console.log(auth);
-  // try {
-  //   const initiaiteCreateAccount = createUserWithEmailAndPassword(
-  //     res.auth,
-  //     req.email,
-  //     req.password
-  //   ).then((userCredential) => {
-  //     const user = userCredential.user;
-  //   });
-  // } catch {}
+  const { data } = await req.json();
+
+  try {
+    const sendRequestRails = await unauthRailsRequest.post(
+      `authentication/login`,
+      {
+        email: data.email,
+        password: data.password,
+      }
+    );
+    console.log(sendRequestRails.data.message);
+    return new NextResponse(
+      JSON.stringify({
+        data: sendRequestRails.data.data,
+        message: sendRequestRails.data.message,
+        status: 201,
+      })
+    );
+  } catch (error) {
+    return new NextResponse(error.response, {
+      status: error.response,
+    });
+  }
 };

@@ -7,9 +7,9 @@ import {
 } from "firebase/storage";
 import { db, storage } from "@/app/firebase";
 import { Timestamp, deleteDoc, doc, setDoc } from "firebase/firestore";
-import { loginFailure, loginSuccess } from "../redux/user_auth/userReducer";
+import { loginFailure, loginSuccess } from "../../redux/user_auth/userReducer";
 
-export const authentication = async ({ data, file, id }, dispatch) => {
+export const registerAuthentication = async ({ data, file, id }, dispatch) => {
   const currentTime = Timestamp.now().seconds;
   const storageRef = ref(storage, `${data?.email}/profile/${id}`);
   await uploadBytesResumable(storageRef, file);
@@ -36,6 +36,18 @@ export const authentication = async ({ data, file, id }, dispatch) => {
     const desertRef = ref(storage, storageRef);
     await deleteObject(desertRef);
     await deleteDoc(doc(db, "users", id));
+    dispatch(loginFailure(error.response.data));
+  }
+};
+
+export const loginAuthentication = async ({ data }, dispatch) => {
+  try {
+    const reg = await publicNextRequest.post("/auth/login", {
+      data,
+    });
+    dispatch(loginSuccess(reg.data));
+  } catch (error) {
+    console.log(error.response);
     dispatch(loginFailure(error.response.data));
   }
 };
