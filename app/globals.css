@@ -612,6 +612,31 @@
   }
 }
 
+.textLink:hover::before,
+.textBold:hover::before,
+.textItalics:hover::before {
+  position: absolute;
+  top: -2.5rem;
+  right: -1rem;
+  background-color: rgb(2, 44, 96);
+  border-radius: 06px 6px 6px 0;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+
+.textLink:hover::before {
+  content: "Link";
+}
+
+.textBold:hover::before {
+  content: "Important text";
+}
+
+.textItalics:hover::before {
+  content: "Highlited text";
+}
+
 @media (min-width: 200px) and (max-width: 767px) {
   .show {
     display: none;
