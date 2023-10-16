@@ -4,13 +4,12 @@ import styles from "./styles.module.css";
 import Image from "next/image";
 import { CalendarFilled, CommentOutlined } from "@ant-design/icons";
 import { FaUser } from "react-icons/fa";
-import { blogs } from "@/app/_mock/blogs";
 import { numberFormat } from "@/app/utils/general";
 import { Button } from "antd";
-const LatestBlogs = () => {
+const LatestBlogs = ({ text, blogs }) => {
   return (
     <div className={`flex background2 column gap1rem ${styles.subContainer2}`}>
-      <h3 className="padding05rem background font14">Latest</h3>
+      <h3 className="padding05rem background font14">{text}</h3>
       {blogs
         .sort(
           (a, b) =>
@@ -18,7 +17,6 @@ const LatestBlogs = () => {
             b.likes_count -
             (a.comments_count + a.likes_count)
         )
-        .slice(5, 10)
         .map((blog) => (
           <div className={styles.blogCardDiv} key={blog.blogs_id}>
             <Image

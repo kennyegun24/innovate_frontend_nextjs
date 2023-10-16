@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 5rem;
-  height: 100vh;
+  height: 100%;
   padding: 0.5rem;
 }
 
@@ -65,8 +65,12 @@
   border-radius: 6px;
 }
 
-.subContainer2 {
+.latest {
   width: 70%;
+}
+
+.subContainer2 {
+  width: 100%;
 }
 
 .subContainer3 {
@@ -141,7 +145,7 @@
     flex-wrap: wrap;
   }
   .subContainer2 {
-    width: 60%;
+    width: 100%;
   }
 
   .searchContainer {
@@ -163,6 +167,10 @@
     width: 100%;
     background: rgba(21, 26, 35, 0.7);
     height: 100vh;
+  }
+
+  .latest {
+    width: 100%;
   }
 
   .hide {

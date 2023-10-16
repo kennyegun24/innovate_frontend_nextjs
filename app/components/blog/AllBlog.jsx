@@ -6,11 +6,12 @@ import SearchToggle from "./SearchToggle";
 import MostLikedBlogs from "./MostLikedBlogs";
 import BlogGrid from "./BlogGrid";
 import LatestBlogs from "./LatestBlogs";
+import { blogs } from "@/app/_mock/blogs";
 
 const AllBlogs = () => {
   const [toggleSearch, setToggleSearch] = useState(false);
   return (
-    <div className={`scroll_y ${styles.container}`}>
+    <div className={`scroll_y_black_white ${styles.container}`}>
       <SearchToggle
         setToggleSearch={setToggleSearch}
         toggleSearch={toggleSearch}
@@ -18,7 +19,9 @@ const AllBlogs = () => {
       />
       <BlogGrid />
       <div className={`${styles.bottomContainer} `}>
-        <LatestBlogs />
+        <div className={styles.latest}>
+          <LatestBlogs text="Liked blogs" blogs={blogs.slice(5, 10)} />
+        </div>
         <div
           className={`${toggleSearch ? styles.show : styles.hide} ${
             styles.searchContainer
