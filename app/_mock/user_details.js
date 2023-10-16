@@ -55,6 +55,7 @@ export const otherUserDetails = [
     post_count: 204,
     posts: [
       {
+        created_at: "2023-10-15 08:30:00",
         creator_name: "Willie Johnston",
         isLiked: true,
         id: 0,
@@ -66,6 +67,7 @@ export const otherUserDetails = [
         image: vacation,
       },
       {
+        created_at: "2023-01-05 10:05:00",
         creator_name: "Willie Johnston",
         isLiked: false,
         id: 1,
@@ -80,7 +82,7 @@ export const otherUserDetails = [
     experience: [
       {
         company_name: "DeCellar",
-        id: 1,
+        id: 0,
         image: image1,
         desc: "Integrated smart contracts for users to interract with",
         title: "Blockchain Developer",
@@ -94,14 +96,14 @@ export const otherUserDetails = [
       },
       {
         company_name: "Goldman Sachs",
-        id: 1,
+        id: 2,
         image: image3,
         desc: "Worked closely with UI designers to develop beautiful and fully responsive UIs",
         title: "Blockchain Developer",
       },
       {
         company_name: "DeCellar",
-        id: 1,
+        id: 3,
         image: image4,
         desc: "Integrated smart contracts for users to interract with",
         title: "Blockchain Developer",
@@ -165,6 +167,7 @@ export const otherUserDetails = [
     post_count: 204,
     posts: [
       {
+        created_at: "2023-04-03 15:55:00",
         creator_name: "Mathilda Rice",
         isLiked: true,
         id: 0,
@@ -176,6 +179,7 @@ export const otherUserDetails = [
         image: multiColors,
       },
       {
+        created_at: "2023-05-20 20:30:00",
         creator_name: "Mathilda Rice",
         isLiked: false,
         id: 1,
@@ -187,9 +191,10 @@ export const otherUserDetails = [
         image: plant,
       },
       {
+        created_at: "2023-06-05 09:10:00",
         creator_name: "Mathilda Rice",
         isLiked: false,
-        id: 1,
+        id: 2,
         text: "Beautiful piece by an amazing photographer! Me ;)",
         author_id: 2,
         likes_count: 66543693260,
@@ -286,6 +291,7 @@ export const otherUserDetails = [
     post_count: 204,
     posts: [
       {
+        created_at: "2023-06-05 09:10:00",
         creator_name: "Estelle Paul",
         isLiked: true,
         id: 0,
@@ -297,6 +303,7 @@ export const otherUserDetails = [
         image: camera,
       },
       {
+        created_at: "2023-07-12 18:20:00",
         creator_name: "Estelle Paul",
         isLiked: false,
         id: 1,
@@ -308,9 +315,10 @@ export const otherUserDetails = [
         image: bubbles,
       },
       {
+        created_at: "2023-08-25 12:15:00",
         creator_name: "Estelle Paul",
         isLiked: true,
-        id: 1,
+        id: 2,
         text: "When people ask me what probability means, I just show them an image of a dice!",
         author_id: 2,
         likes_count: 66543693260,
@@ -407,6 +415,7 @@ export const otherUserDetails = [
     post_count: 204,
     posts: [
       {
+        created_at: "2023-10-15 08:30:00",
         creator_name: "Ralph Jensen",
         isLiked: true,
         id: 0,
@@ -418,6 +427,7 @@ export const otherUserDetails = [
         image: streetTraffic,
       },
       {
+        created_at: "2023-09-30 14:45:00",
         creator_name: "Ralph Jensen",
         isLiked: false,
         id: 1,
@@ -429,9 +439,10 @@ export const otherUserDetails = [
         image: multiColors2,
       },
       {
+        created_at: "2023-08-25 12:15:00",
         creator_name: "Ralph Jensen",
         isLiked: true,
-        id: 1,
+        id: 2,
         text: "This picture makes me miss the beautiful view of sunset in mountanious areas",
         author_id: 2,
         likes_count: 66543693260,
@@ -542,6 +553,7 @@ export const otherUserDetails = [
     post_count: 204,
     posts: [
       {
+        created_at: "2023-01-05 10:05:00",
         creator_name: "McLauren Ramos",
         isLiked: true,
         id: 0,
@@ -553,6 +565,7 @@ export const otherUserDetails = [
         image: fingerLock,
       },
       {
+        created_at: "2023-02-10 23:25:00",
         creator_name: "McLauren Ramos",
         isLiked: false,
         id: 1,
@@ -564,9 +577,10 @@ export const otherUserDetails = [
         image: cuteAnimalAnimation,
       },
       {
+        created_at: "2023-04-03 15:55:00",
         creator_name: "McLauren Ramos",
         isLiked: true,
-        id: 1,
+        id: 2,
         text: "I really miss these old days!!",
         author_id: 2,
         likes_count: 66543693260,
@@ -575,9 +589,10 @@ export const otherUserDetails = [
         image: peopleVationMountain,
       },
       {
+        created_at: "2023-06-05 09:10:00",
         creator_name: "McLauren Ramos",
         isLiked: true,
-        id: 1,
+        id: 3,
         text: "This is a very beautiful piece... Hundreds of images with millions of meanings.",
         author_id: 2,
         likes_count: 66543693260,
@@ -674,6 +689,7 @@ export const otherUserDetails = [
     post_count: 204,
     posts: [
       {
+        created_at: "2023-08-25 12:15:00",
         creator_name: "Christina Fox",
         isLiked: true,
         id: 0,
@@ -685,6 +701,7 @@ export const otherUserDetails = [
         image: carImg,
       },
       {
+        created_at: "2023-05-20 20:30:00",
         creator_name: "Christina Fox",
         isLiked: false,
         id: 1,
@@ -696,9 +713,10 @@ export const otherUserDetails = [
         image: work_shop,
       },
       {
+        created_at: "2023-02-10 23:25:00",
         creator_name: "Christina Fox",
         isLiked: true,
-        id: 1,
+        id: 2,
         text: "Another beautiful piece",
         author_id: 2,
         likes_count: 66543693260,
@@ -707,9 +725,10 @@ export const otherUserDetails = [
         image: triangleImg,
       },
       {
+        created_at: "2023-04-03 15:55:00",
         creator_name: "Christina Fox",
         isLiked: true,
-        id: 1,
+        id: 3,
         text: "This looks and sounds true... But they wont agree 😂",
         author_id: 2,
         likes_count: 66543693260,

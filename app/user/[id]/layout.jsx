@@ -1,23 +1,21 @@
 import React from "react";
-import ProfileNav from "@/app/components/profile/profileNav/ProfileNav";
 import Header from "./Header";
 import styles from "./page.module.css";
-import Back from "@/app/components/Back";
-import { users } from "@/app/_mock/users";
+import { otherUserDetails } from "@/app/_mock/user_details";
 
 export const generateMetadata = ({ params }) => {
-  const data = users[params.id];
+  const data = otherUserDetails[params.id];
   return {
-    title: `${data.name} profile`,
-    description: `profession: ${data.profession} ~ Name: ${data.name}`,
+    title: `${data.name} Profile`,
+    description: `profession: ${data.profession} | Name: ${data.name} | Works at: ${data.company}`,
     twitter: {
-      title: `${data.name} profile`,
-      description: `profession: ${data.profession} ~ Name: ${data.name}`,
+      title: `${data.name} Profile`,
+      description: `profession: ${data.profession} | Name: ${data.name} | Works at: ${data.company}`,
       text: `I am ${data.name}`,
     },
     openGraph: {
-      title: `${data.name} profile`,
-      description: `profession: ${data.profession} | Name: ${data.name}`,
+      title: `${data.name} Profile`,
+      description: `profession: ${data.profession} | Name: ${data.name} | Works at: ${data.company}`,
       image: data.image,
     },
   };
@@ -26,7 +24,6 @@ const Layout = ({ children }) => {
   return (
     <div className={styles.layoutContainer}>
       <Header />
-
       <div className={styles.layoutProfileChildren}>{children}</div>
     </div>
   );
