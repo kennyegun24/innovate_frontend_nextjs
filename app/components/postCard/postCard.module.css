@@ -35,3 +35,19 @@
 .likesCommentsDiv {
   height: 5vh;
 }
+
+.postHeaderContainer,
+.postText {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -khmml-user-select: none;
+}
+
+.postHeaderContainer:focus,
+.postText:focus {
+  outline: none !important;
+}
