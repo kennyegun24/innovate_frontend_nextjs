@@ -4,6 +4,8 @@ import styles from "./register.module.css";
 import { registerAuthentication } from "@/app/utils/api_requests/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { redirect } from "next/navigation";
+import Image from "next/image";
+import imagePicker from "public/image_picker32.png";
 
 const Registration = () => {
   const [userData, setUserData] = useState(null);
@@ -51,14 +53,23 @@ const Registration = () => {
             <input name="name" placeholder="Name..." />
             <input name="email" placeholder="Email..." />
             <input name="password" placeholder="Passeord..." />
-            <button>Register</button>
+            <label
+              className=" flex align_center gap05rem"
+              htmlFor="imageSelector"
+            >
+              <Image src={imagePicker} alt="select image" />
+              <p className="font12">Select profile picture</p>
+            </label>
             <input
+              hidden
               style={{ padding: "initial" }}
               type="file"
               name="image"
               onChange={(e) => setFile(e.target.files[0])}
-              id=""
+              id="imageSelector"
             />
+            <button>Register</button>
+
             <p>
               Have an account?{" "}
               <a href="/login" className="blue text_decoration_none">

@@ -27,7 +27,6 @@ const Login = () => {
       console.log(error);
     }
   };
-  console.log(detailsError);
 
   return (
     <div className={`scroll_y_black_white ${styles.container}`}>
