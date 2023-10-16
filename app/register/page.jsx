@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./register.module.css";
-import { authentication } from "@/app/request/auth";
+import { registerAuthentication } from "@/app/utils/api_requests/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { redirect } from "next/navigation";
 
@@ -9,6 +9,7 @@ const Registration = () => {
   const [userData, setUserData] = useState(null);
   const [file, setFile] = useState(null);
   const dispatch = useDispatch();
+  const { detailsError } = useSelector((state) => state.user);
   const handleInput = (e) => {
     setUserData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -17,7 +18,7 @@ const Registration = () => {
     e.preventDefault();
     const id = crypto.randomUUID();
     try {
-      await authentication(
+      await registerAuthentication(
         {
           data: userData,
           file,

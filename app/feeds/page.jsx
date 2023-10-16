@@ -1,23 +1,21 @@
+"use client";
 import React from "react";
 import NewPostForm from "../components/writePost/NewPost";
 import styles from "./pages.module.css";
 import RecommendedPages from "@/app/components/recommendedPages/RecommendedPages";
 import Posts from "./Posts";
 import FiveRecommendUser from "@/app/components/recommendedsers/fiveRecommendUser";
-
-export const metadata = {
-  title: "Feeds",
-  description: "This is the feeds page of innovate socials",
-};
+import { useSelector } from "react-redux";
 
 const Feeds = () => {
+  const { currentUser } = useSelector((state) => state.user);
   return (
     <div className={styles.container}>
       <div className={styles.leftContainer}>
         <RecommendedPages />
       </div>
       <div className={styles.middleContainer}>
-        <NewPostForm />
+        {currentUser && <NewPostForm />}
         <div className={styles.subMiddleContainer}>
           <Posts />
         </div>
