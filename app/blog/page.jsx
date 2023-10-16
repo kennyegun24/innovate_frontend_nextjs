@@ -17,7 +17,12 @@ const Blog = () => {
           </Button>
         </div>
       )}
-      <div className={styles.allBlogsContainer}>
+      <div
+        style={{
+          height: authState ? "calc(100vh - (5vh + 1rem))" : "100vh",
+        }}
+        className={styles.allBlogsContainer}
+      >
         <AllBlogs />
       </div>
     </div>

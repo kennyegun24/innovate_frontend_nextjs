@@ -1,4 +1,3 @@
 .allBlogsContainer {
-  height: calc(100vh - (5vh + 1rem));
   flex: 1;
 }
