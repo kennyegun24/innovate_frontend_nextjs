@@ -61,7 +61,7 @@
   }
 
   .navLabel {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .hamBurger {
@@ -76,7 +76,9 @@
   }
 
   .subContainer2 {
-    gap: 1.5rem;
+    /* gap: 2rem; */
+    justify-content: space-evenly;
+    height: 100%;
   }
 
   .subContainer {
@@ -90,7 +92,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 2.5rem;
-    padding: 2rem 0 1rem 0;
+    padding: 1rem 0 1rem 0;
     align-items: center;
     transition: all 0.5s ease-in-out;
     background: var(--primaryColor);
@@ -101,7 +103,7 @@
   }
 
   .icons {
-    font-size: 30px;
+    font-size: 24px;
   }
 
   .hide {
