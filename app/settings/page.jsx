@@ -14,7 +14,7 @@ const Page = () => {
     if (screenWidth > 899) {
       setTimeout(() => {
         router.push("/settings/account");
-      }, 2500);
+      }, 1500);
     }
   }, [screenWidth, loading, router]);
 
