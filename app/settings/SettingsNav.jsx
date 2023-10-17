@@ -65,7 +65,7 @@ const SettingsNav = () => {
             <Link
               href={each.link}
               key={index}
-              className={`flex justify_between align_center ${
+              className={`flex theme justify_between align_center ${
                 path.startsWith(each.link) && styles.activeLlink
               }
                ${

@@ -2,18 +2,17 @@
 import React, { useContext } from "react";
 import { FaUsers, FaBlogger, FaBars } from "react-icons/fa";
 import { BiHomeHeart, BiShoppingBag, BiMessage } from "react-icons/bi";
+import { ThemeContext } from "@/app/context/DarkMode";
 import { BsBell } from "react-icons/bs";
 import { SlBriefcase } from "react-icons/sl";
 import styles from "./nav.module.css";
-import { ThemeContext } from "@/app/context/DarkMode";
-import DarkMode from "../darkMode/DarkMode";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useHideRef } from "@/app/customHooks/refHook";
 import { SettingTwoTone } from "@ant-design/icons";
 
 const NavBar = () => {
-  const { toggle, mode } = useContext(ThemeContext);
+  const { mode } = useContext(ThemeContext);
   const path = usePathname();
   const navs = [
     {
@@ -95,9 +94,6 @@ const NavBar = () => {
               <p className={styles.navLabel}>{nav.label}</p>
             </Link>
           ))}
-          <div className={`${styles.toggleContainer}`}>
-            <DarkMode toggle={toggle} mode={mode} />
-          </div>
         </div>
       </div>
     </div>
