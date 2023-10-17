@@ -68,16 +68,16 @@ const NavBar = () => {
   return (
     <div
       ref={area}
-      className={`flex justify_between align_center theme ${styles.container} navTransparent`}
+      className={`flex justify_between background align_center theme ${styles.container}`}
     >
       <FaBars
         onClick={() => setShowActive((prev) => (prev === true ? false : true))}
-        className={`${styles.icons} ${styles.hamBurger}`}
+        className={`navTransparent ${styles.icons} ${styles.hamBurger}`}
       />
       <div
-        className={` ${styles.subContainer} ${
+        className={`scroll_y_black_white ${styles.subContainer} ${
           showActive === true ? styles.show : styles.hide
-        } ${mode === "light" ? styles.backLight : styles.backDark}`}
+        }`}
       >
         <div className={`${styles.subContainer2}`}>
           {navs.map((nav) => (
@@ -85,10 +85,11 @@ const NavBar = () => {
               key={nav.id}
               className={`theme flex gap05rem align_center text_decoration_none ${
                 path === nav.link && "blue"
-              } ${mode === "light" ? styles.dark_text : styles.white_text} ${
-                styles.links
-              }`}
+              } white-black ${styles.links}`}
               href={nav.link}
+              onClick={() =>
+                setShowActive((prev) => (prev === true ? false : true))
+              }
             >
               {nav.icon}
               <p className={styles.navLabel}>{nav.label}</p>

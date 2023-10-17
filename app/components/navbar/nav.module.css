@@ -48,8 +48,10 @@
 
 @media (min-width: 200px) and (max-width: 767px) {
   .container {
-    position: initial;
-    height: 7vh;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 0;
     padding: 1rem 0.5rem;
     width: 50px;
   }
@@ -59,48 +61,43 @@
   }
 
   .navLabel {
-    font-size: 12px;
+    font-size: 18px;
   }
 
   .hamBurger {
     display: block;
     text-align: right;
-    position: absolute;
     right: 0.5rem;
+    bottom: 7px;
+    position: fixed;
+    height: calc(100vh - (90vh + 15px));
+    width: calc(100vh - (90vh + 15px));
+    padding: 0.5rem;
+  }
+
+  .subContainer2 {
+    gap: 1.5rem;
   }
 
   .subContainer {
     height: fit-content;
     width: 200px;
-    position: absolute;
-    top: 7vh;
+    position: fixed;
+    top: 0;
+    height: 90%;
     flex-direction: row;
     backdrop-filter: blur(10px);
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: initial;
+    justify-content: center;
     gap: 2.5rem;
-    padding: 1rem 0.5rem;
+    padding: 2rem 0 1rem 0;
+    align-items: center;
     transition: all 0.5s ease-in-out;
-  }
-
-  .links {
-    flex-grow: 1;
-    flex-direction: column;
+    background: var(--primaryColor);
   }
 
   .backLight {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-
-  .backDark {
-    background-color: rgba(98, 150, 211, 0.3);
-  }
-
-  .subContainer2 {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+    background-color: var(--background_transparent);
   }
 
   .icons {
