@@ -22,12 +22,12 @@ export function middleware(request) {
     return response;
   }
 
-  if (request.nextUrl.pathname === "/settings") {
-    const url = request.nextUrl.clone();
-    url.pathname = "/settings/account";
-    const response = NextResponse.redirect(url);
-    return response;
-  }
+  // if (request.nextUrl.pathname === "/settings") {
+  //   const url = request.nextUrl.clone();
+  //   url.pathname = "/settings/account";
+  //   const response = NextResponse.redirect(url);
+  //   return response;
+  // }
 
   if (request.nextUrl.pathname === "/") {
     const url = request.nextUrl.clone();

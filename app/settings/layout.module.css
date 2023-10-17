@@ -1,0 +1,17 @@
+.childrenContainer {
+  width: 65%;
+}
+
+.allSettingsContainer {
+  width: 35%;
+}
+
+@media (min-width: 200px) and (max-width: 900px) {
+  .childrenContainer {
+    width: 100%;
+  }
+
+  .allSettingsContainer {
+    display: none;
+  }
+}

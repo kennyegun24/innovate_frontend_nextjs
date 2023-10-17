@@ -5,10 +5,12 @@ export const HeightContext = createContext();
 
 export const HeightProvider = ({ children }) => {
   const [screenWidth, setScreenWidth] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const updateScreenWidth = () => {
       setScreenWidth(window.innerWidth);
+      setLoading(false);
     };
 
     updateScreenWidth();
@@ -21,7 +23,7 @@ export const HeightProvider = ({ children }) => {
   }, []);
 
   return (
-    <HeightContext.Provider value={{ screenWidth }}>
+    <HeightContext.Provider value={{ screenWidth, loading }}>
       <div>{children}</div>
     </HeightContext.Provider>
   );

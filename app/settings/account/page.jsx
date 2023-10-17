@@ -1,9 +1,10 @@
 import Link from "next/link";
 import React from "react";
 import { BsLockFill } from "react-icons/bs";
-import { FaUser } from "react-icons/fa";
+import { FaLock, FaTrash, FaUser } from "react-icons/fa";
 import { TiUserDelete } from "react-icons/ti";
 import styles from "./styles.module.css";
+import { DeleteFilled } from "@ant-design/icons";
 
 const links = [
   {
@@ -16,21 +17,21 @@ const links = [
     name: "Change Password",
     text: "Secure your account by changing your account password anytime you want",
     link: "password_change",
-    icon: BsLockFill,
+    icon: FaLock,
   },
   {
     name: "Deactivate Account",
     text: "Deavtivate account... WARNING!!! ACTION CANNOT BE REVOKED IF DONE!!",
     link: "deactivate",
-    icon: TiUserDelete,
+    icon: FaTrash,
   },
 ];
 const Account = () => {
   return (
     <div>
       <div className="padding1rem flex column gap15rem">
-        <h4>Your Account</h4>
-        <p className="font12 opacity07">
+        <h4 className={styles.header}>Your Account</h4>
+        <p className={`opacity07 ${styles.headerText}`}>
           Change password, check account information, deactivate account
           (WARNING! CANNOT BE REVOKED, AS ALL USER DETAILS WILL CEASE TO EXIST
           IN OUR DATABASE)
@@ -45,10 +46,10 @@ const Account = () => {
           <div
             className={`flex gap15rem align_center ${styles.mappedSettings}`}
           >
-            <link.icon className="font18" />
-            <div>
-              <p className="font14 fontW600">{link.name}</p>
-              <p className="font12 opacity07">{link.text}</p>
+            <link.icon className={`${styles.icon}`} />
+            <div className={styles.width85}>
+              <p className={`fontW600 ${styles.linkName}`}>{link.name}</p>
+              <p className={`opacity07 ${styles.linkText}`}>{link.text}</p>
             </div>
           </div>
         </Link>

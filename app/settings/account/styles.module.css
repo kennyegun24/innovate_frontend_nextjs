@@ -5,3 +5,56 @@
 .mappedSettings:hover {
   background: var(--primaryColor);
 }
+
+.headerText {
+  font-size: 12px;
+  line-height: 24px;
+}
+
+.linkName {
+  font-size: 14px;
+}
+
+.linkText {
+  font-size: 12px;
+}
+
+.header {
+  font-size: 20px;
+}
+
+.icon {
+  font-size: 18px;
+}
+
+@media (min-width: 200px) and (max-width: 767px) {
+  .headerText {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .mappedSettings {
+    padding: 1.2rem 1rem;
+  }
+
+  .linkName {
+    font-size: 20px;
+  }
+
+  .linkText {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .header {
+    font-size: 22px;
+  }
+
+  .icon {
+    width: 10%;
+  }
+
+  .width85 {
+    width: 90%;
+  }
+}

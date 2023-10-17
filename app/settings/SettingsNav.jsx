@@ -45,6 +45,7 @@ const SettingsNav = () => {
   }, []);
   return (
     <div className={`flex column gap2rem ${styles.container}`}>
+      <h2 className="font16">Settings</h2>
       <input
         className={styles.searchBox}
         type="search"
@@ -71,7 +72,7 @@ const SettingsNav = () => {
                  styles.navDivSm
                } linkBackgroundNone text_color text_decoration_none`}
             >
-              <p className="font14">{each.name}</p>
+              <p className={styles.text}>{each.name}</p>
               <BsChevronRight />
             </Link>
           ))}
