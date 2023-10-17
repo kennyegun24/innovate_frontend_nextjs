@@ -10,6 +10,7 @@ import DarkMode from "../darkMode/DarkMode";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useHideRef } from "@/app/customHooks/refHook";
+import { SettingTwoTone } from "@ant-design/icons";
 
 const NavBar = () => {
   const { toggle, mode } = useContext(ThemeContext);
@@ -56,6 +57,12 @@ const NavBar = () => {
       icon: <FaBlogger className={styles.icons} />,
       link: "/blog",
       label: "Blogs",
+    },
+    {
+      id: 8,
+      icon: <SettingTwoTone className={styles.icons} />,
+      link: "/settings",
+      label: "Settings",
     },
   ];
   const { setShowActive, area, showActive } = useHideRef();

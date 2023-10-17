@@ -1,21 +1,24 @@
 import React from "react";
 import { FaCheck } from "react-icons/fa";
+import styles from "./page.module.css";
 const DeactivateAccount = () => {
   return (
-    <div>
-      <section className="padding1rem flex column gap1rem">
+    <div className={styles.container}>
+      <section className="flex column gap1rem">
         <h3 className="red">Deactivate your account</h3>
-        <p className="font12 red opacity07">
+        <p className={`red opacity07 ${styles.headerText}`}>
           Are you sure you want to deactivate your account?
         </p>
       </section>
 
-      <section className="flex gap1rem padding1rem column">
+      <section className={`flex gap1rem ${styles.subContainer} column`}>
         <p className="font14 red fontW600 padding05rem background2">
           DEACTIVATE YOUR ACCOUNT. WARNING!!! THIS ACTION CAN&apos;T BE
           REVERSED!
         </p>
-        <section className="flex align_center gap1rem paddingLeft2rem">
+        <section
+          className={`flex align_center gap1rem gap1rem ${styles.paddingLeft}`}
+        >
           <div className="padding05rem blue_background pointer flex align_center">
             <FaCheck className="font22 white-black " />
           </div>

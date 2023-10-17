@@ -1,6 +1,7 @@
 import React from "react";
 import { currentUserDetails } from "@/app/_mock/current_user_details";
 import Image from "next/image";
+import styles from "./styles.module.css";
 
 const data = [
   {
@@ -38,10 +39,10 @@ const data = [
 ];
 const Information = () => {
   return (
-    <div className="padding1rem ">
+    <div className={styles.container}>
       <h3>Your personal information</h3>
 
-      <div className="padding1rem flex column gap15rem">
+      <div className={`flex column gap15rem ${styles.subContainer}`}>
         <section className="flex column gap1rem">
           <p className="font14 opacity07 padding05rem background2">
             Profile picture
@@ -61,7 +62,7 @@ const Information = () => {
           <p className="font14 opacity07 padding05rem background2">
             Personal Details
           </p>
-          <div className="flex column gap1rem paddingLeft2rem">
+          <div className={`flex column gap1rem ${styles.paddingLeft}`}>
             {data.map((values, index) => (
               <div key={index} className="flex gap1rem align_center">
                 <h5>{values.label}:</h5>
