@@ -1,0 +1,14 @@
+.inputDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.inputDiv input {
+  width: 250px;
+  background: var(--primaryColor);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #3170bd;
+}

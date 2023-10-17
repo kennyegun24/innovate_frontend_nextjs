@@ -275,6 +275,10 @@
   opacity: 0.5;
 }
 
+.opacity07 {
+  opacity: 0.7;
+}
+
 .back {
   width: fit-content;
   padding: 0.5rem 1rem;
@@ -398,6 +402,10 @@
   color: #0ac710;
 }
 
+.red {
+  color: #ff0000;
+}
+
 .white-space {
   white-space: pre-line;
 }
@@ -430,12 +438,20 @@
   padding: var(--1rem);
 }
 
-.padding2rem {
-  padding: var(--2rem);
+.padding1rem {
+  padding: var(--15rem);
+}
+
+.padding15rem {
+  padding: var(--15rem);
 }
 
 .paddingLeft2rem {
   padding-left: var(--2rem);
+}
+
+.paddingLeft1rem {
+  padding-left: var(--1rem);
 }
 
 .paddingLeft5 {
@@ -635,6 +651,20 @@
 
 .textItalics:hover::before {
   content: "Highlited text";
+}
+
+.linkBackgroundNone {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -khmml-user-select: none;
+}
+
+.linkBackgroundNone:focus {
+  outline: none !important;
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
