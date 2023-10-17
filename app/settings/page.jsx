@@ -36,7 +36,7 @@ const Page = () => {
           </Suspense>
         </div>
       ) : (
-        <div style={{ height: "100vh" }}>
+        <div style={{ height: "100vh", width: "100%" }}>
           <RollingAnimation text={"Loading"} />
         </div>
       )}
