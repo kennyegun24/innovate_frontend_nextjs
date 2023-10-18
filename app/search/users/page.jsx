@@ -13,6 +13,12 @@ const UsersSearch = () => {
     users.filter((elem) =>
       elem.name.toLowerCase().includes(query.toLowerCase())
     );
+  const random = ["goat", "dog", "antelope", "gazelle", "chimp", "lion"];
+  const getRandomAnimal = () => {
+    let finalResp = random[Math.floor(Math.random() * random.length)];
+    return finalResp;
+  };
+  console.log(getRandomAnimal());
   return (
     <div className="height100 width100">
       {query === "" || query === undefined || query === null ? (
@@ -25,8 +31,11 @@ const UsersSearch = () => {
       ) : people && people.length > 0 ? (
         <RecommendedPeople data={people} />
       ) : (
-        <div className="height100 width100 flex align_center justify_center">
-          <h3>No not found</h3>
+        <div className="height100 padding1rem textCenter width100 flex align_center justify_center">
+          <h3>
+            No human called {query} was found... searching for a{" "}
+            {getRandomAnimal()}?
+          </h3>
         </div>
       )}
     </div>

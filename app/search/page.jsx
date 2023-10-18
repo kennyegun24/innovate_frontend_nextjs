@@ -30,7 +30,7 @@ const PostsSearch = ({}) => {
         <PostCard data={posts.sort((a, b) => b.text.length - a.text.length)} />
       ) : (
         <div className="height100 width100 flex align_center justify_center">
-          <h3>User not found</h3>
+          <h3>Post not found 😤</h3>
         </div>
       )}
     </div>
