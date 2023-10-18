@@ -13,6 +13,8 @@ const Layout = ({ children }) => {
 
   const name = pathname.split("/");
   const extractedName = name[name.length - 1];
+  let finalName =
+    extractedName.charAt(0).toUpperCase() + extractedName.slice(1);
   const { screenWidth, loading } = useContext(HeightContext);
   return (
     <div className="flex width100" style={{ height: "100vh" }}>
@@ -39,7 +41,7 @@ const Layout = ({ children }) => {
         {!loading ? (
           <div>{children}</div>
         ) : (
-          <RollingAnimation text={extractedName} />
+          <RollingAnimation text={finalName} />
         )}
       </div>
     </div>

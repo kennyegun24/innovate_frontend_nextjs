@@ -1,8 +1,7 @@
 "use client";
-import React, { useContext } from "react";
-import { FaUsers, FaBlogger, FaBars } from "react-icons/fa";
+import React from "react";
+import { FaUsers, FaBlogger, FaBars, FaSearch } from "react-icons/fa";
 import { BiHomeHeart, BiShoppingBag, BiMessage } from "react-icons/bi";
-import { ThemeContext } from "@/app/context/DarkMode";
 import { BsBell } from "react-icons/bs";
 import { SlBriefcase } from "react-icons/sl";
 import styles from "./nav.module.css";
@@ -12,7 +11,6 @@ import { useHideRef } from "@/app/customHooks/refHook";
 import { SettingTwoTone } from "@ant-design/icons";
 
 const NavBar = () => {
-  const { mode } = useContext(ThemeContext);
   const path = usePathname();
   const navs = [
     {
@@ -29,6 +27,12 @@ const NavBar = () => {
     },
     {
       id: 3,
+      icon: <FaSearch className={styles.icons} />,
+      link: "/search",
+      label: "Search",
+    },
+    {
+      id: 3,
       icon: <BiMessage className={styles.icons} />,
       link: "/chat",
       label: "Chat",
@@ -42,7 +46,7 @@ const NavBar = () => {
     {
       id: 5,
       icon: <BiShoppingBag className={styles.icons} />,
-      link: "",
+      link: "/store",
       label: "Store",
     },
     {
@@ -84,7 +88,7 @@ const NavBar = () => {
             <Link
               key={nav.id}
               className={`theme flex gap05rem align_center text_decoration_none ${
-                path === nav.link && "blue"
+                path.startsWith(nav.link) && "blue"
               } white-black ${styles.links}`}
               href={nav.link}
               onClick={() =>

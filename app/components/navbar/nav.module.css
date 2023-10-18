@@ -52,8 +52,8 @@
     bottom: 0;
     right: 0;
     height: 0;
-    padding: 1rem 0.5rem;
-    width: 50px;
+    padding: 0;
+    width: 0;
   }
 
   .toggleContainer {
@@ -70,8 +70,8 @@
     right: 0.5rem;
     bottom: 7px;
     position: fixed;
-    height: calc(100vh - (90vh + 15px));
-    width: calc(100vh - (90vh + 15px));
+    height: calc(100vh - (90vh + 25px));
+    width: calc(100vh - (90vh + 25px));
     padding: 0.5rem;
   }
 

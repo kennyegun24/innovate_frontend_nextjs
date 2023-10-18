@@ -15,8 +15,8 @@ const currentUser = {
 const PostCard = ({ data }) => {
   return (
     <div className="flex column gap2rem">
-      {data.map((post) => (
-        <div key={post.id} className={`theme background2 ${styles.container}`}>
+      {data.map((post, index) => (
+        <div key={index} className={`theme background2 ${styles.container}`}>
           <div className={`flex column gap05rem ${styles.subContainer}`}>
             <Link
               href={

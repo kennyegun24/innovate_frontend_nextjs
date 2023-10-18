@@ -9,12 +9,12 @@ const RecommendedUsers = () => {
   return (
     <div
       className="scroll_y"
-      // style={{
-      //   maxHeight: "100%",
-      //   overflowY: "auto",
-      //   overflowX: "hidden",
-      //   borderRight: "1px solid #757474",
-      // }}
+      style={{
+        height: "100vh",
+        overflowY: "auto",
+        overflowX: "hidden",
+        borderRight: "1px solid #757474",
+      }}
     >
       <RecommendedPeople data={friends} />
     </div>
