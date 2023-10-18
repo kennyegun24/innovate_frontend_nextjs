@@ -8,13 +8,15 @@ const PostsSearch = ({}) => {
   const searchParams = useSearchParams();
   const query = searchParams.get("query");
 
-  const posts = otherUserDetails
-    .map((elem) =>
-      elem.posts.filter((ele) =>
-        ele.text.toLowerCase().includes(query.toLowerCase())
+  const posts =
+    query &&
+    otherUserDetails
+      .map((elem) =>
+        elem.posts.filter((ele) =>
+          ele.text.toLowerCase().includes(query.toLowerCase())
+        )
       )
-    )
-    .flat();
+      .flat();
   return (
     <div className="height100">
       {query === "" || query === undefined || query === null ? (

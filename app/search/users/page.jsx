@@ -8,9 +8,11 @@ const UsersSearch = () => {
   const searchParams = useSearchParams();
   const query = searchParams.get("query");
 
-  const people = users.filter((elem) =>
-    elem.name.toLowerCase().includes(query.toLowerCase())
-  );
+  const people =
+    query &&
+    users.filter((elem) =>
+      elem.name.toLowerCase().includes(query.toLowerCase())
+    );
   return (
     <div className="height100 width100">
       {query === "" || query === undefined || query === null ? (
