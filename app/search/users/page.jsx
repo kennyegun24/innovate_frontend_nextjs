@@ -2,7 +2,7 @@
 import React from "react";
 import { useSearchParams } from "next/navigation";
 import RecommendedPeople from "@/app/components/users/RecommendedUsers";
-import { users } from "@/app/_mock/users";
+import { _mock_recommended_users } from "@/app/_mock/recommended_users";
 
 const UsersSearch = () => {
   const searchParams = useSearchParams();
@@ -10,7 +10,7 @@ const UsersSearch = () => {
 
   const people =
     query &&
-    users.filter((elem) =>
+    _mock_recommended_users.filter((elem) =>
       elem.name.toLowerCase().includes(query.toLowerCase())
     );
   const random = ["goat", "dog", "antelope", "gazelle", "chimp", "lion"];
