@@ -1,11 +1,10 @@
 import React from "react";
-import styles from "./roll.module.css";
 
-const RollingAnimation = ({ text }) => {
+const RollingAnimation = () => {
   return (
-    <div className={styles.rollDiv}>
-      <h5>{text}</h5>
-      <p className={styles.roll} />
+    <div className="rollDiv">
+      <h5>Loading...</h5>
+      <p className="roll" />
     </div>
   );
 };
