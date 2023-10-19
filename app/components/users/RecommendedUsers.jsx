@@ -14,7 +14,7 @@ const RecommendedPeople = ({ data }) => {
       }}
     >
       <div
-        className={`${styles.container_small} border scroll_y padding1rem flex column gap1rem`}
+        className={`${styles.container_small} padding1rem flex column gap1rem`}
       >
         {data.map((user) => (
           <Link

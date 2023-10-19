@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
     tab === 1 && router.push(`/search?query=${text}`);
     tab === 2 && router.push(`/search/users?query=${text}`);
     tab === 3 && router.push(`/search/users?query=${text}`);
-  }, [tab, router]);
+  }, [tab, router]); /* eslint-disable-line */
   return (
     <div
       className={`flex column gap05rem scroll_y_black_white ${styles.container}`}

@@ -1,0 +1,18 @@
+.recommendedPeopleContainer {
+  height: calc(100vh - 5rem);
+  width: 100%;
+}
+
+.header {
+  top: 0;
+  width: 70%;
+  background-color: #25252594;
+  backdrop-filter: blur(4px);
+  z-index: 999;
+}
+
+@media (min-width: 200px) and (max-width: 700px) {
+  .header {
+    width: 100%;
+  }
+}
