@@ -8,7 +8,7 @@ import { HeightProvider } from "./context/HeightContext";
 import { InterractionProvider } from "./context/InterractionContext";
 import { headers } from "next/headers";
 const inter = Inter({ subsets: ["latin"] });
-
+import AuthProvider from "./context/SessionProvider";
 export const metadata = {
   metadataBase: new URL("https://innovate-frontend-nextjs.vercel.app"),
   title: {
@@ -35,22 +35,24 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={` ${inter.className}`}>
         <ThemeProvider>
-          <HeightProvider>
-            <InterractionProvider>
-              <FollowedProvider>
-                <div className={styles.appLayout}>
-                  <div className={styles.navLayoutHeader}>
-                    <NavBar />
+          <AuthProvider>
+            <HeightProvider>
+              <InterractionProvider>
+                <FollowedProvider>
+                  <div className={styles.appLayout}>
+                    <div className={styles.navLayoutHeader}>
+                      <NavBar />
+                    </div>
+                    <div
+                      className={`${styles.appLayoutChildren} ${styles.width85}`}
+                    >
+                      {children}
+                    </div>
                   </div>
-                  <div
-                    className={`${styles.appLayoutChildren} ${styles.width85}`}
-                  >
-                    {children}
-                  </div>
-                </div>
-              </FollowedProvider>
-            </InterractionProvider>
-          </HeightProvider>
+                </FollowedProvider>
+              </InterractionProvider>
+            </HeightProvider>
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
