@@ -54,7 +54,7 @@ const Registration = () => {
             <input name="user_name" placeholder="Username..." />
             <input name="name" placeholder="Name..." />
             <input name="email" placeholder="Email..." />
-            <input name="password" placeholder="Passeord..." />
+            <input name="password" type="password" placeholder="Password..." />
             <label
               className=" flex align_center gap05rem"
               htmlFor="imageSelector"

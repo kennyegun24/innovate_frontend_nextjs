@@ -8,6 +8,7 @@ import {
 import { db, storage } from "@/app/firebase";
 import { Timestamp, deleteDoc, doc, setDoc } from "firebase/firestore";
 import { loginFailure, loginSuccess } from "../../redux/user_auth/userReducer";
+import { signIn } from "next-auth/react";
 
 export const registerAuthentication = async ({ data, file, id }, dispatch) => {
   const currentTime = Timestamp.now().seconds;
@@ -28,9 +29,7 @@ export const registerAuthentication = async ({ data, file, id }, dispatch) => {
     if (image) {
       user.image = image;
     }
-    const reg = await publicNextRequest.post("/auth/signup/rails", {
-      user,
-    });
+    const reg = await signIn("credentials", user);
     dispatch(loginSuccess(reg.data.data));
   } catch (error) {
     const desertRef = ref(storage, storageRef);
