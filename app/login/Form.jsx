@@ -2,10 +2,9 @@
 import React, { useState } from "react";
 import styles from "./login.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { loginAuthentication } from "../utils/api_requests/auth";
 import { redirect } from "next/navigation";
 import { loginFailure } from "../redux/user_auth/userReducer";
-import { signIn, signUp } from "next-auth/react";
+import { signIn } from "next-auth/react";
 
 const Form = () => {
   const [user, setUserData] = useState(null);

@@ -43,18 +43,6 @@ export const registerAuthentication = async ({ data, file, id }, dispatch) => {
   }
 };
 
-export const loginAuthentication = async ({ data }, dispatch) => {
-  try {
-    const reg = await publicNextRequest.post("/auth/login", {
-      data,
-    });
-    dispatch(loginSuccess(reg.data));
-  } catch (error) {
-    console.log(error.response.data);
-    dispatch(loginFailure(error.response.data));
-  }
-};
-
 // const response = await publicNextRequest.post("/auth/signup", {
 //   password: data.password,
 //   email: data.email,
