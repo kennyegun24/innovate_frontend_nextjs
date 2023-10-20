@@ -10,33 +10,32 @@ import { Timestamp, deleteDoc, doc, setDoc } from "firebase/firestore";
 import { loginFailure, loginSuccess } from "../../redux/user_auth/userReducer";
 
 export const registerAuthentication = async ({ data, file, id }, dispatch) => {
-  // const currentTime = Timestamp.now().seconds;
-  // const storageRef = ref(storage, `${data?.email}/profile/${id}`);
-  // await uploadBytesResumable(storageRef, file);
+  const currentTime = Timestamp.now().seconds;
+  const storageRef = ref(storage, `${data?.email}/profile/${id}`);
+  await uploadBytesResumable(storageRef, file);
   // const imageName = await getFile
-  // const image = await getDownloadURL(storageRef);
+  const image = await getDownloadURL(storageRef);
 
   try {
-    // await setDoc(doc(db, "users", id), {
-    //   displayName: data.name,
-    //   uid: id,
-    //   email: data.email,
-    //   userImage: image,
-    //   time: currentTime,
-    // });
+    await setDoc(doc(db, "users", id), {
+      displayName: data.name,
+      uid: id,
+      email: data.email,
+      userImage: image,
+      time: currentTime,
+    });
     const user = { ...data, work: id };
-    // if (image) {
-    //   user.image = image;
-    // }
+    if (image) {
+      user.image = image;
+    }
     const reg = await publicNextRequest.post("/auth/signup/rails", {
       user,
     });
-    console.log(reg.data.data);
     dispatch(loginSuccess(reg.data.data));
   } catch (error) {
-    // const desertRef = ref(storage, storageRef);
-    // await deleteObject(desertRef);
-    // await deleteDoc(doc(db, "users", id));
+    const desertRef = ref(storage, storageRef);
+    await deleteObject(desertRef);
+    await deleteDoc(doc(db, "users", id));
     dispatch(
       loginFailure(
         error?.response?.data ? error.response.data : "Something wrong happened"
