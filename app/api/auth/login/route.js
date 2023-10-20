@@ -21,8 +21,8 @@ export const POST = async (req, res) => {
       })
     );
   } catch (error) {
-    return new NextResponse(error.response, {
-      status: error.response,
+    return new NextResponse(error.response.data.message, {
+      status: error.response.status,
     });
   }
 };

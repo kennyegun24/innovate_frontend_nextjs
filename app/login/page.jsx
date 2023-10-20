@@ -3,12 +3,13 @@ import React, { useState } from "react";
 import styles from "./login.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { loginAuthentication } from "../utils/api_requests/auth";
-import { redirect } from "next/dist/server/api-utils";
+import { redirect } from "next/navigation";
+import { loginFailure } from "../redux/user_auth/userReducer";
 
 const Login = () => {
   const [userData, setUserData] = useState(null);
   const dispatch = useDispatch();
-  const { detailsError } = useSelector((state) => state.user);
+  const { detailsError, currentUser } = useSelector((state) => state.user);
   const handleInput = (e) => {
     setUserData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -22,12 +23,12 @@ const Login = () => {
         },
         dispatch
       );
-      redirect("/feeds");
+      currentUser && redirect("/feeds");
     } catch (error) {
       console.log(error);
     }
   };
-
+  console.log(detailsError);
   return (
     <div className={`scroll_y_black_white ${styles.container}`}>
       <div className={styles.containerSm}>
@@ -51,8 +52,15 @@ const Login = () => {
               <a href="/register" className="blue text_decoration_none">
                 Signup
               </a>
-              {detailsError}
             </p>
+            {detailsError &&
+              setTimeout(() => {
+                dispatch(loginFailure(false));
+              }, 2000) && (
+                <span className="font14 red fontW600 textCenter">
+                  {detailsError}
+                </span>
+              )}
           </form>
         </div>
       </div>

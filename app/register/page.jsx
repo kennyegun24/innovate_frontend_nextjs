@@ -3,15 +3,17 @@ import React, { useState } from "react";
 import styles from "./register.module.css";
 import { registerAuthentication } from "@/app/utils/api_requests/auth";
 import { useDispatch, useSelector } from "react-redux";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import imagePicker from "public/image_picker32.png";
+import { loginFailure } from "../redux/user_auth/userReducer";
 
 const Registration = () => {
   const [userData, setUserData] = useState(null);
   const [file, setFile] = useState(null);
   const dispatch = useDispatch();
-  const { detailsError } = useSelector((state) => state.user);
+  const route = useRouter();
+  const { detailsError, currentUser } = useSelector((state) => state.user);
   const handleInput = (e) => {
     setUserData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -28,7 +30,7 @@ const Registration = () => {
         },
         dispatch
       );
-      redirect("/feeds");
+      currentUser && route.push("/feeds");
     } catch (error) {
       console.log(error);
     }
@@ -68,7 +70,17 @@ const Registration = () => {
               onChange={(e) => setFile(e.target.files[0])}
               id="imageSelector"
             />
-            <button>Register</button>
+            <div className="flex column gap05rem">
+              <button>Register</button>
+              {detailsError &&
+                setTimeout(() => {
+                  dispatch(loginFailure(false));
+                }, 2000) && (
+                  <span className="red font14 fontW600 textCenter">
+                    {detailsError}
+                  </span>
+                )}
+            </div>
 
             <p>
               Have an account?{" "}
