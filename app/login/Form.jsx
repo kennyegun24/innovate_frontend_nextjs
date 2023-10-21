@@ -1,15 +1,17 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./login.module.css";
-import { useDispatch, useSelector } from "react-redux";
-import { redirect } from "next/navigation";
-import { loginFailure } from "../redux/user_auth/userReducer";
+import { useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 
 const Form = () => {
   const [user, setUserData] = useState(null);
-  const dispatch = useDispatch();
-  const { detailsError, currentUser } = useSelector((state) => state.user);
+  const [err, setErr] = useState(null);
+  const query = useSearchParams();
+  const getValue = query.get("error");
+  useEffect(() => {
+    setErr(getValue);
+  }, [getValue]);
   const handleInput = (e) => {
     setUserData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -17,13 +19,10 @@ const Form = () => {
   const onSub = async (e) => {
     e.preventDefault();
     try {
-      signIn("credentials", user);
-      currentUser && redirect("/feeds");
-    } catch (error) {
-      console.log(error);
-    }
+      const res = await signIn("credentials", user);
+      if (res?.error) return setErr(getValue);
+    } catch (error) {}
   };
-  console.log(detailsError);
   return (
     <div className={`scroll_y_black_white ${styles.container}`}>
       <div className={styles.containerSm}>
@@ -33,6 +32,14 @@ const Form = () => {
         </div>
 
         <div className={styles.formDiv}>
+          {err &&
+            setTimeout(() => {
+              setErr(null);
+            }, 3000) && (
+              <span className="padding05rem reverse_background2 font14 red fontW600 textCenter">
+                {err}
+              </span>
+            )}
           <div className="flex align_center column">
             <h3>Login to your account</h3>
             <h5>Create your own personal account</h5>
@@ -48,14 +55,6 @@ const Form = () => {
                 Signup
               </a>
             </p>
-            {detailsError &&
-              setTimeout(() => {
-                dispatch(loginFailure(false));
-              }, 2000) && (
-                <span className="font14 red fontW600 textCenter">
-                  {detailsError}
-                </span>
-              )}
           </form>
         </div>
       </div>

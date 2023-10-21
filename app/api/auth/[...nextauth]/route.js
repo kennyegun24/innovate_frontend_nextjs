@@ -2,26 +2,29 @@ import { unauthRailsRequest } from "@/app/utils/publicRequest";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 export const handler = NextAuth({
+  pages: {
+    signIn: "/login",
+    error: "/login",
+  },
   providers: [
     CredentialsProvider({
       id: "credentials",
       name: "Credentials",
       async authorize(credentials) {
-        const authResponse = await unauthRailsRequest.post(
-          `authentication/login`,
-          {
-            // user: {
-            // name: credentials.name,
-            password: credentials.password,
-            email: credentials.email,
-            // user_name: credentials.user_name,
-            // },
-          }
-        );
-        console.log(credentials);
-        const user = await authResponse.data;
-        console.log(user?.data);
-        return user?.data;
+        try {
+          const authResponse = await unauthRailsRequest.post(
+            `authentication/login`,
+            {
+              password: credentials.password,
+              email: credentials.email,
+            }
+          );
+          const user = await authResponse.data;
+
+          return user?.data;
+        } catch (err) {
+          throw Error(err.response.data.message);
+        }
       },
     }),
   ],
