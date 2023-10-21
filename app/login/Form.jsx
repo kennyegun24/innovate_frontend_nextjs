@@ -1,27 +1,28 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./login.module.css";
-import { useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 
 const Form = () => {
   const [user, setUserData] = useState(null);
   const [err, setErr] = useState(null);
-  const query = useSearchParams();
-  const getValue = query.get("error");
-  useEffect(() => {
-    setErr(getValue);
-  }, [getValue]);
+  const [loading, setLoading] = useState(false);
+
   const handleInput = (e) => {
     setUserData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const onSub = async (e) => {
+    setLoading(true);
     e.preventDefault();
     try {
-      const res = await signIn("credentials", user);
-      if (res?.error) return setErr(getValue);
-    } catch (error) {}
+      const res = await signIn("credentials", { ...user, redirect: false });
+      setLoading(false);
+      if (res?.error) return setErr(res.error);
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+    }
   };
   return (
     <div className={`scroll_y_black_white ${styles.container}`}>
@@ -36,7 +37,7 @@ const Form = () => {
             setTimeout(() => {
               setErr(null);
             }, 3000) && (
-              <span className="padding05rem reverse_background2 font14 red fontW600 textCenter">
+              <span className="width100 padding05rem reverse_background2 font14 red fontW600 textCenter">
                 {err}
               </span>
             )}
@@ -46,9 +47,25 @@ const Form = () => {
           </div>
 
           <form onChange={(e) => handleInput(e)} onSubmit={onSub}>
-            <input name="email" placeholder="Username or Email..." />
-            <input name="password" type="password" placeholder="Password..." />
-            <button>Register</button>
+            <input
+              disabled={loading ? true : false}
+              name="email"
+              placeholder="Username or Email..."
+            />
+            <input
+              disabled={loading ? true : false}
+              name="password"
+              type="password"
+              placeholder="Password..."
+            />
+            <button
+              disabled={loading ? true : false}
+              style={{
+                background: loading ? "grey" : "#18191a",
+              }}
+            >
+              {loading ? "Logging you in..." : "Login"}
+            </button>
             <p>
               Don&apos;t have an account?{" "}
               <a href="/register" className="blue text_decoration_none">

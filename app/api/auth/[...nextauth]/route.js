@@ -1,7 +1,10 @@
 import { unauthRailsRequest } from "@/app/utils/publicRequest";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-export const handler = NextAuth({
+const handler = NextAuth({
+  session: {
+    strategy: "jwt",
+  },
   pages: {
     signIn: "/login",
     error: "/login",
@@ -20,10 +23,13 @@ export const handler = NextAuth({
             }
           );
           const user = await authResponse.data;
-
           return user?.data;
         } catch (err) {
-          throw Error(err.response.data.message);
+          throw Error(
+            err.response?.data?.message
+              ? err.response.data.message
+              : "Something went wrong"
+          );
         }
       },
     }),
