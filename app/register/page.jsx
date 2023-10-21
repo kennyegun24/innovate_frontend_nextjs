@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import styles from "./register.module.css";
 import { registerAuthentication } from "@/app/utils/api_requests/auth";
 import { useDispatch, useSelector } from "react-redux";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 import imagePicker from "public/image_picker32.png";
 import { loginFailure } from "../redux/user_auth/userReducer";
@@ -12,8 +11,7 @@ const Registration = () => {
   const [userData, setUserData] = useState(null);
   const [file, setFile] = useState(null);
   const dispatch = useDispatch();
-  const route = useRouter();
-  const { detailsError, currentUser } = useSelector((state) => state.user);
+  const { detailsError } = useSelector((state) => state.user);
   const handleInput = (e) => {
     setUserData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -30,9 +28,8 @@ const Registration = () => {
         },
         dispatch
       );
-      currentUser && route.push("/feeds");
     } catch (error) {
-      console.log(error);
+      throw Error(error);
     }
   };
 

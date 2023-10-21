@@ -8,6 +8,7 @@ const handler = NextAuth({
   pages: {
     signIn: "/login",
     error: "/login",
+    signUp: "/register",
   },
   providers: [
     CredentialsProvider({
@@ -28,6 +29,47 @@ const handler = NextAuth({
           throw Error(
             err.response?.data?.message
               ? err.response.data.message
+              : "Something went wrong"
+          );
+        }
+      },
+    }),
+    CredentialsProvider({
+      id: "signup",
+      name: "Signup",
+      async authorize(credentials) {
+        let user;
+        if (credentials.image) {
+          user = {
+            user_name: credentials.user_name,
+            password: credentials.password,
+            email: credentials.email,
+            work: credentials.work,
+            name: credentials.name,
+            image: credentials.image,
+          };
+        } else {
+          user = {
+            user_name: credentials.user_name,
+            password: credentials.password,
+            email: credentials.email,
+            work: credentials.work,
+            name: credentials.name,
+          };
+        }
+
+        try {
+          const authResponse = await unauthRailsRequest.post(`authentication`, {
+            user,
+          });
+          const res = await authResponse.data;
+          console.log(res.data);
+          return res?.data;
+        } catch (err) {
+          console.log(err.response.data.message[0]);
+          throw Error(
+            err.response?.data?.message
+              ? err.response.data.message[0]
               : "Something went wrong"
           );
         }
