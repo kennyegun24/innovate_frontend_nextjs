@@ -9,7 +9,7 @@ const Logout = () => {
   return (
     <div
       onClick={() => signOut()}
-      className={`linkBackgroundNone text_decoration_none text_color`}
+      className={`pointer linkBackgroundNone text_decoration_none text_color`}
     >
       <div className={`flex gap15rem align_center ${styles.mappedSettings}`}>
         <BiLogOut className={`${styles.icon}`} />
