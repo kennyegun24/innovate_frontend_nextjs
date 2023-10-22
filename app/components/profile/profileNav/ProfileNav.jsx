@@ -1,28 +1,39 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import styles from "./profileNav.module.css";
 import { BsClockFill } from "react-icons/bs";
 import { BiUser } from "react-icons/bi";
 import { FaSignOutAlt, FaUsers } from "react-icons/fa";
-import { currentUserDetails } from "@/app/_mock/current_user_details";
 import { numberFormat } from "@/app/utils/general";
 import Link from "next/link";
+import { signOut, useSession } from "next-auth/react";
+import noImage from "public/noImage.png";
 const ProfileNav = () => {
+  const { data, status } = useSession();
+  console.log(status);
   return (
     <div className={styles.container}>
       <section className="flex column gap1rem height100">
         <Image
-          src={currentUserDetails.image}
+          src={status === "loading" ? noImage : data?.user.image}
           className="roundedImage object-cover"
           alt=""
           width={60}
           height={60}
         />
         <div className={styles.nameCareer}>
-          <h3 className="font14">{currentUserDetails.name}</h3>
-          <p className="font12">{currentUserDetails.profession}</p>
+          <h3 className="font14">
+            {status === "loading" ? "LOADING..." : data?.user.name}
+          </h3>
           <p className="font12">
-            {numberFormat(currentUserDetails.followers_count)} followers
+            {status === "loading" ? "LOADING..." : data?.user.profession}
+          </p>
+          <p className="font12">
+            {numberFormat(
+              status === "loading" ? "LOADING..." : data?.user.followers_count
+            )}{" "}
+            followers
           </p>
         </div>
       </section>
@@ -50,7 +61,7 @@ const ProfileNav = () => {
       </section>
 
       <section className={styles.profileNavigationsSection}>
-        <p className={styles.profileNavigationLink}>
+        <p onClick={() => signOut()} className={styles.profileNavigationLink}>
           <FaSignOutAlt /> Logout
         </p>
       </section>

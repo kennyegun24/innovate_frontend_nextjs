@@ -24,7 +24,7 @@ export const registerAuthentication = async ({ data, file, id }, dispatch) => {
         userImage: image,
         time: currentTime,
       });
-      const user = { ...data, work: id };
+      const user = { ...data, uid: id };
       if (image) {
         user.image = image;
       }
