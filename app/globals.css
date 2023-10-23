@@ -280,13 +280,10 @@
 }
 
 .back {
-  width: fit-content;
-  padding: 0.5rem 1rem;
-  position: sticky;
-  top: 0;
+  padding: 1rem 1rem;
   z-index: 9999;
-  left: 0;
   background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
   height: fit-content;
 }
 
@@ -704,11 +701,11 @@
     background-color: var(--navTransparent);
   }
 
-  .back {
+  /* .back {
     width: fit-content;
     padding: 0.5rem 1rem;
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.6);
-  }
+  } */
 }

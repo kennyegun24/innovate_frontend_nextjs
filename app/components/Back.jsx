@@ -9,8 +9,12 @@ const Back = () => {
     history.back();
   };
   return (
-    <div onClick={handleBack} className={`border back`}>
-      <BiArrowBack className="font16" />
+    <div
+      onClick={handleBack}
+      className={`border flex align_center gap1rem back width100`}
+    >
+      <BiArrowBack className="font18" />
+      <h3>Profile</h3>
     </div>
   );
 };

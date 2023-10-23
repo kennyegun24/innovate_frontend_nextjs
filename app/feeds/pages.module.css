@@ -26,12 +26,16 @@
 
 .leftContainer {
   width: 25%;
-  position: relative;
+  height: fit-content;
+  position: sticky;
+  top: 2%;
 }
 
 .rightContainer {
   width: 25%;
-  position: relative;
+  height: fit-content;
+  position: sticky;
+  top: 6%;
 }
 
 .subMiddleContainer {

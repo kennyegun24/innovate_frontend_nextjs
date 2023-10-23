@@ -23,7 +23,7 @@ const CurrentUserProfilePostFeeds = () => {
       );
       setPosts(_sortedByPopularPosts);
     } else if (e.target.value === "Popularity") {
-      setPosts(otherUserDetails[params.id].posts);
+      setPosts(currentUserDetails.posts);
     }
   };
 
@@ -40,7 +40,7 @@ const CurrentUserProfilePostFeeds = () => {
       );
       setPosts(_sortedTimePosts);
     } else if (e.target.value === "Recent") {
-      setPosts(otherUserDetails[params.id].posts);
+      setPosts(currentUserDetails.posts);
     }
   };
   return (

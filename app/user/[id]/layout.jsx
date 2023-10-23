@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./Header";
 import styles from "./page.module.css";
 import { otherUserDetails } from "@/app/_mock/user_details";
+import Back from "@/app/components/Back";
 
 export const generateMetadata = ({ params }) => {
   const data = otherUserDetails[params.id];
@@ -23,8 +24,15 @@ export const generateMetadata = ({ params }) => {
 const Layout = ({ children }) => {
   return (
     <div className={styles.layoutContainer}>
-      <Header />
-      <div className={styles.layoutProfileChildren}>{children}</div>
+      <section className={`scroll_y_black_white ${styles.miniContainer}`}>
+        <div className={styles.backDiv}>
+          <Back />
+        </div>
+        <div className={`flex column ${styles.layoutChildrenDiv}`}>
+          <Header />
+          <div className={styles.layoutProfileChildren}>{children}</div>
+        </div>
+      </section>
     </div>
   );
 };

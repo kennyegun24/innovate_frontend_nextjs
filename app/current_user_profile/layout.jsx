@@ -15,22 +15,15 @@ const Layout = async ({ children }) => {
     <div className={styles.layoutContainer}>
       <div className={`theme background2 ${styles.layoutProfileNavDiv}`}>
         <ProfileNav />
-        <div
-          style={{
-            position: "absolute",
-            right: 0,
-            top: 0,
-          }}
-        >
-          <Back />
-        </div>
       </div>
       <div className={styles.layoutProfileChildren}>
         <div className={styles.backDiv}>
           <Back />
         </div>
-        <Header />
-        <div className={styles.layoutProfileChildrenDiv}>{children}</div>
+        <div className={` ${styles.layoutChildrenDiv} flex column gap2rem`}>
+          <Header />
+          <div className={styles.layoutProfileChildrenDiv}>{children}</div>
+        </div>
       </div>
     </div>
   );
