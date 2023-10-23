@@ -281,8 +281,6 @@
 
 .back {
   padding: 1rem 1rem;
-  z-index: 9999;
-  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(6px);
   height: fit-content;
 }
