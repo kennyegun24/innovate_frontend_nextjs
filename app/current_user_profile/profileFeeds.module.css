@@ -24,7 +24,7 @@
   }
   .overViewContainer {
     width: 100%;
-    height: max-content;
+    height: fit-content;
     position: static;
   }
 
