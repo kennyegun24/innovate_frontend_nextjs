@@ -238,7 +238,7 @@
 }
 
 .scroll_y_black_white::-webkit-scrollbar {
-  background: #000;
+  background: var(--secondaryColor);
   width: 5px;
 }
 
