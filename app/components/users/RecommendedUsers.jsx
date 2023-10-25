@@ -16,7 +16,7 @@ const RecommendedPeople = ({ data, reference, loading }) => {
       }}
     >
       <div
-        className={`${styles.container_small} padding1rem flex column gap1rem`}
+        className={`${styles.container_small} padding1rem flex column gap15rem`}
       >
         {data.map((user, index) => (
           <Link
@@ -37,12 +37,22 @@ const RecommendedPeople = ({ data, reference, loading }) => {
               </div>
               <div>
                 <h3 className="font16">{user.name}</h3>
-                <p className="opacity05 font12">
-                  @
-                  {user.user_name.length > 10
-                    ? user.user_name.slice(0, 10) + "..."
-                    : user.user_name}
-                </p>
+                {user?.user_name && (
+                  <p className="opacity05 font12">
+                    @
+                    {user.user_name.length > 10
+                      ? user.user_name.slice(0, 10) + "..."
+                      : user.user_name}
+                  </p>
+                )}
+                {user?.username && (
+                  <p className="opacity05 font12">
+                    @
+                    {user.username.length > 10
+                      ? user.username.slice(0, 10) + "..."
+                      : user.username}
+                  </p>
+                )}
                 <p className="font12">{user.header}</p>
               </div>
             </div>

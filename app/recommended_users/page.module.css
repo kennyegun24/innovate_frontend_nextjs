@@ -1,6 +1,6 @@
 .recommendedPeopleContainer {
   height: calc(100vh - 5rem);
-  width: 100%;
+  width: 70%;
 }
 
 .header {
@@ -13,6 +13,11 @@
 
 @media (min-width: 200px) and (max-width: 700px) {
   .header {
+    width: 100%;
+  }
+
+  .recommendedPeopleContainer {
+    height: calc(100vh - 5rem);
     width: 100%;
   }
 }

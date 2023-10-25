@@ -1,9 +1,13 @@
+"use client";
 import React from "react";
 import RecommendedPeople from "@/app/components/users/RecommendedUsers";
 import { _mock_recommended_users } from "../_mock/recommended_users";
 import styles from "./page.module.css";
+import { useRef } from "react";
 
 const RecommendedUsers = () => {
+  const reference = useRef();
+  const loading = false;
   const friends = _mock_recommended_users;
   return (
     <div
@@ -19,7 +23,11 @@ const RecommendedUsers = () => {
         <h2 className="font20 black-white">Recommended Users</h2>
       </div>
       <div className={styles.recommendedPeopleContainer}>
-        <RecommendedPeople data={friends} />
+        <RecommendedPeople
+          loading={loading}
+          reference={reference}
+          data={friends}
+        />
       </div>
     </div>
   );

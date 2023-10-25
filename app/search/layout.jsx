@@ -9,7 +9,6 @@ const Layout = ({ children }) => {
   const path = usePathname();
   const [tab, setTab] = useState(path);
   const [text, setText] = useState("");
-  console.log(path);
   const handleSelect = useCallback((param) => {
     setTab((previous) => (previous === param ? previous : param));
   }, []);
@@ -20,8 +19,8 @@ const Layout = ({ children }) => {
     const value = form.get("search");
     const queryValue = encodeURI(value);
     tab === "/search" && router.push(`/search?query=${queryValue}`);
-    tab === "/search/user" && router.push(`/search/users?query=${queryValue}`);
-    tab === "/search/user" && router.push(`/search/users?query=${queryValue}`);
+    tab === "/search/users" && router.push(`/search/users?query=${queryValue}`);
+    tab === "/search/users" && router.push(`/search/users?query=${queryValue}`);
   };
   const handleInput = useCallback((e) => {
     setText(e);
