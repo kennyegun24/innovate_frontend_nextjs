@@ -1,5 +1,5 @@
 .container_small {
-  width: 70%;
+  width: 100%;
 }
 
 @media (min-width: 200px) and (max-width: 700px) {

@@ -2,12 +2,14 @@
 import React, { useState, useCallback, useEffect } from "react";
 import styles from "./layout.module.css";
 import SearchInput from "./searchInput";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const Layout = ({ children }) => {
   const router = useRouter();
-  const [tab, setTab] = useState(1);
+  const path = usePathname();
+  const [tab, setTab] = useState(path);
   const [text, setText] = useState("");
+  console.log(path);
   const handleSelect = useCallback((param) => {
     setTab((previous) => (previous === param ? previous : param));
   }, []);
@@ -17,18 +19,18 @@ const Layout = ({ children }) => {
     const form = new FormData(e.target);
     const value = form.get("search");
     const queryValue = encodeURI(value);
-    tab === 1 && router.push(`/search?query=${queryValue}`);
-    tab === 2 && router.push(`/search/users?query=${queryValue}`);
-    tab === 3 && router.push(`/search/users?query=${queryValue}`);
+    tab === "/search" && router.push(`/search?query=${queryValue}`);
+    tab === "/search/user" && router.push(`/search/users?query=${queryValue}`);
+    tab === "/search/user" && router.push(`/search/users?query=${queryValue}`);
   };
   const handleInput = useCallback((e) => {
     setText(e);
   }, []);
 
   useEffect(() => {
-    tab === 1 && router.push(`/search?query=${text}`);
-    tab === 2 && router.push(`/search/users?query=${text}`);
-    tab === 3 && router.push(`/search/users?query=${text}`);
+    tab === "/search" && router.push(`/search?query=${text}`);
+    tab === "/search/users" && router.push(`/search/users?query=${text}`);
+    tab === "/search/users" && router.push(`/search/users?query=${text}`);
   }, [tab, router]); /* eslint-disable-line */
   return (
     <div
@@ -40,6 +42,7 @@ const Layout = ({ children }) => {
           tab={tab}
           handleInput={handleInput}
           handleSelect={handleSelect}
+          path={path}
         />
       </div>
       {children}

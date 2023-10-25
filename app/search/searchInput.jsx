@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./page.module.css";
 import { FaSearch } from "react-icons/fa";
 
-const SearchInput = ({ handleSubmit, handleSelect, tab, handleInput }) => {
+const SearchInput = ({ handleSubmit, handleSelect, path, handleInput }) => {
   return (
     <div>
       <div
@@ -24,20 +24,24 @@ const SearchInput = ({ handleSubmit, handleSelect, tab, handleInput }) => {
         </form>
         <div className={`flex justify_between ${styles.buttonDiv}`}>
           <button
-            onClick={() => handleSelect(1)}
-            className={`pointer ${tab === 1 && styles.borderBottom}`}
+            onClick={() => handleSelect("/search")}
+            className={`pointer ${path === "/search" && styles.borderBottom}`}
           >
             Post
           </button>
           <button
-            onClick={() => handleSelect(2)}
-            className={`pointer ${tab === 2 && styles.borderBottom}`}
+            onClick={() => handleSelect("/search/users")}
+            className={`pointer ${
+              path === "/search/users" && styles.borderBottom
+            }`}
           >
             People
           </button>
           <button
-            onClick={() => handleSelect(3)}
-            className={`pointer ${tab === 3 && styles.borderBottom}`}
+            onClick={() => handleSelect("/search/users")}
+            className={`pointer ${
+              path === "/search/users" && styles.borderBottom
+            }`}
           >
             Companies
           </button>
