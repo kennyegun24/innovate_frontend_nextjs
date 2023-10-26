@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./postCard.module.css";
 import Image from "next/image";
 import Like from "../interractions/Like";
@@ -7,16 +7,34 @@ import Comment from "../interractions/Comment";
 import LikeIcon from "../interractions/LikeIcon";
 import CommentIcon from "../interractions/CommentIcon";
 import Link from "next/link";
+import { PostDetailsContext } from "@/app/context/PostDetailsContext";
 
 const currentUser = {
   id: 1,
 };
 
-const PostCard = ({ data }) => {
+const PostCard = ({ data, reference }) => {
+  const { setPostData } = useContext(PostDetailsContext);
+  const handleSelect = (data) => {
+    setPostData({
+      image: data.image,
+      creator_image: data.creator_image,
+      text: data.text,
+      comments_count: data.comments_count,
+      likes_count: data.likes_count,
+      isLiked: data.isLiked,
+      created_at: data.created_at,
+      creator_name: data.creator_name,
+    });
+  };
   return (
     <div className="flex column gap2rem">
-      {data.map((post, index) => (
-        <div key={index} className={`theme background2 ${styles.container}`}>
+      {data?.map((post, index) => (
+        <div
+          ref={data.length === index + 1 ? reference : null}
+          key={index}
+          className={`theme background2 ${styles.container}`}
+        >
           <div className={`flex column gap05rem ${styles.subContainer}`}>
             <Link
               href={
@@ -39,7 +57,8 @@ const PostCard = ({ data }) => {
               </div>
             </Link>
             <Link
-              href={`/feeds/${post.id}`}
+              onClick={() => handleSelect(post)}
+              href={`/feeds/${post.user_name}/${post.id}`}
               className={`text_color text_decoration_none ${styles.postText}`}
             >
               {post.text}
