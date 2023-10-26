@@ -1,0 +1,147 @@
+.postCommentsContainer {
+  color: #111;
+  height: 100%;
+}
+
+.commentsContainer {
+  flex: 1;
+}
+
+.postText {
+  font-size: 14px;
+}
+
+.container {
+  height: 100vh;
+  width: 50%;
+  margin: auto;
+}
+
+.subPostLeftContainer {
+  border-bottom: 1px solid #777676;
+  padding-bottom: 2rem;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.interractionsDiv {
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+}
+
+.subContainer {
+  width: 100%;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  color: #111;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inputWriteComment {
+  height: 200px;
+}
+
+.inputDiv {
+  height: 100%;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  padding: 0.2rem;
+  line-height: 1;
+  font-size: 14px;
+  resize: none;
+  border-radius: 6px 0 0 6px;
+  border-right: 1px solid #c1bebe;
+  color: #fff;
+  outline: none;
+}
+
+.sendIconDiv {
+  width: fit-content;
+  margin: auto 0 0 0;
+  background: #5596e6;
+  display: flex;
+  padding: 0.25rem;
+}
+
+.sendIcon {
+  margin: auto;
+  font-size: 14px;
+  color: #fff;
+  background: transparent;
+  border: none;
+}
+
+.commentDiv {
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.commentImage {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.postImageDiv {
+  height: 400px;
+  width: 100%;
+  border-radius: 6px;
+}
+
+@media (min-width: 200px) and (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .subContainer {
+    padding: 1rem 0.5rem;
+  }
+
+  .postText {
+    font-size: 18px;
+  }
+
+  .postImageMainDiv {
+    height: 200px;
+    width: 90%;
+    margin: 0 2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .postImageDiv {
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    padding: 0.5rem;
+  }
+
+  .subContainer {
+    width: 100%;
+  }
+
+  .inputWriteComment {
+    width: 100%;
+  }
+
+  .inputDiv {
+    height: 100%;
+  }
+
+  .input {
+    height: 100%;
+  }
+}

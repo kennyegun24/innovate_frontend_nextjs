@@ -9,6 +9,7 @@ import { InterractionProvider } from "./context/InterractionContext";
 import { headers } from "next/headers";
 const inter = Inter({ subsets: ["latin"] });
 import AuthProvider from "./context/SessionProvider";
+import { PostDetailsProvider } from "./context/PostDetailsContext";
 export const metadata = {
   metadataBase: new URL("https://innovate-frontend-nextjs.vercel.app"),
   title: {
@@ -39,16 +40,18 @@ export default function RootLayout({ children }) {
             <HeightProvider>
               <InterractionProvider>
                 <FollowedProvider>
-                  <div className={styles.appLayout}>
-                    <div className={styles.navLayoutHeader}>
-                      <NavBar />
+                  <PostDetailsProvider>
+                    <div className={styles.appLayout}>
+                      <div className={styles.navLayoutHeader}>
+                        <NavBar />
+                      </div>
+                      <div
+                        className={`${styles.appLayoutChildren} ${styles.width85}`}
+                      >
+                        {children}
+                      </div>
                     </div>
-                    <div
-                      className={`${styles.appLayoutChildren} ${styles.width85}`}
-                    >
-                      {children}
-                    </div>
-                  </div>
+                  </PostDetailsProvider>
                 </FollowedProvider>
               </InterractionProvider>
             </HeightProvider>
