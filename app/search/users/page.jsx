@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 import RecommendedPeople from "@/app/components/users/RecommendedUsers";
 import { _mock_recommended_users } from "@/app/_mock/recommended_users";
 import { useRef } from "react";
-import { getRandomAnimal, people } from "./UserSearchHelper";
+import { getRandomAnimal } from "./UserSearchHelper";
 import { useCallback } from "react";
 import useSearchUserHook from "@/app/customHooks/useSearchUserHook";
 import { useState } from "react";
@@ -30,7 +30,6 @@ const UsersSearch = () => {
       if (observer.current) observer.current.disconnect();
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && hasMore) {
-          console.log("intercept");
           setPage((prev) => prev + 1);
         }
       });
@@ -38,7 +37,6 @@ const UsersSearch = () => {
     },
     [loading, hasMore]
   );
-  console.log(users);
   return (
     <div className="height100 width100">
       {query === "" || query === undefined || query === null ? (

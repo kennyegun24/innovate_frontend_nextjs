@@ -1,6 +1,7 @@
 "use client";
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./user_auth/userReducer";
+import unauthPostDetailsDetails from "./unauth/postsReducer";
 import { createWrapper } from "next-redux-wrapper";
 // import storage from "redux-persist/lib/storage/session";
 // import {
@@ -45,6 +46,7 @@ import { createWrapper } from "next-redux-wrapper";
 const store = configureStore({
   reducer: {
     user: userReducer,
+    singleUnauthPost: unauthPostDetailsDetails,
   },
   // middleware: (getDefaultMiddleware) =>
   //   getDefaultMiddleware({
