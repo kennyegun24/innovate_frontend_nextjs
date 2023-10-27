@@ -6,7 +6,7 @@ export const fetchUnauthUserPost = createAsyncThunk(
     try {
       const req = await fetch(
         `http://localhost:4000/api/v1/unauth/posts/${id}`,
-        { cache: "force-cache", revalidate: 60 }
+        { cache: "force-cache", next: { revalidate: 60 } }
       );
       const res = await req.json();
       const posts = await res.data;

@@ -2,12 +2,13 @@
 import React, { useState } from "react";
 import styles from "./login.module.css";
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const Form = () => {
   const [user, setUserData] = useState(null);
   const [err, setErr] = useState(null);
   const [loading, setLoading] = useState(false);
-
+  const route = useRouter();
   const handleInput = (e) => {
     setUserData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -18,6 +19,7 @@ const Form = () => {
     try {
       const res = await signIn("credentials", { ...user, redirect: false });
       setLoading(false);
+      if (res.ok) return route.push("/feeds");
       if (res?.error) return setErr(res.error);
     } catch (error) {
       setLoading(false);

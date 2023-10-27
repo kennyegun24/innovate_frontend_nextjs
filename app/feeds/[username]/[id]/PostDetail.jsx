@@ -94,7 +94,7 @@ const PostDetail = ({ params }) => {
           </div>
         </div>
       )}
-      {(loading || !PostContent) && <RollingAnimation />}
+      {loading && !PostContent && <RollingAnimation />}
     </div>
   );
 };
