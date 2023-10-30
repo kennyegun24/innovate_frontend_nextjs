@@ -2,7 +2,7 @@
   padding: 0.5rem 1rem;
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 99999;
   height: 100vh;
 }
 
@@ -48,10 +48,12 @@
 
 @media (min-width: 200px) and (max-width: 767px) {
   .container {
-    position: initial;
-    height: 7vh;
-    padding: 1rem 0.5rem;
-    width: 50px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 0;
+    padding: 0;
+    width: 0;
   }
 
   .toggleContainer {
@@ -59,52 +61,51 @@
   }
 
   .navLabel {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .hamBurger {
     display: block;
     text-align: right;
-    position: absolute;
     right: 0.5rem;
+    bottom: 7px;
+    position: fixed;
+    height: calc(100vh - (90vh + 25px));
+    width: calc(100vh - (90vh + 25px));
+    padding: 0.5rem;
+  }
+
+  .subContainer2 {
+    /* gap: 2rem; */
+    justify-content: space-evenly;
+    height: 100%;
+    z-index: 9999999;
   }
 
   .subContainer {
     height: fit-content;
     width: 200px;
-    position: absolute;
-    top: 7vh;
+    position: fixed;
+    top: 0;
+    height: 90%;
     flex-direction: row;
     backdrop-filter: blur(10px);
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: initial;
+    justify-content: center;
     gap: 2.5rem;
-    padding: 1rem 0.5rem;
+    padding: 1rem 0 1rem 0;
+    align-items: center;
     transition: all 0.5s ease-in-out;
-  }
-
-  .links {
-    flex-grow: 1;
-    flex-direction: column;
+    background: var(--primaryColor);
+    z-index: 9999999;
   }
 
   .backLight {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-
-  .backDark {
-    background-color: rgba(98, 150, 211, 0.3);
-  }
-
-  .subContainer2 {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+    background-color: var(--background_transparent);
   }
 
   .icons {
-    font-size: 30px;
+    font-size: 24px;
   }
 
   .hide {

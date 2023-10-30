@@ -1,26 +1,29 @@
 import React from "react";
 import Image from "next/image";
-import { Button } from "antd";
 import Link from "next/link";
 import styles from "./styles.module.css";
 
-const RecommendedPeople = ({ data }) => {
+const RecommendedPeople = ({ data, reference, loading }) => {
   return (
     <div
       style={{
         display: "flex",
-        justifyContent: "center",
-        height: "100vh",
+        alignItems: "center",
+        // justifyContent: "center",
+        height: "100%",
+        flexDirection: "column",
+        width: "100%",
       }}
     >
       <div
-        className={`${styles.container_small} border scroll_y padding1rem flex column gap1rem`}
+        className={`${styles.container_small} padding1rem flex column gap15rem`}
       >
-        {data.map((user) => (
+        {data.map((user, index) => (
           <Link
-            href={`/user/${user.user_id}`}
+            ref={data.length === index + 1 ? reference : null}
+            href={`/user/${user.id}`}
             className="flex justify_between text_decoration_none text_color theme"
-            key={user.user_id}
+            key={user.id}
           >
             <div className="flex gap1rem">
               <div>
@@ -34,19 +37,33 @@ const RecommendedPeople = ({ data }) => {
               </div>
               <div>
                 <h3 className="font16">{user.name}</h3>
-                <p className="opacity05 font12">@{user.username}</p>
+                {user?.user_name && (
+                  <p className="opacity05 font12">
+                    @
+                    {user.user_name.length > 10
+                      ? user.user_name.slice(0, 10) + "..."
+                      : user.user_name}
+                  </p>
+                )}
+                {user?.username && (
+                  <p className="opacity05 font12">
+                    @
+                    {user.username.length > 10
+                      ? user.username.slice(0, 10) + "..."
+                      : user.username}
+                  </p>
+                )}
                 <p className="font12">{user.header}</p>
               </div>
             </div>
-            <Button
-              style={{ backgroundColor: "transparent" }}
-              className="text_color"
-            >
-              Following
-            </Button>
           </Link>
         ))}
       </div>
+      {loading && (
+        <div>
+          <div className="roll" />
+        </div>
+      )}
     </div>
   );
 };

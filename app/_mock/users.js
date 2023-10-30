@@ -1,8 +1,13 @@
-import profile_pic1 from "public/person1.jpg";
-import profile_pic2 from "public/person2.jpg";
-import profile_pic3 from "public/person3.jpg";
-import profile_pic4 from "public/person4.jpg";
-import profile_pic5 from "public/person5.jpg";
+const profile_pic1 =
+  "https://res.cloudinary.com/drfqge33t/image/upload/v1697414753/person1_f9amhm.jpg";
+const profile_pic2 =
+  "https://res.cloudinary.com/drfqge33t/image/upload/v1697414753/person2_qmlted.jpg";
+const profile_pic3 =
+  "https://res.cloudinary.com/drfqge33t/image/upload/v1697414755/person3_ktvcwi.jpg";
+const profile_pic4 =
+  "https://res.cloudinary.com/drfqge33t/image/upload/v1697414754/person4_b6rwjl.jpg";
+const profile_pic5 =
+  "https://res.cloudinary.com/drfqge33t/image/upload/v1697414754/person5_lgdfod.jpg";
 
 export const users = [
   {

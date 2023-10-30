@@ -3,12 +3,12 @@ import Image from "next/image";
 import React, { useState } from "react";
 import styles from "./newPost.module.css";
 import { BiCamera } from "react-icons/bi";
-import { currentUserDetails } from "@/app/_mock/current_user_details";
 import { useHideRef } from "@/app/customHooks/refHook";
+import { useSession } from "next-auth/react";
 const NewPostForm = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const { showActive, setShowActive, area } = useHideRef();
-
+  const { data } = useSession();
   return (
     <div
       className={`flex column gap1rem theme ${styles.container} background2 border_bottom`}
@@ -18,7 +18,7 @@ const NewPostForm = () => {
         <div>
           <Image
             className={styles.image}
-            src={currentUserDetails.image}
+            src={data?.user.image}
             width={50}
             height={50}
             alt="profile image"

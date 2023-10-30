@@ -1,0 +1,57 @@
+.searchHeader {
+  padding: 0.5rem 0 0 0;
+  backdrop-filter: blur(8px);
+  top: 0;
+  background: rgba(0, 0, 0, 0.538);
+}
+
+.searchContainer {
+  background: #222;
+  border-radius: 1rem;
+  width: 70%;
+  padding: 0 0.5rem;
+  overflow: hidden;
+}
+
+.searchInput {
+  padding: 1rem;
+  border: none;
+  flex: 1;
+  outline: none;
+  background: #222;
+  color: #fff;
+}
+
+.searchInput:focus {
+  background: #222;
+}
+
+.icon {
+  width: 5%;
+}
+
+.buttonDiv {
+  width: 100%;
+}
+
+.buttonDiv button {
+  padding: 1rem;
+  color: #fff;
+  border: none;
+  background: transparent;
+  width: 33%;
+}
+
+.buttonDiv button:hover {
+  background: rgb(64, 64, 64, 0.7);
+}
+
+.buttonDiv .borderBottom {
+  border-bottom: 1px solid #5596e6;
+}
+
+@media (min-width: 200px) and (max-width: 768px) {
+  .searchContainer {
+    width: 90%;
+  }
+}

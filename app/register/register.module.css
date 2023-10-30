@@ -4,12 +4,16 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  background: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999999;
+  backdrop-filter: blur(4px);
 }
 
 .containerSm {
   width: 70%;
-  height: 80vh;
+  height: 90vh;
   display: flex;
 }
 
@@ -40,6 +44,7 @@
   gap: 2.5rem;
   background: #000000;
   color: #ffffff;
+  justify-content: center;
 }
 
 .backgroundContainer h4 {
@@ -60,16 +65,21 @@
 .formDiv form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
   width: 100%;
 }
 
 .formDiv form input {
   width: 100%;
   padding: 0.5rem;
-  border-radius: 0.5rem;
-  border: 1px solid #111;
-  font-size: 16px;
+  border-radius: 0.2rem;
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  font-size: 14px;
+  margin: auto;
+  outline: none;
+  color: #fff;
 }
 
 .formDiv form button {
@@ -134,6 +144,12 @@
   .formDiv h5 {
     font-size: 20px;
   }
+  .formDiv form input {
+    width: 70%;
+  }
+  .formDiv form {
+    align-items: center;
+  }
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
@@ -150,5 +166,6 @@
 
   .formDiv h5 {
     font-size: 18px;
+    text-align: center;
   }
 }

@@ -1,0 +1,38 @@
+.container {
+  padding: 1rem;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.header {
+  font-size: 20px;
+}
+
+.subHeader {
+  font-size: 16px;
+  background: var(--primaryColor);
+  padding: 0.5rem;
+}
+
+.subContainer {
+  gap: 2rem;
+}
+
+.subContainer > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 14px;
+}
+@media (min-width: 200px) and (max-width: 767px) {
+  .label {
+    font-size: 16px;
+  }
+
+  .subHeader {
+    font-size: 18px;
+  }
+}

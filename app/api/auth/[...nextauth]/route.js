@@ -1,0 +1,147 @@
+import { unauthRailsRequest } from "@/app/utils/publicRequest";
+import NextAuth from "next-auth";
+import CredentialsProvider from "next-auth/providers/credentials";
+const handler = NextAuth({
+  session: {
+    strategy: "jwt",
+  },
+  pages: {
+    signIn: "/login",
+    error: "/login",
+    signUp: "/register",
+  },
+  providers: [
+    CredentialsProvider({
+      id: "credentials",
+      name: "Credentials",
+      async authorize(credentials) {
+        try {
+          const authResponse = await unauthRailsRequest.post(
+            `authentication/login`,
+            {
+              password: credentials.password,
+              email: credentials.email,
+            }
+          );
+          const user = await authResponse.data;
+          // console.log(user);
+          return {
+            token: user.data.token,
+            role: user.data.type,
+            image: user.data.image,
+            user_name: user.data.user_name,
+            uid: user.data.uid,
+            user_id: user.data.user_id,
+            name: user.data.name,
+            profession: user.data.profession,
+            followers_count: user.data.followers_count,
+            bio: user.data.bio,
+            about: user.data.about,
+            header: user.data.header,
+            location: user.data.location,
+            posts_count: user.data.posts_count,
+            blogs_count: user.data.blogs_count,
+            phoneNumber: user.data.phoneNumber,
+            company: user.data.company,
+            school: user.data.school,
+          };
+        } catch (err) {
+          throw Error(
+            err.response?.data?.message
+              ? err.response.data.message
+              : "Something went wrong"
+          );
+        }
+      },
+    }),
+    CredentialsProvider({
+      id: "signup",
+      name: "Signup",
+      async authorize(credentials) {
+        let user;
+        if (credentials.image) {
+          user = {
+            user_name: credentials.user_name,
+            password: credentials.password,
+            email: credentials.email,
+            work: credentials.work,
+            name: credentials.name,
+            image: credentials.image,
+          };
+        } else {
+          user = {
+            user_name: credentials.user_name,
+            password: credentials.password,
+            email: credentials.email,
+            uid: credentials.uid,
+            name: credentials.name,
+          };
+        }
+
+        try {
+          const authResponse = await unauthRailsRequest.post(`authentication`, {
+            user,
+          });
+          const res = await authResponse.data;
+          const response = res.data;
+          console.log(response);
+          return {
+            token: user.data.token,
+            role: user.data.type,
+            image: user.data.image,
+            user_name: user.data.user_name,
+            uid: user.data.uid,
+            user_id: user.data.user_id,
+            name: user.data.name,
+            profession: user.data.profession,
+            followers_count: user.data.followers_count,
+            bio: user.data.bio,
+            about: user.data.about,
+            header: user.data.header,
+            location: user.data.location,
+            posts_count: user.data.posts_count,
+            blogs_count: user.data.blogs_count,
+            phoneNumber: user.data.phoneNumber,
+            company: user.data.company,
+            school: user.data.school,
+          };
+        } catch (err) {
+          console.log(err.response.data.message[0]);
+          throw Error(
+            err.response?.data?.message
+              ? err.response.data.message[0]
+              : "Something went wrong"
+          );
+        }
+      },
+    }),
+  ],
+  callbacks: {
+    jwt: async ({ token, user, profile }) => {
+      user && (token = user);
+      return token;
+    },
+    session: async ({ session, token }) => {
+      session.user.token = token.token;
+      session.user.user_id = token.user_id;
+      session.user.image = token.image;
+      session.user.uid = token.uid;
+      session.user.name = token.name;
+      session.user.role = token.role;
+      session.user.user_name = token.user_name;
+      session.user.profession = token.profession;
+      session.user.followers_count = token.followers_count;
+      session.user.bio = token.bio;
+      session.user.about = token.about;
+      session.user.header = token.header;
+      session.user.location = token.location;
+      session.user.posts_count = token.posts_count;
+      session.user.blogs_count = token.blogs_count;
+      session.user.phoneNumber = token.phoneNumber;
+      session.user.company = token.company;
+      session.user.school = token.school;
+      return session;
+    },
+  },
+});
+export { handler as GET, handler as POST };

@@ -4,20 +4,17 @@ import styles from "./pages.module.css";
 import RecommendedPages from "@/app/components/recommendedPages/RecommendedPages";
 import Posts from "./Posts";
 import FiveRecommendUser from "@/app/components/recommendedsers/fiveRecommendUser";
+import { getServerSession } from "next-auth";
 
-export const metadata = {
-  title: "Feeds",
-  description: "This is the feeds page of innovate socials",
-};
-
-const Feeds = () => {
+const Feeds = async () => {
+  const session = await getServerSession();
   return (
     <div className={styles.container}>
       <div className={styles.leftContainer}>
         <RecommendedPages />
       </div>
       <div className={styles.middleContainer}>
-        <NewPostForm />
+        {session && <NewPostForm />}
         <div className={styles.subMiddleContainer}>
           <Posts />
         </div>

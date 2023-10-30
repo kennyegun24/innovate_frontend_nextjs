@@ -1,18 +1,16 @@
 "use client";
-import React, { useContext } from "react";
-import { FaUsers, FaBlogger, FaBars } from "react-icons/fa";
+import React from "react";
+import { FaUsers, FaBlogger, FaBars, FaSearch } from "react-icons/fa";
 import { BiHomeHeart, BiShoppingBag, BiMessage } from "react-icons/bi";
 import { BsBell } from "react-icons/bs";
 import { SlBriefcase } from "react-icons/sl";
 import styles from "./nav.module.css";
-import { ThemeContext } from "@/app/context/DarkMode";
-import DarkMode from "../darkMode/DarkMode";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useHideRef } from "@/app/customHooks/refHook";
+import { SettingTwoTone } from "@ant-design/icons";
 
 const NavBar = () => {
-  const { toggle, mode } = useContext(ThemeContext);
   const path = usePathname();
   const navs = [
     {
@@ -29,68 +27,78 @@ const NavBar = () => {
     },
     {
       id: 3,
+      icon: <FaSearch className={styles.icons} />,
+      link: "/search",
+      label: "Search",
+    },
+    {
+      id: 4,
       icon: <BiMessage className={styles.icons} />,
       link: "/chat",
       label: "Chat",
     },
     {
-      id: 4,
+      id: 5,
       icon: <BsBell className={styles.icons} />,
       link: "/notifications",
       label: "Notification",
     },
     {
-      id: 5,
+      id: 6,
       icon: <BiShoppingBag className={styles.icons} />,
-      link: "",
+      link: "/store",
       label: "Store",
     },
     {
-      id: 6,
+      id: 7,
       icon: <SlBriefcase className={styles.icons} />,
       link: "/jobs",
       label: "Jobs",
     },
     {
-      id: 7,
+      id: 8,
       icon: <FaBlogger className={styles.icons} />,
       link: "/blog",
       label: "Blogs",
+    },
+    {
+      id: 9,
+      icon: <SettingTwoTone className={styles.icons} />,
+      link: "/settings",
+      label: "Settings",
     },
   ];
   const { setShowActive, area, showActive } = useHideRef();
   return (
     <div
       ref={area}
-      className={`flex justify_between align_center theme ${styles.container} navTransparent`}
+      className={`flex justify_between background align_center theme ${styles.container}`}
     >
       <FaBars
         onClick={() => setShowActive((prev) => (prev === true ? false : true))}
-        className={`${styles.icons} ${styles.hamBurger}`}
+        className={`navTransparent ${styles.icons} ${styles.hamBurger}`}
       />
       <div
-        className={` ${styles.subContainer} ${
+        className={`scroll_y_black_white ${styles.subContainer} ${
           showActive === true ? styles.show : styles.hide
-        } ${mode === "light" ? styles.backLight : styles.backDark}`}
+        }`}
       >
         <div className={`${styles.subContainer2}`}>
           {navs.map((nav) => (
             <Link
               key={nav.id}
               className={`theme flex gap05rem align_center text_decoration_none ${
-                path === nav.link && "blue"
-              } ${mode === "light" ? styles.dark_text : styles.white_text} ${
-                styles.links
-              }`}
+                path.startsWith(nav.link) && "blue"
+              } white-black ${styles.links}`}
               href={nav.link}
+              onClick={() =>
+                setShowActive((prev) => (prev === true ? false : true))
+              }
             >
               {nav.icon}
               <p className={styles.navLabel}>{nav.label}</p>
             </Link>
           ))}
-          <div className={`${styles.toggleContainer}`}>
-            <DarkMode toggle={toggle} mode={mode} />
-          </div>
         </div>
       </div>
     </div>

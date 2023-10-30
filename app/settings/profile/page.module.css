@@ -1,0 +1,24 @@
+.container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.subContainer {
+  padding: 1rem;
+}
+
+.paddingLeft {
+  padding-left: 2rem;
+}
+
+@media (min-width: 200px) and (max-width: 650px) {
+  .subContainer {
+    padding: 0;
+  }
+
+  .paddingLeft {
+    padding-left: 0.5rem;
+  }
+}

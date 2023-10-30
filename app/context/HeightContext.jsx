@@ -5,12 +5,12 @@ export const HeightContext = createContext();
 
 export const HeightProvider = ({ children }) => {
   const [screenWidth, setScreenWidth] = useState(0);
-  const [scrollY, setScrollY] = useState(100);
-  const [element, setElement] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const updateScreenWidth = () => {
       setScreenWidth(window.innerWidth);
+      setLoading(false);
     };
 
     updateScreenWidth();
@@ -22,30 +22,8 @@ export const HeightProvider = ({ children }) => {
     };
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (element !== null) {
-        const scrollTotal = document.querySelector(`.${element}`)?.scrollTop;
-
-        setScrollY(scrollTotal);
-      } else {
-        setScrollY(0);
-      }
-    };
-    handleScroll();
-
-    document
-      .querySelector(`.${element}`)
-      ?.addEventListener("scroll", handleScroll);
-    return () => {
-      document
-        .querySelector(`.${element}`)
-        ?.removeEventListener("scroll", handleScroll);
-    };
-  }, [element]);
-
   return (
-    <HeightContext.Provider value={{ screenWidth, scrollY, setElement }}>
+    <HeightContext.Provider value={{ screenWidth, loading }}>
       <div>{children}</div>
     </HeightContext.Provider>
   );

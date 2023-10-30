@@ -1,0 +1,17 @@
+.container {
+  width: 60%;
+  height: 100vh;
+  background: var(--primaryColor);
+  margin: 0 auto;
+}
+
+.searchLayout {
+  top: 0;
+  z-index: 999;
+}
+
+@media (min-width: 200px) and (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}

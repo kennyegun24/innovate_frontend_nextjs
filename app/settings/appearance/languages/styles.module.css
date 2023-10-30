@@ -1,0 +1,32 @@
+.select {
+  border: none;
+  background: none;
+  width: 100%;
+  color: var(--textColor);
+  transition: 0.3s all ease-in-out;
+  outline: none;
+  padding: 0.5rem;
+}
+
+.container {
+  border: 1px solid #686767;
+  padding: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.select option {
+  background: var(--primaryColor);
+  height: 20px;
+}
+
+.container h5 {
+  font-size: 14px;
+}
+
+@media (min-width: 200px) and (max-width: 767px) {
+  .container h5 {
+    font-size: 16px;
+  }
+}

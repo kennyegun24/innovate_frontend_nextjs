@@ -1,2 +1,4 @@
-export const authState = false;
-// export const authState = true;
+"use client";
+import { store } from "../redux/store";
+
+export const authState = store.getState().user.currentUser;

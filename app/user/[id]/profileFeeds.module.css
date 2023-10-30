@@ -8,11 +8,15 @@
 
 .overViewContainer {
   width: 35%;
-  height: max-content;
+  height: fit-content;
+  position: sticky;
+  top: 30%;
 }
 
 .profilePostsComtainer {
   width: 55%;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
@@ -22,7 +26,8 @@
   }
   .overViewContainer {
     width: 100%;
-    height: max-content;
+    height: fit-content;
+    position: static;
   }
 
   .profilePostsComtainer {

@@ -1,0 +1,43 @@
+.navDivSm {
+  padding: 1.5rem;
+}
+
+.navDivSm:hover {
+  background: var(--primaryColor);
+}
+
+.container {
+  padding: 1rem 1rem;
+  width: 100%;
+  border-right: 1px solid #686767;
+  height: 100vh;
+}
+
+.searchBox {
+  padding: 1rem 0.5rem;
+  width: 100%;
+  border-radius: 1rem;
+  outline: none;
+  border: #686767 1px solid;
+  background: transparent;
+  color: var(--textColor);
+}
+
+.activeLlink {
+  border-right: 2px solid #008cff;
+  background-color: var(--primaryColor);
+}
+
+.text {
+  font-size: 14px;
+}
+
+@media (min-width: 200px) and (max-width: 767px) {
+  .navDivSm {
+    padding: 1.5rem 1rem;
+  }
+
+  .text {
+    font-size: 18px;
+  }
+}
