@@ -1,0 +1,21 @@
+.containerSm {
+  width: 30%;
+}
+.childrenContainer {
+  width: 65%;
+}
+
+@media (min-width: 200px) and (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .childrenContainer {
+    width: 100%;
+  }
+  .containerSm {
+    width: 100%;
+  }
+}
