@@ -31,6 +31,8 @@ const ProfileHeader = ({
         <div className={styles.profileHeaderProfileImageDiv}>
           <Image
             src={data.image}
+            width={60}
+            height={60}
             alt=""
             className={`roundedImage object-cover ${styles.profileImage}`}
           />
