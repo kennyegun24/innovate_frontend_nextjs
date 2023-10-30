@@ -3,6 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./user_auth/userReducer";
 import unauthPostDetailsDetails from "./unauth/postsReducer";
 import { createWrapper } from "next-redux-wrapper";
+import unauthOtherUserDetails from "./unauth/otherUserDetalisSlice";
 // import storage from "redux-persist/lib/storage/session";
 // import {
 //   persistStore,
@@ -47,6 +48,7 @@ const store = configureStore({
   reducer: {
     user: userReducer,
     singleUnauthPost: unauthPostDetailsDetails,
+    unauthUserDetails: unauthOtherUserDetails,
   },
   // middleware: (getDefaultMiddleware) =>
   //   getDefaultMiddleware({
