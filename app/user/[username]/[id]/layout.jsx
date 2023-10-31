@@ -34,7 +34,6 @@ export const generateMetadata = async ({ params }) => {
 };
 const Layout = async ({ children, params }) => {
   const { id } = params;
-  const data = await fetchUserDetails(id);
   return (
     <div className={styles.layoutContainer}>
       <section className={`scroll_y_black_white ${styles.miniContainer}`}>
@@ -42,7 +41,7 @@ const Layout = async ({ children, params }) => {
           <Back />
         </div>
         <div className={`flex column ${styles.layoutChildrenDiv}`}>
-          <Header id={id} data={data} />
+          <Header id={id} />
           <div className={styles.layoutProfileChildren}>{children}</div>
         </div>
       </section>

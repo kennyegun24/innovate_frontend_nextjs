@@ -2,8 +2,10 @@
 import React from "react";
 import ProfileHeader from "@/app/components/profile/profileHeader/ProfileHeader";
 import { usePathname } from "next/navigation";
+import { useSelector } from "react-redux";
 
-const Header = ({ id, data }) => {
+const Header = ({ id }) => {
+  const { details } = useSelector((state) => state.unauthUserDetails);
   const path = usePathname();
   const userName = path.split("/")[2];
   const editProfile = `/user/${userName}/${id}`;
@@ -17,7 +19,7 @@ const Header = ({ id, data }) => {
         about={about}
         friends={friends}
         editProfile={editProfile}
-        data={data}
+        data={details}
         button={{
           presence: true,
           border: "blue_border",
