@@ -4,14 +4,18 @@ import styles from "./page.module.css";
 import Back from "@/app/components/Back";
 
 const fetchUserDetails = async (id) => {
-  const fetchDetails = await fetch(
-    `http://localhost:4000/api/v1/unauth/user_details/${id}`,
-    {
-      next: { revalidate: 3600 },
-    }
-  );
-  const response = await fetchDetails.json();
-  return response.data;
+  try {
+    const fetchDetails = await fetch(
+      `http://localhost:4000/api/v1/unauth/user_details/${id}`,
+      {
+        next: { revalidate: 3600 },
+      }
+    );
+    const response = await fetchDetails.json();
+    return response.data;
+  } catch (error) {
+    return {};
+  }
 };
 
 export const generateMetadata = async ({ params }) => {

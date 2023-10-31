@@ -40,7 +40,7 @@ const PostCard = ({ data, reference }) => {
               href={
                 currentUser.id === post.author_id
                   ? "current_user_profile"
-                  : `/user/${post.user_name}/${post.author_id}`
+                  : `/user/@${post.user_name}/${post.author_id}`
               }
               className={`flex gap1rem text_color text_decoration_none ${styles.postHeaderContainer}`}
             >

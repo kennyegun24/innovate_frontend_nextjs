@@ -5,9 +5,10 @@ import ProfilePosts from "./ProfilePosts";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchUnauthOtherUserDetails } from "@/app/redux/unauth/otherUserDetalisSlice";
+import ProfileAnimation from "@/app/components/animaate/ProfileAnimation";
 
 const CurrentUserProfilePostFeeds = ({ params }) => {
-  const { details } = useSelector((state) => state.unauthUserDetails);
+  const { details, loading } = useSelector((state) => state.unauthUserDetails);
   const { id } = params;
   const dispatch = useDispatch();
   useEffect(() => {
@@ -15,12 +16,18 @@ const CurrentUserProfilePostFeeds = ({ params }) => {
   }, [id, dispatch]);
 
   return (
-    <div className={styles.container}>
-      <section className={styles.overViewContainer}>
-        <ProfileFeedsOverview data={details} />
-      </section>
-      <ProfilePosts id={id} />
-    </div>
+    <>
+      {loading ? (
+        <ProfileAnimation />
+      ) : (
+        <div className={styles.container}>
+          <section className={styles.overViewContainer}>
+            <ProfileFeedsOverview data={details} />
+          </section>
+          <ProfilePosts id={id} />
+        </div>
+      )}
+    </>
   );
 };
 

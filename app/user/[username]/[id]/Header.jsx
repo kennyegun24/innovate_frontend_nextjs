@@ -3,9 +3,10 @@ import React from "react";
 import ProfileHeader from "@/app/components/profile/profileHeader/ProfileHeader";
 import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
+import ProfileHeaderAnimation from "@/app/components/animaate/ProfileHeaderAnimation";
 
 const Header = ({ id }) => {
-  const { details } = useSelector((state) => state.unauthUserDetails);
+  const { details, loading } = useSelector((state) => state.unauthUserDetails);
   const path = usePathname();
   const userName = path.split("/")[2];
   const editProfile = `/user/${userName}/${id}`;
@@ -14,19 +15,23 @@ const Header = ({ id }) => {
   const friends = `/user/${userName}/${id}/friends`;
   return (
     <div>
-      <ProfileHeader
-        feeds={feeds}
-        about={about}
-        friends={friends}
-        editProfile={editProfile}
-        data={details}
-        button={{
-          presence: true,
-          border: "blue_border",
-          background_color: "blue_background",
-          color: "white",
-        }}
-      />
+      {loading ? (
+        <ProfileHeaderAnimation />
+      ) : (
+        <ProfileHeader
+          feeds={feeds}
+          about={about}
+          friends={friends}
+          editProfile={editProfile}
+          data={details}
+          button={{
+            presence: true,
+            border: "blue_border",
+            background_color: "blue_background",
+            color: "white",
+          }}
+        />
+      )}
     </div>
   );
 };
