@@ -121,31 +121,34 @@ const handler = NextAuth({
     }),
   ],
   callbacks: {
-    jwt: async ({ token, user, profile }) => {
+    jwt: async ({ token, user }) => {
       user && (token = user);
+      if (token?.expires && new Date() > new Date(token.expires)) {
+        return null;
+      }
       return token;
     },
     session: async ({ session, token }) => {
-      session.user.token = token.token;
-      session.user.user_id = token.user_id;
-      session.user.image = token.image;
-      session.user.uid = token.uid;
-      session.user.name = token.name;
-      session.user.role = token.role;
-      session.user.user_name = token.user_name;
-      session.user.profession = token.profession;
-      session.user.followers_count = token.followers_count;
-      session.user.bio = token.bio;
-      session.user.about = token.about;
-      session.user.header = token.header;
-      session.user.location = token.location;
-      session.user.posts_count = token.posts_count;
-      session.user.blogs_count = token.blogs_count;
-      session.user.phoneNumber = token.phoneNumber;
-      session.user.company = token.company;
-      session.user.school = token.school;
-      session.expires = token.expires;
-      if (session?.expires && new Date() > new Date(session.expires)) {
+      session.user.token = token?.token;
+      session.user.user_id = token?.user_id;
+      session.user.image = token?.image;
+      session.user.uid = token?.uid;
+      session.user.name = token?.name;
+      session.user.role = token?.role;
+      session.user.user_name = token?.user_name;
+      session.user.profession = token?.profession;
+      session.user.followers_count = token?.followers_count;
+      session.user.bio = token?.bio;
+      session.user.about = token?.about;
+      session.user.header = token?.header;
+      session.user.location = token?.location;
+      session.user.posts_count = token?.posts_count;
+      session.user.blogs_count = token?.blogs_count;
+      session.user.phoneNumber = token?.phoneNumber;
+      session.user.company = token?.company;
+      session.user.school = token?.school;
+      session.expires = token?.expires;
+      if (token?.expires && new Date() > new Date(token?.expires)) {
         return null;
       }
       return session;
