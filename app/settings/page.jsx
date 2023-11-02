@@ -27,7 +27,7 @@ const Page = () => {
         </div>
       ) : (
         <div
-          style={{ height: "100vh", width: "100%" }}
+          style={{ height: "80vh", width: "100%" }}
           className="flex align_center justify_center"
         >
           <h2>Select any to display</h2>

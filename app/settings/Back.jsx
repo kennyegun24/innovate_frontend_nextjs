@@ -5,9 +5,8 @@ import { usePathname, useRouter } from "next/navigation";
 
 const Back = () => {
   const path = usePathname();
-  const pathName = path.split("/")[2];
-  const name =
-    pathName.charAt(0).toUpperCase() + pathName.substring(1) || "Settings";
+  const pathName = path.split("/")[2] || "Settings";
+  const name = pathName.charAt(0).toUpperCase() + pathName.substring(1);
   const history = useRouter();
   const handleBack = () => {
     history.back();

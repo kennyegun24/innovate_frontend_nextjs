@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
       >
         {!loading ? (
           <div className="flex column gap1rem">
-            <Back /> <div>{children}</div>
+            <Back /> <div className={styles.children}>{children}</div>
           </div>
         ) : (
           <RollingAnimation />
