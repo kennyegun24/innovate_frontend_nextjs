@@ -2,7 +2,7 @@
   padding: 0.5rem 0 0 0;
   backdrop-filter: blur(8px);
   top: 0;
-  background: rgba(0, 0, 0, 0.538);
+  background: var(--background_transparent);
 }
 
 .searchContainer {
@@ -36,7 +36,6 @@
 
 .buttonDiv button {
   padding: 1rem;
-  color: #fff;
   border: none;
   background: transparent;
   width: 33%;
@@ -47,7 +46,7 @@
 }
 
 .buttonDiv .borderBottom {
-  border-bottom: 1px solid #5596e6;
+  border-bottom: 2px solid #5596e6;
 }
 
 @media (min-width: 200px) and (max-width: 768px) {
