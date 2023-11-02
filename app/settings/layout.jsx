@@ -5,6 +5,7 @@ import { HeightContext } from "../context/HeightContext";
 import { lazy } from "react";
 import styles from "./layout.module.css";
 import RollingAnimation from "../components/animaate/RollingAnimation";
+import Back from "./Back";
 
 const SettingsNav = lazy(() => import("./SettingsNav"));
 const Layout = ({ children }) => {
@@ -31,7 +32,13 @@ const Layout = ({ children }) => {
       <div
         className={`scroll_y_black_white flex column ${styles.childrenContainer}`}
       >
-        {!loading ? <div>{children}</div> : <RollingAnimation />}
+        {!loading ? (
+          <div className="flex column gap1rem">
+            <Back /> <div>{children}</div>
+          </div>
+        ) : (
+          <RollingAnimation />
+        )}
       </div>
     </div>
   );
