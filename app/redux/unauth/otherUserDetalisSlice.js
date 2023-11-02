@@ -9,26 +9,23 @@ export const fetchUnauthOtherUserDetails = createAsyncThunk(
     );
     const res = await req.json();
     const userDetails = await res.data;
-    console.log(userDetails);
     return await userDetails;
   }
 );
 
-export const fetchOtherUserExperience = createAsyncThunk(
-  "fetch/unauth/postDetails",
-  async (id) => {
-    try {
-      const req = await fetch(
-        `http://localhost:4000/api/v1/user/${id}/experience`,
-        { next: { revalidate: 60 } }
-      );
-      const res = await req.json();
-      const userDetails = await res.data;
-      console.log(userDetails);
-      return await userDetails;
-    } catch (error) {}
-  }
-);
+// export const fetchOtherUserExperience = createAsyncThunk(
+//   "fetch/unauth/user/experience",
+//   async (id) => {
+//     const req = await fetch(
+//       `http://localhost:4000/api/v1/user/${id}/experience`,
+//       { next: { revalidate: 60 } }
+//     );
+//     const res = await req.json();
+//     const userExperience = await res.data;
+//     console.log(userExperience);
+//     return await userExperience;
+//   }
+// );
 
 const unauthOtherUserDetails = createSlice({
   name: "PostDetailsSlice",
@@ -36,10 +33,12 @@ const unauthOtherUserDetails = createSlice({
     details: {},
     error: false,
     loading: true,
-    experience: [],
-    education: [],
   },
-  reducers: {},
+  reducers: {
+    getDetails: (state, action) => {
+      state.details = action.payload;
+    },
+  },
   extraReducers(reducers) {
     reducers
       .addCase(fetchUnauthOtherUserDetails.pending, (state, action) => {
@@ -61,4 +60,5 @@ const unauthOtherUserDetails = createSlice({
   },
 });
 
+export const { getDetails } = unauthOtherUserDetails.actions;
 export default unauthOtherUserDetails.reducer;
