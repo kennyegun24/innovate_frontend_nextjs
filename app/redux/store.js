@@ -2,7 +2,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./user_auth/userReducer";
 import unauthPostDetailsDetails from "./unauth/postsReducer";
-import { createWrapper } from "next-redux-wrapper";
 import unauthOtherUserDetails from "./unauth/otherUserDetalisSlice";
 // import storage from "redux-persist/lib/storage/session";
 // import {
@@ -59,8 +58,6 @@ const store = configureStore({
 });
 
 // assigning store to next wrapper
-const makeStore = () => store;
 // const persistor = persistStore(store);
 // export { store, persistor };
 export { store };
-export const wrapper = createWrapper(makeStore);

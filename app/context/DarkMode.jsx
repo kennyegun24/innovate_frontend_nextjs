@@ -1,8 +1,7 @@
 "use client";
 import { createContext, useEffect, useState } from "react";
 import { Provider } from "react-redux";
-import { store, wrapper } from "../redux/store";
-// import { PersistGate } from "redux-persist/integration/react";
+import { store } from "../redux/store";
 
 export const ThemeContext = createContext();
 
