@@ -1,3 +1,4 @@
+@import url(./styles/profile_animation.css);
 * {
   margin: 0;
   padding: 0;
@@ -247,7 +248,7 @@
 } */
 
 .scroll_y_black_white::-webkit-scrollbar-thumb {
-  background: #fff;
+  background: var(--reverse_primaryColor2);
 }
 
 .scroll_y {
@@ -281,7 +282,7 @@
 
 .back {
   padding: 1rem 1rem;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--navTransparent);
   backdrop-filter: blur(6px);
   height: fit-content;
 }
@@ -691,9 +692,27 @@
   }
 }
 
+.not-found-profile-image {
+  height: auto;
+  width: 350px;
+}
+
+.not-found-profile-text {
+  font-size: 20px;
+}
+
 @media (min-width: 200px) and (max-width: 767px) {
   .show {
     display: none;
+  }
+
+  .not-found-profile-image {
+    height: auto;
+    width: 80%;
+  }
+
+  .not-found-profile-text {
+    font-size: 14px;
   }
 
   .navTransparent {
