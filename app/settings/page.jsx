@@ -3,20 +3,10 @@ import React from "react";
 import { Suspense, useContext } from "react";
 import { HeightContext } from "../context/HeightContext";
 import { lazy } from "react";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 import RollingAnimation from "../components/animaate/RollingAnimation";
 const SettingsNav = lazy(() => import("./SettingsNav"));
 const Page = () => {
   const { screenWidth, loading } = useContext(HeightContext);
-  const router = useRouter();
-  useEffect(() => {
-    if (screenWidth > 899) {
-      setTimeout(() => {
-        router.push("/settings/account");
-      }, 1500);
-    }
-  }, [screenWidth, loading, router]);
 
   return (
     <div className="flex width100">
@@ -28,7 +18,7 @@ const Page = () => {
           <Suspense
             fallback={
               <div style={{ height: "100vh" }}>
-                <RollingAnimation text={"Settings"} />
+                <RollingAnimation />
               </div>
             }
           >
@@ -36,8 +26,11 @@ const Page = () => {
           </Suspense>
         </div>
       ) : (
-        <div style={{ height: "100vh", width: "100%" }}>
-          <RollingAnimation text={"Loading"} />
+        <div
+          style={{ height: "100vh", width: "100%" }}
+          className="flex align_center justify_center"
+        >
+          <h2>Select any to display</h2>
         </div>
       )}
     </div>
