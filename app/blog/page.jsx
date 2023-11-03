@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import AllBlogs from "@/app/components/blog/AllBlog";
 import { authState } from "@/app/utils/session";

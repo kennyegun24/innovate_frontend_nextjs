@@ -1,15 +1,21 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import SearchComponent from "./Search";
 import SearchToggle from "./SearchToggle";
 import MostLikedBlogs from "./MostLikedBlogs";
 import BlogGrid from "./BlogGrid";
 import LatestBlogs from "./LatestBlogs";
-import { blogs } from "@/app/_mock/blogs";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchBlogArticle } from "@/app/redux/blogReducer";
 
 const AllBlogs = () => {
   const [toggleSearch, setToggleSearch] = useState(false);
+  const dispatch = useDispatch();
+  const { articles } = useSelector((state) => state.articles);
+  useEffect(() => {
+    dispatch(fetchBlogArticle());
+  }, [dispatch]);
   return (
     <div className={`scroll_y_black_white ${styles.container}`}>
       <SearchToggle
@@ -17,10 +23,10 @@ const AllBlogs = () => {
         toggleSearch={toggleSearch}
         style={styles.searchIconDiv}
       />
-      <BlogGrid />
+      <BlogGrid articles={articles} />
       <div className={`${styles.bottomContainer} `}>
         <div className={styles.latest}>
-          <LatestBlogs text="Liked blogs" blogs={blogs.slice(5, 10)} />
+          <LatestBlogs text="Liked blogs" articles={articles} />
         </div>
         <div
           className={`${toggleSearch ? styles.show : styles.hide} ${
