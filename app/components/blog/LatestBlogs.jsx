@@ -37,7 +37,7 @@ const LatestBlogs = ({ text, articles }) => {
                 </p>
                 <CommentOutlined className="font10" />
                 <p className="font10">
-                  {numberFormat(blog.comments_count + blog.likes_count)}{" "}
+                  {numberFormat(blog.comments_counter + blog.likes_counter)}{" "}
                   Comments
                 </p>
               </div>

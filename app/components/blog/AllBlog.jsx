@@ -26,7 +26,7 @@ const AllBlogs = () => {
       <BlogGrid articles={articles} />
       <div className={`${styles.bottomContainer} `}>
         <div className={styles.latest}>
-          <LatestBlogs text="Liked blogs" articles={articles.slice(5, 8)} />
+          <LatestBlogs text="Recent Blogs" articles={articles.slice(5, 9)} />
         </div>
         <div
           className={`${toggleSearch ? styles.show : styles.hide} ${
@@ -34,7 +34,7 @@ const AllBlogs = () => {
           }`}
         >
           <SearchComponent style={`background2 ${styles.searchDiv}`} />
-          <MostLikedBlogs />
+          <MostLikedBlogs articles={articles.slice(0, 2)} />
         </div>
       </div>
     </div>
