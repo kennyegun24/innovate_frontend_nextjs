@@ -26,7 +26,7 @@ const AllBlogs = () => {
       <BlogGrid articles={articles} />
       <div className={`${styles.bottomContainer} `}>
         <div className={styles.latest}>
-          <LatestBlogs text="Liked blogs" articles={articles} />
+          <LatestBlogs text="Liked blogs" articles={articles.slice(5, 8)} />
         </div>
         <div
           className={`${toggleSearch ? styles.show : styles.hide} ${

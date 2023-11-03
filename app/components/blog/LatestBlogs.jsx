@@ -13,7 +13,6 @@ const LatestBlogs = ({ text, articles }) => {
       <h3 className="padding05rem background font14">{text}</h3>
       {blogs
         .sort((a, b) => b.created_at - a.created_at)
-        .slice(5, 10)
         .map((blog) => (
           <div className={styles.blogCardDiv} key={blog.blogs_id}>
             <Image

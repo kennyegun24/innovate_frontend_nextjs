@@ -21,8 +21,8 @@ const BlogDetails = ({ id }) => {
     }
   );
   const res = data?.data;
-  console.log(data);
   if (isLoading) return;
+  console.log(res);
   return (
     <div className={styles.container}>
       <div className={styles.card}>
@@ -31,7 +31,7 @@ const BlogDetails = ({ id }) => {
       <div className={`${styles.blogCard} flex gap2rem column`}>
         <BlogPost data={res} />
         <div className="width100">
-          <OtherBlogs id={id} />
+          <OtherBlogs id={res.blogs_id} />
         </div>
       </div>
     </div>
