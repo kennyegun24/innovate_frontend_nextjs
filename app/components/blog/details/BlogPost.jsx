@@ -1,19 +1,24 @@
 import React from "react";
 import Image from "next/image";
-import image from "public/twitter.png";
 import { FaUser } from "react-icons/fa";
 import { CalendarFilled, CommentOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 import { numberFormat, readTime, wordCount } from "@/app/utils/general";
 import { BiConversation, BiMicrophone } from "react-icons/bi";
-import { blogPost } from "@/app/_mock/blog_post";
 import { _anchorBoldItalics } from "@/app/utils/textFormat";
+import noImage from "public/no_blog_image.png";
 import styles from "./styles.module.css";
 
-const BlogPost = () => {
+const BlogPost = ({ data }) => {
   return (
     <div className="background2 flex gap1rem column padding1rem">
-      <Image src={image} alt="" className={`object-cover ${styles.image}`} />
+      <Image
+        src={data.image || noImage}
+        alt=""
+        className={`object-cover ${styles.image}`}
+        height={300}
+        width={400}
+      />
 
       <div
         className="flex column gap2rem white-space padding05rem"
@@ -29,38 +34,38 @@ const BlogPost = () => {
           >
             Food Hobit
           </Button>
-          <h3 className="font16">{blogPost.title}</h3>
+          <h3 className="font16">{data.title}</h3>
           <div className="flex gap05rem wrap">
             <div className="flex gap05rem column">
               <p className={`${styles.labels}  flex gap05rem align_center`}>
                 <FaUser className="" />
-                {blogPost.author_name}
+                {data.author_name}
               </p>
 
               <p className={`${styles.labels}  flex gap05rem align_center`}>
                 <CalendarFilled className="" />
-                03 April 2023
+                {new Date(data.created_at).toDateString()}
               </p>
             </div>
             <div className="flex gap05rem column">
               <p className={`${styles.labels}  flex gap05rem align_center`}>
                 <BiMicrophone className="" />
-                {readTime(blogPost.text)}
+                {readTime(data.text)}
               </p>
               <p className={`${styles.labels}  flex gap05rem align_center`}>
                 <BiConversation className={`${styles.labels} `} />
-                {wordCount(blogPost.text)} words
+                {wordCount(data.text)} words
               </p>
             </div>
             <p className={`${styles.labels}  flex gap05rem align_center`}>
               <CommentOutlined className="" />
-              {numberFormat(blogPost.comments_count)} Comments
+              {numberFormat(data.comments_count)} Comments
             </p>
           </div>
         </div>
         <p
           className={`font14 ${styles.text}`}
-          dangerouslySetInnerHTML={_anchorBoldItalics(blogPost.text)}
+          dangerouslySetInnerHTML={_anchorBoldItalics(data.text)}
         ></p>
       </div>
     </div>

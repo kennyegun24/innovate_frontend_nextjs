@@ -4,29 +4,32 @@ import styles from "./styles.module.css";
 import Image from "next/image";
 import { CalendarFilled, CommentOutlined } from "@ant-design/icons";
 import { FaUser } from "react-icons/fa";
-import { blogs } from "@/app/_mock/blogs";
 import { numberFormat } from "@/app/utils/general";
 import { Button } from "antd";
-const BlogGrid = () => {
+import noImage from "public/no_blog_image.png";
+const BlogGrid = ({ articles }) => {
+  const blogs = [...articles];
   return (
     <div className={styles.subContainer}>
       {blogs
         .sort(
           (a, b) =>
-            b.comments_count +
-            b.likes_count -
-            (a.comments_count + a.likes_count)
+            b.comments_counter +
+            b.likes_counter -
+            (a.comments_counter + a.likes_counter)
         )
         .slice(2, 5)
         .map((blog) => (
           <Link
-            href={`/blog/${blog.blogs_id}`}
+            href={`/blog/${blog.author_name}/${blog.id}`}
             className={`text_color theme relative ${styles.col}`}
             key={blog.blogs_id}
           >
             <Image
               className={`object-cover ${styles.image}`}
-              src={blog.image}
+              src={blog?.image || noImage}
+              width={300}
+              height={200}
               alt=""
             />
             <div
@@ -37,19 +40,27 @@ const BlogGrid = () => {
                 right: "0.5rem",
               }}
             >
-              <Button style={{ background: "#fc516d", color: "#fff" }}>
+              <Button
+                style={{
+                  background: "#fc516d",
+                  color: "#fff",
+                  padding: "0.2rem",
+                }}
+              >
                 Food Hobit
               </Button>
-              <h5 className="font16">{blog.text.slice(0, 50)}...</h5>
+              <h5 className="font16">{blog.title.slice(0, 50)}...</h5>
               <div className="flex gap05rem align_center">
                 <FaUser className="font10" />
                 <p className="font10">{blog.author_name}</p>
                 <CalendarFilled className="font10" />
-                <p className="font10">03 April 2023</p>
+                <p className="font10">
+                  {new Date(blog.created_at).toDateString()}
+                </p>
                 <CommentOutlined className="font10" />
                 <p className="font10">
-                  {numberFormat(blog.comments_count + blog.likes_count)}{" "}
-                  Comments r
+                  {numberFormat(blog.comments_counter + blog.likes_counter)}{" "}
+                  Comments
                 </p>
               </div>
             </div>

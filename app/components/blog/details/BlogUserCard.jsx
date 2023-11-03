@@ -8,11 +8,11 @@ import { blogPost } from "@/app/_mock/blog_post";
 import image from "public/person1.jpg";
 import Image from "next/image";
 
-const BlogUserCard = () => {
+const BlogUserCard = ({ data }) => {
   return (
     <div className={`background2 gap05rem flex column ${styles.container}`}>
       <Image
-        src={image}
+        src={data.author_image}
         alt=""
         height={50}
         width={50}
@@ -20,33 +20,33 @@ const BlogUserCard = () => {
         object-cover roundedImage
         "
       />
-      <p className="font14">Mark Wiens</p>
+      <p className="font14">{data.author_name}</p>
       <p className="font12">Software Developer</p>
       <div className="flex gap05rem">
         <div className="flex gap05rem column">
           <p className={`${styles.labels}  flex gap05rem align_center`}>
             <FaUser className="" />
-            Mark Wiens
+            {data.author_name}
           </p>
 
           <p className={`${styles.labels}  flex gap05rem align_center`}>
             <CalendarFilled className="" />
-            03 April 2023
+            {new Date(data.created_at).toDateString()}
           </p>
 
           <p className={`${styles.labels}  flex gap05rem align_center`}>
             <CommentOutlined className="" />
-            {numberFormat(3284)} Comments
+            {numberFormat(data.comments_counter)} Comments
           </p>
         </div>
         <div className="flex gap05rem column">
           <p className={`${styles.labels}  flex gap05rem align_center`}>
             <BiMicrophone className="" />
-            {readTime(blogPost.text)}
+            {readTime(data.text)}
           </p>
           <p className={`${styles.labels}  flex gap05rem align_center`}>
             <BiConversation className={`${styles.labels} `} />
-            {wordCount(blogPost.text)} words
+            {wordCount(data.text)} words
           </p>
         </div>
       </div>
