@@ -4,6 +4,7 @@
 
 .labels {
   font-size: 0.8vw;
+  border: none;
 }
 
 @media (min-width: 200px) and (max-width: 900px) {

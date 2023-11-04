@@ -21,7 +21,7 @@ const BlogPost = ({ data }) => {
       />
 
       <div
-        className="flex column gap2rem white-space padding05rem"
+        className="flex column gap2rem white-space"
         style={{ textAlign: "justify" }}
       >
         <div className="flex column gap1rem">

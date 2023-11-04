@@ -1,14 +1,13 @@
+"use client";
 import React from "react";
 import styles from "./blog_card.module.css";
-import { FaUser } from "react-icons/fa";
+import { FaRegComments, FaUser } from "react-icons/fa";
 import { CalendarFilled, CommentOutlined } from "@ant-design/icons";
 import { BiConversation, BiMicrophone } from "react-icons/bi";
 import { numberFormat, readTime, wordCount } from "@/app/utils/general";
-import { blogPost } from "@/app/_mock/blog_post";
-import image from "public/person1.jpg";
 import Image from "next/image";
 
-const BlogUserCard = ({ data }) => {
+const BlogUserCard = ({ data, click }) => {
   return (
     <div className={`background2 gap05rem flex column ${styles.container}`}>
       <Image
@@ -50,6 +49,15 @@ const BlogUserCard = ({ data }) => {
           </p>
         </div>
       </div>
+      <button
+        className={`
+        ${styles.labels} blue width_fit gap05rem reverse_background pointer padding05rem flex gabutton05rem align_center
+        `}
+        onClick={click}
+      >
+        <FaRegComments className={`${styles.labels} `} />
+        Click to comment
+      </button>
     </div>
   );
 };

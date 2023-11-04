@@ -1,12 +1,14 @@
 "use client";
 import styles from "./styles.module.css";
-
 import BlogUserCard from "./BlogUserCard";
 import BlogPost from "./BlogPost";
 import OtherBlogs from "./OtherBlogs";
 import useSWR from "swr";
+import BlogComment from "./comment/BlogComment";
+import { useState } from "react";
 
 const BlogDetails = ({ id }) => {
+  const [show, setShow] = useState(false);
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error, isLoading } = useSWR(
     `http://localhost:4000/api/v1/blogs/${id}`,
@@ -22,11 +24,15 @@ const BlogDetails = ({ id }) => {
   );
   const res = data?.data;
   if (isLoading) return;
-  console.log(res);
+
+  const handleShow = () => {
+    setShow((prev) => (prev === true ? false : true));
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.card}>
-        <BlogUserCard data={res} />
+        <BlogUserCard click={handleShow} data={res} />
       </div>
       <div className={`${styles.blogCard} flex gap2rem column`}>
         <BlogPost data={res} />
@@ -34,6 +40,7 @@ const BlogDetails = ({ id }) => {
           <OtherBlogs id={res.blogs_id} />
         </div>
       </div>
+      {show && <BlogComment click={handleShow} />}
     </div>
   );
 };
