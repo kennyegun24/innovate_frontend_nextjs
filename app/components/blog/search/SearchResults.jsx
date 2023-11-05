@@ -20,7 +20,7 @@ const SearchResults = ({ styles }) => {
           {blogs.map((blog) => (
             <div
               key={blog.id}
-              className={`background padding1rem flex column gap05rem ${styles.search_results_div}`}
+              className={`background flex column gap05rem ${styles.search_results_div}`}
             >
               <Link
                 href={``}
@@ -34,13 +34,13 @@ const SearchResults = ({ styles }) => {
                   height={30}
                   width={30}
                 />
-                <p>{blog.author_name}</p>
+                <p className="font14">{blog.author_name}</p>
               </Link>
               <h2 className="font16">{blog.title}</h2>
               <Link
                 href={`/blog/${blog.author_name}/${blog.id}`}
                 alt=""
-                className="text_color flex gap05rem align_center"
+                className={`text_color flex gap05rem align_center ${styles.mobile_column}`}
               >
                 <p className={`font14 ${styles.search_results_text}`}>
                   {blog.text.slice(0, 150)}
@@ -49,13 +49,7 @@ const SearchResults = ({ styles }) => {
                   <Image
                     src={blog.image}
                     alt=""
-                    style={{
-                      height: "100px",
-                      maxWidth: "100px",
-                      minWidth: "100px",
-                      borderRadius: "6px",
-                    }}
-                    className="object-cover"
+                    className={`object-cover ${styles.image}`}
                     height={100}
                     width={100}
                   />

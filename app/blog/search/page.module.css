@@ -8,6 +8,7 @@
 .search_results_div {
   max-width: 60%;
   border-radius: 6px;
+  padding: 1rem;
 }
 
 .search_results_text {
@@ -50,4 +51,50 @@
 
 .center {
   height: calc(100vh - (10rem + 2vw));
+}
+
+.image {
+  height: 100px;
+  max-width: 100px;
+  min-width: 100px;
+  border-radius: 6px;
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .search_results_div {
+    max-width: 80%;
+  }
+  .search_text {
+    font-size: 2.5vw;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 600px) {
+  .search_text {
+    font-size: 4vw;
+  }
+  .search_results_text {
+    line-height: 28px;
+    font-size: 12px;
+  }
+  .search_results_div {
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+
+  .mobile_column {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .image {
+    max-width: 150px;
+    min-width: 150px;
+  }
+
+  .container {
+    height: 100vh;
+    width: 100%;
+    padding: 1rem;
+  }
 }
