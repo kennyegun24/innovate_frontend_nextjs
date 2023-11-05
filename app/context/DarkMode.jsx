@@ -9,12 +9,21 @@ export const ThemeProvider = ({ children }) => {
   const [mode, setMode] = useState("dark");
 
   const toggle = () => {
+    let mod = mode === "dark" ? "light" : "dark";
     setMode((prev) => (prev === "dark" ? "light" : "dark"));
+    localStorage.setItem("innovate_web", mod);
   };
 
   useEffect(() => {
     document.querySelector(":root").setAttribute("color-scheme", mode);
   }, [mode]);
+
+  useEffect(() => {
+    const theme = localStorage.getItem("innovate_web")
+      ? localStorage.getItem("innovate_web")
+      : "dark";
+    setMode(theme);
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ toggle, mode }}>
