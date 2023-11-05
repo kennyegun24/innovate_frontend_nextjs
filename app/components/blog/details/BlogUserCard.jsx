@@ -6,6 +6,7 @@ import { CalendarFilled, CommentOutlined } from "@ant-design/icons";
 import { BiConversation, BiMicrophone } from "react-icons/bi";
 import { numberFormat, readTime, wordCount } from "@/app/utils/general";
 import Image from "next/image";
+import Link from "next/link";
 
 const BlogUserCard = ({ data, click }) => {
   return (
@@ -23,10 +24,13 @@ const BlogUserCard = ({ data, click }) => {
       <p className="font12">Software Developer</p>
       <div className="flex gap05rem">
         <div className="flex gap05rem column">
-          <p className={`${styles.labels}  flex gap05rem align_center`}>
+          <Link
+            href={`/user/@${data.author_name}/${data.author_id}`}
+            className={`${styles.labels} text_color flex gap05rem align_center`}
+          >
             <FaUser className="" />
             {data.author_name}
-          </p>
+          </Link>
 
           <p className={`${styles.labels}  flex gap05rem align_center`}>
             <CalendarFilled className="" />

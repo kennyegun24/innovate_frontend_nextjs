@@ -1,0 +1,15 @@
+.container {
+  height: 100vh;
+  width: 100%;
+  padding: 5rem 2rem 2rem 5rem;
+}
+
+/* ----Search Item----- */
+.search_results_div {
+  max-width: 60%;
+  border-radius: 6px;
+}
+
+.search_results_text {
+  line-height: 20px;
+}
