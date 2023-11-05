@@ -2,10 +2,14 @@
 import { useSearchParams } from "next/navigation";
 import React from "react";
 
-const SearchItem = () => {
+const SearchItem = ({ styles }) => {
   const search = useSearchParams();
   const searchName = search.get("query");
-  return <h2 style={{ fontSize: "30px" }}>Search results for {searchName}</h2>;
+  return (
+    <h2 className={styles.search_text}>
+      Search results for <span className="blue">{searchName}</span>
+    </h2>
+  );
 };
 
-export default SearchItem;
+export default React.memo(SearchItem);
