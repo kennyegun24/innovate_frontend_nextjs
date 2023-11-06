@@ -1,5 +1,13 @@
 {
   "settings": {
+    "nav": {
+      "acs": "Account Settings",
+      "pvs": "Profile Settings",
+      "aps": "Appearance",
+      "pvc": "Privacy",
+      "hlc": "Help Center",
+      "tos": "Terms of Service"
+    },
     "appearance": {
       "header": "Appearance Settings",
       "language": {

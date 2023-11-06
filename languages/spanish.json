@@ -1,5 +1,14 @@
 {
   "settings": {
+    "nav": {
+      "acs": "Configuración de Cuenta",
+      "pvs": "Configuración de Perfil",
+      "aps": "Apariencia",
+      "pvc": "Privacidad",
+      "hlc": "Centro de Ayuda",
+      "tos": "Términos de Servicio"
+    },
+
     "appearance": {
       "header": "Ajustes de Apariencia",
       "language": {

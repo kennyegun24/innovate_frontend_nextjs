@@ -1,0 +1,30 @@
+{
+  "settings": {
+    "nav": {
+      "acs": "帐户设置",
+      "pvs": "个人资料设置",
+      "aps": "外观",
+      "pvc": "隐私",
+      "hlc": "帮助中心",
+      "tos": "服务条款"
+    },
+    "appearance": {
+      "header": "外观设置",
+      "language": {
+        "header": "语言设置",
+        "sub_header": "选择您所需的语言",
+        "options": {
+          "en": "英语",
+          "es": "西班牙语",
+          "rs": "俄语",
+          "ch": "中文",
+          "fr": "法语"
+        }
+      },
+      "display": {
+        "header": "显示设置",
+        "sub_header": "在浅色和深色模式之间切换"
+      }
+    }
+  }
+}
