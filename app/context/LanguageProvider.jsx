@@ -23,11 +23,11 @@ export const LanguageProvider = ({ children }) => {
   };
   const switchLanguage = (param) => {
     setLanguage(param);
-    localStorage.setItem("innovate_web", param);
+    localStorage.setItem("innovate_web_language", param);
   };
   useEffect(() => {
-    const lang = localStorage.getItem("innovate_web")
-      ? localStorage.getItem("innovate_web")
+    const lang = localStorage.getItem("innovate_web_language")
+      ? localStorage.getItem("innovate_web_language")
       : "en";
     setLanguage(lang);
   }, []);

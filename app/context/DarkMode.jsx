@@ -11,7 +11,7 @@ export const ThemeProvider = ({ children }) => {
   const toggle = () => {
     let mod = mode === "dark" ? "light" : "dark";
     setMode((prev) => (prev === "dark" ? "light" : "dark"));
-    localStorage.setItem("innovate_web", mod);
+    localStorage.setItem("innovate_web_theme", mod);
   };
 
   useEffect(() => {
@@ -19,8 +19,8 @@ export const ThemeProvider = ({ children }) => {
   }, [mode]);
 
   useEffect(() => {
-    const theme = localStorage.getItem("innovate_web")
-      ? localStorage.getItem("innovate_web")
+    const theme = localStorage.getItem("innovate_web_theme")
+      ? localStorage.getItem("innovate_web_theme")
       : "dark";
     setMode(theme);
   }, []);
