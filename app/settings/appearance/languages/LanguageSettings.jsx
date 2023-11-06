@@ -37,7 +37,7 @@ const LanguageSettings = () => {
           {_language("options.ch") || "Chinese"}
         </option>
         <option selected={language === "fr"} value="fr">
-          {_language("fr") || "French"}
+          {_language("options.fr") || "French"}
         </option>
       </select>
     </div>

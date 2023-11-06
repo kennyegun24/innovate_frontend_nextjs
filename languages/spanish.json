@@ -26,6 +26,10 @@
         "header": "Ajustes de Pantalla",
         "sub_header": "Cambiar entre modos oscuro y claro"
       }
+    },
+    "profile": {
+      "header": "Editar tu información personal",
+      "link_text": "Haz clic aquí para editar tu perfil"
     }
   }
 }

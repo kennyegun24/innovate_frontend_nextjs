@@ -25,6 +25,10 @@
         "header": "Display Settings",
         "sub_header": "Toggle between light and dark mode"
       }
+    },
+    "profile": {
+      "header": "Edit your personal information",
+      "link_text": "Click here to edit your profile"
     }
   }
 }
