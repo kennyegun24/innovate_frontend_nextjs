@@ -6,7 +6,7 @@ import useUserPostsHook from "./userPostHook";
 
 const ProfilePosts = ({ id }) => {
   const [page, setPage] = useState(1);
-  const { posts, hasMore, loading, error } = useUserPostsHook({ page, id });
+  const { posts, hasMore, isLoading, error } = useUserPostsHook({ page, id });
   const [userPosts, setUserPosts] = useState(posts);
 
   useEffect(() => {
@@ -53,7 +53,7 @@ const ProfilePosts = ({ id }) => {
 
   const lastPostRef = useCallback(
     (node) => {
-      if (loading) return;
+      if (isLoading) return;
       if (observer.current) observer.current.disconnect();
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && hasMore) {
@@ -63,7 +63,7 @@ const ProfilePosts = ({ id }) => {
       });
       if (node) observer.current.observe(node);
     },
-    [loading, hasMore]
+    [isLoading, hasMore]
   );
 
   return (

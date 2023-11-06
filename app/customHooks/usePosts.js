@@ -1,12 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
-import { unauthRailsRequest } from "../utils/publicRequest";
+import { useEffect, useState, useMemo } from "react";
+import useSWR from "swr";
 
 const usePostsHook = (page) => {
   const [posts, setPosts] = useState([]);
   const [hasMore, setHasMore] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(true);
   const [pageNo, setPageNo] = useState(1);
   useEffect(() => {
     if (pageNo !== page) {
@@ -14,30 +12,29 @@ const usePostsHook = (page) => {
     }
   }, [page, pageNo]);
 
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const { data, error, isLoading } = useSWR(
+    `http://localhost:4000/api/v1/unauth/posts?page=${pageNo}`,
+    fetcher,
+    {
+      refreshInterval: null,
+      errorRetryInterval: 5000,
+      revalidateIfStale: false,
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
+      errorRetryCount: 1,
+    }
+  );
+
+  const res = useMemo(() => data?.data || [], [data]);
   useEffect(() => {
-    const getData = async () => {
-      try {
-        setLoading(true);
-        const postsQuery = await unauthRailsRequest.get(
-          `unauth/posts?page=${pageNo}`
-        );
-        const res = await postsQuery.data;
-        const data = await res.data;
-        setHasMore((await data.length) === 10);
-        setPosts((prev) => [...prev, ...res.data]);
-        setLoading(false);
-      } catch (Err) {
-        setError("Something went wrong");
-        setLoading(false);
-        throw Error;
-      }
-    };
-    getData();
-  }, [pageNo]);
+    setHasMore(res.length === 10);
+    setPosts((prev) => [...prev, ...res]);
+  }, [res]);
   return {
     posts,
     hasMore,
-    loading,
+    isLoading,
     error,
   };
 };

@@ -35,13 +35,13 @@ const MostLikedBlogs = ({ articles, text, comment }) => {
               href={`/blog/${blog.author_name}/${blog.id}`}
               className={`text_color theme flex column ${styles.subContainer2Sm}`}
             >
-              <h3 className="font16">{blog.title}</h3>
+              <h3 className="font14">{blog.title}</h3>
               <div className={`flex gap05rem align_center ${styles.wrap}`}>
                 <FaUser className="font10" />
-                <p className="font10">{blog.author_name}</p>
+                <p className="font10">{blog.author_name?.slice(0, 8)}...</p>
                 <CalendarFilled className="font10" />
                 <p className="font10">
-                  {new Date(blog.created_at).toDateString()}
+                  {new Date(blog.created_at).toLocaleDateString()}
                 </p>
                 <CommentOutlined className="font10" />
                 <p className="font10">
@@ -49,7 +49,7 @@ const MostLikedBlogs = ({ articles, text, comment }) => {
                   {comment}
                 </p>
               </div>
-              <p className={`font14 ${styles.text}`}>
+              <p className={`font12 ${styles.text}`}>
                 {blog.text.slice(0, 80)}...
               </p>
             </Link>

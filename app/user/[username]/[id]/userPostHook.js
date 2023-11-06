@@ -1,11 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
+import useSWR from "swr";
 
 const useUserPostsHook = ({ page, id }) => {
   const [posts, setPosts] = useState([]);
   const [hasMore, setHasMore] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(true);
   const [pageNo, setPageNo] = useState(1);
   useEffect(() => {
     if (pageNo !== page) {
@@ -13,35 +12,30 @@ const useUserPostsHook = ({ page, id }) => {
     }
   }, [page, pageNo]);
 
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        setLoading(true);
-        const postsQuery = await fetch(
-          `http://localhost:4000/api/v1/unauth/user/${id}/posts?page=${pageNo}`,
-          {
-            next: { revalidate: 100 },
-          }
-        );
-        const res = await postsQuery.json();
-        const data = await res.data;
-        setHasMore((await data.length) === 5);
-        setPosts((prev) => [...prev, ...res.data]);
-        setLoading(false);
-      } catch (err) {
-        setError("Something went wrong");
-        setLoading(false);
-        console.log(err);
-      }
-    };
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const { data, error, isLoading } = useSWR(
+    `http://localhost:4000/api/v1/unauth/user/${id}/posts?page=${pageNo}`,
+    fetcher,
+    {
+      refreshInterval: null,
+      errorRetryInterval: 5000,
+      revalidateIfStale: false,
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
+      errorRetryCount: 1,
+    }
+  );
 
-    getData();
-  }, [id, pageNo, page]);
+  const res = useMemo(() => data?.data || [], [data]);
+  useEffect(() => {
+    setHasMore(res.length === 10);
+    setPosts((prev) => [...prev, ...res]);
+  }, [res]);
 
   return {
     posts,
     hasMore,
-    loading,
+    isLoading,
     error,
   };
 };

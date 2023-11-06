@@ -6,12 +6,12 @@ import { useState } from "react";
 
 const Posts = () => {
   const [page, setPage] = useState(1);
-  const { error, hasMore, loading, posts } = usePostsHook(page);
+  const { error, hasMore, isLoading, posts } = usePostsHook(page);
   const observer = useRef(null);
 
   const lastPostRef = useCallback(
     (node) => {
-      if (loading) return;
+      if (isLoading) return;
       if (observer.current) observer.current.disconnect();
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && hasMore) {
@@ -21,7 +21,7 @@ const Posts = () => {
       });
       if (node) observer.current.observe(node);
     },
-    [loading, hasMore]
+    [isLoading, hasMore]
   );
   return <PostCard data={posts} reference={lastPostRef} />;
 };

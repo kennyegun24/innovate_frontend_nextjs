@@ -29,11 +29,7 @@ const SearchResults = ({ styles }) => {
               key={blog.id}
               className={`background flex column gap05rem ${styles.search_results_div}`}
             >
-              <Link
-                href={``}
-                alt=""
-                className="text_color flex gap05rem align_center"
-              >
+              <div className="flex gap05rem align_center">
                 <Image
                   src={blog.author_image}
                   alt=""
@@ -41,8 +37,13 @@ const SearchResults = ({ styles }) => {
                   height={30}
                   width={30}
                 />
-                <p className="font14">{blog.author_name}</p>
-              </Link>
+                <div className="flex column gap02rem">
+                  <p className="font12">{blog.author_name}</p>
+                  <p className="font10">
+                    {new Date(blog.created_at).toDateString()}
+                  </p>
+                </div>
+              </div>
               <h2 className="font16">{blog.title}</h2>
               <Link
                 href={`/blog/${blog.author_name}/${blog.id}`}
