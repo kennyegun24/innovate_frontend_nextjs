@@ -1,0 +1,22 @@
+{
+  "settings": {
+    "appearance": {
+      "header": "Ajustes de Apariencia",
+      "language": {
+        "header": "Configuración de Idioma",
+        "sub_header": "Selecciona tu idioma deseado",
+        "options": {
+          "en": "Inglés",
+          "es": "Español",
+          "rs": "Ruso",
+          "ch": "Chino",
+          "fr": "Francés"
+        }
+      },
+      "display": {
+        "header": "Ajustes de Pantalla",
+        "sub_header": "Cambiar entre modos oscuro y claro"
+      }
+    }
+  }
+}

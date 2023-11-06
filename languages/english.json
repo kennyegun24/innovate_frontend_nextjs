@@ -1,0 +1,22 @@
+{
+  "settings": {
+    "appearance": {
+      "header": "Appearance Settings",
+      "language": {
+        "header": "Language Settings",
+        "sub_header": "Select Your Desired Language",
+        "options": {
+          "en": "English",
+          "es": "Spanish",
+          "rs": "Russian",
+          "ch": "Chinese",
+          "fr": "French"
+        }
+      },
+      "display": {
+        "header": "Display Settings",
+        "sub_header": "Toggle between light and dark mode"
+      }
+    }
+  }
+}
