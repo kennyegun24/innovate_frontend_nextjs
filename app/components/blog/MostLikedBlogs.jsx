@@ -8,11 +8,11 @@ import { FaUser } from "react-icons/fa";
 import { numberFormat } from "@/app/utils/general";
 import noImage from "public/no_blog_image.png";
 
-const MostLikedBlogs = ({ articles }) => {
+const MostLikedBlogs = ({ articles, text, comment }) => {
   const blogs = [...articles];
   return (
     <div className={`flex background2 column gap1rem ${styles.subContainer3}`}>
-      <h3 className="padding05rem background font14">Most Liked Blogs</h3>
+      <h3 className="padding05rem background font14">{text}</h3>
       {blogs
         .sort(
           (a, b) =>
@@ -46,7 +46,7 @@ const MostLikedBlogs = ({ articles }) => {
                 <CommentOutlined className="font10" />
                 <p className="font10">
                   {numberFormat(blog.comments_counter + blog.likes_counter)}{" "}
-                  Comments
+                  {comment}
                 </p>
               </div>
               <p className={`font14 ${styles.text}`}>

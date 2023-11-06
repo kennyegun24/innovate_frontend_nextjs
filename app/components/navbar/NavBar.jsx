@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import { FaUsers, FaBlogger, FaBars, FaSearch } from "react-icons/fa";
 import { BiHomeHeart, BiShoppingBag, BiMessage } from "react-icons/bi";
 import { BsBell } from "react-icons/bs";
@@ -9,63 +9,69 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useHideRef } from "@/app/customHooks/refHook";
 import { SettingTwoTone } from "@ant-design/icons";
+import { LanguageContext } from "@/app/context/LanguageProvider";
 
 const NavBar = () => {
   const path = usePathname();
+  const { switchLanguage, translateText, language } =
+    useContext(LanguageContext);
+  const _language = (param) => {
+    return translateText("nav." + param);
+  };
   const navs = [
     {
       id: 1,
       icon: <BiHomeHeart className={styles.icons} />,
       link: "/feeds",
-      label: "Feeds",
+      label: _language("fds") || "Feeds",
     },
     {
       id: 2,
       icon: <FaUsers className={styles.icons} />,
       link: "/recommended_users",
-      label: "Users",
+      label: _language("urs") || "Users",
     },
     {
       id: 3,
       icon: <FaSearch className={styles.icons} />,
       link: "/search",
-      label: "Search",
+      label: _language("srh") || "Search",
     },
     {
       id: 4,
       icon: <BiMessage className={styles.icons} />,
       link: "/chat",
-      label: "Chat",
+      label: _language("cht") || "Chats",
     },
     {
       id: 5,
       icon: <BsBell className={styles.icons} />,
       link: "/notifications",
-      label: "Notification",
+      label: _language("ntftn") || "Notification",
     },
     {
       id: 6,
       icon: <BiShoppingBag className={styles.icons} />,
       link: "/store",
-      label: "Store",
+      label: _language("str") || "Store",
     },
     {
       id: 7,
       icon: <SlBriefcase className={styles.icons} />,
       link: "/jobs",
-      label: "Jobs",
+      label: _language("job") || "Jobs",
     },
     {
       id: 8,
       icon: <FaBlogger className={styles.icons} />,
       link: "/blog",
-      label: "Blogs",
+      label: _language("blg") || "Blogs",
     },
     {
       id: 9,
       icon: <SettingTwoTone className={styles.icons} />,
       link: "/settings",
-      label: "Settings",
+      label: _language("sttn") || "Settings",
     },
   ];
   const { setShowActive, area, showActive } = useHideRef();

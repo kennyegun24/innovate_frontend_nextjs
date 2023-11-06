@@ -5,9 +5,11 @@ import BlogPost from "./BlogPost";
 import OtherBlogs from "./OtherBlogs";
 import useSWR from "swr";
 import BlogComment from "./comment/BlogComment";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { LanguageContext } from "@/app/context/LanguageProvider";
 
 const BlogDetails = ({ id }) => {
+  const { translateText } = useContext(LanguageContext);
   const [show, setShow] = useState(false);
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error, isLoading } = useSWR(
@@ -29,15 +31,19 @@ const BlogDetails = ({ id }) => {
     setShow((prev) => (prev === true ? false : true));
   };
 
+  const _language = (param) => {
+    return translateText("blog." + param);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.card}>
-        <BlogUserCard click={handleShow} data={res} />
+        <BlogUserCard lang={_language} click={handleShow} data={res} />
       </div>
       <div className={`${styles.blogCard} flex gap2rem column`}>
-        <BlogPost data={res} />
+        <BlogPost lang={_language} data={res} />
         <div className="width100">
-          <OtherBlogs id={res.blogs_id} />
+          <OtherBlogs lang={_language} id={res.blogs_id} />
         </div>
       </div>
       {show && <BlogComment click={handleShow} />}

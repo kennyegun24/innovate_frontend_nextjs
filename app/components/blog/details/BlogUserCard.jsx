@@ -8,7 +8,7 @@ import { numberFormat, readTime, wordCount } from "@/app/utils/general";
 import Image from "next/image";
 import Link from "next/link";
 
-const BlogUserCard = ({ data, click }) => {
+const BlogUserCard = ({ data, click, lang }) => {
   return (
     <div className={`background2 gap05rem flex column ${styles.container}`}>
       <Image
@@ -39,7 +39,7 @@ const BlogUserCard = ({ data, click }) => {
 
           <p className={`${styles.labels}  flex gap05rem align_center`}>
             <CommentOutlined className="" />
-            {numberFormat(data.comments_counter)} Comments
+            {numberFormat(data.comments_counter)} {lang("cmmt") || "Comments"}
           </p>
         </div>
         <div className="flex gap05rem column">
@@ -49,7 +49,7 @@ const BlogUserCard = ({ data, click }) => {
           </p>
           <p className={`${styles.labels}  flex gap05rem align_center`}>
             <BiConversation className={`${styles.labels} `} />
-            {wordCount(data.text)} words
+            {wordCount(data.text)} {lang("details.wrds") || "Words"}
           </p>
         </div>
       </div>
@@ -60,7 +60,7 @@ const BlogUserCard = ({ data, click }) => {
         onClick={click}
       >
         <FaRegComments className={`${styles.labels} `} />
-        Click to comment
+        {lang("details.ctc") || "Click to comment"}
       </button>
     </div>
   );

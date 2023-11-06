@@ -7,7 +7,7 @@ import { FaUser } from "react-icons/fa";
 import { numberFormat } from "@/app/utils/general";
 import { Button } from "antd";
 import noImage from "public/no_blog_image.png";
-const BlogGrid = ({ articles }) => {
+const BlogGrid = ({ articles, comment }) => {
   const blogs = [...articles];
   return (
     <div className={styles.subContainer}>
@@ -60,7 +60,7 @@ const BlogGrid = ({ articles }) => {
                 <CommentOutlined className="font10" />
                 <p className="font10">
                   {numberFormat(blog.comments_counter + blog.likes_counter)}{" "}
-                  Comments
+                  {comment}
                 </p>
               </div>
             </div>

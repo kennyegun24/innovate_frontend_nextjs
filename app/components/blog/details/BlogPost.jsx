@@ -9,7 +9,7 @@ import { _anchorBoldItalics } from "@/app/utils/textFormat";
 import noImage from "public/no_blog_image.png";
 import styles from "./styles.module.css";
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ data, lang }) => {
   return (
     <div className="background2 flex gap1rem column padding1rem">
       <Image
@@ -54,12 +54,12 @@ const BlogPost = ({ data }) => {
               </p>
               <p className={`${styles.labels}  flex gap05rem align_center`}>
                 <BiConversation className={`${styles.labels} `} />
-                {wordCount(data.text)} words
+                {wordCount(data.text)} {lang("details.wrds") || "words"}
               </p>
             </div>
             <p className={`${styles.labels}  flex gap05rem align_center`}>
               <CommentOutlined className="" />
-              {numberFormat(data.comments_count)} Comments
+              {numberFormat(data.comments_count)} {lang("cmmt") || "Comments"}
             </p>
           </div>
         </div>

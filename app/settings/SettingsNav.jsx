@@ -8,51 +8,51 @@ import Link from "next/link";
 import { LanguageContext } from "@/app/context/LanguageProvider";
 
 const SettingsNav = () => {
-  const { switchLanguage, translateText } = useContext(LanguageContext);
+  const { translateText } = useContext(LanguageContext);
   const [searchText, setSearchText] = useState("");
   const path = usePathname();
   const handleText = useCallback((text) => {
     setSearchText(text);
   }, []);
   const _language = (param) => {
-    return translateText("settings.nav." + param);
+    return translateText("settings." + param);
   };
   const navs = [
     {
-      name: _language("acs") || "Account Settings",
+      name: _language("nav.acs") || "Account Settings",
       link: "/settings/account",
       otherLinks: [],
       otherNames: ["deactivate", "personal information", "password change"],
     },
     {
-      name: _language("pvs") || "Profile Settings",
+      name: _language("nav.pvs") || "Profile Settings",
       link: "/settings/profile",
       otherNames: ["Edit profile"],
     },
     {
-      name: _language("aps") || "Appearance",
+      name: _language("nav.aps") || "Appearance",
       link: "/settings/appearance",
       otherNames: ["Dark mode", "Light mode", "langages"],
     },
     {
-      name: _language("pvc") || "Privacy",
+      name: _language("nav.pvc") || "Privacy",
       link: "/settings/privacy",
       otherNames: [],
     },
     {
-      name: _language("hlc") || "Help Center",
+      name: _language("nav.hlc") || "Help Center",
       link: "/settings/help",
       otherNames: ["Contact support"],
     },
     {
-      name: _language("tos") || "Terms of Service",
+      name: _language("nav.tos") || "Terms of Service",
       link: "/settings/tos",
       otherNames: [],
     },
   ];
   return (
     <div className={`flex column gap2rem ${styles.container}`}>
-      <h2 className="font16">Settings</h2>
+      <h2 className="font16">{_language("header") || "Settings"}</h2>
       <input
         className={styles.searchBox}
         type="search"

@@ -3,11 +3,11 @@ import React from "react";
 import Search from "antd/es/input/Search";
 import { useRouter } from "next/navigation";
 
-const SearchComponent = ({ style }) => {
+const SearchComponent = ({ style, text }) => {
   const router = useRouter();
   return (
     <div className={style}>
-      <p className="font14 padding05rem background">Search for blogs</p>
+      <p className="font14 padding05rem background">{text}</p>
 
       <Search
         placeholder="input search text"

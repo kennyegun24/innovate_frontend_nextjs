@@ -1,5 +1,6 @@
 {
   "settings": {
+    "header": "Settings",
     "nav": {
       "acs": "Account Settings",
       "pvs": "Profile Settings",
@@ -29,6 +30,33 @@
     "profile": {
       "header": "Edit your personal information",
       "link_text": "Click here to edit your profile"
+    }
+  },
+  "nav": {
+    "fds": "Feeds",
+    "urs": "Users",
+    "ntftn": "Notifications",
+    "srh": "Search",
+    "cht": "Chats",
+    "str": "Store",
+    "job": "Jobs",
+    "blg": "Blogs",
+    "sttn": "Settings"
+  },
+  "blog": {
+    "rcnt": "Recent Blogs",
+    "sfb": "Search for blogs",
+    "mlb": "Most Liked Blogs",
+    "cmmt": "Comments",
+    "details": {
+      "obfu": "Other blogs from user",
+      "ctc": "Click to comment",
+      "wrds": "words"
+    },
+    "search": {
+      "srhrs": "Search results for",
+      "srb": "Searched Blogs",
+      "emt_srh": "Search came empty"
     }
   }
 }

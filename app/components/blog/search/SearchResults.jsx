@@ -1,10 +1,17 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useBlogSearchHook } from "@/app/customHooks/useBlogSearch";
+import { LanguageContext } from "@/app/context/LanguageProvider";
+
 const SearchResults = ({ styles }) => {
+  const { translateText } = useContext(LanguageContext);
+
+  const _language = (param) => {
+    return translateText("blog.search." + param);
+  };
   const search = useSearchParams();
   const searchName = search.get("query");
   const [page, setPage] = useState(1);
@@ -72,7 +79,7 @@ const SearchResults = ({ styles }) => {
         <p
           className={`flex align_center justify_center width100 ${styles.center}`}
         >
-          Search came empty
+          {_language("emt_srh") || "Search came empty"}
         </p>
       )}
     </div>

@@ -2,7 +2,7 @@ import React, { useCallback, useRef, useState } from "react";
 import LatestBlogs from "../LatestBlogs";
 // import useSWR from "swr";
 
-const OtherBlogs = ({ id }) => {
+const OtherBlogs = ({ id, lang }) => {
   const ref = useRef();
   const [articles, setArticles] = useState([]);
   const [fetched, setFetch] = useState(false);
@@ -40,10 +40,14 @@ const OtherBlogs = ({ id }) => {
     },
     [id, fetched]
   );
-  console.log(articles);
+
   return (
     <div ref={observer} style={{ width: "100%" }} className="width100">
-      <LatestBlogs articles={articles} text="Other Blogs from user" />
+      <LatestBlogs
+        comment={lang("cmmt") || "Comments"}
+        articles={articles}
+        text={lang("details.obfu") || "Other Blogs from user"}
+      />
     </div>
   );
 };

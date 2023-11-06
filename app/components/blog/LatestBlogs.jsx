@@ -6,7 +6,7 @@ import { CalendarFilled, CommentOutlined } from "@ant-design/icons";
 import { FaUser } from "react-icons/fa";
 import { numberFormat } from "@/app/utils/general";
 import noImage from "public/no_blog_image.png";
-const LatestBlogs = ({ text, articles }) => {
+const LatestBlogs = ({ text, articles, comment }) => {
   const blogs = [...articles];
   return (
     <div className={`flex background2 column gap1rem ${styles.subContainer2}`}>
@@ -38,7 +38,7 @@ const LatestBlogs = ({ text, articles }) => {
                 <CommentOutlined className="font10" />
                 <p className="font10">
                   {numberFormat(blog.comments_counter + blog.likes_counter)}{" "}
-                  Comments
+                  {comment}
                 </p>
               </div>
               <p className={`font14 ${styles.text}`}>
