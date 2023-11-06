@@ -6,10 +6,10 @@ import { FollowedProvider } from "./context/FollowedContext";
 import styles from "./page.module.css";
 import { HeightProvider } from "./context/HeightContext";
 import { InterractionProvider } from "./context/InterractionContext";
-import { headers } from "next/headers";
 const inter = Inter({ subsets: ["latin"] });
 import AuthProvider from "./context/SessionProvider";
 import { PostDetailsProvider } from "./context/PostDetailsContext";
+import { LanguageProvider } from "./context/LanguageProvider";
 export const metadata = {
   metadataBase: new URL("https://innovate-frontend-nextjs.vercel.app"),
   title: {
@@ -35,28 +35,30 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={` ${inter.className}`}>
-        <ThemeProvider>
-          <AuthProvider>
-            <HeightProvider>
-              <InterractionProvider>
-                <FollowedProvider>
-                  <PostDetailsProvider>
-                    <div className={styles.appLayout}>
-                      <div className={styles.navLayoutHeader}>
-                        <NavBar />
+        <LanguageProvider>
+          <ThemeProvider>
+            <AuthProvider>
+              <HeightProvider>
+                <InterractionProvider>
+                  <FollowedProvider>
+                    <PostDetailsProvider>
+                      <div className={styles.appLayout}>
+                        <div className={styles.navLayoutHeader}>
+                          <NavBar />
+                        </div>
+                        <div
+                          className={`${styles.appLayoutChildren} ${styles.width85}`}
+                        >
+                          {children}
+                        </div>
                       </div>
-                      <div
-                        className={`${styles.appLayoutChildren} ${styles.width85}`}
-                      >
-                        {children}
-                      </div>
-                    </div>
-                  </PostDetailsProvider>
-                </FollowedProvider>
-              </InterractionProvider>
-            </HeightProvider>
-          </AuthProvider>
-        </ThemeProvider>
+                    </PostDetailsProvider>
+                  </FollowedProvider>
+                </InterractionProvider>
+              </HeightProvider>
+            </AuthProvider>
+          </ThemeProvider>
+        </LanguageProvider>
       </body>
     </html>
   );
