@@ -21,7 +21,7 @@ const RecommendedPeople = ({ data, reference, loading }) => {
         {data.map((user, index) => (
           <Link
             ref={data.length === index + 1 ? reference : null}
-            href={`/user/${user.id}`}
+            href={`/user/${user.user_name}/${user.id}`}
             className="flex justify_between text_decoration_none text_color theme"
             key={user.id}
           >

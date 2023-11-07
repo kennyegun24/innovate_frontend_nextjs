@@ -9,6 +9,7 @@ import { loginFailure } from "../redux/user_auth/userReducer";
 
 const Registration = () => {
   const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [file, setFile] = useState(null);
   const dispatch = useDispatch();
   const { detailsError } = useSelector((state) => state.user);
@@ -22,6 +23,7 @@ const Registration = () => {
     }
   };
   const onSub = async (e) => {
+    setLoading(true);
     e.preventDefault();
     const id = crypto.randomUUID();
     try {
@@ -33,7 +35,9 @@ const Registration = () => {
         },
         dispatch
       );
+      setLoading(false);
     } catch (error) {
+      setLoading(false);
       throw Error(error);
     }
   };
@@ -73,7 +77,14 @@ const Registration = () => {
               id="imageSelector"
             />
             <div className="flex column gap05rem">
-              <button>Register</button>
+              <button
+                disabled={loading ? true : false}
+                style={{
+                  background: loading ? "grey" : "#18191a",
+                }}
+              >
+                {loading ? "Creating account..." : "Register"}
+              </button>
               {detailsError &&
                 setTimeout(() => {
                   dispatch(loginFailure(false));

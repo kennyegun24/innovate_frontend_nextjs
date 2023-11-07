@@ -69,6 +69,7 @@ const handler = NextAuth({
             work: credentials.work,
             name: credentials.name,
             image: credentials.image,
+            uid: credentials.uid,
           };
         } else {
           user = {
@@ -77,6 +78,7 @@ const handler = NextAuth({
             email: credentials.email,
             uid: credentials.uid,
             name: credentials.name,
+            uid: credentials.uid,
           };
         }
 
