@@ -25,7 +25,7 @@ const handler = NextAuth({
           );
           const user = await authResponse.data;
           const tokenExpiration = new Date();
-          tokenExpiration.setHours(tokenExpiration.getHours() + 2);
+          tokenExpiration.setHours(tokenExpiration.getHours() + 5);
           return {
             token: user.data.token,
             role: user.data.type,
@@ -89,7 +89,7 @@ const handler = NextAuth({
           const res = await authResponse.data;
           const response = await res?.data;
           const tokenExpiration = new Date();
-          tokenExpiration.setHours(tokenExpiration.getHours() + 2);
+          tokenExpiration.setHours(tokenExpiration.getHours() + 5);
           return {
             token: response.token,
             role: response.type,
@@ -126,7 +126,7 @@ const handler = NextAuth({
     jwt: async ({ token, user }) => {
       user && (token = user);
       if (token?.expires && new Date() > new Date(token.expires)) {
-        return {};
+        return null;
       }
       return token;
     },
