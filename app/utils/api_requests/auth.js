@@ -24,6 +24,7 @@ export const registerAuthentication = async ({ data, file, id }, dispatch) => {
         userImage: image,
         time: currentTime,
       });
+      await setDoc(doc(db, "userchat", id), {});
       const user = { ...data, uid: id };
       if (image) {
         user.image = image;
