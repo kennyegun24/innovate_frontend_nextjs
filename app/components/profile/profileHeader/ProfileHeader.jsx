@@ -5,6 +5,7 @@ import rooney from "public/rooney.jpg";
 import styles from "./styles.module.css";
 import ProfileButton from "../../ProfileButton";
 import { numberFormat } from "@/app/utils/general";
+import { AiFillMessage } from "react-icons/ai";
 import Link from "next/link";
 
 const ProfileHeader = ({
@@ -57,15 +58,27 @@ const ProfileHeader = ({
         </h3>
         <div className="flex gap15rem align_center">
           {button && (
-            <ProfileButton
-              border={button.border}
-              background={button.background_color}
-              text={"Follow"}
-              color={button.color}
-            />
+            <>
+              <ProfileButton
+                border={button.border}
+                background={button.background_color}
+                text={"Follow"}
+                color={button.color}
+              />
+              <Link href={`/chat/${data.username}/${data.uid}`}>
+                <ProfileButton
+                  border={button.border}
+                  background={""}
+                  text={<AiFillMessage />}
+                  color={button.color}
+                  font_size={"20px"}
+                  padding={"0.3rem"}
+                />
+              </Link>
+            </>
           )}
           <h3 className={styles.follow_count}>
-            {numberFormat(data.post_count)} Posts
+            {numberFormat(data.posts_count)} Posts
           </h3>
         </div>
       </section>
