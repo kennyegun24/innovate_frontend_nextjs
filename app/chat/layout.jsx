@@ -1,29 +1,20 @@
 "use client";
-import React, { useState, useEffect, lazy, Suspense } from "react";
-import AllChats from "../components/chat/AllChats";
+import React, { lazy, Suspense, useContext } from "react";
 import styles from "./layout.module.css";
+const AllChats = lazy(() => import("../components/chat/AllChats"));
+import RollingAnimation from "../components/animaate/RollingAnimation";
+import { HeightContext } from "../context/HeightContext";
 
 const Layout = ({ children }) => {
-  const [screenWidth, setScreenWidth] = useState(null);
+  const { screenWidth, loading } = useContext(HeightContext);
 
-  useEffect(() => {
-    // Function to update screenWidth state
-    const updateScreenWidth = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    // Initial screen width
-    updateScreenWidth();
-
-    // Attach event listener to window resize event
-    window.addEventListener("resize", updateScreenWidth);
-
-    // Cleanup by removing the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("resize", updateScreenWidth);
-    };
-  }, []);
-  const AllChats = lazy(() => import("../components/chat/AllChats"));
+  loading && (
+    <div
+      className={`scroll_y_black_white flex column ${styles.allSettingsContainer}`}
+    >
+      <RollingAnimation />
+    </div>
+  );
   return (
     <div
       className={`flex align_center justify_center ${styles.layoutContainer}`}
@@ -31,9 +22,11 @@ const Layout = ({ children }) => {
       <div
         className={`flex align_Center border background2 theme ${styles.subLayoutContainer}`}
       >
-        {screenWidth >= 600 && (
-          <div className={`scroll_y ${styles.layoutAllChatsDiv}`}>
-            <Suspense fallback={<div>Loading...</div>}>
+        {screenWidth >= 1025 && (
+          <div
+            className={`scroll_y_black_white flex column ${styles.allSettingsContainer}`}
+          >
+            <Suspense fallback={<RollingAnimation />}>
               <AllChats />
             </Suspense>
           </div>
