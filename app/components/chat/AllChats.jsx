@@ -1,6 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { _mock_all_chats } from "@/app/_mock/all_message";
+import React, { memo, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Search from "antd/es/input/Search";
@@ -32,6 +31,11 @@ const AllChats = () => {
       };
     }
   }, [data?.user?.uid]);
+  if (!data?.user?.uid) return;
+  // let foundIndex = Object.entries(users).findIndex((e) => e[0] === "iamkenny");
+  // if (foundIndex !== -1) {
+  //   Object.entries(users)[foundIndex][1].userInfo.receiver_id = "non";
+  // }
   return (
     <div className="flex column gap05rem ">
       <div
@@ -48,7 +52,7 @@ const AllChats = () => {
         .sort((a, b) => b[1]?.date - a[1]?.date)
         .map((user, index) => {
           return (
-            <div className="padding05rem flex column gap05rem" key={index}>
+            <div className="padding05rem flex column gap05rem" key={user[0]}>
               <Link
                 href={`/chat/${user[1]?.userInfo.displayName}/${user[1]?.userInfo.uid}`}
                 className="flex gap05rem text_decoration_none text_color"
@@ -89,4 +93,4 @@ const AllChats = () => {
   );
 };
 
-export default AllChats;
+export default memo(AllChats);
