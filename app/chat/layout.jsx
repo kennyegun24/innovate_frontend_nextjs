@@ -8,13 +8,6 @@ import { HeightContext } from "../context/HeightContext";
 const Layout = ({ children }) => {
   const { screenWidth, loading } = useContext(HeightContext);
 
-  loading && (
-    <div
-      className={`scroll_y_black_white flex column ${styles.allSettingsContainer}`}
-    >
-      <RollingAnimation />
-    </div>
-  );
   return (
     <div
       className={`flex align_center justify_center ${styles.layoutContainer}`}
@@ -23,12 +16,15 @@ const Layout = ({ children }) => {
         className={`flex align_Center border background2 theme ${styles.subLayoutContainer}`}
       >
         {screenWidth >= 1025 && (
-          <div
-            className={`scroll_y_black_white flex column ${styles.allSettingsContainer}`}
-          >
+          <div className={`scroll_y_black_white flex column`}>
             <Suspense fallback={<RollingAnimation />}>
               <AllChats />
             </Suspense>
+          </div>
+        )}
+        {loading && (
+          <div className={`scroll_y_black_white flex column`}>
+            <RollingAnimation />
           </div>
         )}
         <div className={styles.layoutChildren}>{children}</div>
