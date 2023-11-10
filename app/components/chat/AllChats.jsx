@@ -1,41 +1,56 @@
 "use client";
-import React, { memo, useEffect, useState } from "react";
+import React, { memo, useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Search from "antd/es/input/Search";
 import { db } from "@/app/firebase";
-import { doc, onSnapshot } from "firebase/firestore";
-import { useSession } from "next-auth/react";
+import { doc, getDoc, onSnapshot } from "firebase/firestore";
+import { MessageNotificationContext } from "@/app/context/MessageNotification";
 
 const AllChats = () => {
-  const { data } = useSession();
   const [users, setUsers] = useState({});
+  const { socket, user_details } = useContext(MessageNotificationContext);
 
   useEffect(() => {
-    if (data?.user?.uid) {
-      const getChats = () => {
-        const unsub = onSnapshot(
-          doc(db, "userchat", data?.user?.uid),
-          (doc) => {
-            setUsers(doc.data() || {});
-          }
-        );
-        return () => {
-          unsub();
-        };
-      };
-      data?.user?.uid && getChats();
+    const getMessage = () => {
+      socket.current?.on("receive_message", (data) => {
+        setUsers((prevUsers) => {
+          const updatedUser = { ...prevUsers[data?.chat_id] }; // Create a shallow copy of the specific user
+          updatedUser.lastMessage.text = data?.message;
+          updatedUser.date = Date.now();
 
-      return () => {
-        getChats(); // Unsubscribe from the snapshot listener when the component unmounts
+          return {
+            ...prevUsers,
+            [data?.chat_id]: updatedUser, // Update the specific user in the state
+          };
+        });
+      });
+    };
+    getMessage();
+    return () => {
+      getMessage();
+    };
+    /* eslint-disable */
+  }, []);
+
+  useEffect(() => {
+    if (user_details?.user?.uid) {
+      const getChats = async () => {
+        const docRef = doc(db, "userchat", user_details?.user?.uid);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          setUsers(docSnap.data());
+        } else {
+          // docSnap.data() will be undefined in this case
+          console.log("No such document!");
+        }
       };
+      getChats();
     }
-  }, [data?.user?.uid]);
-  if (!data?.user?.uid) return;
-  // let foundIndex = Object.entries(users).findIndex((e) => e[0] === "iamkenny");
-  // if (foundIndex !== -1) {
-  //   Object.entries(users)[foundIndex][1].userInfo.receiver_id = "non";
-  // }
+  }, [user_details?.user?.uid]);
+
+  if (!user_details?.user?.uid) return;
+
   return (
     <div className="flex column gap05rem ">
       <div
@@ -81,7 +96,11 @@ const AllChats = () => {
                       : user[1]?.lastMessage?.text}
                   </p>
                   <p className="font10 opacity05">
-                    {new Date(user[1].date?.seconds * 1000).toLocaleString()}
+                    {new Date(
+                      user[1]?.date?.seconds
+                        ? user[1].date?.seconds * 1000
+                        : user[1].date
+                    ).toLocaleString()}
                   </p>
                 </div>
               </Link>
