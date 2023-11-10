@@ -14,7 +14,7 @@ export const mssg = async ({
   combineId,
   text,
   currentUserUid,
-  data,
+  user_details,
   details,
 }) => {
   const chat_ref = await getDoc(doc(db, "chats", combineId));
@@ -42,9 +42,9 @@ export const mssg = async ({
       });
       await updateDoc(doc(db, "userchat", details?.uid), {
         [combineId + ".userInfo"]: {
-          uid: data?.user?.uid,
-          displayName: data?.user?.name,
-          photoURL: data?.user?.image,
+          uid: user_details?.user?.uid,
+          displayName: user_details?.user?.name,
+          photoURL: user_details?.user?.image,
         },
         [combineId + ".id"]: uuidv4(),
         [combineId + ".date"]: serverTimestamp(),

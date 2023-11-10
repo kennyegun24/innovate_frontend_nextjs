@@ -1,20 +1,19 @@
 import TextArea from "antd/es/input/TextArea";
-import React, { memo, useCallback, useEffect, useRef, useState } from "react";
+import React, { memo, useCallback, useContext, useRef, useState } from "react";
 import { BiSend } from "react-icons/bi";
 import styles from "./chat_input.module.css";
 import { getURLMetadata } from "@/app/utils/linkPreview";
 import Image from "next/image";
-
-import { useSession } from "next-auth/react";
 import { useSelector } from "react-redux";
 import { mssg } from "@/app/utils/chat/sendMessage";
+import { MessageNotificationContext } from "@/app/context/MessageNotification";
 
-const ChatInput = ({ uid }) => {
+const ChatInput = () => {
   const [urlLink, setUrlLink] = useState({});
   const [text, setText] = useState("");
-  const { data } = useSession();
   const { details } = useSelector((state) => state.unauthUserDetails);
-  const currentUserUid = data?.user?.uid;
+  const { socket, user_details } = useContext(MessageNotificationContext);
+  const currentUserUid = user_details?.user?.uid;
   // const prevUrlRef = useRef(null);
   const handleTextChange = useCallback((newText) => {
     setText(newText);
@@ -40,20 +39,26 @@ const ChatInput = ({ uid }) => {
   }, []);
 
   const combineId =
-    data?.user?.uid && currentUserUid > details?.uid
+    user_details?.user?.uid && currentUserUid > details?.uid
       ? currentUserUid + details?.uid
       : details?.uid + currentUserUid;
-
   const sendMessage = async () => {
     try {
       await mssg({
         combineId,
         text,
         currentUserUid,
-        data,
+        user_details,
         details,
       });
       setText("");
+      socket.current?.emit("send_message", {
+        to_sender: user_details?.user?.uid,
+        to_user: details?.uid,
+        message: text.trim(),
+        chat_id: combineId,
+        sender_name: user_details?.user.name,
+      });
     } catch (error) {
       console.log(error);
     }
@@ -101,8 +106,11 @@ const ChatInput = ({ uid }) => {
           className={styles.textareaDiv}
           value={text}
         />
-        <div className={`${styles.sendIconDiv} background theme pointer`}>
-          <BiSend className="font20 auto" onClick={sendMessage} />
+        <div
+          onClick={sendMessage}
+          className={`${styles.sendIconDiv} background theme pointer`}
+        >
+          <BiSend className="font20 auto" />
         </div>
       </div>
     </div>
