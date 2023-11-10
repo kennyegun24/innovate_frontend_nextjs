@@ -10,6 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 import AuthProvider from "./context/SessionProvider";
 import { PostDetailsProvider } from "./context/PostDetailsContext";
 import { LanguageProvider } from "./context/LanguageProvider";
+import MessageProvider from "./context/MessageNotification";
 export const metadata = {
   metadataBase: new URL("https://innovate-frontend-nextjs.vercel.app"),
   title: {
@@ -42,16 +43,18 @@ export default function RootLayout({ children }) {
                 <InterractionProvider>
                   <FollowedProvider>
                     <PostDetailsProvider>
-                      <div className={styles.appLayout}>
-                        <div className={styles.navLayoutHeader}>
-                          <NavBar />
+                      <MessageProvider>
+                        <div className={styles.appLayout}>
+                          <div className={styles.navLayoutHeader}>
+                            <NavBar />
+                          </div>
+                          <div
+                            className={`${styles.appLayoutChildren} ${styles.width85}`}
+                          >
+                            {children}
+                          </div>
                         </div>
-                        <div
-                          className={`${styles.appLayoutChildren} ${styles.width85}`}
-                        >
-                          {children}
-                        </div>
-                      </div>
+                      </MessageProvider>
                     </PostDetailsProvider>
                   </FollowedProvider>
                 </InterractionProvider>

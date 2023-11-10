@@ -6,6 +6,7 @@ const AllChats = lazy(() => import("../components/chat/AllChats"));
 
 const Chat = () => {
   const { screenWidth, loading } = useContext(HeightContext);
+  if (loading) return;
 
   return (
     <>

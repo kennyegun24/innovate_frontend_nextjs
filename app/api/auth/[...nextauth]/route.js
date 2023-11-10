@@ -25,7 +25,7 @@ const handler = NextAuth({
           );
           const user = await authResponse.data;
           const tokenExpiration = new Date();
-          tokenExpiration.setHours(tokenExpiration.getHours() + 5);
+          tokenExpiration.setHours(tokenExpiration.getHours() + 24);
           return {
             token: user.data.token,
             role: user.data.type,
@@ -89,7 +89,7 @@ const handler = NextAuth({
           const res = await authResponse.data;
           const response = await res?.data;
           const tokenExpiration = new Date();
-          tokenExpiration.setHours(tokenExpiration.getHours() + 5);
+          tokenExpiration.setHours(tokenExpiration.getHours() + 24);
           return {
             token: response.token,
             role: response.type,
