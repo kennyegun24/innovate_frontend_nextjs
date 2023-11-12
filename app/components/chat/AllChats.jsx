@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Search from "antd/es/input/Search";
 import { db } from "@/app/firebase";
-import { doc, getDoc, onSnapshot } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import { MessageNotificationContext } from "@/app/context/MessageNotification";
 
 const AllChats = () => {
@@ -15,14 +15,29 @@ const AllChats = () => {
     const getMessage = () => {
       socket.current?.on("receive_message", (data) => {
         setUsers((prevUsers) => {
-          const updatedUser = { ...prevUsers[data?.chat_id] }; // Create a shallow copy of the specific user
-          updatedUser.lastMessage.text = data?.message;
-          updatedUser.date = Date.now();
+          const updatedUser = { ...prevUsers[data?.chat_id] };
+          if (updatedUser?.lastMessage?.text) {
+            updatedUser.lastMessage.text = data?.message;
+            updatedUser.date = Date.now();
 
-          return {
-            ...prevUsers,
-            [data?.chat_id]: updatedUser, // Update the specific user in the state
-          };
+            return {
+              ...prevUsers,
+              [data?.chat_id]: updatedUser,
+            };
+          } else {
+            return {
+              ...prevUsers,
+              [data?.chat_id]: {
+                lastMessage: {
+                  text: data?.message,
+                },
+                userInfo: {
+                  displayName: data?.sender_name,
+                  uid: data?.to_sender,
+                },
+              },
+            };
+          }
         });
       });
     };
@@ -41,7 +56,6 @@ const AllChats = () => {
         if (docSnap.exists()) {
           setUsers(docSnap.data());
         } else {
-          // docSnap.data() will be undefined in this case
           console.log("No such document!");
         }
       };
