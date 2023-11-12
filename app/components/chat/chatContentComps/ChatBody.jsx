@@ -1,37 +1,59 @@
 "use client";
-import React, { memo, useEffect, useRef, useState } from "react";
-import styles from "./chatBody.module.css";
-import { currentUserDetails } from "@/app/_mock/current_user_details";
+import React, { memo, useContext, useEffect, useRef, useState } from "react";
 import { _mock_chat_message } from "@/app/_mock/chat_content";
 import { useSelector } from "react-redux";
-import { useSession } from "next-auth/react";
 import { db } from "@/app/firebase";
-import { onSnapshot, doc } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
+import { MessageNotificationContext } from "@/app/context/MessageNotification";
 
 const ChatBody = () => {
-  const { data } = useSession();
+  const { user_details, newMessage } = useContext(MessageNotificationContext);
   const { details } = useSelector((state) => state.unauthUserDetails);
   const smoothSlide = useRef();
-  const currentUserUid = data?.user?.uid;
+  const currentUserUid = user_details?.user?.uid;
   const combineId =
-    data?.user?.uid && currentUserUid > details?.uid
-      ? data?.user?.uid + details?.uid
-      : details?.uid + data?.user?.uid;
+    user_details?.user?.uid && currentUserUid > details?.uid
+      ? currentUserUid + details?.uid
+      : details?.uid + currentUserUid;
   const id = currentUserUid;
 
   const [messages, setMessages] = useState([]);
   useEffect(() => {
-    if (combineId && data?.user?.uid) {
-      const unsub = onSnapshot(doc(db, "chats", combineId), (doc) => {
-        console.log(doc.data());
-        setMessages(doc.data()?.messages || []);
-      });
-      // unsub();
-      return () => {
-        unsub();
+    if (combineId && user_details?.user?.uid) {
+      const getChats = async () => {
+        const docRef = doc(db, "chats", combineId);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          setMessages(docSnap.data()?.messages || []);
+        } else {
+          console.log("No such document!");
+        }
       };
+      getChats();
     }
-  }, [combineId, data?.user?.uid, details?.uid]);
+  }, [combineId, user_details?.user?.uid]);
+
+  useEffect(() => {
+    if (newMessage) console.log(newMessage);
+    setMessages((prevChats) => {
+      const date = new Date();
+      const dateString = date.toLocaleString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+      });
+      return [
+        ...prevChats,
+        {
+          senderId: newMessage?.to_sender,
+          text: newMessage?.message,
+          time: dateString,
+        },
+      ];
+    });
+  }, [newMessage]);
 
   useEffect(() => {
     smoothSlide.current?.scrollIntoView({ behavior: "smooth" });
