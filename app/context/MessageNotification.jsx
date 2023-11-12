@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useRef, useEffect } from "react";
+import { createContext, useRef, useEffect, useState } from "react";
 export const MessageNotificationContext = createContext();
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -12,6 +12,7 @@ const MessageProvider = ({ children }) => {
   const { data } = useSession();
   const path = usePathname();
   const restrictedPath = "/chat";
+  const [newMessage, setNewMessage] = useState(null);
 
   useEffect(() => {
     socket.current = io("ws://localhost:8900");
@@ -23,31 +24,31 @@ const MessageProvider = ({ children }) => {
     }
   }, [data?.user?.uid]);
   useEffect(() => {
-    if (!path.startsWith(restrictedPath)) {
-      const user_name = data?.user?.name;
-      socket.current?.on("receive_message", (data) => {
-        if (data.sender_name !== user_name) {
-          const notify = toast(`${data.sender_name} Sent you a message`, {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: true,
-            pauseOnFocusLoss: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            toastId: data.chat_id,
-            draggable: false,
-            progress: undefined,
-            type: "info",
-            theme: "dark",
-          });
-          notify.addEventListener("click", () => {});
-        }
-      });
-    }
+    const user_name = data?.user?.name;
+    socket.current?.on("receive_message", (data) => {
+      setNewMessage({ ...data });
+      if (data.sender_name !== user_name && !path.startsWith(restrictedPath)) {
+        toast(`${data.sender_name} Sent you a message`, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: true,
+          pauseOnFocusLoss: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          toastId: data.chat_id,
+          draggable: false,
+          progress: undefined,
+          type: "info",
+          theme: "dark",
+        });
+      }
+    });
   }, [path, data?.user?.name]);
 
   return (
-    <MessageNotificationContext.Provider value={{ socket, user_details: data }}>
+    <MessageNotificationContext.Provider
+      value={{ newMessage, socket, user_details: data }}
+    >
       {children}
       <ToastContainer />
     </MessageNotificationContext.Provider>
