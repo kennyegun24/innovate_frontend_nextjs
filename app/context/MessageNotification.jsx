@@ -27,21 +27,25 @@ const MessageProvider = ({ children }) => {
     const user_name = data?.user?.name;
     socket.current?.on("receive_message", (data) => {
       setNewMessage({ ...data });
-      if (data.sender_name !== user_name && !path.startsWith(restrictedPath)) {
-        toast(`${data.sender_name} Sent you a message`, {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: true,
-          pauseOnFocusLoss: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          toastId: data.chat_id,
-          draggable: false,
-          progress: undefined,
-          type: "info",
-          theme: "dark",
-        });
-      }
+      if (user_name)
+        if (
+          data.sender_name !== user_name &&
+          !path.startsWith(restrictedPath)
+        ) {
+          toast(`${data.sender_name} Sent you a message`, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: true,
+            pauseOnFocusLoss: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            toastId: data.chat_id,
+            draggable: false,
+            progress: undefined,
+            type: "info",
+            theme: "dark",
+          });
+        }
     });
   }, [path, data?.user?.name]);
 
