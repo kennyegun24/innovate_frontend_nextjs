@@ -70,8 +70,13 @@
     align-items: center;
   }
 
-  .linksMobile {
-    font-size: 1.5rem;
+  .linksMobile:nth-child(1),
+  .linksMobile:nth-child(5) {
+    font-size: 1.4rem;
+  }
+  .linksMobile:nth-child(2),
+  .linksMobile:nth-child(4) {
+    font-size: 1.6rem;
   }
 
   .linksMobile:nth-child(3) {
