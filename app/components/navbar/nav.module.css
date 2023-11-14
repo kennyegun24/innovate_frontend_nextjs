@@ -1,118 +1,107 @@
-.container {
-  padding: 0.5rem 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 99999;
-  height: 100vh;
-}
-
-.subContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  flex-direction: column;
-  height: 70vh;
-}
-
-.toggleContainer {
-  margin: 100% 0;
-  height: fit-content;
-}
-
-.subContainer2 {
-  display: flex;
-  gap: 1.5rem;
-  flex-direction: column;
-}
-
-.icons {
-  font-size: 20px;
-}
-
-.hamBurger {
-  display: none;
-}
-
-.white_text {
-  color: #f4f4f4;
-}
-
-.dark_text {
-  color: #111;
-}
-
-.navLabel {
-  font-size: 16px;
-}
-
-@media (min-width: 200px) and (max-width: 767px) {
+@media (min-width: 767px) {
   .container {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    height: 0;
-    padding: 0;
-    width: 0;
+    padding: 0.5rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+    height: 100vh;
+    display: flex;
+  }
+
+  .subContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: column;
+    height: 70vh;
   }
 
   .toggleContainer {
-    margin: 0;
+    margin: 100% 0;
+    height: fit-content;
+  }
+
+  .subContainer2 {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+  }
+
+  .icons {
+    font-size: 20px;
+  }
+
+  .hamBurger {
+    display: none;
+  }
+
+  .white_text {
+    color: #f4f4f4;
+  }
+
+  .dark_text {
+    color: #111;
   }
 
   .navLabel {
     font-size: 16px;
   }
+}
 
-  .hamBurger {
-    display: block;
-    text-align: right;
-    right: 0.5rem;
-    bottom: 7px;
-    position: fixed;
-    height: calc(100vh - (90vh + 25px));
-    width: calc(100vh - (90vh + 25px));
-    padding: 0.5rem;
+@media (min-width: 200px) and (max-width: 767px) {
+  .container {
+    display: none;
   }
-
-  .subContainer2 {
-    /* gap: 2rem; */
-    justify-content: space-evenly;
+  .containerMobile {
+    display: flex;
+    width: 100%;
     height: 100%;
-    z-index: 9999999;
   }
 
-  .subContainer {
-    height: fit-content;
-    width: 200px;
-    position: fixed;
-    top: 0;
-    height: 90%;
-    flex-direction: row;
-    backdrop-filter: blur(10px);
-    flex-direction: column;
-    justify-content: center;
-    gap: 2.5rem;
-    padding: 1rem 0 1rem 0;
+  .subContainerMobile {
+    width: 100%;
+    position: relative;
+  }
+
+  .subContainer2Mobile {
+    justify-content: space-evenly;
+    display: flex;
     align-items: center;
-    transition: all 0.5s ease-in-out;
-    background: var(--primaryColor);
-    z-index: 9999999;
   }
 
-  .backLight {
-    background-color: var(--background_transparent);
+  .linksMobile {
+    font-size: 1.5rem;
   }
 
-  .icons {
-    font-size: 24px;
+  .linksMobile:nth-child(3) {
+    background: var(--blue_color);
+    padding: 0.6rem;
+    border-radius: 50%;
+    font-size: 1.8rem;
+  }
+
+  .subContainer2MobileToggle {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: fit-content;
+    z-index: 99999999;
+    width: fit-content;
+    justify-content: space-between;
+  }
+
+  .links {
+    font-size: 1.5rem;
   }
 
   .hide {
     right: -999%;
+    transition: all 0.4s ease-in-out;
   }
 
   .show {
     right: 0;
+    transition: all 0.4s ease-in-out;
   }
 }

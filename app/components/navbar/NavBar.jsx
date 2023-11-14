@@ -10,11 +10,12 @@ import { usePathname } from "next/navigation";
 import { useHideRef } from "@/app/customHooks/refHook";
 import { SettingTwoTone } from "@ant-design/icons";
 import { LanguageContext } from "@/app/context/LanguageProvider";
+import { IoMdArrowDropupCircle } from "react-icons/io";
+import { GiCancel } from "react-icons/gi";
 
 const NavBar = () => {
   const path = usePathname();
-  const { switchLanguage, translateText, language } =
-    useContext(LanguageContext);
+  const { translateText } = useContext(LanguageContext);
   const _language = (param) => {
     return translateText("nav." + param);
   };
@@ -32,17 +33,18 @@ const NavBar = () => {
       label: _language("urs") || "Users",
     },
     {
-      id: 3,
+      id: 4,
       icon: <FaSearch className={styles.icons} />,
       link: "/search",
       label: _language("srh") || "Search",
     },
     {
-      id: 4,
+      id: 3,
       icon: <BiMessage className={styles.icons} />,
       link: "/chat",
       label: _language("cht") || "Chats",
     },
+
     {
       id: 5,
       icon: <BsBell className={styles.icons} />,
@@ -76,39 +78,97 @@ const NavBar = () => {
   ];
   const { setShowActive, area, showActive } = useHideRef();
   return (
-    <div
-      ref={area}
-      className={`flex justify_between background align_center theme ${styles.container}`}
-    >
-      <FaBars
-        onClick={() => setShowActive((prev) => (prev === true ? false : true))}
-        className={`navTransparent ${styles.icons} ${styles.hamBurger}`}
-      />
+    <>
       <div
-        className={`scroll_y_black_white ${styles.subContainer} ${
-          showActive === true ? styles.show : styles.hide
-        }`}
+        className={`justify_between background align_center theme ${styles.container}`}
       >
-        <div className={`${styles.subContainer2}`}>
-          {navs.map((nav) => (
-            <Link
-              key={nav.id}
-              className={`theme flex gap05rem align_center text_decoration_none ${
-                path.startsWith(nav.link) && "blue"
-              } white-black ${styles.links}`}
-              href={nav.link}
+        <div className={`scroll_y_black_white ${styles.subContainer} `}>
+          <div className={`${styles.subContainer2}`}>
+            {navs.map((nav) => (
+              <Link
+                key={nav.id}
+                className={`theme flex gap05rem align_center text_decoration_none ${
+                  path.startsWith(nav.link) && "blue"
+                } white-black ${styles.links}`}
+                href={nav.link}
+                onClick={() =>
+                  setShowActive((prev) => (prev === true ? false : true))
+                }
+              >
+                {nav.icon}
+                <p className={styles.navLabel}>{nav.label}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div
+        ref={area}
+        className={`background align_center theme ${styles.containerMobile}`}
+      >
+        <div
+          className={`scroll_y_black_white ${styles.subContainerMobile} 
+          `}
+        >
+          <div className={`flex ${styles.subContainer2Mobile}`}>
+            {navs.slice(0, 4).map((nav) => (
+              <Link
+                key={nav.id}
+                className={`theme flex gap05rem align_center text_decoration_none ${
+                  path.startsWith(nav.link) && "blue"
+                } white-black ${styles.linksMobile}`}
+                href={nav.link}
+                onClick={() =>
+                  setShowActive((prev) => (prev === true ? false : true))
+                }
+              >
+                {nav.icon}
+              </Link>
+            ))}
+            <IoMdArrowDropupCircle
               onClick={() =>
                 setShowActive((prev) => (prev === true ? false : true))
               }
-            >
-              {nav.icon}
-              <p className={styles.navLabel}>{nav.label}</p>
-            </Link>
-          ))}
+              className={`theme flex gap05rem align_center blue text_decoration_none ${styles.linksMobile}`}
+            />
+          </div>
+
+          <div
+            className={`flex column align_center fixed gap15rem padding1rem background ${
+              styles.subContainer2MobileToggle
+            }  ${showActive === true ? styles.show : styles.hide}`}
+          >
+            {navs.slice(4, 9).map((nav) => (
+              <Link
+                key={nav.id}
+                className={`theme flex gap05rem align_center text_decoration_none ${
+                  path.startsWith(nav.link) && "blue"
+                } white-black ${styles.links}`}
+                href={nav.link}
+                onClick={() =>
+                  setShowActive((prev) => (prev === true ? false : true))
+                }
+              >
+                {nav.icon}
+              </Link>
+            ))}
+            <GiCancel
+              onClick={() =>
+                setShowActive((prev) => (prev === true ? false : true))
+              }
+              className={`theme flex gap05rem align_center text_decoration_none red ${styles.linksMobile}`}
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
 export default NavBar;
+// <FaBars
+//   onClick={() =>
+//     setShowActive((prev) => (prev === true ? false : true))
+//   }
+//   className={`navTransparent ${styles.icons} ${styles.hamBurger}`}
+// />;
