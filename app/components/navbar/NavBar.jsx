@@ -118,9 +118,7 @@ const NavBar = () => {
                   path.startsWith(nav.link) && "blue"
                 } white-black ${styles.linksMobile}`}
                 href={nav.link}
-                onClick={() =>
-                  setShowActive((prev) => (prev === true ? false : true))
-                }
+                onClick={() => setShowActive(false)}
               >
                 {nav.icon}
               </Link>

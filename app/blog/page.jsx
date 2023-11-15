@@ -9,7 +9,7 @@ const Blog = () => {
     <div>
       {!authState && (
         <div className="background2 width100 padding05rem flex justify_end">
-          <Button style={{ height: "5vh" }} className="textRight">
+          <Button style={{ height: "5dvh" }} className="textRight">
             <Link href={"/blog/post-blog"} className="text_color">
               New article
             </Link>
@@ -17,10 +17,10 @@ const Blog = () => {
         </div>
       )}
       <div
-        style={{
-          height: !authState ? "calc(100vh - (5vh + 1rem))" : "100vh",
-        }}
-        className={styles.allBlogsContainer}
+        className={
+          (styles.allBlogsContainer,
+          !authState ? styles.allBlogsContainerAdd : styles.allBlogsContainerNo)
+        }
       >
         <AllBlogs />
       </div>

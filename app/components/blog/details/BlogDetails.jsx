@@ -7,13 +7,14 @@ import useSWR from "swr";
 import BlogComment from "./comment/BlogComment";
 import { useState, useContext } from "react";
 import { LanguageContext } from "@/app/context/LanguageProvider";
+import RollingAnimation from "../../animaate/RollingAnimation";
 
 const BlogDetails = ({ id }) => {
   const { translateText } = useContext(LanguageContext);
   const [show, setShow] = useState(false);
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error, isLoading } = useSWR(
-    `http://localhost:4000/api/v1/blogs/${id}`,
+    `http://192.168.14.193:4000/api/v1/blogs/${id}`,
     fetcher,
     {
       refreshInterval: null,
@@ -25,7 +26,9 @@ const BlogDetails = ({ id }) => {
     }
   );
   const res = data?.data;
-  if (isLoading) return;
+  if (isLoading) return <RollingAnimation />;
+
+  if (error) return "Something went wrong";
 
   const handleShow = () => {
     setShow((prev) => (prev === true ? false : true));
@@ -43,7 +46,7 @@ const BlogDetails = ({ id }) => {
       <div className={`${styles.blogCard} flex gap2rem column`}>
         <BlogPost lang={_language} data={res} />
         <div className="width100">
-          <OtherBlogs lang={_language} id={res.blogs_id} />
+          <OtherBlogs lang={_language} id={res?.blogs_id} />
         </div>
       </div>
       {show && <BlogComment click={handleShow} />}
