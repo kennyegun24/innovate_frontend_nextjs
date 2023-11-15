@@ -20,8 +20,18 @@
   min-height: 10%;
 }
 @media (min-width: 200px) and (max-width: 600px) {
+  .chatContentContainer {
+    /* height: 90dvh; */
+  }
   .chatContentChatInputContainer {
-    min-height: 5%;
-    max-height: 20%;
+    max-height: 12%;
+    min-height: 12%;
+  }
+  .chatContentChatBodyContainer {
+    /* height: 70dvh; */
+  }
+  .chatContentChatHeaderContainer {
+    /* min-height: 12%; */
+    max-height: fit-content;
   }
 }
