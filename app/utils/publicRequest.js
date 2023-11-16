@@ -1,7 +1,7 @@
 const { default: axios } = require("axios");
 
 const BASE_URL = "/api";
-const railsEndpoint = "http://localhost:4000/api/v1";
+const railsEndpoint = "http://192.168.252.193:4000/api/v1";
 export const publicNextRequest = axios.create({
   baseURL: BASE_URL,
   headers: { "Content-Type": "application/json" },

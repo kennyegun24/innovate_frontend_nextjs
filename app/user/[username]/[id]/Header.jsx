@@ -18,7 +18,7 @@ const Header = ({ id }) => {
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error, isLoading } = useSWR(
-    `http://localhost:4000/api/v1/unauth/user_details/${id}`,
+    `http://192.168.252.193:4000/api/v1/unauth/user_details/${id}`,
     fetcher,
     {
       refreshInterval: null,

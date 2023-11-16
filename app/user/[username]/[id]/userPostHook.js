@@ -14,7 +14,7 @@ const useUserPostsHook = ({ page, id }) => {
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error, isLoading } = useSWR(
-    `http://localhost:4000/api/v1/unauth/user/${id}/posts?page=${pageNo}`,
+    `http://192.168.252.193:4000/api/v1/unauth/user/${id}/posts?page=${pageNo}`,
     fetcher,
     {
       refreshInterval: null,

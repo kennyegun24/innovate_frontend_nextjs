@@ -33,7 +33,7 @@ const ChatHeader = ({ uid }) => {
     /* eslint-disable */
   }, []);
   return (
-    <div className="flex justify_between padding05rem">
+    <div className="flex justify_between padding05rem height100">
       <div className="gap05rem flex">
         <Image
           src={userData?.userImage}

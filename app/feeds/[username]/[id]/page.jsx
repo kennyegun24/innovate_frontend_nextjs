@@ -1,10 +1,13 @@
 import PostDetail from "./PostDetail";
 
 const fetchData = async (id) => {
-  const req = await fetch(`http://localhost:4000/api/v1/unauth/posts/${id}`, {
-    cache: "force-cache",
-    next: { revalidate: 60 },
-  });
+  const req = await fetch(
+    `http://192.168.252.193:4000/api/v1/unauth/posts/${id}`,
+    {
+      cache: "force-cache",
+      next: { revalidate: 60 },
+    }
+  );
   const res = await req.json();
   const data = await res.data;
   return data;

@@ -7,7 +7,7 @@ export const useBlogSearchHook = ({ page, searchName }) => {
   const [blogs, setBlogs] = useState([]);
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error, isLoading } = useSWR(
-    `http://localhost:4000/api/v1/article/search?query=${searchName}&page=${page}`,
+    `http://192.168.252.193:4000/api/v1/article/search?query=${searchName}&page=${page}`,
     fetcher,
     {
       refreshInterval: null,

@@ -9,6 +9,7 @@ import { MessageNotificationContext } from "@/app/context/MessageNotification";
 
 const AllChats = () => {
   const [users, setUsers] = useState({});
+  const [search, setSearch] = useState("");
   const { socket, user_details } = useContext(MessageNotificationContext);
 
   useEffect(() => {
@@ -75,9 +76,17 @@ const AllChats = () => {
           zIndex: 9999999,
         }}
       >
-        <Search placeholder="Search users..." />
+        <Search
+          placeholder="Search users..."
+          onChange={(e) => setSearch(e.target.value)}
+        />
       </div>
       {Object.entries(users)
+        .filter((user) =>
+          user[1]?.userInfo?.displayName
+            .toLowerCase()
+            .includes(search.toLowerCase())
+        )
         .sort((a, b) => b[1]?.date - a[1]?.date)
         .map((user, index) => {
           return (

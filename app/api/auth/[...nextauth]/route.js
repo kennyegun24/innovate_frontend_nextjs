@@ -126,7 +126,7 @@ const handler = NextAuth({
     jwt: async ({ token, user }) => {
       user && (token = user);
       if (token?.expires && new Date() > new Date(token.expires)) {
-        return null;
+        return {};
       }
       return token;
     },
