@@ -3,6 +3,7 @@ import { otherUserDetails } from "@/app/_mock/user_details";
 import PostCard from "@/app/components/postCard/PostCard";
 import { useSearchParams } from "next/navigation";
 import React from "react";
+import SearchEmpty from "../components/no-content/SearchEmpty";
 
 const PostsSearch = ({}) => {
   const searchParams = useSearchParams();
@@ -30,7 +31,7 @@ const PostsSearch = ({}) => {
         <PostCard data={posts.sort((a, b) => b.text.length - a.text.length)} />
       ) : (
         <div className="height100 width100 flex align_center justify_center">
-          <h3>Post not found 😤</h3>
+          <SearchEmpty text={"Search came empty"} />
         </div>
       )}
     </div>

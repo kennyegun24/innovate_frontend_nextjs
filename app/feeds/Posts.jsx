@@ -3,6 +3,8 @@ import React, { useCallback, useRef } from "react";
 import PostCard from "@/app/components/postCard/PostCard";
 import usePostsHook from "../customHooks/usePosts";
 import { useState } from "react";
+import RollingAnimation from "../components/animaate/RollingAnimation";
+import ConnectivityProblem from "../components/no-content/Connectivity";
 
 const Posts = () => {
   const [page, setPage] = useState(1);
@@ -23,6 +25,8 @@ const Posts = () => {
     },
     [isLoading, hasMore]
   );
+  if (isLoading && posts.length === 0) return <RollingAnimation />;
+  if (error) return <ConnectivityProblem text={"Something went wrong"} />;
   return <PostCard data={posts} reference={lastPostRef} />;
 };
 
