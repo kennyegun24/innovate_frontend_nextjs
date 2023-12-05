@@ -125,10 +125,9 @@ const handler = NextAuth({
   callbacks: {
     jwt: async ({ token, user }) => {
       user && (token = user);
-      if (token?.expires && new Date() > new Date(token.expires)) {
-        return {};
+      if (token?.expires && new Date() <= new Date(token.expires)) {
+        return token;
       }
-      return token;
     },
     session: async ({ session, token }) => {
       session.user.token = token?.token;
@@ -150,10 +149,9 @@ const handler = NextAuth({
       session.user.company = token?.company;
       session.user.school = token?.school;
       session.expires = token?.expires;
-      if (token?.expires && new Date() > new Date(token?.expires)) {
-        return null;
+      if (token?.expires && new Date() <= new Date(token?.expires)) {
+        return session;
       }
-      return session;
     },
   },
 });
