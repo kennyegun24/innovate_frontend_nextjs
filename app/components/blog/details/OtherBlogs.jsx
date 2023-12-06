@@ -8,7 +8,7 @@ const OtherBlogs = ({ id, lang }) => {
   const [fetched, setFetch] = useState(false);
   // const fetcher = (...args) => fetch(...args).then((res) => res.json());
   // const { data, error, isLoading } = useSWR(
-  //   `http://192.168.252.193:4000/api/v1/blogs/${id}`,
+  //   `http://localhost:4000/api/v1/blogs/${id}`,
   //   fetcher,
   //   {
   //     refreshInterval: null,
@@ -25,12 +25,9 @@ const OtherBlogs = ({ id, lang }) => {
       ref.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && !fetched) {
           const fetchData = async () => {
-            const req = fetch(
-              `http://192.168.252.193:4000/api/v1/user/${id}/blogs`,
-              {
-                next: { revalidate: 10000 },
-              }
-            );
+            const req = fetch(`http://localhost:4000/api/v1/user/${id}/blogs`, {
+              next: { revalidate: 10000 },
+            });
             const res = (await req).json();
             const data = await res;
             setArticles(data.data);

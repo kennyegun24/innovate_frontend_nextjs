@@ -4,7 +4,7 @@ export const fetchUnauthOtherUserDetails = createAsyncThunk(
   "fetch/unauth/postDetails",
   async (id) => {
     const req = await fetch(
-      `http://192.168.252.193:4000/api/v1/unauth/user_details/${id}`,
+      `http://localhost:4000/api/v1/unauth/user_details/${id}`,
       { next: { revalidate: 60 } }
     );
     const res = await req.json();

@@ -15,7 +15,7 @@ const MessageProvider = ({ children }) => {
   const [newMessage, setNewMessage] = useState(null);
 
   useEffect(() => {
-    socket.current = io("ws://192.168.252.193:8900");
+    socket.current = io("ws://localhost:8900");
   }, []);
 
   useEffect(() => {

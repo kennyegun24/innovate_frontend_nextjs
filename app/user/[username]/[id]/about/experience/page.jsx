@@ -9,7 +9,7 @@ const OtherUserExperience = ({ params }) => {
   const { id } = params;
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error, isLoading } = useSWR(
-    `http://192.168.252.193:4000/api/v1/user/${id}/experience`,
+    `http://localhost:4000/api/v1/user/${id}/experience`,
     fetcher,
     {
       refreshInterval: null,

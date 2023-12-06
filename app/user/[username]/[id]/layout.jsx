@@ -6,7 +6,7 @@ import Back from "@/app/components/Back";
 const fetchUserDetails = async (id) => {
   try {
     const fetchDetails = await fetch(
-      `http://192.168.252.193:4000/api/v1/unauth/user_details/${id}`,
+      `http://localhost:4000/api/v1/unauth/user_details/${id}`,
       {
         next: { revalidate: 3600 },
       }
