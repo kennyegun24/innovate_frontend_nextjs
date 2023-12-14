@@ -55,3 +55,5 @@ If you have a suggestion that would make this better, please fork the repo and c
    <a href="https://www.freepik.com/free-vector/cute-white-ghost-element-black-background-vector_24382474.htm#page=2&query=ghost&position=0&from_view=search&track=sph">Image by rawpixel.com</a> on Freepik
    <a href="https://www.freepik.com/free-vector/cyber-data-security-online-concept-illustration-internet-security-information-privacy-protection_12953560.htm#query=login&position=28&from_view=search&track=sph">Image by jcomp</a> on Freepik
    <a href="https://www.freepik.com/free-vector/login-concept-illustration_6184159.htm#query=login&position=3&from_view=search&track=sph">Image by storyset</a> on Freepik
+   <a href="https://www.freepik.com/free-vector/hand-drawn-no-data-concept_55024598.htm#query=empty%20content&position=32&from_view=search&track=ais">Image by pikisuperstar</a> on Freepik
+   Image by <a href="https://www.freepik.com/free-vector/modern-warning-pop-up-with-flat-design_2700024.htm#query=error%20message&position=1&from_view=search&track=ais">Freepik</a>

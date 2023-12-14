@@ -1,32 +1,31 @@
-import React, { useState } from "react";
+"use client";
+import React from "react";
 import { BiBriefcase } from "react-icons/bi";
-import { BsInfo } from "react-icons/bs";
 import { FaCheckCircle, FaGraduationCap } from "react-icons/fa";
-import { ThemeContext } from "@/app/context/DarkMode";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const ProfileAboutNav = () => {
-  const [tab, setTab] = useState(1);
   const pathName = usePathname(),
-    pathId = pathName.split("/")[2];
+    pathUserName = pathName.split("/")[2],
+    pathId = pathName.split("/")[3];
   const nav = [
     {
       icon: <FaCheckCircle />,
       text: "Overview",
-      link: `/user/${pathId}/about`,
+      link: `/user/${pathUserName}/${pathId}/about`,
       tab: 1,
     },
     {
       icon: <FaGraduationCap />,
       text: "Education",
-      link: `/user/${pathId}/about/education`,
+      link: `/user/${pathUserName}/${pathId}/about/education`,
       tab: 3,
     },
     {
       icon: <BiBriefcase />,
       text: "Experience",
-      link: `/user/${pathId}/about/experience`,
+      link: `/user/${pathUserName}/${pathId}/about/experience`,
       tab: 4,
     },
   ];

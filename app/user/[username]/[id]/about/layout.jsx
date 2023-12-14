@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import ProfileAboutNav from "./ProfileAboutNav";
 import styles from "./layout.module.css";

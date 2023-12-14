@@ -1,3 +1,21 @@
 .allBlogsContainer {
   flex: 1;
 }
+
+.allBlogsContainerAdd {
+  height: calc(100vh - (5vh + 1rem));
+}
+
+.allBlogsContainerNo {
+  height: 100vh;
+}
+
+@media (min-width: 200px) and (max-width: 767px) {
+  .allBlogsContainerAdd {
+    height: calc(90dvh - (5dvh + 1rem));
+  }
+
+  .allBlogsContainerNo {
+    height: 90dvh;
+  }
+}

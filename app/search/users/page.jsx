@@ -9,6 +9,7 @@ import { useCallback } from "react";
 import useSearchUserHook from "@/app/customHooks/useSearchUserHook";
 import { useState } from "react";
 import { useEffect } from "react";
+import SearchEmpty from "@/app/components/no-content/SearchEmpty";
 
 const UsersSearch = () => {
   const [page, setPage] = useState(1);
@@ -54,10 +55,7 @@ const UsersSearch = () => {
         />
       ) : (
         <div className="height100 padding1rem textCenter width100 flex align_center justify_center">
-          <h3>
-            No human called {query} was found... searching for a{" "}
-            {getRandomAnimal()}?
-          </h3>
+          <SearchEmpty text={"User not found"} />
         </div>
       )}
     </div>

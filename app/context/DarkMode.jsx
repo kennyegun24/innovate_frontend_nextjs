@@ -1,8 +1,7 @@
 "use client";
 import { createContext, useEffect, useState } from "react";
 import { Provider } from "react-redux";
-import { store, wrapper } from "../redux/store";
-// import { PersistGate } from "redux-persist/integration/react";
+import { store } from "../redux/store";
 
 export const ThemeContext = createContext();
 
@@ -10,12 +9,21 @@ export const ThemeProvider = ({ children }) => {
   const [mode, setMode] = useState("dark");
 
   const toggle = () => {
+    let mod = mode === "dark" ? "light" : "dark";
     setMode((prev) => (prev === "dark" ? "light" : "dark"));
+    localStorage.setItem("innovate_web_theme", mod);
   };
 
   useEffect(() => {
     document.querySelector(":root").setAttribute("color-scheme", mode);
   }, [mode]);
+
+  useEffect(() => {
+    const theme = localStorage.getItem("innovate_web_theme")
+      ? localStorage.getItem("innovate_web_theme")
+      : "dark";
+    setMode(theme);
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ toggle, mode }}>

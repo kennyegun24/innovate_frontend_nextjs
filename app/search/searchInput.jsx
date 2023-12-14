@@ -25,13 +25,15 @@ const SearchInput = ({ handleSubmit, handleSelect, path, handleInput }) => {
         <div className={`flex justify_between ${styles.buttonDiv}`}>
           <button
             onClick={() => handleSelect("/search")}
-            className={`pointer ${path === "/search" && styles.borderBottom}`}
+            className={`white-black pointer ${
+              path === "/search" && styles.borderBottom
+            }`}
           >
             Post
           </button>
           <button
             onClick={() => handleSelect("/search/users")}
-            className={`pointer ${
+            className={`white-black pointer ${
               path === "/search/users" && styles.borderBottom
             }`}
           >
@@ -39,7 +41,7 @@ const SearchInput = ({ handleSubmit, handleSelect, path, handleInput }) => {
           </button>
           <button
             onClick={() => handleSelect("/search/users")}
-            className={`pointer ${
+            className={`white-black pointer ${
               path === "/search/users" && styles.borderBottom
             }`}
           >

@@ -1,0 +1,62 @@
+{
+  "settings": {
+    "header": "Settings",
+    "nav": {
+      "acs": "Account Settings",
+      "pvs": "Profile Settings",
+      "aps": "Appearance",
+      "pvc": "Privacy",
+      "hlc": "Help Center",
+      "tos": "Terms of Service"
+    },
+    "appearance": {
+      "header": "Appearance Settings",
+      "language": {
+        "header": "Language Settings",
+        "sub_header": "Select Your Desired Language",
+        "options": {
+          "en": "English",
+          "es": "Spanish",
+          "rs": "Russian",
+          "ch": "Chinese",
+          "fr": "French"
+        }
+      },
+      "display": {
+        "header": "Display Settings",
+        "sub_header": "Toggle between light and dark mode"
+      }
+    },
+    "profile": {
+      "header": "Edit your personal information",
+      "link_text": "Click here to edit your profile"
+    }
+  },
+  "nav": {
+    "fds": "Feeds",
+    "urs": "Users",
+    "ntftn": "Notifications",
+    "srh": "Search",
+    "cht": "Chats",
+    "str": "Store",
+    "job": "Jobs",
+    "blg": "Blogs",
+    "sttn": "Settings"
+  },
+  "blog": {
+    "rcnt": "Recent Blogs",
+    "sfb": "Search for blogs",
+    "mlb": "Most Liked Blogs",
+    "cmmt": "Comments",
+    "details": {
+      "obfu": "Other blogs from user",
+      "ctc": "Click to comment",
+      "wrds": "words"
+    },
+    "search": {
+      "srhrs": "Search results for",
+      "srb": "Searched Blogs",
+      "emt_srh": "Search came empty"
+    }
+  }
+}

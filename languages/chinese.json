@@ -1,0 +1,62 @@
+{
+  "settings": {
+    "header": "设置",
+    "nav": {
+      "acs": "帐户设置",
+      "pvs": "个人资料设置",
+      "aps": "外观",
+      "pvc": "隐私",
+      "hlc": "帮助中心",
+      "tos": "服务条款"
+    },
+    "appearance": {
+      "header": "外观设置",
+      "language": {
+        "header": "语言设置",
+        "sub_header": "选择您所需的语言",
+        "options": {
+          "en": "英语",
+          "es": "西班牙语",
+          "rs": "俄语",
+          "ch": "中文",
+          "fr": "法语"
+        }
+      },
+      "display": {
+        "header": "显示设置",
+        "sub_header": "在浅色和深色模式之间切换"
+      }
+    },
+    "profile": {
+      "header": "编辑个人信息",
+      "link_text": "点击这里编辑您的个人资料"
+    }
+  },
+  "nav": {
+    "fds": "动态",
+    "urs": "用户",
+    "ntftn": "通知",
+    "srh": "搜索",
+    "cht": "聊天",
+    "str": "商店",
+    "job": "工作",
+    "blg": "博客",
+    "sttn": "设置"
+  },
+  "blog": {
+    "rcnt": "最近的博客",
+    "sfb": "搜索博客",
+    "mlb": "最受欢迎的博客",
+    "cmmt": "评论",
+    "details": {
+      "obfu": "用户的其他博客",
+      "ctc": "点击评论",
+      "wrds": "字"
+    },
+    "search": {
+      "srhrs": "搜索结果为",
+      "srb": "搜索的博客",
+      "emt_srh": "搜索为空"
+    }
+  }
+}

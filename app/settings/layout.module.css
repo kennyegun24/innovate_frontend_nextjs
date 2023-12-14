@@ -1,9 +1,14 @@
 .childrenContainer {
   width: 65%;
+  height: 100vh;
 }
 
 .allSettingsContainer {
   width: 35%;
+}
+
+.children {
+  flex: 1;
 }
 
 @media (min-width: 200px) and (max-width: 900px) {

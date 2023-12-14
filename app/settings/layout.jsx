@@ -5,16 +5,10 @@ import { HeightContext } from "../context/HeightContext";
 import { lazy } from "react";
 import styles from "./layout.module.css";
 import RollingAnimation from "../components/animaate/RollingAnimation";
-import { usePathname } from "next/navigation";
+import Back from "./Back";
 
 const SettingsNav = lazy(() => import("./SettingsNav"));
 const Layout = ({ children }) => {
-  const pathname = usePathname();
-
-  const name = pathname.split("/");
-  const extractedName = name[name.length - 1];
-  let finalName =
-    extractedName.charAt(0).toUpperCase() + extractedName.slice(1);
   const { screenWidth, loading } = useContext(HeightContext);
   return (
     <div className="flex width100" style={{ height: "100vh" }}>
@@ -22,7 +16,7 @@ const Layout = ({ children }) => {
         <div
           className={`scroll_y_black_white flex column ${styles.allSettingsContainer}`}
         >
-          <Suspense fallback={<RollingAnimation text={"Settings"} />}>
+          <Suspense fallback={<RollingAnimation />}>
             <SettingsNav />
           </Suspense>
         </div>
@@ -31,7 +25,7 @@ const Layout = ({ children }) => {
         <div
           className={`scroll_y_black_white flex column ${styles.allSettingsContainer}`}
         >
-          <RollingAnimation text={"Settings"} />
+          <RollingAnimation />
         </div>
       )}
 
@@ -39,9 +33,11 @@ const Layout = ({ children }) => {
         className={`scroll_y_black_white flex column ${styles.childrenContainer}`}
       >
         {!loading ? (
-          <div>{children}</div>
+          <div className="flex column gap1rem">
+            <Back /> <div className={styles.children}>{children}</div>
+          </div>
         ) : (
-          <RollingAnimation text={finalName} />
+          <RollingAnimation />
         )}
       </div>
     </div>

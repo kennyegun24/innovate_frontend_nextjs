@@ -1,30 +1,16 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import AllChats from "../components/chat/AllChats";
+import React, { Suspense, useContext, lazy } from "react";
+import { HeightContext } from "../context/HeightContext";
+import RollingAnimation from "../components/animaate/RollingAnimation";
+const AllChats = lazy(() => import("../components/chat/AllChats"));
 
 const Chat = () => {
-  const [screenWidth, setScreenWidth] = useState(null);
+  const { screenWidth, loading } = useContext(HeightContext);
+  if (loading) return;
 
-  useEffect(() => {
-    // Function to update screenWidth state
-    const updateScreenWidth = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    // Initial screen width
-    updateScreenWidth();
-
-    // Attach event listener to window resize event
-    window.addEventListener("resize", updateScreenWidth);
-
-    // Cleanup by removing the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("resize", updateScreenWidth);
-    };
-  }, []);
   return (
     <>
-      {screenWidth > 600 ? (
+      {screenWidth > 1025 ? (
         <div
           className="flex align_center justify_center"
           style={{
@@ -35,7 +21,7 @@ const Chat = () => {
         </div>
       ) : (
         <div
-          className="scroll_y"
+          className="scroll_y_black_white"
           style={{
             maxHeight: "100%",
             overflowY: "auto",
@@ -43,7 +29,15 @@ const Chat = () => {
             borderRight: "1px solid #757474",
           }}
         >
-          <AllChats />
+          <Suspense
+            fallback={
+              <div style={{ height: "100vh" }}>
+                <RollingAnimation />
+              </div>
+            }
+          >
+            <AllChats />
+          </Suspense>
         </div>
       )}
     </>

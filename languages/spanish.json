@@ -1,0 +1,63 @@
+{
+  "settings": {
+    "header": "Configuración",
+    "nav": {
+      "acs": "Configuración de Cuenta",
+      "pvs": "Configuración de Perfil",
+      "aps": "Apariencia",
+      "pvc": "Privacidad",
+      "hlc": "Centro de Ayuda",
+      "tos": "Términos de Servicio"
+    },
+
+    "appearance": {
+      "header": "Ajustes de Apariencia",
+      "language": {
+        "header": "Configuración de Idioma",
+        "sub_header": "Selecciona tu idioma deseado",
+        "options": {
+          "en": "Inglés",
+          "es": "Español",
+          "rs": "Ruso",
+          "ch": "Chino",
+          "fr": "Francés"
+        }
+      },
+      "display": {
+        "header": "Ajustes de Pantalla",
+        "sub_header": "Cambiar entre modos oscuro y claro"
+      }
+    },
+    "profile": {
+      "header": "Editar tu información personal",
+      "link_text": "Haz clic aquí para editar tu perfil"
+    }
+  },
+  "nav": {
+    "fds": "Noticias",
+    "urs": "Usuarios",
+    "ntftn": "Notificaciones",
+    "srh": "Búsqueda",
+    "cht": "Chats",
+    "str": "Tienda",
+    "job": "Empleos",
+    "blg": "Blogs",
+    "sttn": "Configuración"
+  },
+  "blog": {
+    "rcnt": "Blogs Recientes",
+    "sfb": "Buscar blogs",
+    "mlb": "Blogs Más Gustados",
+    "cmmt": "Comentarios",
+    "details": {
+      "obfu": "Otros blogs del usuario",
+      "ctc": "Haga clic para comentar",
+      "wrds": "palabras"
+    },
+    "search": {
+      "srhrs": "Resultados de búsqueda para",
+      "srb": "Blogs Buscados",
+      "emt_srh": "La búsqueda está vacía"
+    }
+  }
+}

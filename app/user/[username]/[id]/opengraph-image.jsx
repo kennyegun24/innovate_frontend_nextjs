@@ -16,7 +16,7 @@ export default async function og({ params }) {
   return new ImageResponse(
     (
       <div style={{ display: "flex" }}>
-        <img src={data.image} alt="alt" />
+        <img src={data?.image} alt="alt" />
       </div>
     )
   );

@@ -2,7 +2,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./user_auth/userReducer";
 import unauthPostDetailsDetails from "./unauth/postsReducer";
-import { createWrapper } from "next-redux-wrapper";
+import unauthOtherUserDetails from "./unauth/otherUserDetalisSlice";
+import articleSlice from "./blogReducer";
 // import storage from "redux-persist/lib/storage/session";
 // import {
 //   persistStore,
@@ -47,6 +48,8 @@ const store = configureStore({
   reducer: {
     user: userReducer,
     singleUnauthPost: unauthPostDetailsDetails,
+    unauthUserDetails: unauthOtherUserDetails,
+    articles: articleSlice,
   },
   // middleware: (getDefaultMiddleware) =>
   //   getDefaultMiddleware({
@@ -57,8 +60,6 @@ const store = configureStore({
 });
 
 // assigning store to next wrapper
-const makeStore = () => store;
 // const persistor = persistStore(store);
 // export { store, persistor };
 export { store };
-export const wrapper = createWrapper(makeStore);

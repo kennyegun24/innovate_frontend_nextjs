@@ -37,7 +37,7 @@ const ProfileOverview = ({ data }) => {
         </div>
       </div>
       <div
-        className={`${styles.containerSm2} background2 font14 flex column theme gap05rem padding1rem`}
+        className={`${styles.containerSm2} background2 font14 flex column theme gap05rem`}
         style={{ borderRadius: "6px" }}
       >
         <h4>About Me</h4>
