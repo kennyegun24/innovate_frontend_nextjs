@@ -19,9 +19,9 @@
 
 .subPostLeftContainer {
   border-bottom: 1px solid #777676;
-  padding-bottom: 2rem;
+  /* padding-bottom: 2rem; */
   position: relative;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .interractionsDiv {
@@ -102,7 +102,8 @@
     flex-direction: column;
     width: 100%;
     gap: 1rem;
-    max-height: 100vh;
+    /* max-height: 100vh; */
+    flex: 1;
     overflow-y: auto;
   }
 
@@ -112,6 +113,10 @@
 
   .postText {
     font-size: 18px;
+  }
+
+  .commentsContainer {
+    margin-top: 1rem;
   }
 
   .postImageMainDiv {

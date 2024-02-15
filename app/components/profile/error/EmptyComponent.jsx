@@ -9,9 +9,8 @@ const EmptyComponent = ({ text }) => {
         className="object-cover not-found-profile-image"
         src={notFound}
         alt="not found"
-        style={{ filter: "grayscale(100%)" }}
       />
-      <p className="not-found-profile-text">{text}</p>
+      <p className="not-found-profile-text text_color">{text}</p>
     </div>
   );
 };

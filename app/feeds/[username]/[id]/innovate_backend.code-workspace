@@ -1,0 +1,19 @@
+{
+  "folders": [
+	{
+		"path": "../../../../../rails/innovate_backend"
+	},
+	{
+		"path": "../../../.."
+	},
+	{
+		"path": "../../../../../innovate/server"
+	},
+	{
+		"path": "../../../../../htmlandcss"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "htmlandcss"
+  }
+}

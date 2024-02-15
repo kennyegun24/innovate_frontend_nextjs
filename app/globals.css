@@ -705,6 +705,7 @@
 .not-found-profile-image {
   height: auto;
   width: 350px;
+  filter: grayscale(100%);
 }
 
 .not-found-profile-text {
@@ -719,6 +720,7 @@
   .not-found-profile-image {
     height: auto;
     width: 80%;
+    filter: none;
   }
 
   .not-found-profile-text {

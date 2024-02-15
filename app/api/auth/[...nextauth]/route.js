@@ -128,6 +128,7 @@ const handler = NextAuth({
       if (token?.expires && new Date() <= new Date(token.expires)) {
         return token;
       }
+      return null;
     },
     session: async ({ session, token }) => {
       session.user.token = token?.token;
@@ -152,6 +153,7 @@ const handler = NextAuth({
       if (token?.expires && new Date() <= new Date(token?.expires)) {
         return session;
       }
+      return null;
     },
   },
 });
