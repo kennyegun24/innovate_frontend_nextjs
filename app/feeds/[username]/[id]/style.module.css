@@ -57,7 +57,7 @@
   resize: none;
   border-radius: 6px 0 0 6px;
   border-right: 1px solid #c1bebe;
-  color: #fff;
+  /* color: #fff; */
   outline: none;
 }
 

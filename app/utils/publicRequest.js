@@ -1,3 +1,5 @@
+import { getSession } from "next-auth/react";
+
 const { default: axios } = require("axios");
 
 const BASE_URL = "/api";
@@ -17,3 +19,26 @@ export const authRailsRequest = axios.create({
   baseURL: `${railsEndpoint}/auth`,
   headers: `Authorization: ${token}`,
 });
+
+export const newComment = async ({ token, post_id, text }) => {
+  const authRailsRequest = axios.create({
+    baseURL: `${railsEndpoint}/auth`,
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  await authRailsRequest.post("post_comments", {
+    post_id,
+    text,
+  });
+};
+
+export const likePost = async ({ token, post_id }) => {
+  const authRailsRequest = axios.create({
+    baseURL: `${railsEndpoint}/auth`,
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  await authRailsRequest.post(`post/${post_id}/like`);
+};

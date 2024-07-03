@@ -10,9 +10,8 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
-    "@next/swc-win32-x64-msvc": "^14.1.0",
     "@reduxjs/toolkit": "^1.9.5",
-    "antd": "^5.9.2",
+    "antd": "^5.19.0",
     "axios": "^1.5.1",
     "eslint": "8.49.0",
     "eslint-config-next": "^14.0.1",
@@ -35,6 +34,7 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@types/antd": "^1.0.0",
     "encoding": "^0.1.13"
   }
 }

@@ -11,6 +11,7 @@ import AuthProvider from "./context/SessionProvider";
 import { PostDetailsProvider } from "./context/PostDetailsContext";
 import { LanguageProvider } from "./context/LanguageProvider";
 import MessageProvider from "./context/MessageNotification";
+import { ConnectionProvider } from "./context/NoInternet";
 export const metadata = {
   metadataBase: new URL("https://innovate-frontend-nextjs.vercel.app"),
   title: {
@@ -39,26 +40,28 @@ export default function RootLayout({ children }) {
         <LanguageProvider>
           <ThemeProvider>
             <AuthProvider>
-              <HeightProvider>
-                <InterractionProvider>
-                  <FollowedProvider>
-                    <PostDetailsProvider>
-                      <MessageProvider>
-                        <div className={styles.appLayout}>
-                          <div className={styles.navLayoutHeader}>
-                            <NavBar />
+              <ConnectionProvider>
+                <HeightProvider>
+                  <InterractionProvider>
+                    <FollowedProvider>
+                      <PostDetailsProvider>
+                        <MessageProvider>
+                          <div className={styles.appLayout}>
+                            <div className={styles.navLayoutHeader}>
+                              <NavBar />
+                            </div>
+                            <div
+                              className={`${styles.appLayoutChildren} ${styles.width85}`}
+                            >
+                              {children}
+                            </div>
                           </div>
-                          <div
-                            className={`${styles.appLayoutChildren} ${styles.width85}`}
-                          >
-                            {children}
-                          </div>
-                        </div>
-                      </MessageProvider>
-                    </PostDetailsProvider>
-                  </FollowedProvider>
-                </InterractionProvider>
-              </HeightProvider>
+                        </MessageProvider>
+                      </PostDetailsProvider>
+                    </FollowedProvider>
+                  </InterractionProvider>
+                </HeightProvider>
+              </ConnectionProvider>
             </AuthProvider>
           </ThemeProvider>
         </LanguageProvider>

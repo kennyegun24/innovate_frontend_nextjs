@@ -26,6 +26,7 @@ const PostDetail = ({ params }) => {
   }, [id, postData, dispatch]);
 
   const PostContent = postData || post;
+
   return (
     <div className={`background2 scroll_y_black_white ${styles.container}`}>
       {(!loading || Object.entries(PostContent).length > 0) && (
@@ -61,6 +62,7 @@ const PostDetail = ({ params }) => {
                 className={`flex align_center gap1rem ${styles.interractionsDiv}`}
               >
                 <LikeIcon
+                  post_id={PostContent.id}
                   isLiked={PostContent.isLiked}
                   count={PostContent.likes_count}
                 />
@@ -86,7 +88,7 @@ const PostDetail = ({ params }) => {
               )}
             </div>
             <div className={styles.inputWriteComment}>
-              <WriteComment />
+              <WriteComment post_id={PostContent.id} />
             </div>
             <div className={styles.commentsContainer}>
               <Comments />
